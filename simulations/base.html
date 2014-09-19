@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>3.9.1. Simulation base classes &mdash; SAPPHiRE 0.9 documentation</title>
+    <title>3.8.1. Simulation base classes &mdash; SAPPHiRE 0.9 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -27,9 +27,9 @@
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="SAPPHiRE 0.9 documentation" href="../index.html" />
-    <link rel="up" title="3.9. Performing simulations" href="../simulations.html" />
-    <link rel="next" title="3.9.2. Simulations based on Monte Carlo EAS ground particle data" href="groundparticles.html" />
-    <link rel="prev" title="3.9. Performing simulations" href="../simulations.html" /> 
+    <link rel="up" title="3.8. Performing simulations" href="../simulations.html" />
+    <link rel="next" title="3.8.2. Detector simulations" href="detector.html" />
+    <link rel="prev" title="3.8. Performing simulations" href="../simulations.html" /> 
   </head>
   <body>
     <div class="related">
@@ -42,14 +42,14 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="groundparticles.html" title="3.9.2. Simulations based on Monte Carlo EAS ground particle data"
+          <a href="detector.html" title="3.8.2. Detector simulations"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../simulations.html" title="3.9. Performing simulations"
+          <a href="../simulations.html" title="3.8. Performing simulations"
              accesskey="P">previous</a> |</li>
         <li><a href="../index.html">SAPPHiRE 0.9 documentation</a> &raquo;</li>
           <li><a href="../sapphire.html" >3. SAPPHiRE Reference</a> &raquo;</li>
-          <li><a href="../simulations.html" accesskey="U">3.9. Performing simulations</a> &raquo;</li> 
+          <li><a href="../simulations.html" accesskey="U">3.8. Performing simulations</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -59,7 +59,7 @@
           <div class="body">
             
   <div class="section" id="module-sapphire.simulations.base">
-<span id="simulation-base-classes"></span><h1>3.9.1. Simulation base classes<a class="headerlink" href="#module-sapphire.simulations.base" title="Permalink to this headline">¶</a></h1>
+<span id="simulation-base-classes"></span><h1>3.8.1. Simulation base classes<a class="headerlink" href="#module-sapphire.simulations.base" title="Permalink to this headline">¶</a></h1>
 <p>Perform simulations of air showers on a cluster of stations</p>
 <p>This base class can be subclassed to provide various kinds of
 simulations. These simulations will inherit the base functionallity from
@@ -81,7 +81,7 @@ that the same reconstruction analysis can be applied to both.</p>
 </div>
 <dl class="class">
 <dt id="sapphire.simulations.base.BaseSimulation">
-<em class="property">class </em><tt class="descclassname">sapphire.simulations.base.</tt><tt class="descname">BaseSimulation</tt><big>(</big><em>cluster</em>, <em>datafile</em>, <em>output_path='/'</em>, <em>N=1</em><big>)</big><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sapphire.simulations.base.</tt><tt class="descname">BaseSimulation</tt><big>(</big><em>cluster</em>, <em>datafile</em>, <em>output_path='/'</em>, <em>N=1</em>, <em>seed=None</em><big>)</big><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Base class for simulations.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -257,10 +257,10 @@ variables to be stored for this event.</li>
             </a></p>
   <h4>Previous topic</h4>
   <p class="topless"><a href="../simulations.html"
-                        title="previous chapter">3.9. Performing simulations</a></p>
+                        title="previous chapter">3.8. Performing simulations</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="groundparticles.html"
-                        title="next chapter">3.9.2. Simulations based on Monte Carlo EAS ground particle data</a></p>
+  <p class="topless"><a href="detector.html"
+                        title="next chapter">3.8.2. Detector simulations</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/simulations/base.txt"
@@ -293,19 +293,19 @@ variables to be stored for this event.</li>
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="groundparticles.html" title="3.9.2. Simulations based on Monte Carlo EAS ground particle data"
+          <a href="detector.html" title="3.8.2. Detector simulations"
              >next</a> |</li>
         <li class="right" >
-          <a href="../simulations.html" title="3.9. Performing simulations"
+          <a href="../simulations.html" title="3.8. Performing simulations"
              >previous</a> |</li>
         <li><a href="../index.html">SAPPHiRE 0.9 documentation</a> &raquo;</li>
           <li><a href="../sapphire.html" >3. SAPPHiRE Reference</a> &raquo;</li>
-          <li><a href="../simulations.html" >3.9. Performing simulations</a> &raquo;</li> 
+          <li><a href="../simulations.html" >3.8. Performing simulations</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>

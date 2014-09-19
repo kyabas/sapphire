@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>3.8.2. Detector simulations &mdash; SAPPHiRE 0.9 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/hisparc_style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.9',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="SAPPHiRE 0.9 documentation" href="../index.html" />
+    <link rel="up" title="3.8. Performing simulations" href="../simulations.html" />
+    <link rel="next" title="3.8.3. Simulations based on Monte Carlo EAS ground particle data" href="groundparticles.html" />
+    <link rel="prev" title="3.8.1. Simulation base classes" href="base.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="groundparticles.html" title="3.8.3. Simulations based on Monte Carlo EAS ground particle data"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="base.html" title="3.8.1. Simulation base classes"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">SAPPHiRE 0.9 documentation</a> &raquo;</li>
+          <li><a href="../sapphire.html" >3. SAPPHiRE Reference</a> &raquo;</li>
+          <li><a href="../simulations.html" accesskey="U">3.8. Performing simulations</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-sapphire.simulations.detector">
+<span id="detector-simulations"></span><h1>3.8.2. Detector simulations<a class="headerlink" href="#module-sapphire.simulations.detector" title="Permalink to this headline">¶</a></h1>
+<p>Common HiSPARC station response simulations</p>
+<p>These are some common simulations for HiSPARC detectors.</p>
+<dl class="class">
+<dt id="sapphire.simulations.detector.ErrorlessSimulation">
+<em class="property">class </em><tt class="descclassname">sapphire.simulations.detector.</tt><tt class="descname">ErrorlessSimulation</tt><big>(</big><em>cluster</em>, <em>datafile</em>, <em>output_path='/'</em>, <em>N=1</em>, <em>seed=None</em><big>)</big><a class="headerlink" href="#sapphire.simulations.detector.ErrorlessSimulation" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="sapphire.simulations.detector.ErrorlessSimulation.simulate_adc_sampling">
+<tt class="descname">simulate_adc_sampling</tt><big>(</big><em>t</em><big>)</big><a class="headerlink" href="#sapphire.simulations.detector.ErrorlessSimulation.simulate_adc_sampling" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sapphire.simulations.detector.ErrorlessSimulation.simulate_detector_mip">
+<tt class="descname">simulate_detector_mip</tt><big>(</big><em>particle</em><big>)</big><a class="headerlink" href="#sapphire.simulations.detector.ErrorlessSimulation.simulate_detector_mip" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sapphire.simulations.detector.ErrorlessSimulation.simulate_detector_mips">
+<tt class="descname">simulate_detector_mips</tt><big>(</big><em>particles</em><big>)</big><a class="headerlink" href="#sapphire.simulations.detector.ErrorlessSimulation.simulate_detector_mips" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sapphire.simulations.detector.ErrorlessSimulation.simulate_detector_offset">
+<tt class="descname">simulate_detector_offset</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.simulations.detector.ErrorlessSimulation.simulate_detector_offset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sapphire.simulations.detector.ErrorlessSimulation.simulate_detector_offsets">
+<tt class="descname">simulate_detector_offsets</tt><big>(</big><em>n_detectors</em><big>)</big><a class="headerlink" href="#sapphire.simulations.detector.ErrorlessSimulation.simulate_detector_offsets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sapphire.simulations.detector.ErrorlessSimulation.simulate_gps_uncertainty">
+<tt class="descname">simulate_gps_uncertainty</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.simulations.detector.ErrorlessSimulation.simulate_gps_uncertainty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sapphire.simulations.detector.ErrorlessSimulation.simulate_signal_transport_time">
+<tt class="descname">simulate_signal_transport_time</tt><big>(</big><em>n=1</em><big>)</big><a class="headerlink" href="#sapphire.simulations.detector.ErrorlessSimulation.simulate_signal_transport_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sapphire.simulations.detector.ErrorlessSimulation.simulate_station_offset">
+<tt class="descname">simulate_station_offset</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.simulations.detector.ErrorlessSimulation.simulate_station_offset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sapphire.simulations.detector.HiSPARCSimulation">
+<em class="property">class </em><tt class="descclassname">sapphire.simulations.detector.</tt><tt class="descname">HiSPARCSimulation</tt><big>(</big><em>cluster</em>, <em>datafile</em>, <em>output_path='/'</em>, <em>N=1</em>, <em>seed=None</em><big>)</big><a class="headerlink" href="#sapphire.simulations.detector.HiSPARCSimulation" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="sapphire.simulations.detector.HiSPARCSimulation.generate_azimuth">
+<tt class="descname">generate_azimuth</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.simulations.detector.HiSPARCSimulation.generate_azimuth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a random azimuth</p>
+<p>Showers from each azimuth have equal probability</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.simulations.detector.HiSPARCSimulation.generate_zenith">
+<tt class="descname">generate_zenith</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.simulations.detector.HiSPARCSimulation.generate_zenith" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a random zenith</p>
+<p>Pick from the expected zenith distribution.</p>
+<p>TODO: There is a difference between expected shower zeniths
+detected on the ground and at the top of the atmosphere. So
+simulations that use CORSIKA generated showers need to take that
+into account.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.simulations.detector.HiSPARCSimulation.inverse_zenith_probability">
+<tt class="descname">inverse_zenith_probability</tt><big>(</big><em>p</em><big>)</big><a class="headerlink" href="#sapphire.simulations.detector.HiSPARCSimulation.inverse_zenith_probability" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverse cumulative probability distribution for zenith</p>
+<p>Derrived from Schultheiss &#8220;The acceptancy of the HiSPARC Network&#8221;,
+(internal note), eq 2.4 from Rossi.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>p</strong> &#8211; probability value between 0 and 1.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">zenith with corresponding cumulative probability.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.simulations.detector.HiSPARCSimulation.simulate_adc_sampling">
+<tt class="descname">simulate_adc_sampling</tt><big>(</big><em>t</em><big>)</big><a class="headerlink" href="#sapphire.simulations.detector.HiSPARCSimulation.simulate_adc_sampling" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simulate ADC time binning due to the sampling frequency</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>t</strong> &#8211; time to be binned.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">time ceiled in 2.5 ns base.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.simulations.detector.HiSPARCSimulation.simulate_detector_mip">
+<tt class="descname">simulate_detector_mip</tt><big>(</big><em>particle</em><big>)</big><a class="headerlink" href="#sapphire.simulations.detector.HiSPARCSimulation.simulate_detector_mip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simulate the detector signal for particles</p>
+<p>Be careful when editting this function, be sure to check both
+the single and vectorized part.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>particle</strong> &#8211; particle row or rows with the p_[x, y, z]
+components of the particle momentum.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.simulations.detector.HiSPARCSimulation.simulate_detector_mips">
+<tt class="descname">simulate_detector_mips</tt><big>(</big><em>particles</em><big>)</big><a class="headerlink" href="#sapphire.simulations.detector.HiSPARCSimulation.simulate_detector_mips" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simulate the detector signal response for particles</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>particles</strong> &#8211; an array of particle rows.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.simulations.detector.HiSPARCSimulation.simulate_detector_offset">
+<tt class="descname">simulate_detector_offset</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.simulations.detector.HiSPARCSimulation.simulate_detector_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simulate time offsets between detectors in one station</p>
+<p>This offset should be fixed for each detector for a simulation run.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.simulations.detector.HiSPARCSimulation.simulate_detector_offsets">
+<tt class="descname">simulate_detector_offsets</tt><big>(</big><em>n_detectors</em><big>)</big><a class="headerlink" href="#sapphire.simulations.detector.HiSPARCSimulation.simulate_detector_offsets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get multiple detector offsets</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>n_detectors</strong> &#8211; number of offsets to return.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.simulations.detector.HiSPARCSimulation.simulate_gps_uncertainty">
+<tt class="descname">simulate_gps_uncertainty</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.simulations.detector.HiSPARCSimulation.simulate_gps_uncertainty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simulate uncertainty from GPS receiver</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.simulations.detector.HiSPARCSimulation.simulate_signal_transport_time">
+<tt class="descname">simulate_signal_transport_time</tt><big>(</big><em>n=1</em><big>)</big><a class="headerlink" href="#sapphire.simulations.detector.HiSPARCSimulation.simulate_signal_transport_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simulate transport times of scintillation light to the PMT</p>
+<p>Generates random transit times within a given distribution and
+adds it to the times the particles passed the detector.</p>
+<p>Be careful when editting this function, be sure to check both
+the single and vectorized part.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>n</strong> &#8211; number of times to simulate</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of signal transport times</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.simulations.detector.HiSPARCSimulation.simulate_station_offset">
+<tt class="descname">simulate_station_offset</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.simulations.detector.HiSPARCSimulation.simulate_station_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simulate time offsets between different stations</p>
+<p>This offset should be fixed for each station for a simulation run.
+The actual distribution is not yet very clear. We assume it is
+gaussian for convenience. Then the stddev is about 16 ns.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/header.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="base.html"
+                        title="previous chapter">3.8.1. Simulation base classes</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="groundparticles.html"
+                        title="next chapter">3.8.3. Simulations based on Monte Carlo EAS ground particle data</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/simulations/detector.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="groundparticles.html" title="3.8.3. Simulations based on Monte Carlo EAS ground particle data"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="base.html" title="3.8.1. Simulation base classes"
+             >previous</a> |</li>
+        <li><a href="../index.html">SAPPHiRE 0.9 documentation</a> &raquo;</li>
+          <li><a href="../sapphire.html" >3. SAPPHiRE Reference</a> &raquo;</li>
+          <li><a href="../simulations.html" >3.8. Performing simulations</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, David Fokkema.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

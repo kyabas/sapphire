@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>3.1.8. Reconstructions &mdash; SAPPHiRE 0.9 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/hisparc_style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.9',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="SAPPHiRE 0.9 documentation" href="../index.html" />
+    <link rel="up" title="3.1. Data analysis" href="../analysis.html" />
+    <link rel="next" title="3.2. HiSPARC API" href="../api.html" />
+    <link rel="prev" title="3.1.7. Processing of HiSPARC events" href="process_events.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../api.html" title="3.2. HiSPARC API"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="process_events.html" title="3.1.7. Processing of HiSPARC events"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">SAPPHiRE 0.9 documentation</a> &raquo;</li>
+          <li><a href="../sapphire.html" >3. SAPPHiRE Reference</a> &raquo;</li>
+          <li><a href="../analysis.html" accesskey="U">3.1. Data analysis</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-sapphire.analysis.reconstructions">
+<span id="reconstructions"></span><h1>3.1.8. Reconstructions<a class="headerlink" href="#module-sapphire.analysis.reconstructions" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="sapphire.analysis.reconstructions.ReconstructESDCoincidences">
+<em class="property">class </em><tt class="descclassname">sapphire.analysis.reconstructions.</tt><tt class="descname">ReconstructESDCoincidences</tt><big>(</big><em>data</em>, <em>coincidences_group='/coincidences'</em>, <em>overwrite=False</em>, <em>progress=True</em><big>)</big><a class="headerlink" href="#sapphire.analysis.reconstructions.ReconstructESDCoincidences" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reconstruct coincidences, e.g. event between multiple stations</p>
+<p>Example usage:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">tables</span>
+<span class="kn">from</span> <span class="nn">sapphire.analysis.reconstructions</span> <span class="kn">import</span> <span class="n">ReconstructESDCoincidences</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="s">&#39;2014_1_1.h5&#39;</span><span class="p">,</span> <span class="s">&#39;a&#39;</span><span class="p">)</span>
+<span class="n">dirrec</span> <span class="o">=</span> <span class="n">ReconstructESDCoincidences</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">dirrec</span><span class="o">.</span><span class="n">reconstruct_and_store</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Initialize the class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>data</strong> &#8211; the PyTables datafile.</li>
+<li><strong>coincidences_group</strong> &#8211; the destination group.</li>
+<li><strong>overwrite</strong> &#8211; if True, overwrite existing reconstruction table.</li>
+<li><strong>progress</strong> &#8211; if True, show a progressbar while reconstructing.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="sapphire.analysis.reconstructions.ReconstructESDCoincidences.determine_detector_timing_offsets">
+<tt class="descname">determine_detector_timing_offsets</tt><big>(</big><em>station</em>, <em>station_group</em><big>)</big><a class="headerlink" href="#sapphire.analysis.reconstructions.ReconstructESDCoincidences.determine_detector_timing_offsets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine the offsets between the station detectors.</p>
+<p>ADL: Currently assumes detector 1 is a good reference.
+But this is not always the best choice. Perhaps it should be
+determined using more data (more than one day) to be more
+accurate.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.reconstructions.ReconstructESDCoincidences.determine_station_timing_offsets">
+<tt class="descname">determine_station_timing_offsets</tt><big>(</big><em>ref_station_number=501</em><big>)</big><a class="headerlink" href="#sapphire.analysis.reconstructions.ReconstructESDCoincidences.determine_station_timing_offsets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine the offsets between the stations.</p>
+<p>ADL: This should use more than one day of data for a good fit.
+Station altitudes are not taken into account. It would be better
+to choose a different reference station per (sub)cluster.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.reconstructions.ReconstructESDCoincidences.get_station_timing_offsets">
+<tt class="descname">get_station_timing_offsets</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.analysis.reconstructions.ReconstructESDCoincidences.get_station_timing_offsets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get predetermined station offsets</p>
+<p>References for subclusters:
+102 for Zaanlands stations, data from 2012/6-2014/8.
+501 for Science Park stations, data from 2010/1-2014/8.
+7001 for Twente University stations, data from 2011/8-2014/8.
+8001 for Eindhoven University stations, data from 2011/10-2014/8.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.reconstructions.ReconstructESDCoincidences.prepare_output">
+<tt class="descname">prepare_output</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.analysis.reconstructions.ReconstructESDCoincidences.prepare_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare output table</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.reconstructions.ReconstructESDCoincidences.reconstruct_and_store">
+<tt class="descname">reconstruct_and_store</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.analysis.reconstructions.ReconstructESDCoincidences.reconstruct_and_store" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shorthand function to reconstruct coincidences and store results</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.reconstructions.ReconstructESDCoincidences.reconstruct_directions">
+<tt class="descname">reconstruct_directions</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.analysis.reconstructions.ReconstructESDCoincidences.reconstruct_directions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reconstruct all coincidences</p>
+<p>Reconstruct each coincidence in the coincidences tables.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.reconstructions.ReconstructESDCoincidences.store_reconstructions">
+<tt class="descname">store_reconstructions</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.analysis.reconstructions.ReconstructESDCoincidences.store_reconstructions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loop over list of reconstructed data and store results</p>
+<p>Only writes rows if reconstruction was possible and successful.</p>
+<p>ADL: Perhaps we should always store reconstructions, and use
+error values in case it failed. However, the usual -999 might be
+a real value (though unlikely to be exactly -999) in case of
+core position reconstruction.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sapphire.analysis.reconstructions.ReconstructESDEvents">
+<em class="property">class </em><tt class="descclassname">sapphire.analysis.reconstructions.</tt><tt class="descname">ReconstructESDEvents</tt><big>(</big><em>data</em>, <em>station_group</em>, <em>station</em>, <em>overwrite=False</em>, <em>progress=True</em><big>)</big><a class="headerlink" href="#sapphire.analysis.reconstructions.ReconstructESDEvents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reconstruct events from single stations</p>
+<p>Example usage:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">tables</span>
+<span class="kn">from</span> <span class="nn">sapphire.analysis.reconstructions</span> <span class="kn">import</span> <span class="n">ReconstructESDEvents</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="s">&#39;2014_1_1.h5&#39;</span><span class="p">,</span> <span class="s">&#39;a&#39;</span><span class="p">)</span>
+<span class="n">station_path</span> <span class="o">=</span> <span class="s">&#39;/hisparc/cluster_amsterdam/station_506&#39;</span>
+<span class="n">dirrec</span> <span class="o">=</span> <span class="n">ReconstructESDEvents</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">station_path</span><span class="p">,</span> <span class="mi">506</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">dirrec</span><span class="o">.</span><span class="n">reconstruct_and_store</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>To visualize the results:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">polar</span><span class="p">([</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">dirrec</span><span class="o">.</span><span class="n">phi</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">isnan</span><span class="p">(</span><span class="n">p</span><span class="p">)],</span>
+          <span class="p">[</span><span class="n">t</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">dirrec</span><span class="o">.</span><span class="n">theta</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">isnan</span><span class="p">(</span><span class="n">t</span><span class="p">)],</span> <span class="s">&#39;ko&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">plt</span><span class="o">.</span><span class="n">polar</span><span class="p">(</span><span class="n">dirrec</span><span class="o">.</span><span class="n">reconstructions</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s">&#39;azimuth&#39;</span><span class="p">),</span>
+          <span class="n">dirrec</span><span class="o">.</span><span class="n">reconstructions</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s">&#39;zenith&#39;</span><span class="p">),</span> <span class="s">&#39;ko&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Initialize the class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>data</strong> &#8211; the PyTables datafile.</li>
+<li><strong>station_group</strong> &#8211; the destination group.</li>
+<li><strong>station</strong> &#8211; either a station number or a Station instance.</li>
+<li><strong>overwrite</strong> &#8211; if True, overwrite existing reconstruction table.</li>
+<li><strong>progress</strong> &#8211; if True, show a progressbar while reconstructing.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="sapphire.analysis.reconstructions.ReconstructESDEvents.determine_detector_timing_offsets">
+<tt class="descname">determine_detector_timing_offsets</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.analysis.reconstructions.ReconstructESDEvents.determine_detector_timing_offsets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine the offsets between the station detectors.</p>
+<p>ADL: Currently assumes detector 1 is a good reference.
+But this is not always the best choice. Perhaps it should be
+determined using more data (more than one day) to be more
+accurate.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.reconstructions.ReconstructESDEvents.prepare_output">
+<tt class="descname">prepare_output</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.analysis.reconstructions.ReconstructESDEvents.prepare_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare output table</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.reconstructions.ReconstructESDEvents.reconstruct_and_store">
+<tt class="descname">reconstruct_and_store</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.analysis.reconstructions.ReconstructESDEvents.reconstruct_and_store" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shorthand function to reconstruct event and store the results</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.reconstructions.ReconstructESDEvents.reconstruct_directions">
+<tt class="descname">reconstruct_directions</tt><big>(</big><em>detector_ids=None</em><big>)</big><a class="headerlink" href="#sapphire.analysis.reconstructions.ReconstructESDEvents.reconstruct_directions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reconstruct all events</p>
+<p>Reconstruct each event in the events tables.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>detector_ids</strong> &#8211; use only these detectors for reconstructions.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.reconstructions.ReconstructESDEvents.store_offsets">
+<tt class="descname">store_offsets</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.analysis.reconstructions.ReconstructESDEvents.store_offsets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store the determined offset in a table.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.reconstructions.ReconstructESDEvents.store_reconstructions">
+<tt class="descname">store_reconstructions</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.analysis.reconstructions.ReconstructESDEvents.store_reconstructions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loop over list of reconstructed data and store results</p>
+<p>Only writes rows if reconstruction was possible and successful.</p>
+<p>ADL: Perhaps we should always store reconstructions, and use
+error values in case it failed. However, the usual -999 might be
+a real value (though unlikely to be exactly -999) in case of
+core position reconstruction.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/header.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="process_events.html"
+                        title="previous chapter">3.1.7. Processing of HiSPARC events</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../api.html"
+                        title="next chapter">3.2. HiSPARC API</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/analysis/reconstructions.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../api.html" title="3.2. HiSPARC API"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="process_events.html" title="3.1.7. Processing of HiSPARC events"
+             >previous</a> |</li>
+        <li><a href="../index.html">SAPPHiRE 0.9 documentation</a> &raquo;</li>
+          <li><a href="../sapphire.html" >3. SAPPHiRE Reference</a> &raquo;</li>
+          <li><a href="../analysis.html" >3.1. Data analysis</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, David Fokkema.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

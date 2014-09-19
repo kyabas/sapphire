@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>3.11.4. Transformations between Celestial coordinate systems &mdash; SAPPHiRE 0.9 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/hisparc_style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.9',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="SAPPHiRE 0.9 documentation" href="../index.html" />
+    <link rel="up" title="3.11. Transformations" href="../transformations.html" />
+    <link rel="next" title="3.11.5. Time conversion functions" href="clock.html" />
+    <link rel="prev" title="3.11.3. Conversion between different bases" href="base.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="clock.html" title="3.11.5. Time conversion functions"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="base.html" title="3.11.3. Conversion between different bases"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">SAPPHiRE 0.9 documentation</a> &raquo;</li>
+          <li><a href="../sapphire.html" >3. SAPPHiRE Reference</a> &raquo;</li>
+          <li><a href="../transformations.html" accesskey="U">3.11. Transformations</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-sapphire.transformations.celestial">
+<span id="transformations-between-celestial-coordinate-systems"></span><h1>3.11.4. Transformations between Celestial coordinate systems<a class="headerlink" href="#module-sapphire.transformations.celestial" title="Permalink to this headline">¶</a></h1>
+<p>Perform various Celestial coordinate transformations</p>
+<p>This module performs transformations between different
+Celestial coordinate systems.</p>
+<p>Formulae from: Duffett-Smith1990
+&#8216;Astronomy with your personal computer&#8217;
+ISBN 0-521-38995-X</p>
+<p>TODO: CHECK IF THESE CONVERSIONS ARE CORRECT!</p>
+<dl class="function">
+<dt id="sapphire.transformations.celestial.equatorial_to_galactic">
+<tt class="descclassname">sapphire.transformations.celestial.</tt><tt class="descname">equatorial_to_galactic</tt><big>(</big><em>right_ascension</em>, <em>declintation</em>, <em>epoch='J2000'</em><big>)</big><a class="headerlink" href="#sapphire.transformations.celestial.equatorial_to_galactic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert Equatorial (J2000.0) to Galactic coordinates</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>right_ascension</strong> &#8211; Right ascension (ra) in degrees.</li>
+<li><strong>declintation</strong> &#8211; Declination (dec) in degrees.</li>
+<li><strong>epoch</strong> &#8211; Epoch for Equatorial coordinates, either &#8216;J2000&#8217; or &#8216;B1950&#8217;.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Galactic longitude (l) and latitude (b) in degrees.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>From Duffett-Smith1990, 2100 EQGAL</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.transformations.celestial.equatorial_to_horizontal">
+<tt class="descclassname">sapphire.transformations.celestial.</tt><tt class="descname">equatorial_to_horizontal</tt><big>(</big><em>longitude</em>, <em>latitude</em>, <em>timestamp</em>, <em>right_ascension</em>, <em>declination</em><big>)</big><a class="headerlink" href="#sapphire.transformations.celestial.equatorial_to_horizontal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert Equatorial (J2000.0) to Horizontal coordinates</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>longitude,latitude</strong> &#8211; Position of the observer on Earth in degrees.
+North and east positive.</li>
+<li><strong>timestamp</strong> &#8211; GPS timestamp of the observation.</li>
+<li><strong>right_ascension</strong> &#8211; right_ascension of the observation in radians.</li>
+<li><strong>declination</strong> &#8211; declination of the observation in radians.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">azimuth and zenith in radians.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>From Duffett-Smith1990, 1500 EQHOR and 1600 HRANG</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.transformations.celestial.galactic_to_equatorial">
+<tt class="descclassname">sapphire.transformations.celestial.</tt><tt class="descname">galactic_to_equatorial</tt><big>(</big><em>longitude</em>, <em>latitude</em>, <em>epoch='J2000'</em><big>)</big><a class="headerlink" href="#sapphire.transformations.celestial.galactic_to_equatorial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert Galactic to Equatorial coordinates (J2000.0)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>longitude</strong> &#8211; Galactic longitude (l) in degrees.</li>
+<li><strong>latitude</strong> &#8211; Galactic latitude (b) in degrees.</li>
+<li><strong>epoch</strong> &#8211; Epoch for Equatorial coordinates, either &#8216;J2000&#8217; or &#8216;B1950&#8217;.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Right ascension (ra) and Declination (dec) in radians.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>From Duffett-Smith1990, 2100 EQGAL</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.transformations.celestial.horizontal_to_equatorial">
+<tt class="descclassname">sapphire.transformations.celestial.</tt><tt class="descname">horizontal_to_equatorial</tt><big>(</big><em>longitude</em>, <em>latitude</em>, <em>timestamp</em>, <em>azimuth</em>, <em>zenith</em><big>)</big><a class="headerlink" href="#sapphire.transformations.celestial.horizontal_to_equatorial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert Horizontal to Equatorial coordinates (J2000.0)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>longitude,latitude</strong> &#8211; Position of the observer on Earth in degrees.
+North and east positive.</li>
+<li><strong>timestamp</strong> &#8211; GPS timestamp of the observation.</li>
+<li><strong>azimuth</strong> &#8211; zenith angle of the observation in radians.</li>
+<li><strong>zenith</strong> &#8211; azimuth angle of the observation in radians.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Right ascension (ra) and Declination (dec) in radians.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>From Duffett-Smith1990, 1500 EQHOR and 1600 HRANG</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/header.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="base.html"
+                        title="previous chapter">3.11.3. Conversion between different bases</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="clock.html"
+                        title="next chapter">3.11.5. Time conversion functions</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/transformations/celestial.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="clock.html" title="3.11.5. Time conversion functions"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="base.html" title="3.11.3. Conversion between different bases"
+             >previous</a> |</li>
+        <li><a href="../index.html">SAPPHiRE 0.9 documentation</a> &raquo;</li>
+          <li><a href="../sapphire.html" >3. SAPPHiRE Reference</a> &raquo;</li>
+          <li><a href="../transformations.html" >3.11. Transformations</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, David Fokkema.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

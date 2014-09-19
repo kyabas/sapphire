@@ -28,7 +28,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="SAPPHiRE 0.9 documentation" href="../index.html" />
     <link rel="up" title="3.1. Data analysis" href="../analysis.html" />
-    <link rel="next" title="3.2. HiSPARC API" href="../api.html" />
+    <link rel="next" title="3.1.8. Reconstructions" href="reconstructions.html" />
     <link rel="prev" title="3.1.6. Landau distribution" href="landau.html" /> 
   </head>
   <body>
@@ -42,7 +42,7 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="../api.html" title="3.2. HiSPARC API"
+          <a href="reconstructions.html" title="3.1.8. Reconstructions"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="landau.html" title="3.1.6. Landau distribution"
@@ -90,7 +90,7 @@ times and particle count in each detector for each event.</p>
 </div>
 <dl class="class">
 <dt id="sapphire.analysis.process_events.ProcessEvents">
-<em class="property">class </em><tt class="descclassname">sapphire.analysis.process_events.</tt><tt class="descname">ProcessEvents</tt><big>(</big><em>data</em>, <em>group</em>, <em>source=None</em><big>)</big><a class="headerlink" href="#sapphire.analysis.process_events.ProcessEvents" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sapphire.analysis.process_events.</tt><tt class="descname">ProcessEvents</tt><big>(</big><em>data</em>, <em>group</em>, <em>source=None</em>, <em>progress=True</em><big>)</big><a class="headerlink" href="#sapphire.analysis.process_events.ProcessEvents" title="Permalink to this definition">¶</a></dt>
 <dd><p>Process HiSPARC events to obtain several observables.</p>
 <p>This class can be used to process a set of HiSPARC events and adds a
 few observables like particle arrival time and number of particles in
@@ -106,6 +106,7 @@ the detector to a copy of the event table.</p>
 cases, this is simply the group containing the events table.</li>
 <li><strong>source</strong> &#8211; the name of the events table.  Default: None,
 meaning the default name &#8216;events&#8217;.</li>
+<li><strong>progress</strong> &#8211; show progressbar.</li>
 </ul>
 </td>
 </tr>
@@ -242,7 +243,7 @@ group</li>
 
 <dl class="class">
 <dt id="sapphire.analysis.process_events.ProcessEventsWithLINT">
-<em class="property">class </em><tt class="descclassname">sapphire.analysis.process_events.</tt><tt class="descname">ProcessEventsWithLINT</tt><big>(</big><em>data</em>, <em>group</em>, <em>source=None</em><big>)</big><a class="headerlink" href="#sapphire.analysis.process_events.ProcessEventsWithLINT" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sapphire.analysis.process_events.</tt><tt class="descname">ProcessEventsWithLINT</tt><big>(</big><em>data</em>, <em>group</em>, <em>source=None</em>, <em>progress=True</em><big>)</big><a class="headerlink" href="#sapphire.analysis.process_events.ProcessEventsWithLINT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Process events using LInear INTerpolation for arrival times.</p>
 <p>This is a subclass of <a class="reference internal" href="#sapphire.analysis.process_events.ProcessEvents" title="sapphire.analysis.process_events.ProcessEvents"><tt class="xref py py-class docutils literal"><span class="pre">ProcessEvents</span></tt></a>.  Use a linear
 interpolation method to determine the arrival times of particles.</p>
@@ -257,6 +258,7 @@ interpolation method to determine the arrival times of particles.</p>
 cases, this is simply the group containing the events table.</li>
 <li><strong>source</strong> &#8211; the name of the events table.  Default: None,
 meaning the default name &#8216;events&#8217;.</li>
+<li><strong>progress</strong> &#8211; show progressbar.</li>
 </ul>
 </td>
 </tr>
@@ -266,7 +268,7 @@ meaning the default name &#8216;events&#8217;.</li>
 
 <dl class="class">
 <dt id="sapphire.analysis.process_events.ProcessEventsWithTriggerOffset">
-<em class="property">class </em><tt class="descclassname">sapphire.analysis.process_events.</tt><tt class="descname">ProcessEventsWithTriggerOffset</tt><big>(</big><em>data</em>, <em>group</em>, <em>source=None</em><big>)</big><a class="headerlink" href="#sapphire.analysis.process_events.ProcessEventsWithTriggerOffset" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sapphire.analysis.process_events.</tt><tt class="descname">ProcessEventsWithTriggerOffset</tt><big>(</big><em>data</em>, <em>group</em>, <em>source=None</em>, <em>progress=True</em><big>)</big><a class="headerlink" href="#sapphire.analysis.process_events.ProcessEventsWithTriggerOffset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Process events and reconstruct trigger time from traces</p>
 <p>The trigger times are stored in the columnt_trigger, they are
 relative to the start of traces, just like the t# columns.</p>
@@ -283,6 +285,7 @@ a value of -999 will be entered.</p>
 cases, this is simply the group containing the events table.</li>
 <li><strong>source</strong> &#8211; the name of the events table.  Default: None,
 meaning the default name &#8216;events&#8217;.</li>
+<li><strong>progress</strong> &#8211; show progressbar.</li>
 </ul>
 </td>
 </tr>
@@ -292,7 +295,7 @@ meaning the default name &#8216;events&#8217;.</li>
 
 <dl class="class">
 <dt id="sapphire.analysis.process_events.ProcessEventsWithoutTraces">
-<em class="property">class </em><tt class="descclassname">sapphire.analysis.process_events.</tt><tt class="descname">ProcessEventsWithoutTraces</tt><big>(</big><em>data</em>, <em>group</em>, <em>source=None</em><big>)</big><a class="headerlink" href="#sapphire.analysis.process_events.ProcessEventsWithoutTraces" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sapphire.analysis.process_events.</tt><tt class="descname">ProcessEventsWithoutTraces</tt><big>(</big><em>data</em>, <em>group</em>, <em>source=None</em>, <em>progress=True</em><big>)</big><a class="headerlink" href="#sapphire.analysis.process_events.ProcessEventsWithoutTraces" title="Permalink to this definition">¶</a></dt>
 <dd><p>Process events without traces</p>
 <p>This is a subclass of <a class="reference internal" href="#sapphire.analysis.process_events.ProcessEvents" title="sapphire.analysis.process_events.ProcessEvents"><tt class="xref py py-class docutils literal"><span class="pre">ProcessEvents</span></tt></a>.  Processing events
 without considering traces will invalidate the arrival time
@@ -310,6 +313,7 @@ processing time and data size.</p>
 cases, this is simply the group containing the events table.</li>
 <li><strong>source</strong> &#8211; the name of the events table.  Default: None,
 meaning the default name &#8216;events&#8217;.</li>
+<li><strong>progress</strong> &#8211; show progressbar.</li>
 </ul>
 </td>
 </tr>
@@ -319,7 +323,7 @@ meaning the default name &#8216;events&#8217;.</li>
 
 <dl class="class">
 <dt id="sapphire.analysis.process_events.ProcessIndexedEvents">
-<em class="property">class </em><tt class="descclassname">sapphire.analysis.process_events.</tt><tt class="descname">ProcessIndexedEvents</tt><big>(</big><em>data</em>, <em>group</em>, <em>indexes</em>, <em>source=None</em><big>)</big><a class="headerlink" href="#sapphire.analysis.process_events.ProcessIndexedEvents" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sapphire.analysis.process_events.</tt><tt class="descname">ProcessIndexedEvents</tt><big>(</big><em>data</em>, <em>group</em>, <em>indexes</em>, <em>source=None</em>, <em>progress=True</em><big>)</big><a class="headerlink" href="#sapphire.analysis.process_events.ProcessIndexedEvents" title="Permalink to this definition">¶</a></dt>
 <dd><p>Process a subset of events using an index.</p>
 <p>This is a subclass of <a class="reference internal" href="#sapphire.analysis.process_events.ProcessEvents" title="sapphire.analysis.process_events.ProcessEvents"><tt class="xref py py-class docutils literal"><span class="pre">ProcessEvents</span></tt></a>.  Using an index, this
 class will only process a subset of events, thus saving time.  For
@@ -357,7 +361,7 @@ meaning the default name &#8216;events&#8217;.</li>
 
 <dl class="class">
 <dt id="sapphire.analysis.process_events.ProcessIndexedEventsWithLINT">
-<em class="property">class </em><tt class="descclassname">sapphire.analysis.process_events.</tt><tt class="descname">ProcessIndexedEventsWithLINT</tt><big>(</big><em>data</em>, <em>group</em>, <em>indexes</em>, <em>source=None</em><big>)</big><a class="headerlink" href="#sapphire.analysis.process_events.ProcessIndexedEventsWithLINT" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sapphire.analysis.process_events.</tt><tt class="descname">ProcessIndexedEventsWithLINT</tt><big>(</big><em>data</em>, <em>group</em>, <em>indexes</em>, <em>source=None</em>, <em>progress=True</em><big>)</big><a class="headerlink" href="#sapphire.analysis.process_events.ProcessIndexedEventsWithLINT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Process a subset of events using LInear INTerpolation.</p>
 <p>This is a subclass of <a class="reference internal" href="#sapphire.analysis.process_events.ProcessIndexedEvents" title="sapphire.analysis.process_events.ProcessIndexedEvents"><tt class="xref py py-class docutils literal"><span class="pre">ProcessIndexedEvents</span></tt></a> and
 <tt class="xref py py-class docutils literal"><span class="pre">ProcessEventsWithLint</span></tt>.</p>
@@ -382,7 +386,7 @@ meaning the default name &#8216;events&#8217;.</li>
 
 <dl class="class">
 <dt id="sapphire.analysis.process_events.ProcessIndexedEventsWithoutTraces">
-<em class="property">class </em><tt class="descclassname">sapphire.analysis.process_events.</tt><tt class="descname">ProcessIndexedEventsWithoutTraces</tt><big>(</big><em>data</em>, <em>group</em>, <em>indexes</em>, <em>source=None</em><big>)</big><a class="headerlink" href="#sapphire.analysis.process_events.ProcessIndexedEventsWithoutTraces" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sapphire.analysis.process_events.</tt><tt class="descname">ProcessIndexedEventsWithoutTraces</tt><big>(</big><em>data</em>, <em>group</em>, <em>indexes</em>, <em>source=None</em>, <em>progress=True</em><big>)</big><a class="headerlink" href="#sapphire.analysis.process_events.ProcessIndexedEventsWithoutTraces" title="Permalink to this definition">¶</a></dt>
 <dd><p>Process a subset of events without traces</p>
 <p>This is a subclass of <a class="reference internal" href="#sapphire.analysis.process_events.ProcessIndexedEvents" title="sapphire.analysis.process_events.ProcessIndexedEvents"><tt class="xref py py-class docutils literal"><span class="pre">ProcessIndexedEvents</span></tt></a> and
 <a class="reference internal" href="#sapphire.analysis.process_events.ProcessEventsWithoutTraces" title="sapphire.analysis.process_events.ProcessEventsWithoutTraces"><tt class="xref py py-class docutils literal"><span class="pre">ProcessEventsWithoutTraces</span></tt></a>.  Processing events without
@@ -424,8 +428,8 @@ meaning the default name &#8216;events&#8217;.</li>
   <p class="topless"><a href="landau.html"
                         title="previous chapter">3.1.6. Landau distribution</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../api.html"
-                        title="next chapter">3.2. HiSPARC API</a></p>
+  <p class="topless"><a href="reconstructions.html"
+                        title="next chapter">3.1.8. Reconstructions</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/analysis/process_events.txt"
@@ -458,7 +462,7 @@ meaning the default name &#8216;events&#8217;.</li>
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="../api.html" title="3.2. HiSPARC API"
+          <a href="reconstructions.html" title="3.1.8. Reconstructions"
              >next</a> |</li>
         <li class="right" >
           <a href="landau.html" title="3.1.6. Landau distribution"
@@ -470,7 +474,7 @@ meaning the default name &#8216;events&#8217;.</li>
     </div>
     <div class="footer">
         &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>

@@ -29,7 +29,7 @@
     <link rel="top" title="SAPPHiRE 0.9 documentation" href="index.html" />
     <link rel="up" title="3. SAPPHiRE Reference" href="sapphire.html" />
     <link rel="next" title="3.3. HiSPARC clusters" href="clusters.html" />
-    <link rel="prev" title="3.1.7. Processing of HiSPARC events" href="analysis/process_events.html" /> 
+    <link rel="prev" title="3.1.8. Reconstructions" href="analysis/reconstructions.html" /> 
   </head>
   <body>
     <div class="related">
@@ -45,7 +45,7 @@
           <a href="clusters.html" title="3.3. HiSPARC clusters"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="analysis/process_events.html" title="3.1.7. Processing of HiSPARC events"
+          <a href="analysis/reconstructions.html" title="3.1.8. Reconstructions"
              accesskey="P">previous</a> |</li>
         <li><a href="index.html">SAPPHiRE 0.9 documentation</a> &raquo;</li>
           <li><a href="sapphire.html" accesskey="U">3. SAPPHiRE Reference</a> &raquo;</li> 
@@ -66,7 +66,8 @@ from JSON to Python dictionaries.</p>
 <p>Example usage:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sapphire.api</span> <span class="kn">import</span> <span class="n">Station</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">stations</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">301</span><span class="p">,</span> <span class="mi">3102</span><span class="p">,</span> <span class="mi">504</span><span class="p">,</span> <span class="mi">7101</span><span class="p">,</span> <span class="mi">8008</span><span class="p">,</span> <span class="mi">13005</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">clusters</span> <span class="o">=</span> <span class="p">[</span><span class="n">Station</span><span class="p">(</span><span class="n">station</span><span class="p">)</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">station</span> <span class="ow">in</span> <span class="n">stations</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">clusters</span> <span class="o">=</span> <span class="p">[</span><span class="n">Station</span><span class="p">(</span><span class="n">station</span><span class="p">)</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="gp">... </span>            <span class="k">for</span> <span class="n">station</span> <span class="ow">in</span> <span class="n">stations</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">station_groups</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;/hisparc/cluster_</span><span class="si">%s</span><span class="s">/station_</span><span class="si">%d</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
 <span class="gp">... </span>                  <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">clusters</span><span class="p">,</span> <span class="n">stations</span><span class="p">)]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">station_groups</span>
@@ -161,6 +162,12 @@ clusters.</td>
 </dd></dl>
 
 <dl class="method">
+<dt id="sapphire.api.Network.station_numbers">
+<tt class="descname">station_numbers</tt><big>(</big><em>country=None</em>, <em>cluster=None</em>, <em>subcluster=None</em>, <em>allow_stale=True</em><big>)</big><a class="headerlink" href="#sapphire.api.Network.station_numbers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as stations but only retuns a list of station numbers</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="sapphire.api.Network.stations">
 <tt class="descname">stations</tt><big>(</big><em>country=None</em>, <em>cluster=None</em>, <em>subcluster=None</em><big>)</big><a class="headerlink" href="#sapphire.api.Network.stations" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of stations</p>
@@ -176,12 +183,6 @@ be specified.</td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="method">
-<dt id="sapphire.api.Network.stations_numbers">
-<tt class="descname">stations_numbers</tt><big>(</big><em>country=None</em>, <em>cluster=None</em>, <em>subcluster=None</em><big>)</big><a class="headerlink" href="#sapphire.api.Network.stations_numbers" title="Permalink to this definition">¶</a></dt>
-<dd><p>Same as stations but only retuns a list of station numbers</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -246,7 +247,7 @@ be specified.</td>
 
 <dl class="class">
 <dt id="sapphire.api.Station">
-<em class="property">class </em><tt class="descclassname">sapphire.api.</tt><tt class="descname">Station</tt><big>(</big><em>station</em>, <em>date=None</em><big>)</big><a class="headerlink" href="#sapphire.api.Station" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sapphire.api.</tt><tt class="descname">Station</tt><big>(</big><em>station</em>, <em>date=None</em>, <em>allow_stale=True</em><big>)</big><a class="headerlink" href="#sapphire.api.Station" title="Permalink to this definition">¶</a></dt>
 <dd><p>Access data about a single station</p>
 <p>Initialize station</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -254,16 +255,18 @@ be specified.</td>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>station</strong> &#8211; station number</li>
-<li><strong>date</strong> &#8211; date object for which to get the station information</li>
+<li><strong>station</strong> &#8211; station number.</li>
+<li><strong>date</strong> &#8211; date object for which to get the station information.</li>
+<li><strong>allow_stale</strong> &#8211; set to False to require data to be fresh
+from the server.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-<dl class="attribute">
+<dl class="method">
 <dt id="sapphire.api.Station.cluster">
-<tt class="descname">cluster</tt><a class="headerlink" href="#sapphire.api.Station.cluster" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">cluster</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.api.Station.cluster" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -283,9 +286,9 @@ be specified.</td>
 </table>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="sapphire.api.Station.country">
-<tt class="descname">country</tt><a class="headerlink" href="#sapphire.api.Station.country" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">country</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.api.Station.country" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -375,9 +378,9 @@ on the date.</td>
 </table>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="sapphire.api.Station.n_detectors">
-<tt class="descname">n_detectors</tt><a class="headerlink" href="#sapphire.api.Station.n_detectors" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">n_detectors</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.api.Station.n_detectors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of detectors in this station</p>
 </dd></dl>
 
@@ -401,9 +404,9 @@ get the number. It is possible to be less specific.</td>
 </table>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="sapphire.api.Station.subcluster">
-<tt class="descname">subcluster</tt><a class="headerlink" href="#sapphire.api.Station.subcluster" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">subcluster</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.api.Station.subcluster" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -420,8 +423,8 @@ get the number. It is possible to be less specific.</td>
               <img class="logo" src="_static/header.png" alt="Logo"/>
             </a></p>
   <h4>Previous topic</h4>
-  <p class="topless"><a href="analysis/process_events.html"
-                        title="previous chapter">3.1.7. Processing of HiSPARC events</a></p>
+  <p class="topless"><a href="analysis/reconstructions.html"
+                        title="previous chapter">3.1.8. Reconstructions</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="clusters.html"
                         title="next chapter">3.3. HiSPARC clusters</a></p>
@@ -460,7 +463,7 @@ get the number. It is possible to be less specific.</td>
           <a href="clusters.html" title="3.3. HiSPARC clusters"
              >next</a> |</li>
         <li class="right" >
-          <a href="analysis/process_events.html" title="3.1.7. Processing of HiSPARC events"
+          <a href="analysis/reconstructions.html" title="3.1.8. Reconstructions"
              >previous</a> |</li>
         <li><a href="index.html">SAPPHiRE 0.9 documentation</a> &raquo;</li>
           <li><a href="sapphire.html" >3. SAPPHiRE Reference</a> &raquo;</li> 
@@ -468,7 +471,7 @@ get the number. It is possible to be less specific.</td>
     </div>
     <div class="footer">
         &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>

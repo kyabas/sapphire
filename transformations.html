@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>3.12. Geographic coordinate transformations &mdash; SAPPHiRE 0.9 documentation</title>
+    <title>3.11. Transformations &mdash; SAPPHiRE 0.9 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -28,7 +28,8 @@
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="top" title="SAPPHiRE 0.9 documentation" href="index.html" />
     <link rel="up" title="3. SAPPHiRE Reference" href="sapphire.html" />
-    <link rel="prev" title="3.11. GPS date/time utility functions" href="time_util.html" /> 
+    <link rel="next" title="3.11.1. Conversion between different angle notations" href="transformations/angles.html" />
+    <link rel="prev" title="3.10. GPS date/time utility functions" href="time_util.html" /> 
   </head>
   <body>
     <div class="related">
@@ -41,7 +42,10 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="time_util.html" title="3.11. GPS date/time utility functions"
+          <a href="transformations/angles.html" title="3.11.1. Conversion between different angle notations"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="time_util.html" title="3.10. GPS date/time utility functions"
              accesskey="P">previous</a> |</li>
         <li><a href="index.html">SAPPHiRE 0.9 documentation</a> &raquo;</li>
           <li><a href="sapphire.html" accesskey="U">3. SAPPHiRE Reference</a> &raquo;</li> 
@@ -54,94 +58,34 @@
           <div class="body">
             
   <div class="section" id="module-sapphire.transformations">
-<span id="geographic-coordinate-transformations"></span><h1>3.12. Geographic coordinate transformations<a class="headerlink" href="#module-sapphire.transformations" title="Permalink to this headline">¶</a></h1>
-<p>Perform various coordinate transformations</p>
-<p>This module performs various coordinate transformations, based on some
-well-known formulas.  The rationale for this module is that gdal is
-non-intuitive to use for the needed transformations, but more
-importantly, is very hard to install, especially on the Windows
-platform.</p>
-<dl class="class">
-<dt id="sapphire.transformations.FromWGS84ToENUTransformation">
-<em class="property">class </em><tt class="descclassname">sapphire.transformations.</tt><tt class="descname">FromWGS84ToENUTransformation</tt><big>(</big><em>ref_llacoordinates</em><big>)</big><a class="headerlink" href="#sapphire.transformations.FromWGS84ToENUTransformation" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
-<dt id="sapphire.transformations.FromWGS84ToENUTransformation.ecef_to_enu">
-<tt class="descname">ecef_to_enu</tt><big>(</big><em>coordinates</em><big>)</big><a class="headerlink" href="#sapphire.transformations.FromWGS84ToENUTransformation.ecef_to_enu" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert from ECEF coordinates to ENU coordinates</p>
-<p>ENU: East, North, Up</p>
-<p>The conversion formulas are taken from
-<a class="reference external" href="http://en.wikipedia.org/wiki/Geodetic_system#From_ECEF_to_ENU">http://en.wikipedia.org/wiki/Geodetic_system#From_ECEF_to_ENU</a></p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>coordinates</strong> &#8211; a tuple containing the ECEF coordinates of the
-point to transform</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="sapphire.transformations.FromWGS84ToENUTransformation.geode">
-<tt class="descname">geode</tt><em class="property"> = &lt;sapphire.transformations.WGS84Datum object at 0x10771a4d0&gt;</em><a class="headerlink" href="#sapphire.transformations.FromWGS84ToENUTransformation.geode" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="sapphire.transformations.FromWGS84ToENUTransformation.lla_to_ecef">
-<tt class="descname">lla_to_ecef</tt><big>(</big><em>coordinates</em><big>)</big><a class="headerlink" href="#sapphire.transformations.FromWGS84ToENUTransformation.lla_to_ecef" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert from LLA coordinates to ECEF coordinates</p>
-<p>LLA:  Latitude, Longitude, Altitude
-ECEF: Earth-Centered, Earth-Fixed</p>
-<p>The conversion formulas are taken from
-<a class="reference external" href="http://en.wikipedia.org/wiki/Geodetic_system#From_geodetic_to_ECEF">http://en.wikipedia.org/wiki/Geodetic_system#From_geodetic_to_ECEF</a>
-but slightly reworked.</p>
-<p>Mind that the input is expected to be in degrees, as is standard in
-coordinate notation.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="sapphire.transformations.FromWGS84ToENUTransformation.transform">
-<tt class="descname">transform</tt><big>(</big><em>coordinates</em><big>)</big><a class="headerlink" href="#sapphire.transformations.FromWGS84ToENUTransformation.transform" title="Permalink to this definition">¶</a></dt>
-<dd><p>Transfrom WGS84 coordinates to ENU coordinates</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="sapphire.transformations.WGS84Datum">
-<em class="property">class </em><tt class="descclassname">sapphire.transformations.</tt><tt class="descname">WGS84Datum</tt><a class="headerlink" href="#sapphire.transformations.WGS84Datum" title="Permalink to this definition">¶</a></dt>
-<dd><p>Definition of the WGS84 datum</p>
-<p>These definitions are taken from
-<a class="reference external" href="http://en.wikipedia.org/wiki/Geodetic_system">http://en.wikipedia.org/wiki/Geodetic_system</a>, believing that enough
-editors have gone over them to make sure they are correct.</p>
-<dl class="attribute">
-<dt id="sapphire.transformations.WGS84Datum.a">
-<tt class="descname">a</tt><em class="property"> = 6378137.0</em><a class="headerlink" href="#sapphire.transformations.WGS84Datum.a" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="sapphire.transformations.WGS84Datum.b">
-<tt class="descname">b</tt><em class="property"> = 6356752.314245179</em><a class="headerlink" href="#sapphire.transformations.WGS84Datum.b" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="sapphire.transformations.WGS84Datum.e">
-<tt class="descname">e</tt><em class="property"> = 0.08181919084262149</em><a class="headerlink" href="#sapphire.transformations.WGS84Datum.e" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="sapphire.transformations.WGS84Datum.eprime">
-<tt class="descname">eprime</tt><em class="property"> = 0.08209443794969568</em><a class="headerlink" href="#sapphire.transformations.WGS84Datum.eprime" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="sapphire.transformations.WGS84Datum.f">
-<tt class="descname">f</tt><em class="property"> = 0.0033528106647474805</em><a class="headerlink" href="#sapphire.transformations.WGS84Datum.f" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
+<span id="transformations"></span><h1>3.11. Transformations<a class="headerlink" href="#module-sapphire.transformations" title="Permalink to this headline">¶</a></h1>
+<p>Transformation modules</p>
+<p>Easy transformations between different systems.</p>
+<dl class="docutils">
+<dt><tt class="xref py py-mod docutils literal"><span class="pre">angles</span></tt></dt>
+<dd>conversion between different angle notations</dd>
+<dt><tt class="xref py py-mod docutils literal"><span class="pre">axes</span></tt></dt>
+<dd>rotation matrices and conversion between coordinate systems</dd>
+<dt><tt class="xref py py-mod docutils literal"><span class="pre">base</span></tt></dt>
+<dd>conversion betweeen decimal and sexagesimal</dd>
+<dt><tt class="xref py py-mod docutils literal"><span class="pre">celestial</span></tt></dt>
+<dd>conversion betweeen celestial coordinate systems</dd>
+<dt><tt class="xref py py-mod docutils literal"><span class="pre">clock</span></tt></dt>
+<dd>conversion between different time keeping systems</dd>
+<dt><tt class="xref py py-mod docutils literal"><span class="pre">geographic</span></tt></dt>
+<dd>geographic coordinate transformations (e.g. WGS84 to ENU)</dd>
+</dl>
+<p>Contents:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="transformations/angles.html">3.11.1. Conversion between different angle notations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transformations/axes.html">3.11.2. Conversion between axes coordinate systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transformations/base.html">3.11.3. Conversion between different bases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transformations/celestial.html">3.11.4. Transformations between Celestial coordinate systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transformations/clock.html">3.11.5. Time conversion functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transformations/geographic.html">3.11.6. Transformations between geographic coordinate systems</a></li>
+</ul>
+</div>
 </div>
 
 
@@ -155,7 +99,10 @@ editors have gone over them to make sure they are correct.</p>
             </a></p>
   <h4>Previous topic</h4>
   <p class="topless"><a href="time_util.html"
-                        title="previous chapter">3.11. GPS date/time utility functions</a></p>
+                        title="previous chapter">3.10. GPS date/time utility functions</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="transformations/angles.html"
+                        title="next chapter">3.11.1. Conversion between different angle notations</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/transformations.txt"
@@ -188,7 +135,10 @@ editors have gone over them to make sure they are correct.</p>
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="time_util.html" title="3.11. GPS date/time utility functions"
+          <a href="transformations/angles.html" title="3.11.1. Conversion between different angle notations"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="time_util.html" title="3.10. GPS date/time utility functions"
              >previous</a> |</li>
         <li><a href="index.html">SAPPHiRE 0.9 documentation</a> &raquo;</li>
           <li><a href="sapphire.html" >3. SAPPHiRE Reference</a> &raquo;</li> 
@@ -196,7 +146,7 @@ editors have gone over them to make sure they are correct.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>

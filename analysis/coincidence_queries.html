@@ -62,7 +62,7 @@
 <span id="query-coincidences-from-a-datafile"></span><h1>3.1.1. Query coincidences from a datafile<a class="headerlink" href="#module-sapphire.analysis.coincidence_queries" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="sapphire.analysis.coincidence_queries.CoincidenceQuery">
-<em class="property">class </em><tt class="descclassname">sapphire.analysis.coincidence_queries.</tt><tt class="descname">CoincidenceQuery</tt><big>(</big><em>data_path</em>, <em>coincidence_group='/coincidences'</em><big>)</big><a class="headerlink" href="#sapphire.analysis.coincidence_queries.CoincidenceQuery" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sapphire.analysis.coincidence_queries.</tt><tt class="descname">CoincidenceQuery</tt><big>(</big><em>data</em>, <em>coincidence_group='/coincidences'</em><big>)</big><a class="headerlink" href="#sapphire.analysis.coincidence_queries.CoincidenceQuery" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform queries on an ESD file where coincidences have been analysed.</p>
 <p>Functions in this class build and perform queries to easily filter
 coincidences based on station participation and station
@@ -85,6 +85,19 @@ does not occur in the datafile.</p>
 <span class="n">cq</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
+<p>Setup variables to point to the tables</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>data</strong> &#8211; either a PyTables file or path to a HDF5 file</li>
+<li><strong>coincidence_group</strong> &#8211; path to the coincidences group</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="sapphire.analysis.coincidence_queries.CoincidenceQuery.all">
 <tt class="descname">all</tt><big>(</big><em>stations</em>, <em>start=None</em>, <em>stop=None</em><big>)</big><a class="headerlink" href="#sapphire.analysis.coincidence_queries.CoincidenceQuery.all" title="Permalink to this definition">¶</a></dt>
@@ -240,6 +253,14 @@ any combinations need to be in a coincidence.</li>
 </dd></dl>
 
 <dl class="method">
+<dt id="sapphire.analysis.coincidence_queries.CoincidenceQuery.finish">
+<tt class="descname">finish</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.analysis.coincidence_queries.CoincidenceQuery.finish" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clean-up after using</p>
+<p>Do not use if you opened the file yourself and still intent to
+use it.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="sapphire.analysis.coincidence_queries.CoincidenceQuery.minimum_events_for_coincidence">
 <tt class="descname">minimum_events_for_coincidence</tt><big>(</big><em>coincidences_events</em>, <em>n=2</em><big>)</big><a class="headerlink" href="#sapphire.analysis.coincidence_queries.CoincidenceQuery.minimum_events_for_coincidence" title="Permalink to this definition">¶</a></dt>
 <dd><p>Filter coincidences to only include those with at least n events.</p>
@@ -358,7 +379,7 @@ table.</td>
     </div>
     <div class="footer">
         &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>

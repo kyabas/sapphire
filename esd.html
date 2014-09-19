@@ -28,7 +28,7 @@
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="top" title="SAPPHiRE 0.9 documentation" href="index.html" />
     <link rel="up" title="3. SAPPHiRE Reference" href="sapphire.html" />
-    <link rel="next" title="3.6. GPS / UTC time functions" href="gpstime.html" />
+    <link rel="next" title="3.6. Working with KASCADE data" href="kascade.html" />
     <link rel="prev" title="3.4.2.5. Submit CORSIKA jobs to Stoomboot" href="corsika/qsub.html" /> 
   </head>
   <body>
@@ -42,7 +42,7 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="gpstime.html" title="3.6. GPS / UTC time functions"
+          <a href="kascade.html" title="3.6. Working with KASCADE data"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="corsika/qsub.html" title="3.4.2.5. Submit CORSIKA jobs to Stoomboot"
@@ -61,52 +61,57 @@
 <span id="module-for-downloading-hisparc-event-summary-data"></span><h1>3.5. Module for downloading HiSPARC Event Summary Data<a class="headerlink" href="#module-sapphire.esd" title="Permalink to this headline">¶</a></h1>
 <p>Fetch events and other data from the event summary data (ESD)</p>
 <p>This module enables you to access the event summary data.</p>
-<p>For convenience, you&#8217;ll want the <a class="reference internal" href="#sapphire.esd.download_data" title="sapphire.esd.download_data"><tt class="xref py py-func docutils literal"><span class="pre">download_data()</span></tt></a> function.</p>
+<p>If you are in a real hurry and know what you&#8217;re doing (and took the
+time to read this far), you can call the <a class="reference internal" href="#sapphire.esd.quick_download" title="sapphire.esd.quick_download"><tt class="xref py py-func docutils literal"><span class="pre">quick_download()</span></tt></a>
+function like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sapphire.esd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">sapphire</span><span class="o">.</span><span class="n">esd</span><span class="o">.</span><span class="n">quick_download</span><span class="p">(</span><span class="mi">501</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For regular use, look up <a class="reference internal" href="#sapphire.esd.download_data" title="sapphire.esd.download_data"><tt class="xref py py-func docutils literal"><span class="pre">download_data()</span></tt></a>.</p>
 <dl class="function">
-<dt id="sapphire.esd.create_table">
-<tt class="descclassname">sapphire.esd.</tt><tt class="descname">create_table</tt><big>(</big><em>file</em>, <em>group</em><big>)</big><a class="headerlink" href="#sapphire.esd.create_table" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create event table in PyTables file</p>
-<p>Create an event table containing the ESD data columns which are
-available in the CSV download.</p>
+<dt id="sapphire.esd.download_coincidences">
+<tt class="descclassname">sapphire.esd.</tt><tt class="descname">download_coincidences</tt><big>(</big><em>file</em>, <em>cluster=None</em>, <em>stations=None</em>, <em>start=None</em>, <em>end=None</em>, <em>n=2</em><big>)</big><a class="headerlink" href="#sapphire.esd.download_coincidences" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download event summary data coincidences</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>file</strong> &#8211; PyTables file</li>
-<li><strong>group</strong> &#8211; the group to contain the events table, which need not
-exist</li>
+<li><strong>file</strong> &#8211; The PyTables datafile handler.</li>
+<li><strong>cluster</strong> &#8211; The HiSPARC cluster name for which to get data.</li>
+<li><strong>stations</strong> &#8211; A list of HiSPARC station numbers for which to get data.</li>
+<li><strong>start</strong> &#8211; a datetime instance defining the start of the search
+interval.</li>
+<li><strong>end</strong> &#8211; a datetime instance defining the end of the search
+interval.</li>
+<li><strong>n</strong> &#8211; the minimum number of events in the coincidence.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="function">
-<dt id="sapphire.esd.create_weather_table">
-<tt class="descclassname">sapphire.esd.</tt><tt class="descname">create_weather_table</tt><big>(</big><em>file</em>, <em>group</em><big>)</big><a class="headerlink" href="#sapphire.esd.create_weather_table" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create weather table in PyTables file</p>
-<p>Create a weather table containing the ESD weather columns which are
-available in the CSV download.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>file</strong> &#8211; PyTables file</li>
-<li><strong>group</strong> &#8211; the group to contain the weather table, which need not
-exist</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
+<p>The start and stop parameters may both be None.  In that case,
+yesterday&#8217;s data is downloaded.  If only end is None, a single day&#8217;s
+worth of data is downloaded, starting at the datetime specified with
+start.</p>
+<p>Optionally either a cluster or stations can be defined to limit the
+results to include only events from those stations.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">tables</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">sapphire.esd</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="s">&#39;data_coincidences.h5&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">sapphire</span><span class="o">.</span><span class="n">esd</span><span class="o">.</span><span class="n">download_coincidences</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">cluster</span><span class="o">=</span><span class="s">&#39;Aarhus&#39;</span><span class="p">,</span>
+    <span class="n">start</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2013</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="n">end</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2013</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="function">
 <dt id="sapphire.esd.download_data">
-<tt class="descclassname">sapphire.esd.</tt><tt class="descname">download_data</tt><big>(</big><em>file</em>, <em>group</em>, <em>station_number</em>, <em>start</em>, <em>end</em>, <em>type='events'</em><big>)</big><a class="headerlink" href="#sapphire.esd.download_data" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.esd.</tt><tt class="descname">download_data</tt><big>(</big><em>file</em>, <em>group</em>, <em>station_number</em>, <em>start=None</em>, <em>end=None</em>, <em>type='events'</em><big>)</big><a class="headerlink" href="#sapphire.esd.download_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Download event summary data</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -126,6 +131,11 @@ interval</li>
 </tr>
 </tbody>
 </table>
+<p>If group is None, use &#8216;/s&lt;station_number&gt;&#8217; as a default.</p>
+<p>The start and stop parameters may both be None.  In that case,
+yesterday&#8217;s data is downloaded.  If only end is None, a single day&#8217;s
+worth of data is downloaded, starting at the datetime specified with
+start.</p>
 <p>Example:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">tables</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">datetime</span>
@@ -138,49 +148,40 @@ interval</li>
 </dd></dl>
 
 <dl class="function">
-<dt id="sapphire.esd.read_line_and_store_event">
-<tt class="descclassname">sapphire.esd.</tt><tt class="descname">read_line_and_store_event</tt><big>(</big><em>line</em>, <em>table</em><big>)</big><a class="headerlink" href="#sapphire.esd.read_line_and_store_event" title="Permalink to this definition">¶</a></dt>
-<dd><p>Read CSV line and store event</p>
-<p>Read a line from the CSV download and store event.  Return the event
-timestamp to keep track of the progress.</p>
+<dt id="sapphire.esd.quick_download">
+<tt class="descclassname">sapphire.esd.</tt><tt class="descname">quick_download</tt><big>(</big><em>station_number</em>, <em>date=None</em><big>)</big><a class="headerlink" href="#sapphire.esd.quick_download" title="Permalink to this definition">¶</a></dt>
+<dd><p>Quickly download some data</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>line</strong> &#8211; text line from the CSV file</li>
-<li><strong>table</strong> &#8211; pytables table for event storage</li>
+<li><strong>station_number</strong> &#8211; The HiSPARC station number</li>
+<li><strong>date</strong> &#8211; the date for which to get data (datetime.datetime
+instance), passed unchanged to the <a class="reference internal" href="#sapphire.esd.download_data" title="sapphire.esd.download_data"><tt class="xref py py-func docutils literal"><span class="pre">download_data()</span></tt></a> as
+:param start:.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">event timestamp</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">handle to an open PyTables file</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="function">
-<dt id="sapphire.esd.read_line_and_store_weather">
-<tt class="descclassname">sapphire.esd.</tt><tt class="descname">read_line_and_store_weather</tt><big>(</big><em>line</em>, <em>table</em><big>)</big><a class="headerlink" href="#sapphire.esd.read_line_and_store_weather" title="Permalink to this definition">¶</a></dt>
-<dd><p>Read CSV line and store weather data</p>
-<p>Read a line from the CSV download and store weather.  Return the
-weather timestamp to keep track of the progress.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>line</strong> &#8211; text line from the CSV file</li>
-<li><strong>table</strong> &#8211; pytables table for weather storage</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">weather timestamp</p>
-</td>
-</tr>
-</tbody>
-</table>
+<p>Everything is handled by this function, including file creation.
+Expect no frills: you just get yesterday&#8217;s data.</p>
+<p>Example usage:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sapphire.esd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">sapphire</span><span class="o">.</span><span class="n">esd</span><span class="o">.</span><span class="n">quick_download</span><span class="p">(</span><span class="mi">501</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">data</span>
+<span class="go">data1.h5 (File) u&#39;&#39;</span>
+<span class="go">Last modif.: &#39;Mon Jun  9 22:03:50 2014&#39;</span>
+<span class="go">Object Tree:</span>
+<span class="go">/ (RootGroup) u&#39;&#39;</span>
+<span class="go">/s501 (Group) u&#39;&#39;</span>
+<span class="go">/s501/events (Table(58898,)) &#39;&#39;</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
@@ -198,8 +199,8 @@ weather timestamp to keep track of the progress.</p>
   <p class="topless"><a href="corsika/qsub.html"
                         title="previous chapter">3.4.2.5. Submit CORSIKA jobs to Stoomboot</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="gpstime.html"
-                        title="next chapter">3.6. GPS / UTC time functions</a></p>
+  <p class="topless"><a href="kascade.html"
+                        title="next chapter">3.6. Working with KASCADE data</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/esd.txt"
@@ -232,7 +233,7 @@ weather timestamp to keep track of the progress.</p>
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="gpstime.html" title="3.6. GPS / UTC time functions"
+          <a href="kascade.html" title="3.6. Working with KASCADE data"
              >next</a> |</li>
         <li class="right" >
           <a href="corsika/qsub.html" title="3.4.2.5. Submit CORSIKA jobs to Stoomboot"
@@ -243,7 +244,7 @@ weather timestamp to keep track of the progress.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>

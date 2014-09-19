@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>3.11.2. Conversion between axes coordinate systems &mdash; SAPPHiRE 0.9 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/hisparc_style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.9',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="SAPPHiRE 0.9 documentation" href="../index.html" />
+    <link rel="up" title="3.11. Transformations" href="../transformations.html" />
+    <link rel="next" title="3.11.3. Conversion between different bases" href="base.html" />
+    <link rel="prev" title="3.11.1. Conversion between different angle notations" href="angles.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="base.html" title="3.11.3. Conversion between different bases"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="angles.html" title="3.11.1. Conversion between different angle notations"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">SAPPHiRE 0.9 documentation</a> &raquo;</li>
+          <li><a href="../sapphire.html" >3. SAPPHiRE Reference</a> &raquo;</li>
+          <li><a href="../transformations.html" accesskey="U">3.11. Transformations</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-sapphire.transformations.axes">
+<span id="conversion-between-axes-coordinate-systems"></span><h1>3.11.2. Conversion between axes coordinate systems<a class="headerlink" href="#module-sapphire.transformations.axes" title="Permalink to this headline">¶</a></h1>
+<p>Perform various axes related transformations</p>
+<ul class="simple">
+<li>Transformation between Cartesian, polar, cylindrical and spherical
+coordinate systems.</li>
+<li>Create a rotation matrix for rotations around a certain axis.</li>
+</ul>
+<dl class="function">
+<dt id="sapphire.transformations.axes.cartesian_to_cylindrical">
+<tt class="descclassname">sapphire.transformations.axes.</tt><tt class="descname">cartesian_to_cylindrical</tt><big>(</big><em>x</em>, <em>y</em>, <em>z</em><big>)</big><a class="headerlink" href="#sapphire.transformations.axes.cartesian_to_cylindrical" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts Cartesian coordinates into cylindrical coordinates</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>x,y,z</strong> &#8211; Cartesian coordinates</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">tuple of cylindrical coordinates (r, phi, z), with
+phi in radians.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.transformations.axes.cartesian_to_polar">
+<tt class="descclassname">sapphire.transformations.axes.</tt><tt class="descname">cartesian_to_polar</tt><big>(</big><em>x</em>, <em>y</em><big>)</big><a class="headerlink" href="#sapphire.transformations.axes.cartesian_to_polar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts Cartesian coordinates into polar coordinates</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>x,y</strong> &#8211; Cartesian coordinates</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">tuple of polar coordinates (r, phi), with phi in radians.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.transformations.axes.cartesian_to_spherical">
+<tt class="descclassname">sapphire.transformations.axes.</tt><tt class="descname">cartesian_to_spherical</tt><big>(</big><em>x</em>, <em>y</em>, <em>z</em><big>)</big><a class="headerlink" href="#sapphire.transformations.axes.cartesian_to_spherical" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts Cartesian coordinates into spherical coordinates</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>x,y,z</strong> &#8211; Cartesian coordinates</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">tuple of spherical coordinates (r, theta, phi),
+with theta and phi in radians.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.transformations.axes.cylindrical_to_cartesian">
+<tt class="descclassname">sapphire.transformations.axes.</tt><tt class="descname">cylindrical_to_cartesian</tt><big>(</big><em>r</em>, <em>phi</em>, <em>z</em><big>)</big><a class="headerlink" href="#sapphire.transformations.axes.cylindrical_to_cartesian" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert cylindrical coordinates into Cartesian coordinates</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>r,phi,z</strong> &#8211; cylindrical coordinates, with phi in radians.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">tuple of Cartesian coordinates (x, y, z)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.transformations.axes.polar_to_cartesian">
+<tt class="descclassname">sapphire.transformations.axes.</tt><tt class="descname">polar_to_cartesian</tt><big>(</big><em>r</em>, <em>phi</em><big>)</big><a class="headerlink" href="#sapphire.transformations.axes.polar_to_cartesian" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert polar coordinates into Cartesian coordinates</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>r,phi</strong> &#8211; polar coordinates, with phi in radians.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">tuple of Cartesian coordinates (x, y)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.transformations.axes.rotation_matrix">
+<tt class="descclassname">sapphire.transformations.axes.</tt><tt class="descname">rotation_matrix</tt><big>(</big><em>angle</em>, <em>axis='z'</em><big>)</big><a class="headerlink" href="#sapphire.transformations.axes.rotation_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a rotation matrix around an axis</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>angle</strong> &#8211; amount of rotation in radians.</li>
+<li><strong>axis</strong> &#8211; the axis to rotate around, either <tt class="docutils literal"><span class="pre">'x',</span> <span class="pre">'y',</span> <span class="pre">'z'</span></tt>,
+or a (x,y,z) tuple specifying the axis to rotate about.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">unitary rotation matrix.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.transformations.axes.spherical_to_cartesian">
+<tt class="descclassname">sapphire.transformations.axes.</tt><tt class="descname">spherical_to_cartesian</tt><big>(</big><em>r</em>, <em>theta</em>, <em>phi</em><big>)</big><a class="headerlink" href="#sapphire.transformations.axes.spherical_to_cartesian" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert spherical coordinates into Cartesian coordinates</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>r,theta,phi</strong> &#8211; spherical coordinates, with theta and phi in radians.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">tuple of Cartesian coordinates (x, y, z)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/header.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="angles.html"
+                        title="previous chapter">3.11.1. Conversion between different angle notations</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="base.html"
+                        title="next chapter">3.11.3. Conversion between different bases</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/transformations/axes.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="base.html" title="3.11.3. Conversion between different bases"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="angles.html" title="3.11.1. Conversion between different angle notations"
+             >previous</a> |</li>
+        <li><a href="../index.html">SAPPHiRE 0.9 documentation</a> &raquo;</li>
+          <li><a href="../sapphire.html" >3. SAPPHiRE Reference</a> &raquo;</li>
+          <li><a href="../transformations.html" >3.11. Transformations</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, David Fokkema.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

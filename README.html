@@ -59,17 +59,18 @@ I&#8217;ve gathered the following approach.</p>
 <div class="section" id="creating-the-gh-pages-branch">
 <h2>Creating the gh-pages branch<a class="headerlink" href="#creating-the-gh-pages-branch" title="Permalink to this headline">¶</a></h2>
 <p>Follow these instructions:</p>
-<div class="highlight-python"><pre>$ git checkout --orphan gh-pages
+<div class="highlight-python"><div class="highlight"><pre>$ git checkout --orphan gh-pages
 $ git rm -rf .
 $ touch .nojekyll
 $ git add .
-$ git commit -m "Initial commit"</pre>
+$ git commit -m &quot;Initial commit&quot;
+</pre></div>
 </div>
 </div>
 <div class="section" id="building-gh-pages-docs">
 <h2>Building gh-pages docs<a class="headerlink" href="#building-gh-pages-docs" title="Permalink to this headline">¶</a></h2>
 <p>Issue the following commands from the repository root:</p>
-<div class="highlight-python"><pre>$ git checkout gh-pages
+<div class="highlight-python"><div class="highlight"><pre>$ git checkout gh-pages
 $ git rm -rf .
 $ git checkout HEAD .nojekyll
 $ git checkout master doc
@@ -77,9 +78,10 @@ $ make -C doc html
 $ mv -fv doc/_build/html/* .
 $ rm -rf doc/
 $ git add -A ??
-$ git commit -m "Generated gh-pages for `git log master -1 --pretty=short
---abbrev-commit`"
-$ git checkout master</pre>
+$ git commit -m &quot;Generated gh-pages for `git log master -1 --pretty=short
+--abbrev-commit`&quot;
+$ git checkout master
+</pre></div>
 </div>
 </div>
 <div class="section" id="easy-deployment">
@@ -151,7 +153,7 @@ gh-pages target.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>

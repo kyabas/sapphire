@@ -59,7 +59,8 @@
 <h1>1. Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
 <p>In theory, installing a Python package should be as easy as py.  Er, pie.
 Using <a class="reference external" href="http://www.pip-installer.org/">Pip</a>.  Like so:</p>
-<div class="highlight-python"><pre>$ pip install hisparc-sapphire</pre>
+<div class="highlight-python"><div class="highlight"><pre>$ pip install hisparc-sapphire
+</pre></div>
 </div>
 <p>Then, the Python package called <tt class="docutils literal"><span class="pre">sapphire</span></tt> would be retrieved from the
 internet.  It would have its dependencies listed and <tt class="docutils literal"><span class="pre">pip</span></tt> would pull
@@ -79,7 +80,8 @@ to install SAPPHiRE itself, we will first install the prerequisites.</p>
 great packages, is done using <a class="reference external" href="https://mxcl.github.com/homebrew/">Homebrew</a>.  Please follow the installation
 instructions (really easy) and when done, type the following into a
 terminal:</p>
-<div class="highlight-python"><pre>$ brew install python</pre>
+<div class="highlight-python"><div class="highlight"><pre>$ brew install python
+</pre></div>
 </div>
 <p>This will install Python and Pip.</p>
 <p>As of this writing, several of the dependencies listed by SAPPHiRE do not
@@ -88,10 +90,11 @@ that matter) know how to handle.  Furthermore, matplotlib needs to be
 installed all by itself, and its dependencies must be installed before it.</p>
 <p>After trial and error, this is the magic incantation which works on my
 system:</p>
-<div class="highlight-python"><pre>$ pip install numpy
+<div class="highlight-python"><div class="highlight"><pre>$ pip install numpy
 $ pip install numexpr
 $ pip install cython
-$ pip install matplotlib</pre>
+$ pip install matplotlib
+</pre></div>
 </div>
 <p>There are more prerequisites to be installed, but they are correctly
 handled by the Python package management software.</p>
@@ -124,7 +127,8 @@ the following ways:</p>
 <p><strong>Windows 8:</strong>  From the Start Screen, type <tt class="docutils literal"><span class="pre">cmd</span></tt> and press <em>Enter</em>.</p>
 </div></blockquote>
 <p>First, we&#8217;ll install the modern Python package manager Pip:</p>
-<div class="highlight-python"><pre>c:\&gt; easy_install pip</pre>
+<div class="highlight-python"><div class="highlight"><pre>c:\&gt; easy_install pip
+</pre></div>
 </div>
 <p>This will probably try to open another terminal window, install Pip, close
 the window, and <em>then</em> complain that easy_install is probably not
@@ -142,11 +146,13 @@ displaying a dollar sign ($) whenever we work from a terminal.  In
 Unix environments, the dollar sign signifies the <em>command prompt</em>.  In
 Windows, the command prompt is something like <tt class="docutils literal"><span class="pre">c:\&gt;</span></tt>.  Thus, whenever
 you see:</p>
-<div class="highlight-python"><pre>$ pip install foo</pre>
+<div class="highlight-python"><div class="highlight"><pre>$ pip install foo
+</pre></div>
 </div>
 <p>we mean that you should open a command window, and then type <tt class="docutils literal"><span class="pre">pip</span>
 <span class="pre">install</span> <span class="pre">foo</span></tt> at the prompt.  In Windows, this looks something like:</p>
-<div class="last highlight-python"><pre>c:\&gt; pip install foo</pre>
+<div class="last highlight-python"><div class="highlight"><pre>c:\&gt; pip install foo
+</pre></div>
 </div>
 </div>
 <p>When you run Python(x,y), we found it best to select <em>IPython (Qt)</em> under
@@ -168,20 +174,22 @@ have their own dependencies listed in a way that Pip (or other tools, for
 that matter) know how to handle.  Furthermore, matplotlib needs to be
 installed all by itself, and its dependencies must be installed before it.</p>
 <p>You need to install some development libraries:</p>
-<div class="highlight-python"><pre>$ sudo apt-get install gfortran
+<div class="highlight-python"><div class="highlight"><pre>$ sudo apt-get install gfortran
 $ sudo apt-get install python-dev
 $ sudo apt-get install libfreetype6-dev
 $ sudo apt-get install libpng-dev
 $ sudo apt-get install libatlas-base-dev
 $ sudo apt-get install libhdf5-dev
-$ sudo apt-get install tk-dev</pre>
+$ sudo apt-get install tk-dev
+</pre></div>
 </div>
 <p>After trial and error, this is the magic incantation which works on my
 system:</p>
-<div class="highlight-python"><pre>$ sudo pip install numpy
+<div class="highlight-python"><div class="highlight"><pre>$ sudo pip install numpy
 $ sudo pip install numexpr
 $ sudo pip install cython
-$ sudo pip install matplotlib</pre>
+$ sudo pip install matplotlib
+</pre></div>
 </div>
 <p>There are more prerequisites to be installed, but they are correctly
 handled by the Python package management software.</p>
@@ -198,12 +206,14 @@ and use setup.py to install it.</p>
 <p>These scenarios do not involve fetching the code.  They will just
 install SAPPHiRE, so that you can get to work.  To get the latest
 stable release version, simply issue:</p>
-<div class="highlight-python"><pre>$ pip install hisparc-sapphire</pre>
+<div class="highlight-python"><div class="highlight"><pre>$ pip install hisparc-sapphire
+</pre></div>
 </div>
 <p>Done.  Now get to work.</p>
 <p>If you like living on the edge with a possibly broken version of
 SAPPHiRE, get the latest development version:</p>
-<div class="highlight-python"><pre>$ pip install https://github.com/hisparc/sapphire/zipball/master</pre>
+<div class="highlight-python"><div class="highlight"><pre>$ pip install https://github.com/hisparc/sapphire/zipball/master
+</pre></div>
 </div>
 </div>
 <div class="section" id="let-me-see-the-code">
@@ -222,7 +232,8 @@ bundled in a zip file.</p>
 <a class="reference external" href="https://github.com/hisparc/sapphire/zipball/master">https://github.com/hisparc/sapphire/zipball/master</a>.  Uncompress the zip
 file, open a terminal and navigate to the top-level directory containing
 the code.  Then issue:</p>
-<div class="highlight-python"><pre>$ python setup.py install</pre>
+<div class="highlight-python"><div class="highlight"><pre>$ python setup.py install
+</pre></div>
 </div>
 <p>This takes care of installing the missing dependencies and SAPPHiRE
 itself.</p>
@@ -243,10 +254,12 @@ directory.</em></p>
 </div>
 <p>Start a Python session.  You can use a launcher of some type (e.g. the one
 from Python(x,y)), or open a terminal and type:</p>
-<div class="highlight-python"><pre>$ python</pre>
+<div class="highlight-python"><div class="highlight"><pre>$ python
+</pre></div>
 </div>
 <p>Or, if you prefer, <a class="reference external" href="http://ipython.org">IPython</a>:</p>
-<div class="highlight-python"><pre>$ ipython</pre>
+<div class="highlight-python"><div class="highlight"><pre>$ ipython
+</pre></div>
 </div>
 <p>In fact, we recommend using IPython for interactive use (install IPython
 using <tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">ipython</span></tt>).  Then, try to import SAPPHiRE:</p>
@@ -334,7 +347,7 @@ correctly installed.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>
