@@ -60,6 +60,20 @@
   <div class="section" id="module-sapphire.kascade">
 <span id="working-with-kascade-data"></span><h1>3.6. Working with KASCADE data<a class="headerlink" href="#module-sapphire.kascade" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
+<dt id="sapphire.kascade.StoreKascadeData">
+<em class="property">class </em><tt class="descclassname">sapphire.kascade.</tt><tt class="descname">StoreKascadeData</tt><big>(</big><em>data</em>, <em>hisparc_path</em>, <em>kascade_path</em>, <em>kascade_filename</em>, <em>force=False</em><big>)</big><a class="headerlink" href="#sapphire.kascade.StoreKascadeData" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="sapphire.kascade.StoreKascadeData.read_and_store_data">
+<tt class="descname">read_and_store_data</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.kascade.StoreKascadeData.read_and_store_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read and store KASCADE data matching HiSPARC data</p>
+<p>This function looks at the HiSPARC event data in the specified
+datafile and then processes and adds KASCADE data surrounding
+those events, for later coincidence processing.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="sapphire.kascade.KascadeCoincidences">
 <em class="property">class </em><tt class="descclassname">sapphire.kascade.</tt><tt class="descname">KascadeCoincidences</tt><big>(</big><em>data</em>, <em>hisparc_group</em>, <em>kascade_group</em>, <em>overwrite=False</em>, <em>ignore_existing=False</em><big>)</big><a class="headerlink" href="#sapphire.kascade.KascadeCoincidences" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
@@ -95,20 +109,6 @@ coincidences are not stored.  Default: None.</li>
 <dt id="sapphire.kascade.KascadeCoincidences.store_coincidences">
 <tt class="descname">store_coincidences</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.kascade.KascadeCoincidences.store_coincidences" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="sapphire.kascade.StoreKascadeData">
-<em class="property">class </em><tt class="descclassname">sapphire.kascade.</tt><tt class="descname">StoreKascadeData</tt><big>(</big><em>data</em>, <em>hisparc_path</em>, <em>kascade_path</em>, <em>kascade_filename</em>, <em>force=False</em><big>)</big><a class="headerlink" href="#sapphire.kascade.StoreKascadeData" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
-<dt id="sapphire.kascade.StoreKascadeData.read_and_store_data">
-<tt class="descname">read_and_store_data</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.kascade.StoreKascadeData.read_and_store_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>Read and store KASCADE data matching HiSPARC data</p>
-<p>This function looks at the HiSPARC event data in the specified
-datafile and then processes and adds KASCADE data surrounding
-those events, for later coincidence processing.</p>
-</dd></dl>
 
 </dd></dl>
 
@@ -172,7 +172,7 @@ those events, for later coincidence processing.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
     </div>
   </body>
 </html>

@@ -99,36 +99,27 @@ exist) in which the result tables will be created.</li>
 </tbody>
 </table>
 <dl class="method">
+<dt id="sapphire.simulations.base.BaseSimulation.run">
+<tt class="descname">run</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the simulations.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="sapphire.simulations.base.BaseSimulation.generate_shower_parameters">
 <tt class="descname">generate_shower_parameters</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.generate_shower_parameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate shower parameters like core position, energy, etc.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="sapphire.simulations.base.BaseSimulation.process_detector_observables">
-<tt class="descname">process_detector_observables</tt><big>(</big><em>detector_observables</em><big>)</big><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.process_detector_observables" title="Permalink to this definition">¶</a></dt>
-<dd><p>Process detector observables for a station.</p>
-<p>The list of detector observables is converted into a dictionary
-containing the familiar observables like pulseheights, n1, n2,
-..., t1, t2, ..., integrals, etc.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>detector_observables</strong> &#8211; list of observables of the detectors
-making up a station.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dictionary containing the familiar station observables
-like n1, n2, n3, etc.</td>
-</tr>
-</tbody>
-</table>
+<dt id="sapphire.simulations.base.BaseSimulation.simulate_events_for_shower">
+<tt class="descname">simulate_events_for_shower</tt><big>(</big><em>shower_parameters</em><big>)</big><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.simulate_events_for_shower" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simulate station events for a single shower</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="sapphire.simulations.base.BaseSimulation.run">
-<tt class="descname">run</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.run" title="Permalink to this definition">¶</a></dt>
-<dd><p>Run the simulations.</p>
+<dt id="sapphire.simulations.base.BaseSimulation.simulate_station_response">
+<tt class="descname">simulate_station_response</tt><big>(</big><em>station</em>, <em>shower_parameters</em><big>)</big><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.simulate_station_response" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simulate station response to a shower.</p>
 </dd></dl>
 
 <dl class="method">
@@ -172,9 +163,9 @@ detector) and &#8216;t&#8217; (time of arrival of first detected particle)</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="sapphire.simulations.base.BaseSimulation.simulate_events_for_shower">
-<tt class="descname">simulate_events_for_shower</tt><big>(</big><em>shower_parameters</em><big>)</big><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.simulate_events_for_shower" title="Permalink to this definition">¶</a></dt>
-<dd><p>Simulate station events for a single shower</p>
+<dt id="sapphire.simulations.base.BaseSimulation.simulate_trigger">
+<tt class="descname">simulate_trigger</tt><big>(</big><em>detector_observables</em><big>)</big><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.simulate_trigger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simulate a trigger response.</p>
 </dd></dl>
 
 <dl class="method">
@@ -184,37 +175,21 @@ detector) and &#8216;t&#8217; (time of arrival of first detected particle)</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="sapphire.simulations.base.BaseSimulation.simulate_station_response">
-<tt class="descname">simulate_station_response</tt><big>(</big><em>station</em>, <em>shower_parameters</em><big>)</big><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.simulate_station_response" title="Permalink to this definition">¶</a></dt>
-<dd><p>Simulate station response to a shower.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="sapphire.simulations.base.BaseSimulation.simulate_trigger">
-<tt class="descname">simulate_trigger</tt><big>(</big><em>detector_observables</em><big>)</big><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.simulate_trigger" title="Permalink to this definition">¶</a></dt>
-<dd><p>Simulate a trigger response.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="sapphire.simulations.base.BaseSimulation.store_coincidence">
-<tt class="descname">store_coincidence</tt><big>(</big><em>shower_id</em>, <em>shower_parameters</em>, <em>station_events</em><big>)</big><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.store_coincidence" title="Permalink to this definition">¶</a></dt>
-<dd><p>Store coincidence.</p>
-<p>Store the information to find events of different stations
-belonging to the same simulated shower in the coincidences
-tables.</p>
+<dt id="sapphire.simulations.base.BaseSimulation.process_detector_observables">
+<tt class="descname">process_detector_observables</tt><big>(</big><em>detector_observables</em><big>)</big><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.process_detector_observables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process detector observables for a station.</p>
+<p>The list of detector observables is converted into a dictionary
+containing the familiar observables like pulseheights, n1, n2,
+..., t1, t2, ..., integrals, etc.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>shower_id</strong> &#8211; The shower number for the coincidence id.</li>
-<li><strong>shower_parameters</strong> &#8211; A dictionary with the parameters of
-the simulated shower.</li>
-<li><strong>station_events</strong> &#8211; A list of tuples containing the
-station_id and event_index referring to the events that
-participated in the coincidence.</li>
-</ul>
-</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>detector_observables</strong> &#8211; list of observables of the detectors
+making up a station.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dictionary containing the familiar station observables
+like n1, n2, n3, etc.</td>
 </tr>
 </tbody>
 </table>
@@ -236,6 +211,31 @@ variables to be stored for this event.</li>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The index (row number) of the newly added event.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.simulations.base.BaseSimulation.store_coincidence">
+<tt class="descname">store_coincidence</tt><big>(</big><em>shower_id</em>, <em>shower_parameters</em>, <em>station_events</em><big>)</big><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.store_coincidence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store coincidence.</p>
+<p>Store the information to find events of different stations
+belonging to the same simulated shower in the coincidences
+tables.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>shower_id</strong> &#8211; The shower number for the coincidence id.</li>
+<li><strong>shower_parameters</strong> &#8211; A dictionary with the parameters of
+the simulated shower.</li>
+<li><strong>station_events</strong> &#8211; A list of tuples containing the
+station_id and event_index referring to the events that
+participated in the coincidence.</li>
+</ul>
 </td>
 </tr>
 </tbody>
@@ -305,7 +305,7 @@ variables to be stored for this event.</li>
     </div>
     <div class="footer">
         &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
     </div>
   </body>
 </html>

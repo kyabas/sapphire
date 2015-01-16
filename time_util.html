@@ -81,14 +81,13 @@ Unix-like timestamp, in GPS time.</p>
 </pre></div>
 </div>
 <dl class="method">
-<dt id="sapphire.time_util.GPSTime.datetime">
-<tt class="descname">datetime</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.time_util.GPSTime.datetime" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the GPS date/time as a <tt class="xref py py-class docutils literal"><span class="pre">datetime.datetime</span></tt>
-instance.</p>
+<dt id="sapphire.time_util.GPSTime.gpstimestamp">
+<tt class="descname">gpstimestamp</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.time_util.GPSTime.gpstimestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the GPS date/time as a timestamp.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">gpstime</span> <span class="o">=</span> <span class="n">GPSTime</span><span class="p">(</span><span class="mi">1354320000</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">gpstime</span><span class="o">.</span><span class="n">datetime</span><span class="p">()</span>
-<span class="go">datetime.datetime(2012, 12, 1, 0, 0)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">gpstime</span> <span class="o">=</span> <span class="n">GPSTime</span><span class="p">(</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gpstime</span><span class="o">.</span><span class="n">gpstimestamp</span><span class="p">()</span>
+<span class="go">1354320000</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -106,13 +105,14 @@ instance.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="sapphire.time_util.GPSTime.gpstimestamp">
-<tt class="descname">gpstimestamp</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.time_util.GPSTime.gpstimestamp" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the GPS date/time as a timestamp.</p>
+<dt id="sapphire.time_util.GPSTime.datetime">
+<tt class="descname">datetime</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.time_util.GPSTime.datetime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the GPS date/time as a <tt class="xref py py-class docutils literal"><span class="pre">datetime.datetime</span></tt>
+instance.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">gpstime</span> <span class="o">=</span> <span class="n">GPSTime</span><span class="p">(</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">gpstime</span><span class="o">.</span><span class="n">gpstimestamp</span><span class="p">()</span>
-<span class="go">1354320000</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">gpstime</span> <span class="o">=</span> <span class="n">GPSTime</span><span class="p">(</span><span class="mi">1354320000</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gpstime</span><span class="o">.</span><span class="n">datetime</span><span class="p">()</span>
+<span class="go">datetime.datetime(2012, 12, 1, 0, 0)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -179,7 +179,7 @@ instance.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
     </div>
   </body>
 </html>

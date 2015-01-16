@@ -64,31 +64,52 @@
 <p>This module performs various coordinate transformations, based on some
 well-known formulas.</p>
 <dl class="class">
-<dt id="sapphire.transformations.geographic.FromWGS84ToENUTransformation">
-<em class="property">class </em><tt class="descclassname">sapphire.transformations.geographic.</tt><tt class="descname">FromWGS84ToENUTransformation</tt><big>(</big><em>ref_llacoordinates</em><big>)</big><a class="headerlink" href="#sapphire.transformations.geographic.FromWGS84ToENUTransformation" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
-<dt id="sapphire.transformations.geographic.FromWGS84ToENUTransformation.ecef_to_enu">
-<tt class="descname">ecef_to_enu</tt><big>(</big><em>coordinates</em><big>)</big><a class="headerlink" href="#sapphire.transformations.geographic.FromWGS84ToENUTransformation.ecef_to_enu" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert from ECEF coordinates to ENU coordinates</p>
-<p>ECEF: Earth-Centered, Earth-Fixed
-ENU: East, North, Up</p>
-<p>The conversion formulas are taken from
-<a class="reference external" href="http://en.wikipedia.org/wiki/Geodetic_system#From_ECEF_to_ENU">http://en.wikipedia.org/wiki/Geodetic_system#From_ECEF_to_ENU</a></p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>coordinates</strong> &#8211; a tuple containing the ECEF coordinates of the
-point to transform</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
+<dt id="sapphire.transformations.geographic.WGS84Datum">
+<em class="property">class </em><tt class="descclassname">sapphire.transformations.geographic.</tt><tt class="descname">WGS84Datum</tt><a class="headerlink" href="#sapphire.transformations.geographic.WGS84Datum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Definition of the WGS84 datum</p>
+<p>These definitions are taken from
+<a class="reference external" href="http://en.wikipedia.org/wiki/Geodetic_system">http://en.wikipedia.org/wiki/Geodetic_system</a>, believing that enough
+editors have gone over them to make sure they are correct.</p>
+<dl class="attribute">
+<dt id="sapphire.transformations.geographic.WGS84Datum.a">
+<tt class="descname">a</tt><em class="property"> = 6378137.0</em><a class="headerlink" href="#sapphire.transformations.geographic.WGS84Datum.a" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
-<dt id="sapphire.transformations.geographic.FromWGS84ToENUTransformation.geode">
-<tt class="descname">geode</tt><em class="property"> = &lt;sapphire.transformations.geographic.WGS84Datum object at 0x10a5ae250&gt;</em><a class="headerlink" href="#sapphire.transformations.geographic.FromWGS84ToENUTransformation.geode" title="Permalink to this definition">¶</a></dt>
+<dt id="sapphire.transformations.geographic.WGS84Datum.f">
+<tt class="descname">f</tt><em class="property"> = 0.0033528106647474805</em><a class="headerlink" href="#sapphire.transformations.geographic.WGS84Datum.f" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sapphire.transformations.geographic.WGS84Datum.b">
+<tt class="descname">b</tt><em class="property"> = 6356752.314245179</em><a class="headerlink" href="#sapphire.transformations.geographic.WGS84Datum.b" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sapphire.transformations.geographic.WGS84Datum.e">
+<tt class="descname">e</tt><em class="property"> = 0.08181919084262149</em><a class="headerlink" href="#sapphire.transformations.geographic.WGS84Datum.e" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sapphire.transformations.geographic.WGS84Datum.eprime">
+<tt class="descname">eprime</tt><em class="property"> = 0.08209443794969568</em><a class="headerlink" href="#sapphire.transformations.geographic.WGS84Datum.eprime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sapphire.transformations.geographic.FromWGS84ToENUTransformation">
+<em class="property">class </em><tt class="descclassname">sapphire.transformations.geographic.</tt><tt class="descname">FromWGS84ToENUTransformation</tt><big>(</big><em>ref_llacoordinates</em><big>)</big><a class="headerlink" href="#sapphire.transformations.geographic.FromWGS84ToENUTransformation" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="sapphire.transformations.geographic.FromWGS84ToENUTransformation.geode">
+<tt class="descname">geode</tt><em class="property"> = &lt;sapphire.transformations.geographic.WGS84Datum object at 0x1076e3250&gt;</em><a class="headerlink" href="#sapphire.transformations.geographic.FromWGS84ToENUTransformation.geode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sapphire.transformations.geographic.FromWGS84ToENUTransformation.transform">
+<tt class="descname">transform</tt><big>(</big><em>coordinates</em><big>)</big><a class="headerlink" href="#sapphire.transformations.geographic.FromWGS84ToENUTransformation.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transfrom WGS84 coordinates to ENU coordinates</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sapphire.transformations.geographic.FromWGS84ToENUTransformation.lla_to_ecef">
@@ -113,44 +134,23 @@ and altitude (in meters).</td>
 </dd></dl>
 
 <dl class="method">
-<dt id="sapphire.transformations.geographic.FromWGS84ToENUTransformation.transform">
-<tt class="descname">transform</tt><big>(</big><em>coordinates</em><big>)</big><a class="headerlink" href="#sapphire.transformations.geographic.FromWGS84ToENUTransformation.transform" title="Permalink to this definition">¶</a></dt>
-<dd><p>Transfrom WGS84 coordinates to ENU coordinates</p>
+<dt id="sapphire.transformations.geographic.FromWGS84ToENUTransformation.ecef_to_enu">
+<tt class="descname">ecef_to_enu</tt><big>(</big><em>coordinates</em><big>)</big><a class="headerlink" href="#sapphire.transformations.geographic.FromWGS84ToENUTransformation.ecef_to_enu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert from ECEF coordinates to ENU coordinates</p>
+<p>ECEF: Earth-Centered, Earth-Fixed
+ENU: East, North, Up</p>
+<p>The conversion formulas are taken from
+<a class="reference external" href="http://en.wikipedia.org/wiki/Geodetic_system#From_ECEF_to_ENU">http://en.wikipedia.org/wiki/Geodetic_system#From_ECEF_to_ENU</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>coordinates</strong> &#8211; a tuple containing the ECEF coordinates (in meters)
+of the point to transform</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="sapphire.transformations.geographic.WGS84Datum">
-<em class="property">class </em><tt class="descclassname">sapphire.transformations.geographic.</tt><tt class="descname">WGS84Datum</tt><a class="headerlink" href="#sapphire.transformations.geographic.WGS84Datum" title="Permalink to this definition">¶</a></dt>
-<dd><p>Definition of the WGS84 datum</p>
-<p>These definitions are taken from
-<a class="reference external" href="http://en.wikipedia.org/wiki/Geodetic_system">http://en.wikipedia.org/wiki/Geodetic_system</a>, believing that enough
-editors have gone over them to make sure they are correct.</p>
-<dl class="attribute">
-<dt id="sapphire.transformations.geographic.WGS84Datum.a">
-<tt class="descname">a</tt><em class="property"> = 6378137.0</em><a class="headerlink" href="#sapphire.transformations.geographic.WGS84Datum.a" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="sapphire.transformations.geographic.WGS84Datum.b">
-<tt class="descname">b</tt><em class="property"> = 6356752.314245179</em><a class="headerlink" href="#sapphire.transformations.geographic.WGS84Datum.b" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="sapphire.transformations.geographic.WGS84Datum.e">
-<tt class="descname">e</tt><em class="property"> = 0.08181919084262149</em><a class="headerlink" href="#sapphire.transformations.geographic.WGS84Datum.e" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="sapphire.transformations.geographic.WGS84Datum.eprime">
-<tt class="descname">eprime</tt><em class="property"> = 0.08209443794969568</em><a class="headerlink" href="#sapphire.transformations.geographic.WGS84Datum.eprime" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="sapphire.transformations.geographic.WGS84Datum.f">
-<tt class="descname">f</tt><em class="property"> = 0.0033528106647474805</em><a class="headerlink" href="#sapphire.transformations.geographic.WGS84Datum.f" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 
 </dd></dl>
 
@@ -215,7 +215,7 @@ editors have gone over them to make sure they are correct.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
     </div>
   </body>
 </html>

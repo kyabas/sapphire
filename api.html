@@ -86,6 +86,11 @@ from JSON to Python dictionaries.</p>
 <dd><p>Base API class</p>
 <p>This provided the methods to retrieve data from the API.
 Also converts JSON data to Python objects (dict/list/etc..).</p>
+<dl class="attribute">
+<dt id="sapphire.api.API.urls">
+<tt class="descname">urls</tt><em class="property"> = {'stations_in_subcluster': 'subclusters/{subcluster_number}/', 'event_trace': 'station/{station_number}/trace/{ext_timestamp}/', 'subclusters_in_cluster': 'clusters/{cluster_number}/', 'pulseheight_drift': 'station/{station_number}/plate/{plate_number}/pulseheight/drift/{year}/{month}/{day}/{number_of_days}/', 'stations': 'stations/', 'clusters_in_country': 'countries/{country_number}/', 'station_info': 'station/{station_number}/{year}/{month}/{day}/', 'countries': 'countries/', 'subclusters': 'subclusters/', 'pulseheight_fit': 'station/{station_number}/plate/{plate_number}/pulseheight/fit/{year}/{month}/{day}/', 'stations_with_data': 'stations/data/{year}/{month}/{day}/', 'number_of_events': 'station/{station_number}/num_events/{year}/{month}/{day}/{hour}/', 'clusters': 'clusters/', 'configuration': 'station/{station_number}/config/{year}/{month}/{day}/', 'has_weather': 'station/{station_number}/weather/{year}/{month}/{day}/', 'stations_with_weather': 'stations/weather/{year}/{month}/{day}/', 'has_data': 'station/{station_number}/data/{year}/{month}/{day}/'}</em><a class="headerlink" href="#sapphire.api.API.urls" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="staticmethod">
 <dt id="sapphire.api.API.check_connection">
 <em class="property">static </em><tt class="descname">check_connection</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.api.API.check_connection" title="Permalink to this definition">¶</a></dt>
@@ -100,11 +105,6 @@ Also converts JSON data to Python objects (dict/list/etc..).</p>
 </table>
 </dd></dl>
 
-<dl class="attribute">
-<dt id="sapphire.api.API.urls">
-<tt class="descname">urls</tt><em class="property"> = {'stations_in_subcluster': 'subclusters/{subcluster_number}/', 'event_trace': 'station/{station_number}/trace/{ext_timestamp}/', 'subclusters_in_cluster': 'clusters/{cluster_number}/', 'pulseheight_drift': 'station/{station_number}/plate/{plate_number}/pulseheight/drift/{year}/{month}/{day}/{number_of_days}/', 'stations': 'stations/', 'clusters_in_country': 'countries/{country_number}/', 'station_info': 'station/{station_number}/{year}/{month}/{day}/', 'countries': 'countries/', 'subclusters': 'subclusters/', 'pulseheight_fit': 'station/{station_number}/plate/{plate_number}/pulseheight/fit/{year}/{month}/{day}/', 'stations_with_data': 'stations/data/{year}/{month}/{day}/', 'number_of_events': 'station/{station_number}/num_events/{year}/{month}/{day}/{hour}/', 'clusters': 'clusters/', 'configuration': 'station/{station_number}/config/{year}/{month}/{day}/', 'has_weather': 'station/{station_number}/weather/{year}/{month}/{day}/', 'stations_with_weather': 'stations/weather/{year}/{month}/{day}/', 'has_data': 'station/{station_number}/data/{year}/{month}/{day}/'}</em><a class="headerlink" href="#sapphire.api.API.urls" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
 </dd></dl>
 
 <dl class="class">
@@ -112,29 +112,6 @@ Also converts JSON data to Python objects (dict/list/etc..).</p>
 <em class="property">class </em><tt class="descclassname">sapphire.api.</tt><tt class="descname">Network</tt><a class="headerlink" href="#sapphire.api.Network" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get info about the network (countries/clusters/subclusters/stations)</p>
 <p>Initialize network</p>
-<dl class="method">
-<dt id="sapphire.api.Network.cluster_numbers">
-<tt class="descname">cluster_numbers</tt><big>(</big><em>country=None</em><big>)</big><a class="headerlink" href="#sapphire.api.Network.cluster_numbers" title="Permalink to this definition">¶</a></dt>
-<dd><p>Same as clusters but only retuns a list of cluster numbers</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="sapphire.api.Network.clusters">
-<tt class="descname">clusters</tt><big>(</big><em>country=None</em><big>)</big><a class="headerlink" href="#sapphire.api.Network.clusters" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a list of clusters</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>country</strong> &#8211; the number of the country for which to get all
-clusters.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">all clusters in the region</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
 <dl class="method">
 <dt id="sapphire.api.Network.countries">
 <tt class="descname">countries</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.api.Network.countries" title="Permalink to this definition">¶</a></dt>
@@ -156,15 +133,50 @@ clusters.</td>
 </dd></dl>
 
 <dl class="method">
-<dt id="sapphire.api.Network.nested_network">
-<tt class="descname">nested_network</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.api.Network.nested_network" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a nested list of the full network</p>
+<dt id="sapphire.api.Network.clusters">
+<tt class="descname">clusters</tt><big>(</big><em>country=None</em><big>)</big><a class="headerlink" href="#sapphire.api.Network.clusters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of clusters</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>country</strong> &#8211; the number of the country for which to get all
+clusters.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">all clusters in the region</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
-<dt id="sapphire.api.Network.station_numbers">
-<tt class="descname">station_numbers</tt><big>(</big><em>country=None</em>, <em>cluster=None</em>, <em>subcluster=None</em>, <em>allow_stale=True</em><big>)</big><a class="headerlink" href="#sapphire.api.Network.station_numbers" title="Permalink to this definition">¶</a></dt>
-<dd><p>Same as stations but only retuns a list of station numbers</p>
+<dt id="sapphire.api.Network.cluster_numbers">
+<tt class="descname">cluster_numbers</tt><big>(</big><em>country=None</em><big>)</big><a class="headerlink" href="#sapphire.api.Network.cluster_numbers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as clusters but only retuns a list of cluster numbers</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.api.Network.subclusters">
+<tt class="descname">subclusters</tt><big>(</big><em>country=None</em>, <em>cluster=None</em><big>)</big><a class="headerlink" href="#sapphire.api.Network.subclusters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of subclusters</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>country,cluster</strong> &#8211; the number of the region for which to get
+the subclusters it contains, only one or none should
+be specified.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">all subclusters in the region</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.api.Network.subcluster_numbers">
+<tt class="descname">subcluster_numbers</tt><big>(</big><em>country=None</em>, <em>cluster=None</em><big>)</big><a class="headerlink" href="#sapphire.api.Network.subcluster_numbers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as subclusters but only retuns a list of subcluster numbers</p>
 </dd></dl>
 
 <dl class="method">
@@ -183,6 +195,18 @@ be specified.</td>
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.api.Network.station_numbers">
+<tt class="descname">station_numbers</tt><big>(</big><em>country=None</em>, <em>cluster=None</em>, <em>subcluster=None</em>, <em>allow_stale=True</em><big>)</big><a class="headerlink" href="#sapphire.api.Network.station_numbers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as stations but only retuns a list of station numbers</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.api.Network.nested_network">
+<tt class="descname">nested_network</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.api.Network.nested_network" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a nested list of the full network</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -219,30 +243,6 @@ possible to be less specific.</td>
 </table>
 </dd></dl>
 
-<dl class="method">
-<dt id="sapphire.api.Network.subcluster_numbers">
-<tt class="descname">subcluster_numbers</tt><big>(</big><em>country=None</em>, <em>cluster=None</em><big>)</big><a class="headerlink" href="#sapphire.api.Network.subcluster_numbers" title="Permalink to this definition">¶</a></dt>
-<dd><p>Same as subclusters but only retuns a list of subcluster numbers</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="sapphire.api.Network.subclusters">
-<tt class="descname">subclusters</tt><big>(</big><em>country=None</em>, <em>cluster=None</em><big>)</big><a class="headerlink" href="#sapphire.api.Network.subclusters" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a list of subclusters</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>country,cluster</strong> &#8211; the number of the region for which to get
-the subclusters it contains, only one or none should
-be specified.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">all subclusters in the region</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
 </dd></dl>
 
 <dl class="class">
@@ -265,9 +265,57 @@ from the server.</li>
 </tbody>
 </table>
 <dl class="method">
+<dt id="sapphire.api.Station.country">
+<tt class="descname">country</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.api.Station.country" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="sapphire.api.Station.cluster">
 <tt class="descname">cluster</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.api.Station.cluster" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="method">
+<dt id="sapphire.api.Station.subcluster">
+<tt class="descname">subcluster</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.api.Station.subcluster" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sapphire.api.Station.n_detectors">
+<tt class="descname">n_detectors</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.api.Station.n_detectors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of detectors in this station</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.api.Station.detectors">
+<tt class="descname">detectors</tt><big>(</big><em>date=None</em><big>)</big><a class="headerlink" href="#sapphire.api.Station.detectors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the locations of detectors</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>date</strong> &#8211; date object for which to get the detector information</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list with the locations of each detector</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.api.Station.location">
+<tt class="descname">location</tt><big>(</big><em>date=None</em><big>)</big><a class="headerlink" href="#sapphire.api.Station.location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get gps location of the station</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>date</strong> &#8211; date object for which to get the location</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">the gps coordinates for the station</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="method">
 <dt id="sapphire.api.Station.config">
@@ -287,40 +335,20 @@ from the server.</li>
 </dd></dl>
 
 <dl class="method">
-<dt id="sapphire.api.Station.country">
-<tt class="descname">country</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.api.Station.country" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="sapphire.api.Station.detectors">
-<tt class="descname">detectors</tt><big>(</big><em>date=None</em><big>)</big><a class="headerlink" href="#sapphire.api.Station.detectors" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the locations of detectors</p>
+<dt id="sapphire.api.Station.n_events">
+<tt class="descname">n_events</tt><big>(</big><em>year=''</em>, <em>month=''</em>, <em>day=''</em>, <em>hour=''</em><big>)</big><a class="headerlink" href="#sapphire.api.Station.n_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get number of events</p>
+<p>Note that it is possible to give only the year to get the total
+number of events in that year. If both year and month are given,
+the total events in that month are returned.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>date</strong> &#8211; date object for which to get the detector information</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>year,month,day,hour</strong> &#8211; the date and time for which to
+get the number. It is possible to be less specific.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list with the locations of each detector</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="sapphire.api.Station.event_trace">
-<tt class="descname">event_trace</tt><big>(</big><em>timestamp</em>, <em>nanoseconds</em><big>)</big><a class="headerlink" href="#sapphire.api.Station.event_trace" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the traces for a specific event</p>
-<p>The exact timestamp and nanoseconds for the event have to be
-given.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>timestamp,nanoseconds</strong> &#8211; the extended timestamp for which
-to get the traces</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">an array with the traces for each detector in ADCcounts</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">the number of events recorded by the station on date.</td>
 </tr>
 </tbody>
 </table>
@@ -363,51 +391,23 @@ on the date.</td>
 </dd></dl>
 
 <dl class="method">
-<dt id="sapphire.api.Station.location">
-<tt class="descname">location</tt><big>(</big><em>date=None</em><big>)</big><a class="headerlink" href="#sapphire.api.Station.location" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get gps location of the station</p>
+<dt id="sapphire.api.Station.event_trace">
+<tt class="descname">event_trace</tt><big>(</big><em>timestamp</em>, <em>nanoseconds</em><big>)</big><a class="headerlink" href="#sapphire.api.Station.event_trace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the traces for a specific event</p>
+<p>The exact timestamp and nanoseconds for the event have to be
+given.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>date</strong> &#8211; date object for which to get the location</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>timestamp,nanoseconds</strong> &#8211; the extended timestamp for which
+to get the traces</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">the gps coordinates for the station</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="sapphire.api.Station.n_detectors">
-<tt class="descname">n_detectors</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.api.Station.n_detectors" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the number of detectors in this station</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="sapphire.api.Station.n_events">
-<tt class="descname">n_events</tt><big>(</big><em>year=''</em>, <em>month=''</em>, <em>day=''</em>, <em>hour=''</em><big>)</big><a class="headerlink" href="#sapphire.api.Station.n_events" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get number of events</p>
-<p>Note that it is possible to give only the year to get the total
-number of events in that year. If both year and month are given,
-the total events in that month are returned.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>year,month,day,hour</strong> &#8211; the date and time for which to
-get the number. It is possible to be less specific.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">the number of events recorded by the station on date.</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">an array with the traces for each detector in ADCcounts</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
-
-<dl class="method">
-<dt id="sapphire.api.Station.subcluster">
-<tt class="descname">subcluster</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.api.Station.subcluster" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 
 </dd></dl>
 
@@ -471,7 +471,7 @@ get the number. It is possible to be less specific.</td>
     </div>
     <div class="footer">
         &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
     </div>
   </body>
 </html>

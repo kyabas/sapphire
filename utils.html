@@ -58,22 +58,23 @@
 <p>Utilities</p>
 <p>The module contains some commonly functions and classes.</p>
 <dl class="function">
-<dt id="sapphire.utils.angle_between">
-<tt class="descclassname">sapphire.utils.</tt><tt class="descname">angle_between</tt><big>(</big><em>zenith1</em>, <em>azimuth1</em>, <em>zenith2</em>, <em>azimuth2</em><big>)</big><a class="headerlink" href="#sapphire.utils.angle_between" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate the angle between two (zenith, azimuth) coordinates</p>
-<p>Using the spherical law of cosines,
-from: <a class="reference external" href="http://www.movable-type.co.uk/scripts/latlong.html#cosine-law">http://www.movable-type.co.uk/scripts/latlong.html#cosine-law</a></p>
+<dt id="sapphire.utils.pbar">
+<tt class="descclassname">sapphire.utils.</tt><tt class="descname">pbar</tt><big>(</big><em>iterable</em>, <em>length=None</em>, <em>show=True</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#sapphire.utils.pbar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a new progressbar with our default widgets</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>zenith#</strong> &#8211; Zenith parts of the coordinates, in radians (0, pi/2).</li>
-<li><strong>azimuth#</strong> &#8211; Azimuth parts of the coordinates, in radians (-pi, pi).</li>
+<li><strong>iterable</strong> &#8211; the iterable over which will be looped.</li>
+<li><strong>length</strong> &#8211; in case iterable is a generator, this should be its
+expected length.</li>
+<li><strong>show</strong> &#8211; boolean, if False simply return the iterable.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Angle between the two coordinates.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a new iterable which iterates over the same elements as
+the input, but shows a progressbar if possible.</p>
 </td>
 </tr>
 </tbody>
@@ -100,23 +101,30 @@ from: <a class="reference external" href="http://www.movable-type.co.uk/scripts/
 </dd></dl>
 
 <dl class="function">
-<dt id="sapphire.utils.pbar">
-<tt class="descclassname">sapphire.utils.</tt><tt class="descname">pbar</tt><big>(</big><em>iterable</em>, <em>length=None</em>, <em>show=True</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#sapphire.utils.pbar" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a new progressbar with our default widgets</p>
+<dt id="sapphire.utils.norm_angle">
+<tt class="descclassname">sapphire.utils.</tt><tt class="descname">norm_angle</tt><big>(</big><em>angle</em><big>)</big><a class="headerlink" href="#sapphire.utils.norm_angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Normalize an angle to the range [-pi, pi)</p>
+<p>We use the range from -pi upto but not including pi to represent
+angles.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.utils.angle_between">
+<tt class="descclassname">sapphire.utils.</tt><tt class="descname">angle_between</tt><big>(</big><em>zenith1</em>, <em>azimuth1</em>, <em>zenith2</em>, <em>azimuth2</em><big>)</big><a class="headerlink" href="#sapphire.utils.angle_between" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the angle between two (zenith, azimuth) coordinates</p>
+<p>Using the spherical law of cosines,
+from: <a class="reference external" href="http://www.movable-type.co.uk/scripts/latlong.html#cosine-law">http://www.movable-type.co.uk/scripts/latlong.html#cosine-law</a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>iterable</strong> &#8211; the iterable over which will be looped.</li>
-<li><strong>length</strong> &#8211; in case iterable is a generator, this should be its
-expected length.</li>
-<li><strong>show</strong> &#8211; boolean, if False simply return the iterable.</li>
+<li><strong>zenith#</strong> &#8211; Zenith parts of the coordinates, in radians (0, pi/2).</li>
+<li><strong>azimuth#</strong> &#8211; Azimuth parts of the coordinates, in radians (-pi, pi).</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a new iterable which iterates over the same elements as
-the input, but shows a progressbar if possible.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Angle between the two coordinates.</p>
 </td>
 </tr>
 </tbody>
@@ -177,7 +185,7 @@ the input, but shows a progressbar if possible.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
     </div>
   </body>
 </html>

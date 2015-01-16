@@ -75,6 +75,7 @@
  | <a href="#U"><strong>U</strong></a>
  | <a href="#W"><strong>W</strong></a>
  | <a href="#X"><strong>X</strong></a>
+ | <a href="#Z"><strong>Z</strong></a>
  
 </div>
 <h2 id="A">A</h2>
@@ -675,7 +676,11 @@
   </dt>
 
       
-  <dt><a href="simulations/detector.html#sapphire.simulations.detector.HiSPARCSimulation.generate_azimuth">generate_azimuth() (sapphire.simulations.detector.HiSPARCSimulation method)</a>
+  <dt><a href="simulations/detector.html#sapphire.simulations.detector.HiSPARCSimulation.generate_azimuth">generate_azimuth() (sapphire.simulations.detector.HiSPARCSimulation class method)</a>
+  </dt>
+
+      
+  <dt><a href="simulations/detector.html#sapphire.simulations.detector.HiSPARCSimulation.generate_core_position">generate_core_position() (sapphire.simulations.detector.HiSPARCSimulation class method)</a>
   </dt>
 
       
@@ -697,7 +702,7 @@
 
       </dl></dd>
       
-  <dt><a href="simulations/detector.html#sapphire.simulations.detector.HiSPARCSimulation.generate_zenith">generate_zenith() (sapphire.simulations.detector.HiSPARCSimulation method)</a>
+  <dt><a href="simulations/detector.html#sapphire.simulations.detector.HiSPARCSimulation.generate_zenith">generate_zenith() (sapphire.simulations.detector.HiSPARCSimulation class method)</a>
   </dt>
 
       
@@ -931,7 +936,7 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%" valign="top"><dl>
       
-  <dt><a href="corsika/blocks.html#sapphire.corsika.blocks.ParticleData.hadron_generation">hadron_generation (sapphire.corsika.blocks.ParticleData attribute)</a>
+  <dt><a href="transformations/celestial.html#sapphire.transformations.celestial.ha_to_ra">ha_to_ra() (in module sapphire.transformations.celestial)</a>
   </dt>
 
       
@@ -954,12 +959,12 @@
   <dt><a href="corsika/blocks.html#sapphire.corsika.blocks.RunHeader.height_to_thickness">height_to_thickness() (sapphire.corsika.blocks.RunHeader method)</a>
   </dt>
 
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="clusters.html#sapphire.clusters.HiSPARCNetwork">HiSPARCNetwork (class in sapphire.clusters)</a>
   </dt>
 
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="simulations/detector.html#sapphire.simulations.detector.HiSPARCSimulation">HiSPARCSimulation (class in sapphire.simulations.detector)</a>
   </dt>
@@ -970,6 +975,14 @@
 
       
   <dt><a href="transformations/celestial.html#sapphire.transformations.celestial.horizontal_to_equatorial">horizontal_to_equatorial() (in module sapphire.transformations.celestial)</a>
+  </dt>
+
+      
+  <dt><a href="transformations/celestial.html#sapphire.transformations.celestial.horizontal_to_hadec">horizontal_to_hadec() (in module sapphire.transformations.celestial)</a>
+  </dt>
+
+      
+  <dt><a href="transformations/celestial.html#sapphire.transformations.celestial.horizontal_to_zenithazimuth">horizontal_to_zenithazimuth() (in module sapphire.transformations.celestial)</a>
   </dt>
 
       
@@ -987,7 +1000,11 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%" valign="top"><dl>
       
-  <dt><a href="simulations/detector.html#sapphire.simulations.detector.HiSPARCSimulation.inverse_zenith_probability">inverse_zenith_probability() (sapphire.simulations.detector.HiSPARCSimulation method)</a>
+  <dt><a href="analysis/direction_reconstruction.html#sapphire.analysis.direction_reconstruction.SphereAlgorithm.interaction_curve">interaction_curve() (sapphire.analysis.direction_reconstruction.SphereAlgorithm static method)</a>
+  </dt>
+
+      
+  <dt><a href="simulations/detector.html#sapphire.simulations.detector.HiSPARCSimulation.inverse_zenith_probability">inverse_zenith_probability() (sapphire.simulations.detector.HiSPARCSimulation class method)</a>
   </dt>
 
       
@@ -997,7 +1014,15 @@
   </dl></td>
   <td style="width: 33%" valign="top"><dl>
       
+  <dt><a href="corsika/blocks.html#sapphire.corsika.blocks.ParticleData.is_detectable">is_detectable (sapphire.corsika.blocks.ParticleData attribute)</a>
+  </dt>
+
+      
   <dt><a href="corsika/blocks.html#sapphire.corsika.blocks.ParticleData.is_nucleus">is_nucleus (sapphire.corsika.blocks.ParticleData attribute)</a>
+  </dt>
+
+      
+  <dt><a href="corsika/blocks.html#sapphire.corsika.blocks.ParticleData.is_particle">is_particle (sapphire.corsika.blocks.ParticleData attribute)</a>
   </dt>
 
   </dl></td>
@@ -1138,6 +1163,10 @@
   <dt><a href="api.html#sapphire.api.Network">Network (class in sapphire.api)</a>
   </dt>
 
+      
+  <dt><a href="utils.html#sapphire.utils.norm_angle">norm_angle() (in module sapphire.utils)</a>
+  </dt>
+
   </dl></td>
 </tr></table>
 
@@ -1145,19 +1174,15 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%" valign="top"><dl>
       
-  <dt><a href="corsika/blocks.html#sapphire.corsika.blocks.ParticleData.observation_level">observation_level (sapphire.corsika.blocks.ParticleData attribute)</a>
-  </dt>
-
-      
   <dt><a href="analysis/core_reconstruction.html#sapphire.analysis.core_reconstruction.CorePositionSolver.optimize_core_position">optimize_core_position() (sapphire.analysis.core_reconstruction.CorePositionSolver method)</a>
   </dt>
 
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="analysis/core_reconstruction.html#sapphire.analysis.core_reconstruction.OverdeterminedCorePositionCirclesSolver">OverdeterminedCorePositionCirclesSolver (class in sapphire.analysis.core_reconstruction)</a>
   </dt>
 
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="analysis/core_reconstruction.html#sapphire.analysis.core_reconstruction.OverdeterminedCorePositionSolver">OverdeterminedCorePositionSolver (class in sapphire.analysis.core_reconstruction)</a>
   </dt>
@@ -1168,6 +1193,10 @@
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="corsika/blocks.html#sapphire.corsika.blocks.ParticleData.particle">particle (sapphire.corsika.blocks.ParticleData attribute)</a>
+  </dt>
+
       
   <dt><a href="corsika/blocks.html#sapphire.corsika.blocks.particle_data">particle_data() (in module sapphire.corsika.blocks)</a>
   </dt>
@@ -1214,10 +1243,6 @@
 
       
   <dt><a href="analysis/coincidence_queries.html#sapphire.analysis.coincidence_queries.CoincidenceQuery.perform_query">perform_query() (sapphire.analysis.coincidence_queries.CoincidenceQuery method)</a>
-  </dt>
-
-      
-  <dt><a href="corsika/blocks.html#sapphire.corsika.blocks.ParticleData.phi">phi (sapphire.corsika.blocks.ParticleData attribute)</a>
   </dt>
 
       
@@ -1459,11 +1484,15 @@
 
       </dl></dd>
       
-  <dt><a href="analysis/reconstructions.html#sapphire.analysis.reconstructions.ReconstructESDCoincidences">ReconstructESDCoincidences (class in sapphire.analysis.reconstructions)</a>
+  <dt><a href="analysis/direction_reconstruction.html#sapphire.analysis.direction_reconstruction.SphereAlgorithm.reconstruct_source_ECS">reconstruct_source_ECS() (sapphire.analysis.direction_reconstruction.SphereAlgorithm class method)</a>
   </dt>
 
   </dl></td>
   <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="analysis/reconstructions.html#sapphire.analysis.reconstructions.ReconstructESDCoincidences">ReconstructESDCoincidences (class in sapphire.analysis.reconstructions)</a>
+  </dt>
+
       
   <dt><a href="analysis/reconstructions.html#sapphire.analysis.reconstructions.ReconstructESDEvents">ReconstructESDEvents (class in sapphire.analysis.reconstructions)</a>
   </dt>
@@ -1684,8 +1713,6 @@
   </dt>
 
       </dl></dd>
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="analysis/coincidences.html#sapphire.analysis.coincidences.Coincidences.search_coincidences">search_coincidences() (sapphire.analysis.coincidences.Coincidences method)</a>
   </dt>
@@ -1700,6 +1727,8 @@
   </dt>
 
       </dl></dd>
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="clusters.html#sapphire.clusters.BaseCluster.set_coordinates">set_coordinates() (sapphire.clusters.BaseCluster method)</a>
   </dt>
@@ -1717,12 +1746,12 @@
   </dt>
 
       
-  <dt><a href="simulations/detector.html#sapphire.simulations.detector.ErrorlessSimulation.simulate_adc_sampling">simulate_adc_sampling() (sapphire.simulations.detector.ErrorlessSimulation method)</a>
+  <dt><a href="simulations/detector.html#sapphire.simulations.detector.ErrorlessSimulation.simulate_adc_sampling">simulate_adc_sampling() (sapphire.simulations.detector.ErrorlessSimulation class method)</a>
   </dt>
 
       <dd><dl>
         
-  <dt><a href="simulations/detector.html#sapphire.simulations.detector.HiSPARCSimulation.simulate_adc_sampling">(sapphire.simulations.detector.HiSPARCSimulation method)</a>
+  <dt><a href="simulations/detector.html#sapphire.simulations.detector.HiSPARCSimulation.simulate_adc_sampling">(sapphire.simulations.detector.HiSPARCSimulation class method)</a>
   </dt>
 
       </dl></dd>
@@ -1731,22 +1760,22 @@
   </dt>
 
       
-  <dt><a href="simulations/detector.html#sapphire.simulations.detector.ErrorlessSimulation.simulate_detector_mip">simulate_detector_mip() (sapphire.simulations.detector.ErrorlessSimulation method)</a>
+  <dt><a href="simulations/detector.html#sapphire.simulations.detector.ErrorlessSimulation.simulate_detector_mip">simulate_detector_mip() (sapphire.simulations.detector.ErrorlessSimulation class method)</a>
   </dt>
 
       <dd><dl>
         
-  <dt><a href="simulations/detector.html#sapphire.simulations.detector.HiSPARCSimulation.simulate_detector_mip">(sapphire.simulations.detector.HiSPARCSimulation method)</a>
+  <dt><a href="simulations/detector.html#sapphire.simulations.detector.HiSPARCSimulation.simulate_detector_mip">(sapphire.simulations.detector.HiSPARCSimulation class method)</a>
   </dt>
 
       </dl></dd>
       
-  <dt><a href="simulations/detector.html#sapphire.simulations.detector.ErrorlessSimulation.simulate_detector_mips">simulate_detector_mips() (sapphire.simulations.detector.ErrorlessSimulation method)</a>
+  <dt><a href="simulations/detector.html#sapphire.simulations.detector.ErrorlessSimulation.simulate_detector_mips">simulate_detector_mips() (sapphire.simulations.detector.ErrorlessSimulation class method)</a>
   </dt>
 
       <dd><dl>
         
-  <dt><a href="simulations/detector.html#sapphire.simulations.detector.HiSPARCSimulation.simulate_detector_mips">(sapphire.simulations.detector.HiSPARCSimulation method)</a>
+  <dt><a href="simulations/detector.html#sapphire.simulations.detector.HiSPARCSimulation.simulate_detector_mips">(sapphire.simulations.detector.HiSPARCSimulation class method)</a>
   </dt>
 
         
@@ -1755,22 +1784,22 @@
 
       </dl></dd>
       
-  <dt><a href="simulations/detector.html#sapphire.simulations.detector.ErrorlessSimulation.simulate_detector_offset">simulate_detector_offset() (sapphire.simulations.detector.ErrorlessSimulation method)</a>
+  <dt><a href="simulations/detector.html#sapphire.simulations.detector.ErrorlessSimulation.simulate_detector_offset">simulate_detector_offset() (sapphire.simulations.detector.ErrorlessSimulation class method)</a>
   </dt>
 
       <dd><dl>
         
-  <dt><a href="simulations/detector.html#sapphire.simulations.detector.HiSPARCSimulation.simulate_detector_offset">(sapphire.simulations.detector.HiSPARCSimulation method)</a>
+  <dt><a href="simulations/detector.html#sapphire.simulations.detector.HiSPARCSimulation.simulate_detector_offset">(sapphire.simulations.detector.HiSPARCSimulation class method)</a>
   </dt>
 
       </dl></dd>
       
-  <dt><a href="simulations/detector.html#sapphire.simulations.detector.ErrorlessSimulation.simulate_detector_offsets">simulate_detector_offsets() (sapphire.simulations.detector.ErrorlessSimulation method)</a>
+  <dt><a href="simulations/detector.html#sapphire.simulations.detector.ErrorlessSimulation.simulate_detector_offsets">simulate_detector_offsets() (sapphire.simulations.detector.ErrorlessSimulation class method)</a>
   </dt>
 
       <dd><dl>
         
-  <dt><a href="simulations/detector.html#sapphire.simulations.detector.HiSPARCSimulation.simulate_detector_offsets">(sapphire.simulations.detector.HiSPARCSimulation method)</a>
+  <dt><a href="simulations/detector.html#sapphire.simulations.detector.HiSPARCSimulation.simulate_detector_offsets">(sapphire.simulations.detector.HiSPARCSimulation class method)</a>
   </dt>
 
       </dl></dd>
@@ -1807,32 +1836,32 @@
 
       </dl></dd>
       
-  <dt><a href="simulations/detector.html#sapphire.simulations.detector.ErrorlessSimulation.simulate_gps_uncertainty">simulate_gps_uncertainty() (sapphire.simulations.detector.ErrorlessSimulation method)</a>
+  <dt><a href="simulations/detector.html#sapphire.simulations.detector.ErrorlessSimulation.simulate_gps_uncertainty">simulate_gps_uncertainty() (sapphire.simulations.detector.ErrorlessSimulation class method)</a>
   </dt>
 
       <dd><dl>
         
-  <dt><a href="simulations/detector.html#sapphire.simulations.detector.HiSPARCSimulation.simulate_gps_uncertainty">(sapphire.simulations.detector.HiSPARCSimulation method)</a>
+  <dt><a href="simulations/detector.html#sapphire.simulations.detector.HiSPARCSimulation.simulate_gps_uncertainty">(sapphire.simulations.detector.HiSPARCSimulation class method)</a>
   </dt>
 
       </dl></dd>
       
-  <dt><a href="simulations/detector.html#sapphire.simulations.detector.ErrorlessSimulation.simulate_signal_transport_time">simulate_signal_transport_time() (sapphire.simulations.detector.ErrorlessSimulation method)</a>
+  <dt><a href="simulations/detector.html#sapphire.simulations.detector.ErrorlessSimulation.simulate_signal_transport_time">simulate_signal_transport_time() (sapphire.simulations.detector.ErrorlessSimulation class method)</a>
   </dt>
 
       <dd><dl>
         
-  <dt><a href="simulations/detector.html#sapphire.simulations.detector.HiSPARCSimulation.simulate_signal_transport_time">(sapphire.simulations.detector.HiSPARCSimulation method)</a>
+  <dt><a href="simulations/detector.html#sapphire.simulations.detector.HiSPARCSimulation.simulate_signal_transport_time">(sapphire.simulations.detector.HiSPARCSimulation class method)</a>
   </dt>
 
       </dl></dd>
       
-  <dt><a href="simulations/detector.html#sapphire.simulations.detector.ErrorlessSimulation.simulate_station_offset">simulate_station_offset() (sapphire.simulations.detector.ErrorlessSimulation method)</a>
+  <dt><a href="simulations/detector.html#sapphire.simulations.detector.ErrorlessSimulation.simulate_station_offset">simulate_station_offset() (sapphire.simulations.detector.ErrorlessSimulation class method)</a>
   </dt>
 
       <dd><dl>
         
-  <dt><a href="simulations/detector.html#sapphire.simulations.detector.HiSPARCSimulation.simulate_station_offset">(sapphire.simulations.detector.HiSPARCSimulation method)</a>
+  <dt><a href="simulations/detector.html#sapphire.simulations.detector.HiSPARCSimulation.simulate_station_offset">(sapphire.simulations.detector.HiSPARCSimulation class method)</a>
   </dt>
 
       </dl></dd>
@@ -1860,6 +1889,10 @@
 
       
   <dt><a href="clusters.html#sapphire.clusters.SingleTwoDetectorStation">SingleTwoDetectorStation (class in sapphire.clusters)</a>
+  </dt>
+
+      
+  <dt><a href="analysis/direction_reconstruction.html#sapphire.analysis.direction_reconstruction.SphereAlgorithm">SphereAlgorithm (class in sapphire.analysis.direction_reconstruction)</a>
   </dt>
 
       
@@ -2037,6 +2070,22 @@
   </dl></td>
 </tr></table>
 
+<h2 id="Z">Z</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="transformations/celestial.html#sapphire.transformations.celestial.zenithazimuth_to_equatorial">zenithazimuth_to_equatorial() (in module sapphire.transformations.celestial)</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="transformations/celestial.html#sapphire.transformations.celestial.zenithazimuth_to_horizontal">zenithazimuth_to_horizontal() (in module sapphire.transformations.celestial)</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
 
 
           </div>
@@ -2081,7 +2130,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
     </div>
   </body>
 </html>

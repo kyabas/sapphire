@@ -61,19 +61,69 @@
   <div class="section" id="module-sapphire.analysis.core_reconstruction">
 <span id="reconstruction-of-eas-core-and-size"></span><h1>3.1.3. Reconstruction of EAS core and size<a class="headerlink" href="#module-sapphire.analysis.core_reconstruction" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="sapphire.analysis.core_reconstruction.CorePositionCirclesSolver">
-<em class="property">class </em><tt class="descclassname">sapphire.analysis.core_reconstruction.</tt><tt class="descname">CorePositionCirclesSolver</tt><big>(</big><em>ldf</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CorePositionCirclesSolver" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
-<dt id="sapphire.analysis.core_reconstruction.CorePositionCirclesSolver.calculate_chi_squared_for_xy">
-<tt class="descname">calculate_chi_squared_for_xy</tt><big>(</big><em>(guess_x</em>, <em>guess_y)</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CorePositionCirclesSolver.calculate_chi_squared_for_xy" title="Permalink to this definition">¶</a></dt>
+<dt id="sapphire.analysis.core_reconstruction.CoreReconstruction">
+<em class="property">class </em><tt class="descclassname">sapphire.analysis.core_reconstruction.</tt><tt class="descname">CoreReconstruction</tt><big>(</big><em>data</em>, <em>stations</em>, <em>results_group=None</em>, <em>solver=None</em>, <em>N=None</em>, <em>overwrite=False</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CoreReconstruction" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="sapphire.analysis.core_reconstruction.CoreReconstruction.reconstruction_description">
+<tt class="descname">reconstruction_description</tt><em class="property"> = {'reconstructed_core_pos': Float32Col(shape=(2,), dflt=0.0, pos=None), 'core_chisq': Float32Col(shape=(), dflt=0.0, pos=None), 'N': UInt8Col(shape=(), dflt=0, pos=None), 'min_n134': Float32Col(shape=(), dflt=0.0, pos=None), 'reconstructed_shower_size': Float32Col(shape=(), dflt=0.0, pos=None), 'coinc_id': UInt32Col(shape=(), dflt=0, pos=None)}</em><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CoreReconstruction.reconstruction_description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.core_reconstruction.CoreReconstruction.create_empty_output_table">
+<tt class="descname">create_empty_output_table</tt><big>(</big><em>group_path</em>, <em>overwrite=False</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CoreReconstruction.create_empty_output_table" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.core_reconstruction.CoreReconstruction.store_reconstructed_coincidence">
+<tt class="descname">store_reconstructed_coincidence</tt><big>(</big><em>coincidence</em>, <em>reconstructed_core_x</em>, <em>reconstructed_core_y</em>, <em>reconstructed_shower_size</em>, <em>chisq</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CoreReconstruction.store_reconstructed_coincidence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.core_reconstruction.CoreReconstruction.reconstruct_core_positions">
+<tt class="descname">reconstruct_core_positions</tt><big>(</big><em>source</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CoreReconstruction.reconstruct_core_positions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.core_reconstruction.CoreReconstruction.reconstruct_core_position">
+<tt class="descname">reconstruct_core_position</tt><big>(</big><em>coincidence</em>, <em>startpos=None</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CoreReconstruction.reconstruct_core_position" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.core_reconstruction.CoreReconstruction.get_events_from_coincidence">
+<tt class="descname">get_events_from_coincidence</tt><big>(</big><em>coincidence</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CoreReconstruction.get_events_from_coincidence" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
-<dt id="sapphire.analysis.core_reconstruction.CorePositionCirclesSolverWithoutNullMeasurements">
-<em class="property">class </em><tt class="descclassname">sapphire.analysis.core_reconstruction.</tt><tt class="descname">CorePositionCirclesSolverWithoutNullMeasurements</tt><big>(</big><em>ldf</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CorePositionCirclesSolverWithoutNullMeasurements" title="Permalink to this definition">¶</a></dt>
+<dt id="sapphire.analysis.core_reconstruction.PlotCoreReconstruction">
+<em class="property">class </em><tt class="descclassname">sapphire.analysis.core_reconstruction.</tt><tt class="descname">PlotCoreReconstruction</tt><big>(</big><em>data</em>, <em>stations</em>, <em>results_group=None</em>, <em>solver=None</em>, <em>N=None</em>, <em>overwrite=False</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.PlotCoreReconstruction" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="sapphire.analysis.core_reconstruction.PlotCoreReconstruction.plot_reconstruct_core_position">
+<tt class="descname">plot_reconstruct_core_position</tt><big>(</big><em>source</em>, <em>coincidence_idx</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.PlotCoreReconstruction.plot_reconstruct_core_position" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.core_reconstruction.PlotCoreReconstruction.get_coincidence_with_multiplicity">
+<tt class="descname">get_coincidence_with_multiplicity</tt><big>(</big><em>index</em>, <em>multiplicity</em>, <em>num_detectors</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.PlotCoreReconstruction.get_coincidence_with_multiplicity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.core_reconstruction.PlotCoreReconstruction.draw_cluster">
+<tt class="descname">draw_cluster</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.PlotCoreReconstruction.draw_cluster" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.core_reconstruction.PlotCoreReconstruction.plot_coincidence_twice">
+<tt class="descname">plot_coincidence_twice</tt><big>(</big><em>index=0</em>, <em>multiplicity=3</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.PlotCoreReconstruction.plot_coincidence_twice" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.core_reconstruction.PlotCoreReconstruction.plot_coincidence">
+<tt class="descname">plot_coincidence</tt><big>(</big><em>index=0</em>, <em>multiplicity=3</em>, <em>use_detectors=False</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.PlotCoreReconstruction.plot_coincidence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
 
 <dl class="class">
 <dt id="sapphire.analysis.core_reconstruction.CorePositionSolver">
@@ -84,13 +134,18 @@
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="sapphire.analysis.core_reconstruction.CorePositionSolver.calculate_chi_squared_for_xy">
-<tt class="descname">calculate_chi_squared_for_xy</tt><big>(</big><em>(guess_x</em>, <em>guess_y)</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CorePositionSolver.calculate_chi_squared_for_xy" title="Permalink to this definition">¶</a></dt>
+<dt id="sapphire.analysis.core_reconstruction.CorePositionSolver.reset_measurements">
+<tt class="descname">reset_measurements</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CorePositionSolver.reset_measurements" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="sapphire.analysis.core_reconstruction.CorePositionSolver.get_center_of_mass_of_measurements">
-<tt class="descname">get_center_of_mass_of_measurements</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CorePositionSolver.get_center_of_mass_of_measurements" title="Permalink to this definition">¶</a></dt>
+<dt id="sapphire.analysis.core_reconstruction.CorePositionSolver.optimize_core_position">
+<tt class="descname">optimize_core_position</tt><big>(</big><em>x0</em>, <em>y0</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CorePositionSolver.optimize_core_position" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.core_reconstruction.CorePositionSolver.calculate_chi_squared_for_xy">
+<tt class="descname">calculate_chi_squared_for_xy</tt><big>(</big><em>(guess_x</em>, <em>guess_y)</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CorePositionSolver.calculate_chi_squared_for_xy" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -104,13 +159,8 @@
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="sapphire.analysis.core_reconstruction.CorePositionSolver.optimize_core_position">
-<tt class="descname">optimize_core_position</tt><big>(</big><em>x0</em>, <em>y0</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CorePositionSolver.optimize_core_position" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="sapphire.analysis.core_reconstruction.CorePositionSolver.reset_measurements">
-<tt class="descname">reset_measurements</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CorePositionSolver.reset_measurements" title="Permalink to this definition">¶</a></dt>
+<dt id="sapphire.analysis.core_reconstruction.CorePositionSolver.get_center_of_mass_of_measurements">
+<tt class="descname">get_center_of_mass_of_measurements</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CorePositionSolver.get_center_of_mass_of_measurements" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -126,79 +176,29 @@
 </dd></dl>
 
 <dl class="class">
-<dt id="sapphire.analysis.core_reconstruction.CoreReconstruction">
-<em class="property">class </em><tt class="descclassname">sapphire.analysis.core_reconstruction.</tt><tt class="descname">CoreReconstruction</tt><big>(</big><em>data</em>, <em>stations</em>, <em>results_group=None</em>, <em>solver=None</em>, <em>N=None</em>, <em>overwrite=False</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CoreReconstruction" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
-<dt id="sapphire.analysis.core_reconstruction.CoreReconstruction.create_empty_output_table">
-<tt class="descname">create_empty_output_table</tt><big>(</big><em>group_path</em>, <em>overwrite=False</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CoreReconstruction.create_empty_output_table" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="sapphire.analysis.core_reconstruction.CoreReconstruction.get_events_from_coincidence">
-<tt class="descname">get_events_from_coincidence</tt><big>(</big><em>coincidence</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CoreReconstruction.get_events_from_coincidence" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="sapphire.analysis.core_reconstruction.CoreReconstruction.reconstruct_core_position">
-<tt class="descname">reconstruct_core_position</tt><big>(</big><em>coincidence</em>, <em>startpos=None</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CoreReconstruction.reconstruct_core_position" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="sapphire.analysis.core_reconstruction.CoreReconstruction.reconstruct_core_positions">
-<tt class="descname">reconstruct_core_positions</tt><big>(</big><em>source</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CoreReconstruction.reconstruct_core_positions" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="sapphire.analysis.core_reconstruction.CoreReconstruction.reconstruction_description">
-<tt class="descname">reconstruction_description</tt><em class="property"> = {'reconstructed_core_pos': Float32Col(shape=(2,), dflt=0.0, pos=None), 'core_chisq': Float32Col(shape=(), dflt=0.0, pos=None), 'N': UInt8Col(shape=(), dflt=0, pos=None), 'min_n134': Float32Col(shape=(), dflt=0.0, pos=None), 'reconstructed_shower_size': Float32Col(shape=(), dflt=0.0, pos=None), 'coinc_id': UInt32Col(shape=(), dflt=0, pos=None)}</em><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CoreReconstruction.reconstruction_description" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="sapphire.analysis.core_reconstruction.CoreReconstruction.store_reconstructed_coincidence">
-<tt class="descname">store_reconstructed_coincidence</tt><big>(</big><em>coincidence</em>, <em>reconstructed_core_x</em>, <em>reconstructed_core_y</em>, <em>reconstructed_shower_size</em>, <em>chisq</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CoreReconstruction.store_reconstructed_coincidence" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="sapphire.analysis.core_reconstruction.OverdeterminedCorePositionCirclesSolver">
-<em class="property">class </em><tt class="descclassname">sapphire.analysis.core_reconstruction.</tt><tt class="descname">OverdeterminedCorePositionCirclesSolver</tt><big>(</big><em>ldf</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.OverdeterminedCorePositionCirclesSolver" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="class">
 <dt id="sapphire.analysis.core_reconstruction.OverdeterminedCorePositionSolver">
 <em class="property">class </em><tt class="descclassname">sapphire.analysis.core_reconstruction.</tt><tt class="descname">OverdeterminedCorePositionSolver</tt><big>(</big><em>ldf</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.OverdeterminedCorePositionSolver" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="class">
-<dt id="sapphire.analysis.core_reconstruction.PlotCoreReconstruction">
-<em class="property">class </em><tt class="descclassname">sapphire.analysis.core_reconstruction.</tt><tt class="descname">PlotCoreReconstruction</tt><big>(</big><em>data</em>, <em>stations</em>, <em>results_group=None</em>, <em>solver=None</em>, <em>N=None</em>, <em>overwrite=False</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.PlotCoreReconstruction" title="Permalink to this definition">¶</a></dt>
+<dt id="sapphire.analysis.core_reconstruction.CorePositionCirclesSolver">
+<em class="property">class </em><tt class="descclassname">sapphire.analysis.core_reconstruction.</tt><tt class="descname">CorePositionCirclesSolver</tt><big>(</big><em>ldf</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CorePositionCirclesSolver" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
-<dt id="sapphire.analysis.core_reconstruction.PlotCoreReconstruction.draw_cluster">
-<tt class="descname">draw_cluster</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.PlotCoreReconstruction.draw_cluster" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="sapphire.analysis.core_reconstruction.PlotCoreReconstruction.get_coincidence_with_multiplicity">
-<tt class="descname">get_coincidence_with_multiplicity</tt><big>(</big><em>index</em>, <em>multiplicity</em>, <em>num_detectors</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.PlotCoreReconstruction.get_coincidence_with_multiplicity" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="sapphire.analysis.core_reconstruction.PlotCoreReconstruction.plot_coincidence">
-<tt class="descname">plot_coincidence</tt><big>(</big><em>index=0</em>, <em>multiplicity=3</em>, <em>use_detectors=False</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.PlotCoreReconstruction.plot_coincidence" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="sapphire.analysis.core_reconstruction.PlotCoreReconstruction.plot_coincidence_twice">
-<tt class="descname">plot_coincidence_twice</tt><big>(</big><em>index=0</em>, <em>multiplicity=3</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.PlotCoreReconstruction.plot_coincidence_twice" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="sapphire.analysis.core_reconstruction.PlotCoreReconstruction.plot_reconstruct_core_position">
-<tt class="descname">plot_reconstruct_core_position</tt><big>(</big><em>source</em>, <em>coincidence_idx</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.PlotCoreReconstruction.plot_reconstruct_core_position" title="Permalink to this definition">¶</a></dt>
+<dt id="sapphire.analysis.core_reconstruction.CorePositionCirclesSolver.calculate_chi_squared_for_xy">
+<tt class="descname">calculate_chi_squared_for_xy</tt><big>(</big><em>(guess_x</em>, <em>guess_y)</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CorePositionCirclesSolver.calculate_chi_squared_for_xy" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
+
+<dl class="class">
+<dt id="sapphire.analysis.core_reconstruction.CorePositionCirclesSolverWithoutNullMeasurements">
+<em class="property">class </em><tt class="descclassname">sapphire.analysis.core_reconstruction.</tt><tt class="descname">CorePositionCirclesSolverWithoutNullMeasurements</tt><big>(</big><em>ldf</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CorePositionCirclesSolverWithoutNullMeasurements" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="sapphire.analysis.core_reconstruction.OverdeterminedCorePositionCirclesSolver">
+<em class="property">class </em><tt class="descclassname">sapphire.analysis.core_reconstruction.</tt><tt class="descname">OverdeterminedCorePositionCirclesSolver</tt><big>(</big><em>ldf</em><big>)</big><a class="headerlink" href="#sapphire.analysis.core_reconstruction.OverdeterminedCorePositionCirclesSolver" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </div>
 
@@ -261,7 +261,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
     </div>
   </body>
 </html>

@@ -103,6 +103,25 @@ number of counts.</li>
 </tbody>
 </table>
 <dl class="method">
+<dt id="sapphire.analysis.find_mpv.FindMostProbableValueInSpectrum.find_mpv">
+<tt class="descname">find_mpv</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.analysis.find_mpv.FindMostProbableValueInSpectrum.find_mpv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the most probable value.</p>
+<p>First perform a first guess, then use that value to fit the MIP
+peak.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return mpv:</th><td class="field-body">best guess of the most probable value</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Return boolean is_fitted:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">indicates if the fit was successful.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="sapphire.analysis.find_mpv.FindMostProbableValueInSpectrum.find_first_guess_mpv">
 <tt class="descname">find_first_guess_mpv</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.analysis.find_mpv.FindMostProbableValueInSpectrum.find_first_guess_mpv" title="Permalink to this definition">¶</a></dt>
 <dd><p>First guess of most probable value.</p>
@@ -125,25 +144,6 @@ this to be the approximate location of the MIP peak.</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns mpv:</th><td class="field-body">first guess of the most probable value</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="sapphire.analysis.find_mpv.FindMostProbableValueInSpectrum.find_mpv">
-<tt class="descname">find_mpv</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.analysis.find_mpv.FindMostProbableValueInSpectrum.find_mpv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Find the most probable value.</p>
-<p>First perform a first guess, then use that value to fit the MIP
-peak.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return mpv:</th><td class="field-body">best guess of the most probable value</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Return boolean is_fitted:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">indicates if the fit was successful.</td>
 </tr>
 </tbody>
 </table>
@@ -180,6 +180,18 @@ first_guess]</li>
 </dd></dl>
 
 <dl class="function">
+<dt id="sapphire.analysis.find_mpv.main">
+<tt class="descclassname">sapphire.analysis.find_mpv.</tt><tt class="descname">main</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.analysis.find_mpv.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Demo the MPV finder with actual data.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.analysis.find_mpv.get_station_ids_with_data">
+<tt class="descclassname">sapphire.analysis.find_mpv.</tt><tt class="descname">get_station_ids_with_data</tt><big>(</big><em>date</em><big>)</big><a class="headerlink" href="#sapphire.analysis.find_mpv.get_station_ids_with_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the station ids having data on this day.</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="sapphire.analysis.find_mpv.get_histogram_for_station_on_date">
 <tt class="descclassname">sapphire.analysis.find_mpv.</tt><tt class="descname">get_histogram_for_station_on_date</tt><big>(</big><em>station_id</em>, <em>date</em><big>)</big><a class="headerlink" href="#sapphire.analysis.find_mpv.get_histogram_for_station_on_date" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a histogram of the spectrum of a station on a date.</p>
@@ -192,18 +204,6 @@ first_guess]</li>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="function">
-<dt id="sapphire.analysis.find_mpv.get_station_ids_with_data">
-<tt class="descclassname">sapphire.analysis.find_mpv.</tt><tt class="descname">get_station_ids_with_data</tt><big>(</big><em>date</em><big>)</big><a class="headerlink" href="#sapphire.analysis.find_mpv.get_station_ids_with_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the station ids having data on this day.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="sapphire.analysis.find_mpv.main">
-<tt class="descclassname">sapphire.analysis.find_mpv.</tt><tt class="descname">main</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.analysis.find_mpv.main" title="Permalink to this definition">¶</a></dt>
-<dd><p>Demo the MPV finder with actual data.</p>
 </dd></dl>
 
 </div>
@@ -267,7 +267,7 @@ first_guess]</li>
     </div>
     <div class="footer">
         &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
     </div>
   </body>
 </html>

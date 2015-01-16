@@ -77,6 +77,94 @@ Simulate just the arrival times.</p>
 </pre></div>
 </div>
 <dl class="class">
+<dt id="sapphire.simulations.showerfront.FlatFrontSimulation">
+<em class="property">class </em><tt class="descclassname">sapphire.simulations.showerfront.</tt><tt class="descname">FlatFrontSimulation</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulation" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="sapphire.simulations.showerfront.FlatFrontSimulation.generate_shower_parameters">
+<tt class="descname">generate_shower_parameters</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulation.generate_shower_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate shower parameters, i.e. azimuth and zenith angles.</p>
+<p>For this groundparticles simulation, only the shower core position
+and rotation angle of the shower are generated.  Do <em>not</em>
+interpret these parameters as the position of the cluster, or the
+rotation of the cluster!  Interpret them as <em>shower</em> parameters.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary with shower parameters: core_pos
+(x, y-tuple) and azimuth.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.simulations.showerfront.FlatFrontSimulation.simulate_detector_response">
+<tt class="descname">simulate_detector_response</tt><big>(</big><em>detector</em>, <em>shower_parameters</em><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulation.simulate_detector_response" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simulate detector response to a shower.</p>
+<p>Return the arrival time of shower front passing the center of
+the detector.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.simulations.showerfront.FlatFrontSimulation.get_arrival_time">
+<tt class="descname">get_arrival_time</tt><big>(</big><em>detector</em>, <em>shower_parameters</em><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulation.get_arrival_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate arrival time</p>
+<p>Assumes a flat shower front and core position to be
+the center of the cluster.</p>
+<p>Equation based on Fokkema2012 sec 4.2, eq 4.9.
+With additions to account for altitude.
+(DOI: 10.3990/1.9789036534383)
+The directional vector c * dt should be negative,
+not apparent in Fokkema2012 fig 4.4.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Shower front arrival time in ns.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.simulations.showerfront.FlatFrontSimulation.simulate_gps">
+<tt class="descname">simulate_gps</tt><big>(</big><em>station_observables</em>, <em>shower_parameters</em>, <em>station</em><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulation.simulate_gps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simulate gps timestamp</p>
+<p>Ensure that all detector arrival times are positive.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sapphire.simulations.showerfront.FlatFrontSimulationWithoutErrors">
+<em class="property">class </em><tt class="descclassname">sapphire.simulations.showerfront.</tt><tt class="descname">FlatFrontSimulationWithoutErrors</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulationWithoutErrors" title="Permalink to this definition">¶</a></dt>
+<dd><p>This simulation does not simulate errors/uncertainties</p>
+<p>This should result in perfect timing for the detectors.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="sapphire.simulations.showerfront.FlatFrontSimulation2D">
+<em class="property">class </em><tt class="descclassname">sapphire.simulations.showerfront.</tt><tt class="descname">FlatFrontSimulation2D</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulation2D" title="Permalink to this definition">¶</a></dt>
+<dd><p>This simualtion ignores detector altitudes.</p>
+<dl class="method">
+<dt id="sapphire.simulations.showerfront.FlatFrontSimulation2D.get_arrival_time">
+<tt class="descname">get_arrival_time</tt><big>(</big><em>detector</em>, <em>shower_parameters</em><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulation2D.get_arrival_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate arrival time</p>
+<p>Ignore detector altitudes</p>
+<p>Equation based on Fokkema2012 sec 4.2, eq 4.9.
+(DOI: 10.3990/1.9789036534383)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sapphire.simulations.showerfront.FlatFrontSimulation2DWithoutErrors">
+<em class="property">class </em><tt class="descclassname">sapphire.simulations.showerfront.</tt><tt class="descname">FlatFrontSimulation2DWithoutErrors</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulation2DWithoutErrors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ignore altitude of detectors and do not simulate errors.</p>
+</dd></dl>
+
+<dl class="class">
 <dt id="sapphire.simulations.showerfront.ConeFrontSimulation">
 <em class="property">class </em><tt class="descclassname">sapphire.simulations.showerfront.</tt><tt class="descname">ConeFrontSimulation</tt><big>(</big><em>max_core_distance</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.ConeFrontSimulation" title="Permalink to this definition">¶</a></dt>
 <dd><p>This simulation uses a cone shaped shower front.</p>
@@ -105,22 +193,6 @@ The opening angle of the cone is given in the init</p>
 </tbody>
 </table>
 <dl class="method">
-<dt id="sapphire.simulations.showerfront.ConeFrontSimulation.front_shape">
-<tt class="descname">front_shape</tt><big>(</big><em>r</em><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.ConeFrontSimulation.front_shape" title="Permalink to this definition">¶</a></dt>
-<dd><p>Delay of the showerfront relative to flat as function of distance</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>r</strong> &#8211; distance to the shower core in shower frame.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">delay time of shower front.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="sapphire.simulations.showerfront.ConeFrontSimulation.generate_shower_parameters">
 <tt class="descname">generate_shower_parameters</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.ConeFrontSimulation.generate_shower_parameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate shower parameters</p>
@@ -143,94 +215,22 @@ and zenith angle of the shower are generated.</p>
 <dd><p>Calculate arrival time</p>
 </dd></dl>
 
-</dd></dl>
-
-<dl class="class">
-<dt id="sapphire.simulations.showerfront.FlatFrontSimulation">
-<em class="property">class </em><tt class="descclassname">sapphire.simulations.showerfront.</tt><tt class="descname">FlatFrontSimulation</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulation" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
-<dt id="sapphire.simulations.showerfront.FlatFrontSimulation.generate_shower_parameters">
-<tt class="descname">generate_shower_parameters</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulation.generate_shower_parameters" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate shower parameters, i.e. azimuth and zenith angles.</p>
-<p>For this groundparticles simulation, only the shower core position
-and rotation angle of the shower are generated.  Do <em>not</em>
-interpret these parameters as the position of the cluster, or the
-rotation of the cluster!  Interpret them as <em>shower</em> parameters.</p>
+<dl class="method">
+<dt id="sapphire.simulations.showerfront.ConeFrontSimulation.front_shape">
+<tt class="descname">front_shape</tt><big>(</big><em>r</em><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.ConeFrontSimulation.front_shape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delay of the showerfront relative to flat as function of distance</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary with shower parameters: core_pos
-(x, y-tuple) and azimuth.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>r</strong> &#8211; distance to the shower core in shower frame.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">delay time of shower front.</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
-<dl class="method">
-<dt id="sapphire.simulations.showerfront.FlatFrontSimulation.get_arrival_time">
-<tt class="descname">get_arrival_time</tt><big>(</big><em>detector</em>, <em>shower_parameters</em><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulation.get_arrival_time" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate arrival time</p>
-<p>Assumes a flat shower front and core position to be
-the center of the cluster.</p>
-<p>Equation based on Fokkema2012 sec 4.2, eq 4.9.
-With additions to account for altitude.
-(DOI: 10.3990/1.9789036534383)
-The directional vector c * dt should be negative,
-not apparent in Fokkema2012 fig 4.4.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Shower front arrival time in ns.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="sapphire.simulations.showerfront.FlatFrontSimulation.simulate_detector_response">
-<tt class="descname">simulate_detector_response</tt><big>(</big><em>detector</em>, <em>shower_parameters</em><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulation.simulate_detector_response" title="Permalink to this definition">¶</a></dt>
-<dd><p>Simulate detector response to a shower.</p>
-<p>Return the arrival time of shower front passing the center of
-the detector.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="sapphire.simulations.showerfront.FlatFrontSimulation.simulate_gps">
-<tt class="descname">simulate_gps</tt><big>(</big><em>station_observables</em>, <em>shower_parameters</em>, <em>station</em><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulation.simulate_gps" title="Permalink to this definition">¶</a></dt>
-<dd><p>Simulate gps timestamp</p>
-<p>Ensure that all detector arrival times are positive.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="sapphire.simulations.showerfront.FlatFrontSimulation2D">
-<em class="property">class </em><tt class="descclassname">sapphire.simulations.showerfront.</tt><tt class="descname">FlatFrontSimulation2D</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulation2D" title="Permalink to this definition">¶</a></dt>
-<dd><p>This simualtion ignores detector altitudes.</p>
-<dl class="method">
-<dt id="sapphire.simulations.showerfront.FlatFrontSimulation2D.get_arrival_time">
-<tt class="descname">get_arrival_time</tt><big>(</big><em>detector</em>, <em>shower_parameters</em><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulation2D.get_arrival_time" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate arrival time</p>
-<p>Ignore detector altitudes</p>
-<p>Equation based on Fokkema2012 sec 4.2, eq 4.9.
-(DOI: 10.3990/1.9789036534383)</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="sapphire.simulations.showerfront.FlatFrontSimulation2DWithoutErrors">
-<em class="property">class </em><tt class="descclassname">sapphire.simulations.showerfront.</tt><tt class="descname">FlatFrontSimulation2DWithoutErrors</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulation2DWithoutErrors" title="Permalink to this definition">¶</a></dt>
-<dd><p>Ignore altitude of detectors and do not simulate errors.</p>
-</dd></dl>
-
-<dl class="class">
-<dt id="sapphire.simulations.showerfront.FlatFrontSimulationWithoutErrors">
-<em class="property">class </em><tt class="descclassname">sapphire.simulations.showerfront.</tt><tt class="descname">FlatFrontSimulationWithoutErrors</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulationWithoutErrors" title="Permalink to this definition">¶</a></dt>
-<dd><p>This simulation does not simulate errors/uncertainties</p>
-<p>This should result in perfect timing for the detectors.</p>
 </dd></dl>
 
 </div>
@@ -294,7 +294,7 @@ the detector.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
     </div>
   </body>
 </html>

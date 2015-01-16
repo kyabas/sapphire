@@ -66,20 +66,6 @@
 <dd><p>CorsikaEvent constructor.</p>
 <p>The user never calls this. The CorsikaFile does.</p>
 <dl class="method">
-<dt id="sapphire.corsika.reader.CorsikaEvent.get_end">
-<tt class="descname">get_end</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.corsika.reader.CorsikaEvent.get_end" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the Event end sub-block</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">an instance of EventEnd</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="sapphire.corsika.reader.CorsikaEvent.get_header">
 <tt class="descname">get_header</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.corsika.reader.CorsikaEvent.get_header" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the Event Header</p>
@@ -88,6 +74,20 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">an instance of EventHeader</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.corsika.reader.CorsikaEvent.get_end">
+<tt class="descname">get_end</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.corsika.reader.CorsikaEvent.get_end" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the Event end sub-block</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">an instance of EventEnd</td>
 </tr>
 </tbody>
 </table>
@@ -122,8 +122,8 @@ all particles at observation levels other than 1.</p>
 <dl class="class">
 <dt id="sapphire.corsika.reader.CorsikaFile">
 <em class="property">class </em><tt class="descclassname">sapphire.corsika.reader.</tt><tt class="descname">CorsikaFile</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#sapphire.corsika.reader.CorsikaFile" title="Permalink to this definition">¶</a></dt>
-<dd><p>Corsika output file handler</p>
-<p>This class will probide an interface for Corsika output files.
+<dd><p>CORSIKA output file handler</p>
+<p>This class will probide an interface for CORSIKA output files.
 Allowing you go get at the events and particles in the file.
 This class is meant for unthinned simulations.</p>
 <p>CorsikaFile constructor</p>
@@ -136,11 +136,6 @@ This class is meant for unthinned simulations.</p>
 </tbody>
 </table>
 <dl class="method">
-<dt id="sapphire.corsika.reader.CorsikaFile.Blocks">
-<tt class="descname">Blocks</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.corsika.reader.CorsikaFile.Blocks" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
 <dt id="sapphire.corsika.reader.CorsikaFile.check">
 <tt class="descname">check</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.corsika.reader.CorsikaFile.check" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check DAT file format</p>
@@ -152,6 +147,28 @@ information: the number of bytes in the block.</p>
 blocks in the file and if the header and end are equal.</p>
 <p>Here would be the place to dynamically check for endiannes and
 field size.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.corsika.reader.CorsikaFile.get_sub_blocks">
+<tt class="descname">get_sub_blocks</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.corsika.reader.CorsikaFile.get_sub_blocks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the sub-blocks in the file.</p>
+<p>Normally one would not need this function but it is here because
+I have used it.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.corsika.reader.CorsikaFile.get_header">
+<tt class="descname">get_header</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.corsika.reader.CorsikaFile.get_header" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the Run header</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">an instance of RunHeader</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -181,33 +198,16 @@ Use it like this:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="sapphire.corsika.reader.CorsikaFile.get_header">
-<tt class="descname">get_header</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.corsika.reader.CorsikaFile.get_header" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the Run header</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">an instance of RunHeader</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="sapphire.corsika.reader.CorsikaFile.get_sub_blocks">
-<tt class="descname">get_sub_blocks</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.corsika.reader.CorsikaFile.get_sub_blocks" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the sub-blocks in the file.</p>
-<p>Normally one would not need this function but it is here because
-I have used it.</p>
-</dd></dl>
+<dt id="sapphire.corsika.reader.CorsikaFile.Blocks">
+<tt class="descname">Blocks</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.corsika.reader.CorsikaFile.Blocks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="sapphire.corsika.reader.CorsikaFileThin">
 <em class="property">class </em><tt class="descclassname">sapphire.corsika.reader.</tt><tt class="descname">CorsikaFileThin</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#sapphire.corsika.reader.CorsikaFileThin" title="Permalink to this definition">¶</a></dt>
-<dd><p>Corsika thinned output file handler</p>
+<dd><p>CORSIKA thinned output file handler</p>
 <p>Same as the unthinned output handler, but with support for
 the different format, particles also have the weight property.
 This class is meant for thinned simulations.</p>
@@ -276,7 +276,7 @@ This class is meant for thinned simulations.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
     </div>
   </body>
 </html>

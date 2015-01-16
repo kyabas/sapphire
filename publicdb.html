@@ -64,6 +64,48 @@
 event data.</p>
 <p>For convenience, you&#8217;ll want the <a class="reference internal" href="#sapphire.publicdb.download_data" title="sapphire.publicdb.download_data"><tt class="xref py py-func docutils literal"><span class="pre">download_data()</span></tt></a> function.</p>
 <dl class="function">
+<dt id="sapphire.publicdb.download_data">
+<tt class="descclassname">sapphire.publicdb.</tt><tt class="descname">download_data</tt><big>(</big><em>file</em>, <em>group</em>, <em>station_id</em>, <em>start</em>, <em>end</em>, <em>get_blobs=False</em><big>)</big><a class="headerlink" href="#sapphire.publicdb.download_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download raw data from the datastore</p>
+<p>This function downloads data from the datastore, using the XML-RPC API
+exposed by the public database.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>file</strong> &#8211; The PyTables datafile handler</li>
+<li><strong>group</strong> &#8211; The PyTables destination group, which need not exist</li>
+<li><strong>station_id</strong> &#8211; The HiSPARC station number for which to get events</li>
+<li><strong>start</strong> &#8211; a datetime instance defining the start of the search
+interval</li>
+<li><strong>end</strong> &#8211; a datetime instance defining the end of the search
+interval</li>
+<li><strong>get_blobs</strong> &#8211; boolean, select whether binary data like traces
+should be fetched</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">tables</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sapphire.publicdb</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="s">&#39;data.h5&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2010</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2010</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sapphire</span><span class="o">.</span><span class="n">publicdb</span><span class="o">.</span><span class="n">download_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s">&#39;/s501&#39;</span><span class="p">,</span> <span class="mi">501</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+<span class="go">INFO:hisparc.publicdb:2010-09-01 00:00:00 None</span>
+<span class="go">INFO:hisparc.publicdb:Getting server data URL (2010-09-01 00:00:00)</span>
+<span class="go">INFO:hisparc.publicdb:Downloading data...</span>
+<span class="go">INFO:hisparc.publicdb:Storing data...</span>
+<span class="go">INFO:hisparc.publicdb:Done.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
 <dt id="sapphire.publicdb.datetimerange">
 <tt class="descclassname">sapphire.publicdb.</tt><tt class="descname">datetimerange</tt><big>(</big><em>start</em>, <em>stop</em><big>)</big><a class="headerlink" href="#sapphire.publicdb.datetimerange" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generator for datetime ranges</p>
@@ -115,48 +157,6 @@ day, it returns a start and stop value.  See example below.</p>
 <span class="go">(datetime.datetime(2010, 1, 4, 0, 0), None)</span>
 <span class="go">(datetime.datetime(2010, 1, 5, 0, 0),</span>
 <span class="go"> datetime.datetime(2010, 1, 5, 13, 0))</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="function">
-<dt id="sapphire.publicdb.download_data">
-<tt class="descclassname">sapphire.publicdb.</tt><tt class="descname">download_data</tt><big>(</big><em>file</em>, <em>group</em>, <em>station_id</em>, <em>start</em>, <em>end</em>, <em>get_blobs=False</em><big>)</big><a class="headerlink" href="#sapphire.publicdb.download_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>Download raw data from the datastore</p>
-<p>This function downloads data from the datastore, using the XML-RPC API
-exposed by the public database.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>file</strong> &#8211; The PyTables datafile handler</li>
-<li><strong>group</strong> &#8211; The PyTables destination group, which need not exist</li>
-<li><strong>station_id</strong> &#8211; The HiSPARC station number for which to get events</li>
-<li><strong>start</strong> &#8211; a datetime instance defining the start of the search
-interval</li>
-<li><strong>end</strong> &#8211; a datetime instance defining the end of the search
-interval</li>
-<li><strong>get_blobs</strong> &#8211; boolean, select whether binary data like traces
-should be fetched</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-<p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">tables</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">datetime</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sapphire.publicdb</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="s">&#39;data.h5&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2010</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2010</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">sapphire</span><span class="o">.</span><span class="n">publicdb</span><span class="o">.</span><span class="n">download_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s">&#39;/s501&#39;</span><span class="p">,</span> <span class="mi">501</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
-<span class="go">INFO:hisparc.publicdb:2010-09-01 00:00:00 None</span>
-<span class="go">INFO:hisparc.publicdb:Getting server data URL (2010-09-01 00:00:00)</span>
-<span class="go">INFO:hisparc.publicdb:Downloading data...</span>
-<span class="go">INFO:hisparc.publicdb:Storing data...</span>
-<span class="go">INFO:hisparc.publicdb:Done.</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -221,7 +221,7 @@ should be fetched</li>
     </div>
     <div class="footer">
         &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
     </div>
   </body>
 </html>

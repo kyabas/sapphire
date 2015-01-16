@@ -78,10 +78,103 @@ with random core positions and azimuth angles.</p>
 </pre></div>
 </div>
 <dl class="class">
+<dt id="sapphire.simulations.groundparticles.GroundParticlesSimulation">
+<em class="property">class </em><tt class="descclassname">sapphire.simulations.groundparticles.</tt><tt class="descname">GroundParticlesSimulation</tt><big>(</big><em>corsikafile_path</em>, <em>max_core_distance</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#sapphire.simulations.groundparticles.GroundParticlesSimulation" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="sapphire.simulations.groundparticles.GroundParticlesSimulation.finish">
+<tt class="descname">finish</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.simulations.groundparticles.GroundParticlesSimulation.finish" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clean-up after simulation</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.simulations.groundparticles.GroundParticlesSimulation.generate_shower_parameters">
+<tt class="descname">generate_shower_parameters</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.simulations.groundparticles.GroundParticlesSimulation.generate_shower_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate shower parameters like core position, energy, etc.</p>
+<p>For this groundparticles simulation, only the shower core position
+and rotation angle of the shower are generated.  Do <em>not</em>
+interpret these parameters as the position of the cluster, or the
+rotation of the cluster!  Interpret them as <em>shower</em> parameters.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary with shower parameters: core_pos
+(x, y-tuple) and azimuth.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.simulations.groundparticles.GroundParticlesSimulation.simulate_detector_response">
+<tt class="descname">simulate_detector_response</tt><big>(</big><em>detector</em>, <em>shower_parameters</em><big>)</big><a class="headerlink" href="#sapphire.simulations.groundparticles.GroundParticlesSimulation.simulate_detector_response" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simulate detector response to a shower.</p>
+<p>Checks if leptons have passed a detector. If so, it returns the number
+of leptons in the detector and the arrival time of the first lepton
+passing the detector.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.simulations.groundparticles.GroundParticlesSimulation.simulate_trigger">
+<tt class="descname">simulate_trigger</tt><big>(</big><em>detector_observables</em><big>)</big><a class="headerlink" href="#sapphire.simulations.groundparticles.GroundParticlesSimulation.simulate_trigger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simulate a trigger response.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if at least 2 detectors detect at least one particle,
+False otherwise.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.simulations.groundparticles.GroundParticlesSimulation.simulate_gps">
+<tt class="descname">simulate_gps</tt><big>(</big><em>station_observables</em>, <em>shower_parameters</em>, <em>station</em><big>)</big><a class="headerlink" href="#sapphire.simulations.groundparticles.GroundParticlesSimulation.simulate_gps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simulate gps timestamp.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.simulations.groundparticles.GroundParticlesSimulation.get_particles_in_detector">
+<tt class="descname">get_particles_in_detector</tt><big>(</big><em>detector</em><big>)</big><a class="headerlink" href="#sapphire.simulations.groundparticles.GroundParticlesSimulation.get_particles_in_detector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get particles that hit a detector.</p>
+<p>Particle ids 2, 3, 5, 6 are electrons and muons,
+id 4 is no longer used (were neutrino&#8217;s).</p>
+<p>The detector is approximated by a square with a surface of 0.5
+square meter which is <em>not</em> correctly rotated.  In fact, during
+the simulation, the rotation of the detector is undefined.  This
+is faster than a more thorough implementation.</p>
+<p><em>Detector height is ignored!</em></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>detector</strong> &#8211; detector for which to get particles.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="sapphire.simulations.groundparticles.DetectorBoundarySimulation">
 <em class="property">class </em><tt class="descclassname">sapphire.simulations.groundparticles.</tt><tt class="descname">DetectorBoundarySimulation</tt><big>(</big><em>corsikafile_path</em>, <em>max_core_distance</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#sapphire.simulations.groundparticles.DetectorBoundarySimulation" title="Permalink to this definition">¶</a></dt>
 <dd><p>More accuratly simulate the detection area of the detectors.</p>
 <p>This requires a slightly more complex query which is a bit slower.</p>
+<dl class="method">
+<dt id="sapphire.simulations.groundparticles.DetectorBoundarySimulation.get_particles_in_detector">
+<tt class="descname">get_particles_in_detector</tt><big>(</big><em>detector</em><big>)</big><a class="headerlink" href="#sapphire.simulations.groundparticles.DetectorBoundarySimulation.get_particles_in_detector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simulate the detector detection area accurately.</p>
+<p>First particles are filtered to see which fall inside a
+non-rotated square box around the detector (i.e. sides of 1.2m).
+For the remaining particles a more accurate query is used to see
+which actually hit the detector. The advantage of using the
+square is that column indexes can be used, which may speed up
+queries.</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="sapphire.simulations.groundparticles.DetectorBoundarySimulation.get_line_boundary_eqs">
 <tt class="descname">get_line_boundary_eqs</tt><big>(</big><em>p0</em>, <em>p1</em>, <em>p2</em><big>)</big><a class="headerlink" href="#sapphire.simulations.groundparticles.DetectorBoundarySimulation.get_line_boundary_eqs" title="Permalink to this definition">¶</a></dt>
@@ -115,107 +208,6 @@ value1 &lt; equation &lt; value2 are between the parallel lines</p>
 </div>
 </dd></dl>
 
-<dl class="method">
-<dt id="sapphire.simulations.groundparticles.DetectorBoundarySimulation.get_particles_in_detector">
-<tt class="descname">get_particles_in_detector</tt><big>(</big><em>detector</em><big>)</big><a class="headerlink" href="#sapphire.simulations.groundparticles.DetectorBoundarySimulation.get_particles_in_detector" title="Permalink to this definition">¶</a></dt>
-<dd><p>Simulate the detector detection area accurately.</p>
-<p>First particles are filtered to see which fall inside a
-non-rotated square box around the detector (i.e. sides of 1.2m).
-For the remaining particles a more accurate query is used to see
-which actually hit the detector. The advantage of using the
-square is that column indexes can be used, which may speed up
-queries.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="sapphire.simulations.groundparticles.GroundParticlesSimulation">
-<em class="property">class </em><tt class="descclassname">sapphire.simulations.groundparticles.</tt><tt class="descname">GroundParticlesSimulation</tt><big>(</big><em>corsikafile_path</em>, <em>max_core_distance</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#sapphire.simulations.groundparticles.GroundParticlesSimulation" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
-<dt id="sapphire.simulations.groundparticles.GroundParticlesSimulation.finish">
-<tt class="descname">finish</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.simulations.groundparticles.GroundParticlesSimulation.finish" title="Permalink to this definition">¶</a></dt>
-<dd><p>Clean-up after simulation</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="sapphire.simulations.groundparticles.GroundParticlesSimulation.generate_shower_parameters">
-<tt class="descname">generate_shower_parameters</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.simulations.groundparticles.GroundParticlesSimulation.generate_shower_parameters" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate shower parameters like core position, energy, etc.</p>
-<p>For this groundparticles simulation, only the shower core position
-and rotation angle of the shower are generated.  Do <em>not</em>
-interpret these parameters as the position of the cluster, or the
-rotation of the cluster!  Interpret them as <em>shower</em> parameters.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary with shower parameters: core_pos
-(x, y-tuple) and azimuth.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="sapphire.simulations.groundparticles.GroundParticlesSimulation.get_particles_in_detector">
-<tt class="descname">get_particles_in_detector</tt><big>(</big><em>detector</em><big>)</big><a class="headerlink" href="#sapphire.simulations.groundparticles.GroundParticlesSimulation.get_particles_in_detector" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get particles that hit a detector.</p>
-<p>Particle ids 2, 3, 5, 6 are electrons and muons,
-id 4 is no longer used (were neutrino&#8217;s).</p>
-<p>The detector is approximated by a square with a surface of 0.5
-square meter which is <em>not</em> correctly rotated.  In fact, during
-the simulation, the rotation of the detector is undefined.  This
-is faster than a more thorough implementation.</p>
-<p><em>Detector height is ignored!</em></p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>detector</strong> &#8211; detector for which to get particles.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="sapphire.simulations.groundparticles.GroundParticlesSimulation.simulate_detector_response">
-<tt class="descname">simulate_detector_response</tt><big>(</big><em>detector</em>, <em>shower_parameters</em><big>)</big><a class="headerlink" href="#sapphire.simulations.groundparticles.GroundParticlesSimulation.simulate_detector_response" title="Permalink to this definition">¶</a></dt>
-<dd><p>Simulate detector response to a shower.</p>
-<p>Checks if leptons have passed a detector. If so, it returns the number
-of leptons in the detector and the arrival time of the first lepton
-passing the detector.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="sapphire.simulations.groundparticles.GroundParticlesSimulation.simulate_gps">
-<tt class="descname">simulate_gps</tt><big>(</big><em>station_observables</em>, <em>shower_parameters</em>, <em>station</em><big>)</big><a class="headerlink" href="#sapphire.simulations.groundparticles.GroundParticlesSimulation.simulate_gps" title="Permalink to this definition">¶</a></dt>
-<dd><p>Simulate gps timestamp.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="sapphire.simulations.groundparticles.GroundParticlesSimulation.simulate_trigger">
-<tt class="descname">simulate_trigger</tt><big>(</big><em>detector_observables</em><big>)</big><a class="headerlink" href="#sapphire.simulations.groundparticles.GroundParticlesSimulation.simulate_trigger" title="Permalink to this definition">¶</a></dt>
-<dd><p>Simulate a trigger response.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if at least 2 detectors detect at least one particle,
-False otherwise.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="sapphire.simulations.groundparticles.GroundParticlesSimulationWithoutErrors">
-<em class="property">class </em><tt class="descclassname">sapphire.simulations.groundparticles.</tt><tt class="descname">GroundParticlesSimulationWithoutErrors</tt><big>(</big><em>corsikafile_path</em>, <em>max_core_distance</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#sapphire.simulations.groundparticles.GroundParticlesSimulationWithoutErrors" title="Permalink to this definition">¶</a></dt>
-<dd><p>This simulation does not simulate errors/uncertainties</p>
-<p>This results in perfect timing (first particle through detector)
-and particle counting for the detectors.</p>
 </dd></dl>
 
 <dl class="class">
@@ -228,6 +220,14 @@ and particle counting for the detectors.</p>
 <dd><p>A mip for a mip, count number of particles in a detector.</p>
 </dd></dl>
 
+</dd></dl>
+
+<dl class="class">
+<dt id="sapphire.simulations.groundparticles.GroundParticlesSimulationWithoutErrors">
+<em class="property">class </em><tt class="descclassname">sapphire.simulations.groundparticles.</tt><tt class="descname">GroundParticlesSimulationWithoutErrors</tt><big>(</big><em>corsikafile_path</em>, <em>max_core_distance</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#sapphire.simulations.groundparticles.GroundParticlesSimulationWithoutErrors" title="Permalink to this definition">¶</a></dt>
+<dd><p>This simulation does not simulate errors/uncertainties</p>
+<p>This results in perfect timing (first particle through detector)
+and particle counting for the detectors.</p>
 </dd></dl>
 
 </div>
@@ -291,7 +291,7 @@ and particle counting for the detectors.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
     </div>
   </body>
 </html>
