@@ -157,9 +157,8 @@ phi as given by Fokkema2012 eq 4.13.</p>
 <em class="property">class </em><tt class="descclassname">sapphire.analysis.direction_reconstruction.</tt><tt class="descname">DirectAlgorithmCartesian2D</tt><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithmCartesian2D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct angles using direct analytical formula.</p>
 <p>This implements the equations derived in Montanus2014.
-&#8220;Direction reconstruction of cosmic air showers with</p>
-<blockquote>
-<div>detectorstations at different altitudes&#8221;</div></blockquote>
+&#8220;Direction reconstruction of cosmic air showers with
+detectorstations at different altitudes&#8221;</p>
 <p>Here the 2D version is used, assuming each detector is at the same
 altitude.</p>
 <dl class="classmethod">
@@ -214,9 +213,8 @@ phi as given by Montanus2014 eq 26.</p>
 <em class="property">class </em><tt class="descclassname">sapphire.analysis.direction_reconstruction.</tt><tt class="descname">DirectAlgorithmCartesian3D</tt><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithmCartesian3D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct angles using direct analytical formula.</p>
 <p>This implements the equations derived in Montanus2014.
-&#8220;Direction reconstruction of cosmic air showers with</p>
-<blockquote>
-<div>detectorstations at different altitudes&#8221;</div></blockquote>
+&#8220;Direction reconstruction of cosmic air showers with
+detectorstations at different altitudes&#8221;</p>
 <p>Here the 3D version is used, assuming each detector is at the same
 altitude.</p>
 <dl class="classmethod">
@@ -409,10 +407,9 @@ phi as given by Montanus2014 eq 22.</p>
 <em class="property">class </em><tt class="descclassname">sapphire.analysis.direction_reconstruction.</tt><tt class="descname">RegressionAlgorithm</tt><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.RegressionAlgorithm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct angles using an analytical regression formula.</p>
 <p>This implements the equations as for ISVHECRI (Montanus 2014).
-&#8220;Direction reconstruction of cosmic air showers with</p>
-<blockquote>
-<div>three or more detectorstations in a horizontal (for the
-moment) plane&#8221;</div></blockquote>
+&#8220;Direction reconstruction of cosmic air showers with
+three or more detectorstations in a horizontal (for the
+moment) plane&#8221;</p>
 <dl class="classmethod">
 <dt id="sapphire.analysis.direction_reconstruction.RegressionAlgorithm.reconstruct_common">
 <em class="property">classmethod </em><tt class="descname">reconstruct_common</tt><big>(</big><em>t</em>, <em>x</em>, <em>y</em>, <em>z=None</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.RegressionAlgorithm.reconstruct_common" title="Permalink to this definition">¶</a></dt>
@@ -469,9 +466,8 @@ phi as derived by Montanus2014.</p>
 <em class="property">class </em><tt class="descclassname">sapphire.analysis.direction_reconstruction.</tt><tt class="descname">RegressionAlgorithm3D</tt><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.RegressionAlgorithm3D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct angles by iteratively applying a regression formula.</p>
 <p>This implements the equations as recently derived (Montanus 2014).
-&#8220;Direction reconstruction of cosmic air showers with</p>
-<blockquote>
-<div>three or more detectorstations at arbitrary altitudes&#8221;</div></blockquote>
+&#8220;Direction reconstruction of cosmic air showers with
+three or more detectorstations at arbitrary altitudes&#8221;</p>
 <dl class="classmethod">
 <dt id="sapphire.analysis.direction_reconstruction.RegressionAlgorithm3D.reconstruct_common">
 <em class="property">classmethod </em><tt class="descname">reconstruct_common</tt><big>(</big><em>t</em>, <em>x</em>, <em>y</em>, <em>z=None</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.RegressionAlgorithm3D.reconstruct_common" title="Permalink to this definition">¶</a></dt>
@@ -714,14 +710,17 @@ So coincidences with more than three events are allowed.</p>
 <dt id="sapphire.analysis.direction_reconstruction.logic_checks">
 <tt class="descclassname">sapphire.analysis.direction_reconstruction.</tt><tt class="descname">logic_checks</tt><big>(</big><em>t</em>, <em>x</em>, <em>y</em>, <em>z</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.logic_checks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check for impossible reconstructions</p>
-<p>Criteria:
-- No two detectors are at the same position.
-- Time difference between two detections should be less than distance / c.
-- All detectors on a line is bad.</p>
-<p>To fix:
-- Time difference can still be to large in cases where a different</p>
-<blockquote>
-<div>distance becomes relevant.</div></blockquote>
+<p>Criteria:</p>
+<ul class="simple">
+<li>No two detectors are at the same position.</li>
+<li>Time difference between two detections should be less than distance / c.</li>
+<li>All detectors on a line is bad.</li>
+</ul>
+<p>To fix:</p>
+<ul class="simple">
+<li>Time difference can still be to large in cases where a different
+distance becomes relevant.</li>
+</ul>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
