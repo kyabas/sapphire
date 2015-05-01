@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>3.1.1. Query coincidences from a datafile &mdash; SAPPHiRE 0.9 documentation</title>
+    <title>3.1.2. Query coincidences from a datafile &mdash; SAPPHiRE 0.10 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.9',
+        VERSION:     '0.10',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,15 +24,15 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.9 documentation" href="../index.html" />
+    <link rel="top" title="SAPPHiRE 0.10 documentation" href="../index.html" />
     <link rel="up" title="3.1. Data analysis" href="../analysis.html" />
-    <link rel="next" title="3.1.2. Search for coincidences between HiSPARC stations" href="coincidences.html" />
-    <link rel="prev" title="3.1. Data analysis" href="../analysis.html" /> 
+    <link rel="next" title="3.1.3. Search for coincidences between HiSPARC stations" href="coincidences.html" />
+    <link rel="prev" title="3.1.1. Data timing and signal calibration" href="calibration.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -42,32 +42,32 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="coincidences.html" title="3.1.2. Search for coincidences between HiSPARC stations"
+          <a href="coincidences.html" title="3.1.3. Search for coincidences between HiSPARC stations"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../analysis.html" title="3.1. Data analysis"
+          <a href="calibration.html" title="3.1.1. Data timing and signal calibration"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">SAPPHiRE 0.9 documentation</a> &raquo;</li>
-          <li><a href="../sapphire.html" >3. SAPPHiRE Reference</a> &raquo;</li>
-          <li><a href="../analysis.html" accesskey="U">3.1. Data analysis</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.10 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../sapphire.html" >3. SAPPHiRE Reference</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../analysis.html" accesskey="U">3.1. Data analysis</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-sapphire.analysis.coincidence_queries">
-<span id="query-coincidences-from-a-datafile"></span><h1>3.1.1. Query coincidences from a datafile<a class="headerlink" href="#module-sapphire.analysis.coincidence_queries" title="Permalink to this headline">¶</a></h1>
+<span id="query-coincidences-from-a-datafile"></span><h1>3.1.2. Query coincidences from a datafile<a class="headerlink" href="#module-sapphire.analysis.coincidence_queries" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="sapphire.analysis.coincidence_queries.CoincidenceQuery">
-<em class="property">class </em><tt class="descclassname">sapphire.analysis.coincidence_queries.</tt><tt class="descname">CoincidenceQuery</tt><big>(</big><em>data</em>, <em>coincidence_group='/coincidences'</em><big>)</big><a class="headerlink" href="#sapphire.analysis.coincidence_queries.CoincidenceQuery" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.analysis.coincidence_queries.</code><code class="descname">CoincidenceQuery</code><span class="sig-paren">(</span><em>data</em>, <em>coincidence_group='/coincidences'</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.coincidence_queries.CoincidenceQuery" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform queries on an ESD file where coincidences have been analysed.</p>
 <p>Functions in this class build and perform queries to easily filter
 coincidences based on station participation and station
 organization. This assumes coincidences have been analysed using
-<a class="reference internal" href="coincidences.html#sapphire.analysis.coincidences.CoincidencesESD" title="sapphire.analysis.coincidences.CoincidencesESD"><tt class="xref py py-class docutils literal"><span class="pre">sapphire.analysis.coincidences.CoincidencesESD</span></tt></a>.</p>
+<a class="reference internal" href="coincidences.html#sapphire.analysis.coincidences.CoincidencesESD" title="sapphire.analysis.coincidences.CoincidencesESD"><code class="xref py py-class docutils literal"><span class="pre">CoincidencesESD</span></code></a>.</p>
 <p>First initiate the class so it can get the correct tables, then get
 coincidences using one of the functions (all_coincidences, any, all,
 at_least), then get the events for these coincidences using other
@@ -78,7 +78,7 @@ does not occur in the datafile.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">sapphire.analysis.coincidence_queries</span> <span class="kn">import</span> <span class="n">CoincidenceQuery</span>
 
 <span class="n">cq</span> <span class="o">=</span> <span class="n">CoincidenceQuery</span><span class="p">(</span><span class="s">&#39;2013_8_1.h5&#39;</span><span class="p">)</span>
-<span class="n">coincidences</span> <span class="o">=</span> <span class="n">cq</span><span class="o">.</span><span class="n">all</span><span class="p">([</span><span class="mi">501</span><span class="p">,</span> <span class="mi">502</span><span class="p">,</span> <span class="mi">503</span><span class="p">,</span> <span class="mi">504</span><span class="p">])</span>
+<span class="n">coincidences</span> <span class="o">=</span> <span class="n">cq</span><span class="o">.</span><span class="n">all</span><span class="p">([</span><span class="mi">501</span><span class="p">,</span> <span class="mi">502</span><span class="p">,</span> <span class="mi">503</span><span class="p">,</span> <span class="mi">504</span><span class="p">],</span> <span class="n">iterator</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="n">events</span> <span class="o">=</span> <span class="n">cq</span><span class="o">.</span><span class="n">all_events</span><span class="p">(</span><span class="n">coincidences</span><span class="p">)</span>
 <span class="n">specific_events</span> <span class="o">=</span> <span class="n">cq</span><span class="o">.</span><span class="n">events_from_stations</span><span class="p">(</span><span class="n">coincidences</span><span class="p">,</span>
                                           <span class="p">[</span><span class="mi">501</span><span class="p">,</span> <span class="mi">502</span><span class="p">,</span> <span class="mi">503</span><span class="p">,</span> <span class="mi">504</span><span class="p">])</span>
@@ -100,7 +100,7 @@ does not occur in the datafile.</p>
 </table>
 <dl class="method">
 <dt id="sapphire.analysis.coincidence_queries.CoincidenceQuery.finish">
-<tt class="descname">finish</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.analysis.coincidence_queries.CoincidenceQuery.finish" title="Permalink to this definition">¶</a></dt>
+<code class="descname">finish</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.coincidence_queries.CoincidenceQuery.finish" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clean-up after using</p>
 <p>Do not use if you opened the file yourself and still intent to
 use it.</p>
@@ -108,7 +108,7 @@ use it.</p>
 
 <dl class="method">
 <dt id="sapphire.analysis.coincidence_queries.CoincidenceQuery.all_coincidences">
-<tt class="descname">all_coincidences</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.analysis.coincidence_queries.CoincidenceQuery.all_coincidences" title="Permalink to this definition">¶</a></dt>
+<code class="descname">all_coincidences</code><span class="sig-paren">(</span><em>iterator=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.coincidence_queries.CoincidenceQuery.all_coincidences" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get all coincidences</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -122,7 +122,7 @@ use it.</p>
 
 <dl class="method">
 <dt id="sapphire.analysis.coincidence_queries.CoincidenceQuery.any">
-<tt class="descname">any</tt><big>(</big><em>stations</em>, <em>start=None</em>, <em>stop=None</em><big>)</big><a class="headerlink" href="#sapphire.analysis.coincidence_queries.CoincidenceQuery.any" title="Permalink to this definition">¶</a></dt>
+<code class="descname">any</code><span class="sig-paren">(</span><em>stations</em>, <em>start=None</em>, <em>stop=None</em>, <em>iterator=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.coincidence_queries.CoincidenceQuery.any" title="Permalink to this definition">¶</a></dt>
 <dd><p>Filter for coincidences that contain any of the given stations</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -139,7 +139,7 @@ a coincidence.</td>
 
 <dl class="method">
 <dt id="sapphire.analysis.coincidence_queries.CoincidenceQuery.all">
-<tt class="descname">all</tt><big>(</big><em>stations</em>, <em>start=None</em>, <em>stop=None</em><big>)</big><a class="headerlink" href="#sapphire.analysis.coincidence_queries.CoincidenceQuery.all" title="Permalink to this definition">¶</a></dt>
+<code class="descname">all</code><span class="sig-paren">(</span><em>stations</em>, <em>start=None</em>, <em>stop=None</em>, <em>iterator=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.coincidence_queries.CoincidenceQuery.all" title="Permalink to this definition">¶</a></dt>
 <dd><p>Filter for coincidences that contain all of the given stations</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -156,7 +156,7 @@ coincidence.</td>
 
 <dl class="method">
 <dt id="sapphire.analysis.coincidence_queries.CoincidenceQuery.at_least">
-<tt class="descname">at_least</tt><big>(</big><em>stations</em>, <em>n</em>, <em>start=None</em>, <em>stop=None</em><big>)</big><a class="headerlink" href="#sapphire.analysis.coincidence_queries.CoincidenceQuery.at_least" title="Permalink to this definition">¶</a></dt>
+<code class="descname">at_least</code><span class="sig-paren">(</span><em>stations</em>, <em>n</em>, <em>start=None</em>, <em>stop=None</em>, <em>iterator=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.coincidence_queries.CoincidenceQuery.at_least" title="Permalink to this definition">¶</a></dt>
 <dd><p>Filter coincidences to contain at least n of the given stations</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -178,7 +178,7 @@ any combinations need to be in a coincidence.</li>
 
 <dl class="method">
 <dt id="sapphire.analysis.coincidence_queries.CoincidenceQuery.timerange">
-<tt class="descname">timerange</tt><big>(</big><em>start</em>, <em>stop</em><big>)</big><a class="headerlink" href="#sapphire.analysis.coincidence_queries.CoincidenceQuery.timerange" title="Permalink to this definition">¶</a></dt>
+<code class="descname">timerange</code><span class="sig-paren">(</span><em>start</em>, <em>stop</em>, <em>iterator=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.coincidence_queries.CoincidenceQuery.timerange" title="Permalink to this definition">¶</a></dt>
 <dd><p>Query based on timestamps</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -199,7 +199,7 @@ any combinations need to be in a coincidence.</li>
 
 <dl class="method">
 <dt id="sapphire.analysis.coincidence_queries.CoincidenceQuery.perform_query">
-<tt class="descname">perform_query</tt><big>(</big><em>query</em><big>)</big><a class="headerlink" href="#sapphire.analysis.coincidence_queries.CoincidenceQuery.perform_query" title="Permalink to this definition">¶</a></dt>
+<code class="descname">perform_query</code><span class="sig-paren">(</span><em>query</em>, <em>iterator=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.coincidence_queries.CoincidenceQuery.perform_query" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform a query on the coincidences table</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -216,7 +216,7 @@ table.</td>
 
 <dl class="method">
 <dt id="sapphire.analysis.coincidence_queries.CoincidenceQuery.all_events">
-<tt class="descname">all_events</tt><big>(</big><em>coincidences</em>, <em>n=0</em><big>)</big><a class="headerlink" href="#sapphire.analysis.coincidence_queries.CoincidenceQuery.all_events" title="Permalink to this definition">¶</a></dt>
+<code class="descname">all_events</code><span class="sig-paren">(</span><em>coincidences</em>, <em>n=0</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.coincidence_queries.CoincidenceQuery.all_events" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get all events for the given coincidences.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -237,7 +237,7 @@ table.</td>
 
 <dl class="method">
 <dt id="sapphire.analysis.coincidence_queries.CoincidenceQuery.minimum_events_for_coincidence">
-<tt class="descname">minimum_events_for_coincidence</tt><big>(</big><em>coincidences_events</em>, <em>n=2</em><big>)</big><a class="headerlink" href="#sapphire.analysis.coincidence_queries.CoincidenceQuery.minimum_events_for_coincidence" title="Permalink to this definition">¶</a></dt>
+<code class="descname">minimum_events_for_coincidence</code><span class="sig-paren">(</span><em>coincidences_events</em>, <em>n=2</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.coincidence_queries.CoincidenceQuery.minimum_events_for_coincidence" title="Permalink to this definition">¶</a></dt>
 <dd><p>Filter coincidences to only include those with at least n events.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -255,7 +255,7 @@ table.</td>
 
 <dl class="method">
 <dt id="sapphire.analysis.coincidence_queries.CoincidenceQuery.events_from_stations">
-<tt class="descname">events_from_stations</tt><big>(</big><em>coincidences</em>, <em>stations</em>, <em>n=2</em><big>)</big><a class="headerlink" href="#sapphire.analysis.coincidence_queries.CoincidenceQuery.events_from_stations" title="Permalink to this definition">¶</a></dt>
+<code class="descname">events_from_stations</code><span class="sig-paren">(</span><em>coincidences</em>, <em>stations</em>, <em>n=2</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.coincidence_queries.CoincidenceQuery.events_from_stations" title="Permalink to this definition">¶</a></dt>
 <dd><p>Only get events for specific stations for coincidences.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -276,7 +276,7 @@ table.</td>
 
 <dl class="method">
 <dt id="sapphire.analysis.coincidence_queries.CoincidenceQuery.events_in_subcluster">
-<tt class="descname">events_in_subcluster</tt><big>(</big><em>coincidences</em>, <em>subcluster</em>, <em>n=2</em><big>)</big><a class="headerlink" href="#sapphire.analysis.coincidence_queries.CoincidenceQuery.events_in_subcluster" title="Permalink to this definition">¶</a></dt>
+<code class="descname">events_in_subcluster</code><span class="sig-paren">(</span><em>coincidences</em>, <em>subcluster</em>, <em>n=2</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.coincidence_queries.CoincidenceQuery.events_in_subcluster" title="Permalink to this definition">¶</a></dt>
 <dd><p>Filter to only events from stations in a specific subcluster</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -297,7 +297,7 @@ table.</td>
 
 <dl class="method">
 <dt id="sapphire.analysis.coincidence_queries.CoincidenceQuery.events_in_cluster">
-<tt class="descname">events_in_cluster</tt><big>(</big><em>coincidences</em>, <em>cluster</em>, <em>n=2</em><big>)</big><a class="headerlink" href="#sapphire.analysis.coincidence_queries.CoincidenceQuery.events_in_cluster" title="Permalink to this definition">¶</a></dt>
+<code class="descname">events_in_cluster</code><span class="sig-paren">(</span><em>coincidences</em>, <em>cluster</em>, <em>n=2</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.coincidence_queries.CoincidenceQuery.events_in_cluster" title="Permalink to this definition">¶</a></dt>
 <dd><p>Filter to only events from stations in a specific subcluster</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -324,23 +324,25 @@ table.</td>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/header.png" alt="Logo"/>
             </a></p>
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../analysis.html"
-                        title="previous chapter">3.1. Data analysis</a></p>
+  <p class="topless"><a href="calibration.html"
+                        title="previous chapter">3.1.1. Data timing and signal calibration</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="coincidences.html"
-                        title="next chapter">3.1.2. Search for coincidences between HiSPARC stations</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../_sources/analysis/coincidence_queries.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+                        title="next chapter">3.1.3. Search for coincidences between HiSPARC stations</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/analysis/coincidence_queries.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
@@ -357,7 +359,7 @@ table.</td>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -367,19 +369,19 @@ table.</td>
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="coincidences.html" title="3.1.2. Search for coincidences between HiSPARC stations"
+          <a href="coincidences.html" title="3.1.3. Search for coincidences between HiSPARC stations"
              >next</a> |</li>
         <li class="right" >
-          <a href="../analysis.html" title="3.1. Data analysis"
+          <a href="calibration.html" title="3.1.1. Data timing and signal calibration"
              >previous</a> |</li>
-        <li><a href="../index.html">SAPPHiRE 0.9 documentation</a> &raquo;</li>
-          <li><a href="../sapphire.html" >3. SAPPHiRE Reference</a> &raquo;</li>
-          <li><a href="../analysis.html" >3.1. Data analysis</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.10 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../sapphire.html" >3. SAPPHiRE Reference</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../analysis.html" >3.1. Data analysis</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

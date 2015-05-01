@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>3. SAPPHiRE Reference &mdash; SAPPHiRE 0.9 documentation</title>
+    <title>3. SAPPHiRE Reference &mdash; SAPPHiRE 0.10 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.9',
+        VERSION:     '0.10',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,14 +24,14 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.9 documentation" href="index.html" />
+    <link rel="top" title="SAPPHiRE 0.10 documentation" href="index.html" />
     <link rel="next" title="3.1. Data analysis" href="analysis.html" />
     <link rel="prev" title="2. Tutorial" href="tutorial.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -46,14 +46,14 @@
         <li class="right" >
           <a href="tutorial.html" title="2. Tutorial"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">SAPPHiRE 0.9 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.10 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-sapphire">
 <span id="sapphire-reference"></span><h1>3. SAPPHiRE Reference<a class="headerlink" href="#module-sapphire" title="Permalink to this headline">¶</a></h1>
@@ -64,43 +64,45 @@ combination of the old framework and the collection of simulation and
 analysis scripts developed by David Fokkema for his PhD thesis work.</p>
 <p>The following packages and modules are included:</p>
 <dl class="docutils">
-<dt><a class="reference internal" href="analysis.html#module-sapphire.analysis" title="sapphire.analysis"><tt class="xref py py-mod docutils literal"><span class="pre">analysis</span></tt></a></dt>
+<dt><a class="reference internal" href="analysis.html#module-sapphire.analysis" title="sapphire.analysis"><code class="xref py py-mod docutils literal"><span class="pre">analysis</span></code></a></dt>
 <dd>package containing analysis-related modules</dd>
-<dt><a class="reference internal" href="api.html#module-sapphire.api" title="sapphire.api"><tt class="xref py py-mod docutils literal"><span class="pre">api</span></tt></a></dt>
+<dt><a class="reference internal" href="api.html#module-sapphire.api" title="sapphire.api"><code class="xref py py-mod docutils literal"><span class="pre">api</span></code></a></dt>
 <dd>publicdb api interface</dd>
-<dt><a class="reference internal" href="clusters.html#module-sapphire.clusters" title="sapphire.clusters"><tt class="xref py py-mod docutils literal"><span class="pre">clusters</span></tt></a></dt>
+<dt><a class="reference internal" href="clusters.html#module-sapphire.clusters" title="sapphire.clusters"><code class="xref py py-mod docutils literal"><span class="pre">clusters</span></code></a></dt>
 <dd>definitions for HiSPARC detectors, stations and clusters</dd>
-<dt><a class="reference internal" href="corsika.html#module-sapphire.corsika" title="sapphire.corsika"><tt class="xref py py-mod docutils literal"><span class="pre">corsika</span></tt></a></dt>
+<dt><a class="reference internal" href="corsika.html#module-sapphire.corsika" title="sapphire.corsika"><code class="xref py py-mod docutils literal"><span class="pre">corsika</span></code></a></dt>
 <dd>package containing CORSIKA simulation related modules</dd>
-<dt><a class="reference internal" href="esd.html#module-sapphire.esd" title="sapphire.esd"><tt class="xref py py-mod docutils literal"><span class="pre">esd</span></tt></a></dt>
+<dt><a class="reference internal" href="esd.html#module-sapphire.esd" title="sapphire.esd"><code class="xref py py-mod docutils literal"><span class="pre">esd</span></code></a></dt>
 <dd>event summary data access</dd>
-<dt><a class="reference internal" href="kascade.html#module-sapphire.kascade" title="sapphire.kascade"><tt class="xref py py-mod docutils literal"><span class="pre">kascade</span></tt></a></dt>
+<dt><a class="reference internal" href="kascade.html#module-sapphire.kascade" title="sapphire.kascade"><code class="xref py py-mod docutils literal"><span class="pre">kascade</span></code></a></dt>
 <dd>work on KASCADE data</dd>
-<dt><a class="reference internal" href="publicdb.html#module-sapphire.publicdb" title="sapphire.publicdb"><tt class="xref py py-mod docutils literal"><span class="pre">publicdb</span></tt></a></dt>
+<dt><a class="reference internal" href="publicdb.html#module-sapphire.publicdb" title="sapphire.publicdb"><code class="xref py py-mod docutils literal"><span class="pre">publicdb</span></code></a></dt>
 <dd>public data access</dd>
-<dt><a class="reference internal" href="simulations.html#module-sapphire.simulations" title="sapphire.simulations"><tt class="xref py py-mod docutils literal"><span class="pre">simulations</span></tt></a></dt>
+<dt><a class="reference internal" href="simulations.html#module-sapphire.simulations" title="sapphire.simulations"><code class="xref py py-mod docutils literal"><span class="pre">simulations</span></code></a></dt>
 <dd>package containing simulation-related modules</dd>
-<dt><a class="reference internal" href="storage.html#module-sapphire.storage" title="sapphire.storage"><tt class="xref py py-mod docutils literal"><span class="pre">storage</span></tt></a></dt>
+<dt><a class="reference internal" href="storage.html#module-sapphire.storage" title="sapphire.storage"><code class="xref py py-mod docutils literal"><span class="pre">storage</span></code></a></dt>
 <dd>storage-related definitions</dd>
-<dt><a class="reference internal" href="time_util.html#module-sapphire.time_util" title="sapphire.time_util"><tt class="xref py py-mod docutils literal"><span class="pre">time_util</span></tt></a></dt>
+<dt><a class="reference internal" href="time_util.html#module-sapphire.time_util" title="sapphire.time_util"><code class="xref py py-mod docutils literal"><span class="pre">time_util</span></code></a></dt>
 <dd>GPS date/time utility functions</dd>
-<dt><a class="reference internal" href="transformations.html#module-sapphire.transformations" title="sapphire.transformations"><tt class="xref py py-mod docutils literal"><span class="pre">transformations</span></tt></a></dt>
+<dt><a class="reference internal" href="transformations.html#module-sapphire.transformations" title="sapphire.transformations"><code class="xref py py-mod docutils literal"><span class="pre">transformations</span></code></a></dt>
 <dd>transformations between different systems</dd>
-<dt><a class="reference internal" href="utils.html#module-sapphire.utils" title="sapphire.utils"><tt class="xref py py-mod docutils literal"><span class="pre">utils</span></tt></a></dt>
+<dt><a class="reference internal" href="utils.html#module-sapphire.utils" title="sapphire.utils"><code class="xref py py-mod docutils literal"><span class="pre">utils</span></code></a></dt>
 <dd>commonly used functions such as a progressbar</dd>
 </dl>
 <p>Contents:</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="analysis.html">3.1. Data analysis</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="analysis/coincidence_queries.html">3.1.1. Query coincidences from a datafile</a></li>
-<li class="toctree-l2"><a class="reference internal" href="analysis/coincidences.html">3.1.2. Search for coincidences between HiSPARC stations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="analysis/core_reconstruction.html">3.1.3. Reconstruction of EAS core and size</a></li>
-<li class="toctree-l2"><a class="reference internal" href="analysis/direction_reconstruction.html">3.1.4. Reconstruction of EAS direction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="analysis/find_mpv.html">3.1.5. MPV fit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="analysis/landau.html">3.1.6. Landau distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="analysis/process_events.html">3.1.7. Processing of HiSPARC events</a></li>
-<li class="toctree-l2"><a class="reference internal" href="analysis/reconstructions.html">3.1.8. Reconstructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis/calibration.html">3.1.1. Data timing and signal calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis/coincidence_queries.html">3.1.2. Query coincidences from a datafile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis/coincidences.html">3.1.3. Search for coincidences between HiSPARC stations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis/core_reconstruction.html">3.1.4. Reconstruction of EAS core and size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis/direction_reconstruction.html">3.1.5. Reconstruction of EAS direction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis/event_utils.html">3.1.6. Get signal and timing values from events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis/find_mpv.html">3.1.7. MPV fit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis/landau.html">3.1.8. Landau distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis/process_events.html">3.1.9. Processing of HiSPARC events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis/reconstructions.html">3.1.10. Reconstructions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">3.2. HiSPARC API</a></li>
@@ -118,6 +120,7 @@ analysis scripts developed by David Fokkema for his PhD thesis work.</p>
 <li class="toctree-l3"><a class="reference internal" href="corsika/units.html">3.4.2.3. Corsika Units</a></li>
 <li class="toctree-l3"><a class="reference internal" href="corsika/particles.html">3.4.2.4. Corsika Particles</a></li>
 <li class="toctree-l3"><a class="reference internal" href="corsika/qsub.html">3.4.2.5. Submit CORSIKA jobs to Stoomboot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="corsika/qsub.html#module-sapphire.corsika.qsub_corsika">3.4.2.6. Corsika on Stoomboot</a></li>
 </ul>
 </li>
 </ul>
@@ -153,7 +156,7 @@ analysis scripts developed by David Fokkema for his PhD thesis work.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="index.html">
               <img class="logo" src="_static/header.png" alt="Logo"/>
@@ -164,12 +167,14 @@ analysis scripts developed by David Fokkema for his PhD thesis work.</p>
   <h4>Next topic</h4>
   <p class="topless"><a href="analysis.html"
                         title="next chapter">3.1. Data analysis</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/sapphire.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/sapphire.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -186,7 +191,7 @@ analysis scripts developed by David Fokkema for his PhD thesis work.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -201,12 +206,12 @@ analysis scripts developed by David Fokkema for his PhD thesis work.</p>
         <li class="right" >
           <a href="tutorial.html" title="2. Tutorial"
              >previous</a> |</li>
-        <li><a href="index.html">SAPPHiRE 0.9 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.10 documentation</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

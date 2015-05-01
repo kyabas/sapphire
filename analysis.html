@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>3.1. Data analysis &mdash; SAPPHiRE 0.9 documentation</title>
+    <title>3.1. Data analysis &mdash; SAPPHiRE 0.10 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.9',
+        VERSION:     '0.10',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,15 +24,15 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.9 documentation" href="index.html" />
+    <link rel="top" title="SAPPHiRE 0.10 documentation" href="index.html" />
     <link rel="up" title="3. SAPPHiRE Reference" href="sapphire.html" />
-    <link rel="next" title="3.1.1. Query coincidences from a datafile" href="analysis/coincidence_queries.html" />
+    <link rel="next" title="3.1.1. Data timing and signal calibration" href="analysis/calibration.html" />
     <link rel="prev" title="3. SAPPHiRE Reference" href="sapphire.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -42,55 +42,61 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="analysis/coincidence_queries.html" title="3.1.1. Query coincidences from a datafile"
+          <a href="analysis/calibration.html" title="3.1.1. Data timing and signal calibration"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="sapphire.html" title="3. SAPPHiRE Reference"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">SAPPHiRE 0.9 documentation</a> &raquo;</li>
-          <li><a href="sapphire.html" accesskey="U">3. SAPPHiRE Reference</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.10 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="sapphire.html" accesskey="U">3. SAPPHiRE Reference</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-sapphire.analysis">
 <span id="data-analysis"></span><h1>3.1. Data analysis<a class="headerlink" href="#module-sapphire.analysis" title="Permalink to this headline">¶</a></h1>
 <p>Data analysis</p>
 <p>This package contains modules for performing various analysis tasks:</p>
 <dl class="docutils">
-<dt><a class="reference internal" href="analysis/coincidence_queries.html#module-sapphire.analysis.coincidence_queries" title="sapphire.analysis.coincidence_queries"><tt class="xref py py-mod docutils literal"><span class="pre">coincidence_queries</span></tt></a></dt>
+<dt><a class="reference internal" href="analysis/calibration.html#module-sapphire.analysis.calibration" title="sapphire.analysis.calibration"><code class="xref py py-mod docutils literal"><span class="pre">calibration</span></code></a></dt>
+<dd>Determine calibration values</dd>
+<dt><a class="reference internal" href="analysis/coincidence_queries.html#module-sapphire.analysis.coincidence_queries" title="sapphire.analysis.coincidence_queries"><code class="xref py py-mod docutils literal"><span class="pre">coincidence_queries</span></code></a></dt>
 <dd>Filter coincidences analysed with
-<tt class="xref py py-class docutils literal"><span class="pre">CoincidenceESD</span></tt></dd>
-<dt><a class="reference internal" href="analysis/coincidences.html#module-sapphire.analysis.coincidences" title="sapphire.analysis.coincidences"><tt class="xref py py-mod docutils literal"><span class="pre">coincidences</span></tt></a></dt>
+<a class="reference internal" href="analysis/coincidences.html#sapphire.analysis.coincidences.CoincidencesESD" title="sapphire.analysis.coincidences.CoincidencesESD"><code class="xref py py-class docutils literal"><span class="pre">CoincidencesESD</span></code></a></dd>
+<dt><a class="reference internal" href="analysis/coincidences.html#module-sapphire.analysis.coincidences" title="sapphire.analysis.coincidences"><code class="xref py py-mod docutils literal"><span class="pre">coincidences</span></code></a></dt>
 <dd>Search for coincidences between HiSPARC stations</dd>
-<dt><a class="reference internal" href="analysis/core_reconstruction.html#module-sapphire.analysis.core_reconstruction" title="sapphire.analysis.core_reconstruction"><tt class="xref py py-mod docutils literal"><span class="pre">core_reconstruction</span></tt></a></dt>
+<dt><a class="reference internal" href="analysis/core_reconstruction.html#module-sapphire.analysis.core_reconstruction" title="sapphire.analysis.core_reconstruction"><code class="xref py py-mod docutils literal"><span class="pre">core_reconstruction</span></code></a></dt>
 <dd>Shower core and shower size reconstruction</dd>
-<dt><a class="reference internal" href="analysis/direction_reconstruction.html#module-sapphire.analysis.direction_reconstruction" title="sapphire.analysis.direction_reconstruction"><tt class="xref py py-mod docutils literal"><span class="pre">direction_reconstruction</span></tt></a></dt>
+<dt><a class="reference internal" href="analysis/direction_reconstruction.html#module-sapphire.analysis.direction_reconstruction" title="sapphire.analysis.direction_reconstruction"><code class="xref py py-mod docutils literal"><span class="pre">direction_reconstruction</span></code></a></dt>
 <dd>EAS direction reconstruction</dd>
-<dt><a class="reference internal" href="analysis/find_mpv.html#module-sapphire.analysis.find_mpv" title="sapphire.analysis.find_mpv"><tt class="xref py py-mod docutils literal"><span class="pre">find_mpv</span></tt></a></dt>
+<dt><a class="reference internal" href="analysis/event_utils.html#module-sapphire.analysis.event_utils" title="sapphire.analysis.event_utils"><code class="xref py py-mod docutils literal"><span class="pre">event_utils</span></code></a></dt>
+<dd>Module for getting data from processed events</dd>
+<dt><a class="reference internal" href="analysis/find_mpv.html#module-sapphire.analysis.find_mpv" title="sapphire.analysis.find_mpv"><code class="xref py py-mod docutils literal"><span class="pre">find_mpv</span></code></a></dt>
 <dd>Module for finding the MIP peak MPV in pulseintegral data</dd>
-<dt><a class="reference internal" href="analysis/landau.html#module-sapphire.analysis.landau" title="sapphire.analysis.landau"><tt class="xref py py-mod docutils literal"><span class="pre">landau</span></tt></a></dt>
+<dt><a class="reference internal" href="analysis/landau.html#module-sapphire.analysis.landau" title="sapphire.analysis.landau"><code class="xref py py-mod docutils literal"><span class="pre">landau</span></code></a></dt>
 <dd>Landau distribution</dd>
-<dt><a class="reference internal" href="analysis/process_events.html#module-sapphire.analysis.process_events" title="sapphire.analysis.process_events"><tt class="xref py py-mod docutils literal"><span class="pre">process_events</span></tt></a></dt>
+<dt><a class="reference internal" href="analysis/process_events.html#module-sapphire.analysis.process_events" title="sapphire.analysis.process_events"><code class="xref py py-mod docutils literal"><span class="pre">process_events</span></code></a></dt>
 <dd>Process HiSPARC events</dd>
-<dt><a class="reference internal" href="analysis/reconstructions.html#module-sapphire.analysis.reconstructions" title="sapphire.analysis.reconstructions"><tt class="xref py py-mod docutils literal"><span class="pre">reconstructions</span></tt></a></dt>
+<dt><a class="reference internal" href="analysis/reconstructions.html#module-sapphire.analysis.reconstructions" title="sapphire.analysis.reconstructions"><code class="xref py py-mod docutils literal"><span class="pre">reconstructions</span></code></a></dt>
 <dd>Perform shower reconstructions</dd>
 </dl>
 <p>Contents:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="analysis/coincidence_queries.html">3.1.1. Query coincidences from a datafile</a></li>
-<li class="toctree-l1"><a class="reference internal" href="analysis/coincidences.html">3.1.2. Search for coincidences between HiSPARC stations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="analysis/core_reconstruction.html">3.1.3. Reconstruction of EAS core and size</a></li>
-<li class="toctree-l1"><a class="reference internal" href="analysis/direction_reconstruction.html">3.1.4. Reconstruction of EAS direction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="analysis/find_mpv.html">3.1.5. MPV fit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="analysis/landau.html">3.1.6. Landau distribution</a></li>
-<li class="toctree-l1"><a class="reference internal" href="analysis/process_events.html">3.1.7. Processing of HiSPARC events</a></li>
-<li class="toctree-l1"><a class="reference internal" href="analysis/reconstructions.html">3.1.8. Reconstructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis/calibration.html">3.1.1. Data timing and signal calibration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis/coincidence_queries.html">3.1.2. Query coincidences from a datafile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis/coincidences.html">3.1.3. Search for coincidences between HiSPARC stations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis/core_reconstruction.html">3.1.4. Reconstruction of EAS core and size</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis/direction_reconstruction.html">3.1.5. Reconstruction of EAS direction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis/event_utils.html">3.1.6. Get signal and timing values from events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis/find_mpv.html">3.1.7. MPV fit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis/landau.html">3.1.8. Landau distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis/process_events.html">3.1.9. Processing of HiSPARC events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis/reconstructions.html">3.1.10. Reconstructions</a></li>
 </ul>
 </div>
 </div>
@@ -99,7 +105,7 @@
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="index.html">
               <img class="logo" src="_static/header.png" alt="Logo"/>
@@ -108,14 +114,16 @@
   <p class="topless"><a href="sapphire.html"
                         title="previous chapter">3. SAPPHiRE Reference</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="analysis/coincidence_queries.html"
-                        title="next chapter">3.1.1. Query coincidences from a datafile</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/analysis.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <p class="topless"><a href="analysis/calibration.html"
+                        title="next chapter">3.1.1. Data timing and signal calibration</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/analysis.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -132,7 +140,7 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -142,18 +150,18 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="analysis/coincidence_queries.html" title="3.1.1. Query coincidences from a datafile"
+          <a href="analysis/calibration.html" title="3.1.1. Data timing and signal calibration"
              >next</a> |</li>
         <li class="right" >
           <a href="sapphire.html" title="3. SAPPHiRE Reference"
              >previous</a> |</li>
-        <li><a href="index.html">SAPPHiRE 0.9 documentation</a> &raquo;</li>
-          <li><a href="sapphire.html" >3. SAPPHiRE Reference</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.10 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="sapphire.html" >3. SAPPHiRE Reference</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

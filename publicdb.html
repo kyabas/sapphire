@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>3.7. Public data access &mdash; SAPPHiRE 0.9 documentation</title>
+    <title>3.7. Public data access &mdash; SAPPHiRE 0.10 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.9',
+        VERSION:     '0.10',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,15 +24,15 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.9 documentation" href="index.html" />
+    <link rel="top" title="SAPPHiRE 0.10 documentation" href="index.html" />
     <link rel="up" title="3. SAPPHiRE Reference" href="sapphire.html" />
     <link rel="next" title="3.8. Performing simulations" href="simulations.html" />
     <link rel="prev" title="3.6. Working with KASCADE data" href="kascade.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -47,25 +47,25 @@
         <li class="right" >
           <a href="kascade.html" title="3.6. Working with KASCADE data"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">SAPPHiRE 0.9 documentation</a> &raquo;</li>
-          <li><a href="sapphire.html" accesskey="U">3. SAPPHiRE Reference</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.10 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="sapphire.html" accesskey="U">3. SAPPHiRE Reference</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-sapphire.publicdb">
 <span id="public-data-access"></span><h1>3.7. Public data access<a class="headerlink" href="#module-sapphire.publicdb" title="Permalink to this headline">¶</a></h1>
 <p>Fetch events and other data from the public database</p>
 <p>This module enables you to access the public database and even the raw
 event data.</p>
-<p>For convenience, you&#8217;ll want the <a class="reference internal" href="#sapphire.publicdb.download_data" title="sapphire.publicdb.download_data"><tt class="xref py py-func docutils literal"><span class="pre">download_data()</span></tt></a> function.</p>
+<p>For convenience, you&#8217;ll want the <a class="reference internal" href="#sapphire.publicdb.download_data" title="sapphire.publicdb.download_data"><code class="xref py py-func docutils literal"><span class="pre">download_data()</span></code></a> function.</p>
 <dl class="function">
 <dt id="sapphire.publicdb.download_data">
-<tt class="descclassname">sapphire.publicdb.</tt><tt class="descname">download_data</tt><big>(</big><em>file</em>, <em>group</em>, <em>station_id</em>, <em>start</em>, <em>end</em>, <em>get_blobs=False</em><big>)</big><a class="headerlink" href="#sapphire.publicdb.download_data" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">sapphire.publicdb.</code><code class="descname">download_data</code><span class="sig-paren">(</span><em>file</em>, <em>group</em>, <em>station_id</em>, <em>start</em>, <em>end</em>, <em>get_blobs=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.publicdb.download_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Download raw data from the datastore</p>
 <p>This function downloads data from the datastore, using the XML-RPC API
 exposed by the public database.</p>
@@ -107,7 +107,7 @@ should be fetched</li>
 
 <dl class="function">
 <dt id="sapphire.publicdb.datetimerange">
-<tt class="descclassname">sapphire.publicdb.</tt><tt class="descname">datetimerange</tt><big>(</big><em>start</em>, <em>stop</em><big>)</big><a class="headerlink" href="#sapphire.publicdb.datetimerange" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">sapphire.publicdb.</code><code class="descname">datetimerange</code><span class="sig-paren">(</span><em>start</em>, <em>stop</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.publicdb.datetimerange" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generator for datetime ranges</p>
 <p>This is a very specific generator for datetime ranges.  Based on a
 start and stop value, it generates one day intervals.  On the first
@@ -167,7 +167,7 @@ day, it returns a start and stop value.  See example below.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="index.html">
               <img class="logo" src="_static/header.png" alt="Logo"/>
@@ -178,12 +178,14 @@ day, it returns a start and stop value.  See example below.</p>
   <h4>Next topic</h4>
   <p class="topless"><a href="simulations.html"
                         title="next chapter">3.8. Performing simulations</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/publicdb.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/publicdb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -200,7 +202,7 @@ day, it returns a start and stop value.  See example below.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -215,13 +217,13 @@ day, it returns a start and stop value.  See example below.</p>
         <li class="right" >
           <a href="kascade.html" title="3.6. Working with KASCADE data"
              >previous</a> |</li>
-        <li><a href="index.html">SAPPHiRE 0.9 documentation</a> &raquo;</li>
-          <li><a href="sapphire.html" >3. SAPPHiRE Reference</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.10 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="sapphire.html" >3. SAPPHiRE Reference</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>
