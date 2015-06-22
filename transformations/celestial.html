@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>3.11.4. Transformations between Celestial coordinate systems &mdash; SAPPHiRE 0.10 documentation</title>
+    <title>3.11.4. Transformations between Celestial coordinate systems &mdash; SAPPHiRE 0.11 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.10',
+        VERSION:     '0.11',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,15 +24,15 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.10 documentation" href="../index.html" />
+    <link rel="top" title="SAPPHiRE 0.11 documentation" href="../index.html" />
     <link rel="up" title="3.11. Transformations" href="../transformations.html" />
     <link rel="next" title="3.11.5. Time conversion functions" href="clock.html" />
     <link rel="prev" title="3.11.3. Conversion between different bases" href="base.html" /> 
   </head>
-  <body role="document">
-    <div class="related" role="navigation" aria-label="related navigation">
+  <body>
+    <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -47,16 +47,16 @@
         <li class="right" >
           <a href="base.html" title="3.11.3. Conversion between different bases"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.10 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="../sapphire.html" >3. SAPPHiRE Reference</a> &raquo;</li>
-          <li class="nav-item nav-item-2"><a href="../transformations.html" accesskey="U">3.11. Transformations</a> &raquo;</li> 
+        <li><a href="../index.html">SAPPHiRE 0.11 documentation</a> &raquo;</li>
+          <li><a href="../sapphire.html" >3. SAPPHiRE Reference</a> &raquo;</li>
+          <li><a href="../transformations.html" accesskey="U">3.11. Transformations</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body" role="main">
+          <div class="body">
             
   <div class="section" id="module-sapphire.transformations.celestial">
 <span id="transformations-between-celestial-coordinate-systems"></span><h1>3.11.4. Transformations between Celestial coordinate systems<a class="headerlink" href="#module-sapphire.transformations.celestial" title="Permalink to this headline">¶</a></h1>
@@ -69,7 +69,7 @@ ISBN 0-521-38995-X</p>
 <p>TODO: CHECK IF THESE CONVERSIONS ARE CORRECT!</p>
 <dl class="function">
 <dt id="sapphire.transformations.celestial.zenithazimuth_to_equatorial">
-<code class="descclassname">sapphire.transformations.celestial.</code><code class="descname">zenithazimuth_to_equatorial</code><span class="sig-paren">(</span><em>longitude</em>, <em>latitude</em>, <em>timestamp</em>, <em>zenith</em>, <em>azimuth</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.transformations.celestial.zenithazimuth_to_equatorial" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.transformations.celestial.</tt><tt class="descname">zenithazimuth_to_equatorial</tt><big>(</big><em>longitude</em>, <em>latitude</em>, <em>timestamp</em>, <em>zenith</em>, <em>azimuth</em><big>)</big><a class="headerlink" href="#sapphire.transformations.celestial.zenithazimuth_to_equatorial" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert Horizontal to Equatorial coordinates (J2000.0)</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -94,7 +94,7 @@ North and east positive.</li>
 
 <dl class="function">
 <dt id="sapphire.transformations.celestial.zenithazimuth_to_horizontal">
-<code class="descclassname">sapphire.transformations.celestial.</code><code class="descname">zenithazimuth_to_horizontal</code><span class="sig-paren">(</span><em>zenith</em>, <em>azimuth</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.transformations.celestial.zenithazimuth_to_horizontal" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.transformations.celestial.</tt><tt class="descname">zenithazimuth_to_horizontal</tt><big>(</big><em>zenith</em>, <em>azimuth</em><big>)</big><a class="headerlink" href="#sapphire.transformations.celestial.zenithazimuth_to_horizontal" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert from Zenith Azimuth to Horizontal coordinates</p>
 <p>Zenith Azimuth is the coordinate system used by HiSPARC. Zenith is
 the angle between the zenith and the direction. Azimuth is the angle
@@ -106,13 +106,13 @@ Azimuth the angle in the horizontal plane, from North to East (NESW).</p>
 
 <dl class="function">
 <dt id="sapphire.transformations.celestial.horizontal_to_zenithazimuth">
-<code class="descclassname">sapphire.transformations.celestial.</code><code class="descname">horizontal_to_zenithazimuth</code><span class="sig-paren">(</span><em>altitude</em>, <em>Azimuth</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.transformations.celestial.horizontal_to_zenithazimuth" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.transformations.celestial.</tt><tt class="descname">horizontal_to_zenithazimuth</tt><big>(</big><em>altitude</em>, <em>Azimuth</em><big>)</big><a class="headerlink" href="#sapphire.transformations.celestial.horizontal_to_zenithazimuth" title="Permalink to this definition">¶</a></dt>
 <dd><p>Inverse of zenithazimuth_to_horizontal is the same transformation</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="sapphire.transformations.celestial.horizontal_to_equatorial">
-<code class="descclassname">sapphire.transformations.celestial.</code><code class="descname">horizontal_to_equatorial</code><span class="sig-paren">(</span><em>latitude</em>, <em>lst</em>, <em>altitude</em>, <em>Azimuth</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.transformations.celestial.horizontal_to_equatorial" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.transformations.celestial.</tt><tt class="descname">horizontal_to_equatorial</tt><big>(</big><em>latitude</em>, <em>lst</em>, <em>altitude</em>, <em>Azimuth</em><big>)</big><a class="headerlink" href="#sapphire.transformations.celestial.horizontal_to_equatorial" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert Horizontal to Equatorial coordinates (J2000.0)</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -138,7 +138,7 @@ in decimal hours.</li>
 
 <dl class="function">
 <dt id="sapphire.transformations.celestial.horizontal_to_hadec">
-<code class="descclassname">sapphire.transformations.celestial.</code><code class="descname">horizontal_to_hadec</code><span class="sig-paren">(</span><em>latitude</em>, <em>altitude</em>, <em>Azimuth</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.transformations.celestial.horizontal_to_hadec" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.transformations.celestial.</tt><tt class="descname">horizontal_to_hadec</tt><big>(</big><em>latitude</em>, <em>altitude</em>, <em>Azimuth</em><big>)</big><a class="headerlink" href="#sapphire.transformations.celestial.horizontal_to_hadec" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert Horizontal to Hour Angle and Declination</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -162,7 +162,7 @@ North positive.</li>
 
 <dl class="function">
 <dt id="sapphire.transformations.celestial.ha_to_ra">
-<code class="descclassname">sapphire.transformations.celestial.</code><code class="descname">ha_to_ra</code><span class="sig-paren">(</span><em>ha</em>, <em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.transformations.celestial.ha_to_ra" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.transformations.celestial.</tt><tt class="descname">ha_to_ra</tt><big>(</big><em>ha</em>, <em>lst</em><big>)</big><a class="headerlink" href="#sapphire.transformations.celestial.ha_to_ra" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert Hour angle to right ascension</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -184,7 +184,7 @@ in decimal hours.</li>
 
 <dl class="function">
 <dt id="sapphire.transformations.celestial.equatorial_to_horizontal">
-<code class="descclassname">sapphire.transformations.celestial.</code><code class="descname">equatorial_to_horizontal</code><span class="sig-paren">(</span><em>longitude</em>, <em>latitude</em>, <em>timestamp</em>, <em>right_ascension</em>, <em>declination</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.transformations.celestial.equatorial_to_horizontal" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.transformations.celestial.</tt><tt class="descname">equatorial_to_horizontal</tt><big>(</big><em>longitude</em>, <em>latitude</em>, <em>timestamp</em>, <em>right_ascension</em>, <em>declination</em><big>)</big><a class="headerlink" href="#sapphire.transformations.celestial.equatorial_to_horizontal" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert Equatorial (J2000.0) to Horizontal coordinates</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -209,7 +209,7 @@ North and east positive.</li>
 
 <dl class="function">
 <dt id="sapphire.transformations.celestial.equatorial_to_galactic">
-<code class="descclassname">sapphire.transformations.celestial.</code><code class="descname">equatorial_to_galactic</code><span class="sig-paren">(</span><em>right_ascension</em>, <em>declintation</em>, <em>epoch='J2000'</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.transformations.celestial.equatorial_to_galactic" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.transformations.celestial.</tt><tt class="descname">equatorial_to_galactic</tt><big>(</big><em>right_ascension</em>, <em>declintation</em>, <em>epoch='J2000'</em><big>)</big><a class="headerlink" href="#sapphire.transformations.celestial.equatorial_to_galactic" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert Equatorial (J2000.0) to Galactic coordinates</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -232,7 +232,7 @@ North and east positive.</li>
 
 <dl class="function">
 <dt id="sapphire.transformations.celestial.galactic_to_equatorial">
-<code class="descclassname">sapphire.transformations.celestial.</code><code class="descname">galactic_to_equatorial</code><span class="sig-paren">(</span><em>longitude</em>, <em>latitude</em>, <em>epoch='J2000'</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.transformations.celestial.galactic_to_equatorial" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.transformations.celestial.</tt><tt class="descname">galactic_to_equatorial</tt><big>(</big><em>longitude</em>, <em>latitude</em>, <em>epoch='J2000'</em><big>)</big><a class="headerlink" href="#sapphire.transformations.celestial.galactic_to_equatorial" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert Galactic to Equatorial coordinates (J2000.0)</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -259,7 +259,7 @@ North and east positive.</li>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/header.png" alt="Logo"/>
@@ -270,14 +270,12 @@ North and east positive.</li>
   <h4>Next topic</h4>
   <p class="topless"><a href="clock.html"
                         title="next chapter">3.11.5. Time conversion functions</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../_sources/transformations/celestial.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/transformations/celestial.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
@@ -294,7 +292,7 @@ North and east positive.</li>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -309,14 +307,14 @@ North and east positive.</li>
         <li class="right" >
           <a href="base.html" title="3.11.3. Conversion between different bases"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.10 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="../sapphire.html" >3. SAPPHiRE Reference</a> &raquo;</li>
-          <li class="nav-item nav-item-2"><a href="../transformations.html" >3.11. Transformations</a> &raquo;</li> 
+        <li><a href="../index.html">SAPPHiRE 0.11 documentation</a> &raquo;</li>
+          <li><a href="../sapphire.html" >3. SAPPHiRE Reference</a> &raquo;</li>
+          <li><a href="../transformations.html" >3.11. Transformations</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer" role="contentinfo">
+    <div class="footer">
         &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>

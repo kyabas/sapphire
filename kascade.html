@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>3.6. Working with KASCADE data &mdash; SAPPHiRE 0.10 documentation</title>
+    <title>3.6. Working with KASCADE data &mdash; SAPPHiRE 0.11 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.10',
+        VERSION:     '0.11',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,15 +24,15 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.10 documentation" href="index.html" />
+    <link rel="top" title="SAPPHiRE 0.11 documentation" href="index.html" />
     <link rel="up" title="3. SAPPHiRE Reference" href="sapphire.html" />
     <link rel="next" title="3.7. Public data access" href="publicdb.html" />
     <link rel="prev" title="3.5. Module for downloading HiSPARC Event Summary Data" href="esd.html" /> 
   </head>
-  <body role="document">
-    <div class="related" role="navigation" aria-label="related navigation">
+  <body>
+    <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -47,24 +47,24 @@
         <li class="right" >
           <a href="esd.html" title="3.5. Module for downloading HiSPARC Event Summary Data"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.10 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="sapphire.html" accesskey="U">3. SAPPHiRE Reference</a> &raquo;</li> 
+        <li><a href="index.html">SAPPHiRE 0.11 documentation</a> &raquo;</li>
+          <li><a href="sapphire.html" accesskey="U">3. SAPPHiRE Reference</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body" role="main">
+          <div class="body">
             
   <div class="section" id="module-sapphire.kascade">
 <span id="working-with-kascade-data"></span><h1>3.6. Working with KASCADE data<a class="headerlink" href="#module-sapphire.kascade" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="sapphire.kascade.StoreKascadeData">
-<em class="property">class </em><code class="descclassname">sapphire.kascade.</code><code class="descname">StoreKascadeData</code><span class="sig-paren">(</span><em>data</em>, <em>hisparc_path</em>, <em>kascade_path</em>, <em>kascade_filename</em>, <em>force=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.kascade.StoreKascadeData" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sapphire.kascade.</tt><tt class="descname">StoreKascadeData</tt><big>(</big><em>data</em>, <em>hisparc_path</em>, <em>kascade_path</em>, <em>kascade_filename</em>, <em>force=False</em><big>)</big><a class="headerlink" href="#sapphire.kascade.StoreKascadeData" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
 <dt id="sapphire.kascade.StoreKascadeData.read_and_store_data">
-<code class="descname">read_and_store_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.kascade.StoreKascadeData.read_and_store_data" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">read_and_store_data</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.kascade.StoreKascadeData.read_and_store_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read and store KASCADE data matching HiSPARC data</p>
 <p>This function looks at the HiSPARC event data in the specified
 datafile and then processes and adds KASCADE data surrounding
@@ -75,10 +75,10 @@ those events, for later coincidence processing.</p>
 
 <dl class="class">
 <dt id="sapphire.kascade.KascadeCoincidences">
-<em class="property">class </em><code class="descclassname">sapphire.kascade.</code><code class="descname">KascadeCoincidences</code><span class="sig-paren">(</span><em>data</em>, <em>hisparc_group</em>, <em>kascade_group</em>, <em>overwrite=False</em>, <em>ignore_existing=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.kascade.KascadeCoincidences" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sapphire.kascade.</tt><tt class="descname">KascadeCoincidences</tt><big>(</big><em>data</em>, <em>hisparc_group</em>, <em>kascade_group</em>, <em>overwrite=False</em>, <em>ignore_existing=False</em><big>)</big><a class="headerlink" href="#sapphire.kascade.KascadeCoincidences" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
 <dt id="sapphire.kascade.KascadeCoincidences.search_coincidences">
-<code class="descname">search_coincidences</code><span class="sig-paren">(</span><em>timeshift=0</em>, <em>dtlimit=None</em>, <em>limit=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.kascade.KascadeCoincidences.search_coincidences" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">search_coincidences</tt><big>(</big><em>timeshift=0</em>, <em>dtlimit=None</em>, <em>limit=None</em><big>)</big><a class="headerlink" href="#sapphire.kascade.KascadeCoincidences.search_coincidences" title="Permalink to this definition">¶</a></dt>
 <dd><p>Search for coincidences</p>
 <p>This function does the actual searching of coincidences. It uses
 a timeshift to shift the HiSPARC data (we know that these employ
@@ -86,7 +86,7 @@ GPS time, so not taking UTC leap seconds into account). The
 shift will also compensate for delays in the experimental setup.</p>
 <p>The coincidences are stored as an instance variable
 (self.coincidences). Final storage can be done by calling
-<a class="reference internal" href="#sapphire.kascade.KascadeCoincidences.store_coincidences" title="sapphire.kascade.KascadeCoincidences.store_coincidences"><code class="xref py py-meth docutils literal"><span class="pre">store_coincidences()</span></code></a>.</p>
+<a class="reference internal" href="#sapphire.kascade.KascadeCoincidences.store_coincidences" title="sapphire.kascade.KascadeCoincidences.store_coincidences"><tt class="xref py py-meth docutils literal"><span class="pre">store_coincidences()</span></tt></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -107,7 +107,7 @@ coincidences are not stored.  Default: None.</li>
 
 <dl class="method">
 <dt id="sapphire.kascade.KascadeCoincidences.store_coincidences">
-<code class="descname">store_coincidences</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.kascade.KascadeCoincidences.store_coincidences" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">store_coincidences</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.kascade.KascadeCoincidences.store_coincidences" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -118,7 +118,7 @@ coincidences are not stored.  Default: None.</li>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="index.html">
               <img class="logo" src="_static/header.png" alt="Logo"/>
@@ -129,14 +129,12 @@ coincidences are not stored.  Default: None.</li>
   <h4>Next topic</h4>
   <p class="topless"><a href="publicdb.html"
                         title="next chapter">3.7. Public data access</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/kascade.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/kascade.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -153,7 +151,7 @@ coincidences are not stored.  Default: None.</li>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -168,13 +166,13 @@ coincidences are not stored.  Default: None.</li>
         <li class="right" >
           <a href="esd.html" title="3.5. Module for downloading HiSPARC Event Summary Data"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.10 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="sapphire.html" >3. SAPPHiRE Reference</a> &raquo;</li> 
+        <li><a href="index.html">SAPPHiRE 0.11 documentation</a> &raquo;</li>
+          <li><a href="sapphire.html" >3. SAPPHiRE Reference</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer" role="contentinfo">
+    <div class="footer">
         &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>
