@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>2. Tutorial &mdash; SAPPHiRE 0.11 documentation</title>
+    <title>Tutorial &mdash; SAPPHiRE 0.11 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -27,8 +27,8 @@
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="top" title="SAPPHiRE 0.11 documentation" href="index.html" />
-    <link rel="next" title="3. SAPPHiRE Reference" href="sapphire.html" />
-    <link rel="prev" title="1. Installation" href="installation.html" /> 
+    <link rel="next" title="SAPPHiRE Reference" href="sapphire.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
   </head>
   <body>
     <div class="related">
@@ -41,10 +41,10 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="sapphire.html" title="3. SAPPHiRE Reference"
+          <a href="sapphire.html" title="SAPPHiRE Reference"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="installation.html" title="1. Installation"
+          <a href="installation.html" title="Installation"
              accesskey="P">previous</a> |</li>
         <li><a href="index.html">SAPPHiRE 0.11 documentation</a> &raquo;</li> 
       </ul>
@@ -56,7 +56,7 @@
           <div class="body">
             
   <div class="section" id="tutorial">
-<h1>2. Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
+<h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
 <p>SAPPHiRE simplifies data access, simulations and analysis for the <a class="reference external" href="http://www.hisparc.nl">HiSPARC</a> experiment.  In this tutorial, we&#8217;ll try to give
 you a feeling for the things you can <em>do</em> with SAPPHiRE.  How can you
 download data?  How can you analyze this data?  How can you produce
@@ -73,7 +73,7 @@ best with chapter 3 and ignore chapter 2.  Chapters 3 through 6 should
 give you some working knowledge of Python.</p>
 </div>
 <div class="section" id="first-steps">
-<h2>2.1. First steps<a class="headerlink" href="#first-steps" title="Permalink to this headline">¶</a></h2>
+<h2>First steps<a class="headerlink" href="#first-steps" title="Permalink to this headline">¶</a></h2>
 <p>In a few examples, we will plot the data which we have produced.  We make
 use of pylab, which is included with matplotlib.  In OS X and Linux, you
 can start an IPython terminal with pylab using:</p>
@@ -115,7 +115,7 @@ it.  Not all of it is very helpful to a newcomer, hence this tutorial.
 All help text is also available in the <a class="reference internal" href="sapphire.html"><em>SAPPHiRE Reference</em></a>.</p>
 </div>
 <div class="section" id="downloading-and-accessing-hisparc-data">
-<h2>2.2. Downloading and accessing HiSPARC data<a class="headerlink" href="#downloading-and-accessing-hisparc-data" title="Permalink to this headline">¶</a></h2>
+<h2>Downloading and accessing HiSPARC data<a class="headerlink" href="#downloading-and-accessing-hisparc-data" title="Permalink to this headline">¶</a></h2>
 <p>The SAPPHiRE package comprises multiple modules and packages.  To access
 data from the public database, we&#8217;ll have to import the <a class="reference internal" href="esd.html#module-sapphire.esd" title="sapphire.esd"><tt class="xref py py-mod docutils literal"><span class="pre">sapphire.esd</span></tt></a>
 module.  Also, we need the <tt class="docutils literal"><span class="pre">tables</span></tt> module to actually store the data.
@@ -139,7 +139,7 @@ with that name, it will be overwritten!  Alternatively, you can say
 overwriting its contents.  Finally, you can specify <tt class="docutils literal"><span class="pre">'r'</span></tt> for
 <em>read-only</em>.</p>
 <div class="section" id="downloading-data">
-<h3>2.2.1. Downloading data<a class="headerlink" href="#downloading-data" title="Permalink to this headline">¶</a></h3>
+<h3>Downloading data<a class="headerlink" href="#downloading-data" title="Permalink to this headline">¶</a></h3>
 <p>To download data, we have to specify the date/time <em>range</em>.  If we want to
 download data from the December 1, 2012 all through December 2, 2012,
 we can specify this by typing:</p>
@@ -200,7 +200,7 @@ However, downloading data will take much longer that way. If only some
 traces need to be accessed, the <a class="reference internal" href="api.html#module-sapphire.api" title="sapphire.api"><tt class="xref py py-mod docutils literal"><span class="pre">sapphire.api</span></tt></a> is a better choice.</p>
 </div>
 <div class="section" id="looking-around">
-<h3>2.2.2. Looking around<a class="headerlink" href="#looking-around" title="Permalink to this headline">¶</a></h3>
+<h3>Looking around<a class="headerlink" href="#looking-around" title="Permalink to this headline">¶</a></h3>
 <p>If you want to know what groups and tables are contained within the data
 file, just <tt class="docutils literal"><span class="pre">print</span></tt> it:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">data</span>
@@ -300,7 +300,7 @@ the weather table:</p>
 <p>We&#8217;ll let these column names speak for themselves.</p>
 </div>
 <div class="section" id="accessing-the-data">
-<h3>2.2.3. Accessing the data<a class="headerlink" href="#accessing-the-data" title="Permalink to this headline">¶</a></h3>
+<h3>Accessing the data<a class="headerlink" href="#accessing-the-data" title="Permalink to this headline">¶</a></h3>
 <p>We can access the data in several ways.  We can address the complete
 table, or just one or several rows from it.  We can read out a single
 column, or select data based on a query.  Before we do any of that, we&#8217;ll
@@ -369,7 +369,7 @@ method, but we <em>can</em> access all pulseheights in the following way:</p>
 use the <tt class="docutils literal"><span class="pre">Table.col</span></tt> method.  For arrays, use this special notation.</p>
 </div>
 <div class="section" id="the-sapphire-time-util-module">
-<h3>2.2.4. The <a class="reference internal" href="time_util.html#module-sapphire.time_util" title="sapphire.time_util"><tt class="xref py py-mod docutils literal"><span class="pre">sapphire.time_util</span></tt></a> module<a class="headerlink" href="#the-sapphire-time-util-module" title="Permalink to this headline">¶</a></h3>
+<h3>The <a class="reference internal" href="time_util.html#module-sapphire.time_util" title="sapphire.time_util"><tt class="xref py py-mod docutils literal"><span class="pre">sapphire.time_util</span></tt></a> module<a class="headerlink" href="#the-sapphire-time-util-module" title="Permalink to this headline">¶</a></h3>
 <p>SAPPHiRE includes a handy module: <a class="reference internal" href="time_util.html#module-sapphire.time_util" title="sapphire.time_util"><tt class="xref py py-mod docutils literal"><span class="pre">sapphire.time_util</span></tt></a>.  This saves
 you from the hassle of converting timestamps and confusing local time and
 GPS (or UTC) time.  It is important to realize that the HiSPARC station
@@ -449,7 +449,7 @@ classes from modules into your own namespace:</p>
 </div>
 </div>
 <div class="section" id="plotting-data">
-<h3>2.2.5. Plotting data<a class="headerlink" href="#plotting-data" title="Permalink to this headline">¶</a></h3>
+<h3>Plotting data<a class="headerlink" href="#plotting-data" title="Permalink to this headline">¶</a></h3>
 <p>Now that we can access the data, we want to visualize it.  Plotting data
 is a great way to do that.  And of course, the venerable histogram is
 still very useful to condense thousands of events into one display.  Pylab
@@ -498,13 +498,13 @@ page 44–45, and 49–51.</p>
 </div>
 </div>
 <div class="section" id="searching-for-coincidences">
-<h2>2.3. Searching for coincidences<a class="headerlink" href="#searching-for-coincidences" title="Permalink to this headline">¶</a></h2>
+<h2>Searching for coincidences<a class="headerlink" href="#searching-for-coincidences" title="Permalink to this headline">¶</a></h2>
 <p>If you work with HiSPARC data, invariably you&#8217;ll be interested in
 <em>coincidences</em> between HiSPARC stations.  That is, are there showers
 which have been observed by multiple stations?  To find out, we&#8217;ll make
 use of the <a class="reference internal" href="analysis/coincidences.html#module-sapphire.analysis.coincidences" title="sapphire.analysis.coincidences"><tt class="xref py py-mod docutils literal"><span class="pre">sapphire.analysis.coincidences</span></tt></a> module.</p>
 <div class="section" id="performing-the-search">
-<h3>2.3.1. Performing the search<a class="headerlink" href="#performing-the-search" title="Permalink to this headline">¶</a></h3>
+<h3>Performing the search<a class="headerlink" href="#performing-the-search" title="Permalink to this headline">¶</a></h3>
 <p>Consider the following script, which you can hopefully understand by now
 (note that the prompt (&gt;&gt;&gt;) is absent, since this is a <em>script</em>:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">datetime</span>
@@ -709,18 +709,18 @@ different.  To uniquely define an event, use a station number /
             </a></p>
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">2. Tutorial</a><ul>
-<li><a class="reference internal" href="#first-steps">2.1. First steps</a></li>
-<li><a class="reference internal" href="#downloading-and-accessing-hisparc-data">2.2. Downloading and accessing HiSPARC data</a><ul>
-<li><a class="reference internal" href="#downloading-data">2.2.1. Downloading data</a></li>
-<li><a class="reference internal" href="#looking-around">2.2.2. Looking around</a></li>
-<li><a class="reference internal" href="#accessing-the-data">2.2.3. Accessing the data</a></li>
-<li><a class="reference internal" href="#the-sapphire-time-util-module">2.2.4. The <tt class="docutils literal"><span class="pre">sapphire.time_util</span></tt> module</a></li>
-<li><a class="reference internal" href="#plotting-data">2.2.5. Plotting data</a></li>
+<li><a class="reference internal" href="#">Tutorial</a><ul>
+<li><a class="reference internal" href="#first-steps">First steps</a></li>
+<li><a class="reference internal" href="#downloading-and-accessing-hisparc-data">Downloading and accessing HiSPARC data</a><ul>
+<li><a class="reference internal" href="#downloading-data">Downloading data</a></li>
+<li><a class="reference internal" href="#looking-around">Looking around</a></li>
+<li><a class="reference internal" href="#accessing-the-data">Accessing the data</a></li>
+<li><a class="reference internal" href="#the-sapphire-time-util-module">The <tt class="docutils literal"><span class="pre">sapphire.time_util</span></tt> module</a></li>
+<li><a class="reference internal" href="#plotting-data">Plotting data</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#searching-for-coincidences">2.3. Searching for coincidences</a><ul>
-<li><a class="reference internal" href="#performing-the-search">2.3.1. Performing the search</a></li>
+<li><a class="reference internal" href="#searching-for-coincidences">Searching for coincidences</a><ul>
+<li><a class="reference internal" href="#performing-the-search">Performing the search</a></li>
 </ul>
 </li>
 </ul>
@@ -729,10 +729,10 @@ different.  To uniquely define an event, use a station number /
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="installation.html"
-                        title="previous chapter">1. Installation</a></p>
+                        title="previous chapter">Installation</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="sapphire.html"
-                        title="next chapter">3. SAPPHiRE Reference</a></p>
+                        title="next chapter">SAPPHiRE Reference</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/tutorial.txt"
@@ -765,10 +765,10 @@ different.  To uniquely define an event, use a station number /
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="sapphire.html" title="3. SAPPHiRE Reference"
+          <a href="sapphire.html" title="SAPPHiRE Reference"
              >next</a> |</li>
         <li class="right" >
-          <a href="installation.html" title="1. Installation"
+          <a href="installation.html" title="Installation"
              >previous</a> |</li>
         <li><a href="index.html">SAPPHiRE 0.11 documentation</a> &raquo;</li> 
       </ul>
