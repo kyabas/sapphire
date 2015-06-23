@@ -581,7 +581,7 @@ let us turn to the results:</p>
 </pre></div>
 </div>
 <p>The new addition is the <tt class="docutils literal"><span class="pre">/coincidences</span></tt> group.  It contains three
-tables, which are <tt class="docutils literal"><span class="pre">c_index</span></tt>, <tt class="docutils literal"><span class="pre">coincidences</span></tt> and <tt class="docutils literal"><span class="pre">observables</span></tt>.
+tables, which are <tt class="docutils literal"><span class="pre">c_index</span></tt>, <tt class="docutils literal"><span class="pre">coincidences</span></tt> and <tt class="docutils literal"><span class="pre">s_index</span></tt>.
 Information about the coincidences is stored in the <tt class="docutils literal"><span class="pre">coincidences</span></tt>
 table.  Let&#8217;s look at the columns:</p>
 <table border="1" class="docutils">
@@ -647,14 +647,14 @@ position in cartesian coordinates.  Furthermore, the <tt class="docutils literal
 not known for certain when working with HiSPARC data, but are included
 nonetheless.  These columns are all set to 0.0.</p>
 <p>The <tt class="docutils literal"><span class="pre">c_index</span></tt> array is used as an index to look up the tables and
-individual events making up a coincidence.  The fifth coincidence is
+individual events making up a coincidence.  The second coincidence is
 accessed by:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">coincidences</span><span class="o">.</span><span class="n">coincidences</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">coincidences</span><span class="o">.</span><span class="n">coincidences</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 <span class="go">(2L, 1356998460, 730384055L, 1356998460730384055L, 2, 0.0, 0.0, 0.0,</span>
 <span class="go"> 0.0, 0.0, 0.0, True, False, True)</span>
 </pre></div>
 </div>
-<p>Remember, the indexes are zero-based.  The coincidence id is also 4:</p>
+<p>Remember, the indexes are zero-based.  The coincidence id is also 2:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">coincidences</span><span class="o">.</span><span class="n">coincidences</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="s">&#39;id&#39;</span><span class="p">]</span>
 <span class="go">2</span>
 </pre></div>
@@ -678,7 +678,7 @@ location of the station group the <tt class="docutils literal"><span class="pre"
 station groups.:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">coincidences</span><span class="o">.</span><span class="n">s_index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="go">&#39;/s501&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">s501</span><span class="o">.</span><span class="n">events</span><span class="p">[</span><span class="mi">40</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">get_node</span><span class="p">(</span><span class="s">&#39;/s501&#39;</span><span class="p">,</span> <span class="s">&#39;events&#39;</span><span class="p">)[</span><span class="mi">40</span><span class="p">]</span>
 <span class="go">(40L, 1356998460, 730384055L, 1356998460730384055L, [2, 227, 301, 2],</span>
 <span class="go"> [0, 1657, 3173, 0], 0.0, 0.5117999911308289, 0.9417999982833862,</span>
 <span class="go"> 0.0, -999.0, 12.5, 57.5, -999.0, 62.5)</span>
