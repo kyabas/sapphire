@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>HiSPARC API &mdash; SAPPHiRE 0.11 documentation</title>
+    <title>HiSPARC API &mdash; SAPPHiRE 0.12 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.11',
+        VERSION:     '0.12',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.11 documentation" href="index.html" />
+    <link rel="top" title="SAPPHiRE 0.12 documentation" href="index.html" />
     <link rel="up" title="SAPPHiRE Reference" href="sapphire.html" />
     <link rel="next" title="HiSPARC clusters" href="clusters.html" />
     <link rel="prev" title="Reconstructions" href="analysis/reconstructions.html" /> 
@@ -47,7 +47,7 @@
         <li class="right" >
           <a href="analysis/reconstructions.html" title="Reconstructions"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">SAPPHiRE 0.11 documentation</a> &raquo;</li>
+        <li><a href="index.html">SAPPHiRE 0.12 documentation</a> &raquo;</li>
           <li><a href="sapphire.html" accesskey="U">SAPPHiRE Reference</a> &raquo;</li> 
       </ul>
     </div>  
@@ -95,7 +95,7 @@ is returned as NumPy arrays.</p>
 
 <dl class="attribute">
 <dt id="sapphire.api.API.src_urls">
-<tt class="descname">src_urls</tt><em class="property"> = {'eventtime': 'eventtime/{station_number}/{year}/{month}/{day}/', 'barometer': 'barometer/{station_number}/{year}/{month}/{day}/', 'integral': 'pulseintegral/{station_number}/{year}/{month}/{day}/', 'voltage': 'voltage/{station_number}/', 'coincidencenumber': 'coincidencenumber/{year}/{month}/{day}/', 'coincidencetime': 'coincidencetime/{year}/{month}/{day}/', 'temperature': 'temperature/{station_number}/{year}/{month}/{day}/', 'pulseheight': 'pulseheight/{station_number}/{year}/{month}/{day}/', 'detector_timing_offsets': 'detector_timing_offsets/{station_number}/', 'current': 'current/{station_number}/', 'gps': 'gps/{station_number}/'}</em><a class="headerlink" href="#sapphire.api.API.src_urls" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">src_urls</tt><em class="property"> = {'eventtime': 'eventtime/{station_number}/{year}/{month}/{day}/', 'barometer': 'barometer/{station_number}/{year}/{month}/{day}/', 'integral': 'pulseintegral/{station_number}/{year}/{month}/{day}/', 'voltage': 'voltage/{station_number}/', 'coincidencenumber': 'coincidencenumber/{year}/{month}/{day}/', 'coincidencetime': 'coincidencetime/{year}/{month}/{day}/', 'layout': 'layout/{station_number}/', 'temperature': 'temperature/{station_number}/{year}/{month}/{day}/', 'pulseheight': 'pulseheight/{station_number}/{year}/{month}/{day}/', 'detector_timing_offsets': 'detector_timing_offsets/{station_number}/', 'current': 'current/{station_number}/', 'gps': 'gps/{station_number}/'}</em><a class="headerlink" href="#sapphire.api.API.src_urls" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="staticmethod">
@@ -107,27 +107,6 @@ is returned as NumPy arrays.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean indicating the internet status</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="staticmethod">
-<dt id="sapphire.api.API.get_active_index">
-<em class="property">static </em><tt class="descname">get_active_index</tt><big>(</big><em>timestamps</em>, <em>timestamp</em><big>)</big><a class="headerlink" href="#sapphire.api.API.get_active_index" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the index where the timestamp fits.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>timestamps</strong> &#8211; list of timestamps.</li>
-<li><strong>timestamp</strong> &#8211; timestamp for which to find the position.</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">index into the timestamps list.</p>
-</td>
 </tr>
 </tbody>
 </table>
@@ -643,7 +622,37 @@ to get the traces.</li>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>timestamp</strong> &#8211; timestamp for which the value is valid.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of values for given timestamp.</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dictionary with the values for given timestamp.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sapphire.api.Station.station_layouts">
+<tt class="descname">station_layouts</tt><a class="headerlink" href="#sapphire.api.Station.station_layouts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the station layout data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">array of timestamps and values.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.api.Station.station_layout">
+<tt class="descname">station_layout</tt><big>(</big><em>timestamp</em><big>)</big><a class="headerlink" href="#sapphire.api.Station.station_layout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get station layout data for specific timestamp</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>timestamp</strong> &#8211; timestamp for which the value is valid.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of coordinates for given timestamp.</td>
 </tr>
 </tbody>
 </table>
@@ -735,7 +744,7 @@ to get the traces.</li>
         <li class="right" >
           <a href="analysis/reconstructions.html" title="Reconstructions"
              >previous</a> |</li>
-        <li><a href="index.html">SAPPHiRE 0.11 documentation</a> &raquo;</li>
+        <li><a href="index.html">SAPPHiRE 0.12 documentation</a> &raquo;</li>
           <li><a href="sapphire.html" >SAPPHiRE Reference</a> &raquo;</li> 
       </ul>
     </div>

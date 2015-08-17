@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Store CORSIKA data as HDF5 &mdash; SAPPHiRE 0.12 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/hisparc_style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="SAPPHiRE 0.12 documentation" href="../index.html" />
+    <link rel="up" title="Corsika Reader Documentation" href="../corsika.html" />
+    <link rel="next" title="Module for downloading HiSPARC Event Summary Data" href="../esd.html" />
+    <link rel="prev" title="Submit CORSIKA jobs to Stoomboot" href="qsub.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../esd.html" title="Module for downloading HiSPARC Event Summary Data"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="qsub.html" title="Submit CORSIKA jobs to Stoomboot"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">SAPPHiRE 0.12 documentation</a> &raquo;</li>
+          <li><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li><a href="../corsika.html" accesskey="U">Corsika Reader Documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-sapphire.corsika.store_corsika_data">
+<span id="store-corsika-data-as-hdf5"></span><h1>Store CORSIKA data as HDF5<a class="headerlink" href="#module-sapphire.corsika.store_corsika_data" title="Permalink to this headline">¶</a></h1>
+<p>Store CORSIKA simulation data in HDF5 file</p>
+<p>This module reads the CORSIKA binary ground particles file and stores
+each particle individually in a HDF5 file, using PyTables.  This file
+can then be used as input for the detector simulation.</p>
+<p>The syntax and options for calling this script can be seen with:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">store_corsika_data</span> <span class="o">--</span><span class="n">help</span>
+</pre></div>
+</div>
+<p>For example to convert a CORSIKA file in the current directory called
+DAT000000 to a HDF5 called corsika.h5 with a progress bar run:</p>
+<div class="highlight-python"><div class="highlight"><pre>store_corsika_data --progress DAT000000 corsika.h5
+</pre></div>
+</div>
+<dl class="function">
+<dt id="sapphire.corsika.store_corsika_data.save_particle">
+<tt class="descclassname">sapphire.corsika.store_corsika_data.</tt><tt class="descname">save_particle</tt><big>(</big><em>row</em>, <em>p</em><big>)</big><a class="headerlink" href="#sapphire.corsika.store_corsika_data.save_particle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the information of a particle into a row</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.corsika.store_corsika_data.store_and_sort_corsika_data">
+<tt class="descclassname">sapphire.corsika.store_corsika_data.</tt><tt class="descname">store_and_sort_corsika_data</tt><big>(</big><em>source</em>, <em>destination</em>, <em>overwrite=False</em>, <em>progress=False</em><big>)</big><a class="headerlink" href="#sapphire.corsika.store_corsika_data.store_and_sort_corsika_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>First convert the data to HDF5 and create a sorted version</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.corsika.store_corsika_data.store_corsika_data">
+<tt class="descclassname">sapphire.corsika.store_corsika_data.</tt><tt class="descname">store_corsika_data</tt><big>(</big><em>source</em>, <em>destination</em>, <em>table_name='groundparticles'</em>, <em>progress=False</em><big>)</big><a class="headerlink" href="#sapphire.corsika.store_corsika_data.store_corsika_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store particles from a CORSIKA simulation in a HDF5 file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>source</strong> &#8211; CorsikaFile instance of the source DAT file</li>
+<li><strong>destination</strong> &#8211; PyTables file instance of the destination file</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.corsika.store_corsika_data.create_index">
+<tt class="descclassname">sapphire.corsika.store_corsika_data.</tt><tt class="descname">create_index</tt><big>(</big><em>hdf_data</em>, <em>table_name='groundparticles'</em>, <em>progress=False</em><big>)</big><a class="headerlink" href="#sapphire.corsika.store_corsika_data.create_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a completely sorted index for the x column</p>
+<p>This can speed up queries to select data based on the x column.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.corsika.store_corsika_data.copy_and_sort_node">
+<tt class="descclassname">sapphire.corsika.store_corsika_data.</tt><tt class="descname">copy_and_sort_node</tt><big>(</big><em>hdf_temp</em>, <em>hdf_data</em>, <em>table_name='groundparticles'</em>, <em>progress=False</em><big>)</big><a class="headerlink" href="#sapphire.corsika.store_corsika_data.copy_and_sort_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sort the data in the tables by the x column</p>
+<p>This speeds up queries to select data based on the x column.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.corsika.store_corsika_data.create_tempfile_path">
+<tt class="descclassname">sapphire.corsika.store_corsika_data.</tt><tt class="descname">create_tempfile_path</tt><big>(</big><em>temp_dir=None</em><big>)</big><a class="headerlink" href="#sapphire.corsika.store_corsika_data.create_tempfile_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a temporary file, close it, and return the path</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.corsika.store_corsika_data.main">
+<tt class="descclassname">sapphire.corsika.store_corsika_data.</tt><tt class="descname">main</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.corsika.store_corsika_data.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/header.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="qsub.html"
+                        title="previous chapter">Submit CORSIKA jobs to Stoomboot</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../esd.html"
+                        title="next chapter">Module for downloading HiSPARC Event Summary Data</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/corsika/store_corsika_data.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../esd.html" title="Module for downloading HiSPARC Event Summary Data"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="qsub.html" title="Submit CORSIKA jobs to Stoomboot"
+             >previous</a> |</li>
+        <li><a href="../index.html">SAPPHiRE 0.12 documentation</a> &raquo;</li>
+          <li><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li><a href="../corsika.html" >Corsika Reader Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, David Fokkema.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

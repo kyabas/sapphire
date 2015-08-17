@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Reconstructions &mdash; SAPPHiRE 0.11 documentation</title>
+    <title>Reconstructions &mdash; SAPPHiRE 0.12 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.11',
+        VERSION:     '0.12',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.11 documentation" href="../index.html" />
+    <link rel="top" title="SAPPHiRE 0.12 documentation" href="../index.html" />
     <link rel="up" title="Data analysis" href="../analysis.html" />
     <link rel="next" title="HiSPARC API" href="../api.html" />
     <link rel="prev" title="Processing of HiSPARC events" href="process_events.html" /> 
@@ -47,7 +47,7 @@
         <li class="right" >
           <a href="process_events.html" title="Processing of HiSPARC events"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">SAPPHiRE 0.11 documentation</a> &raquo;</li>
+        <li><a href="../index.html">SAPPHiRE 0.12 documentation</a> &raquo;</li>
           <li><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li><a href="../analysis.html" accesskey="U">Data analysis</a> &raquo;</li> 
       </ul>
@@ -161,7 +161,7 @@ NaN as reconstructed value.</p>
 
 <dl class="class">
 <dt id="sapphire.analysis.reconstructions.ReconstructESDCoincidences">
-<em class="property">class </em><tt class="descclassname">sapphire.analysis.reconstructions.</tt><tt class="descname">ReconstructESDCoincidences</tt><big>(</big><em>data</em>, <em>coincidences_group='/coincidences'</em>, <em>overwrite=False</em>, <em>progress=True</em>, <em>destination='reconstructions'</em><big>)</big><a class="headerlink" href="#sapphire.analysis.reconstructions.ReconstructESDCoincidences" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sapphire.analysis.reconstructions.</tt><tt class="descname">ReconstructESDCoincidences</tt><big>(</big><em>data</em>, <em>coincidences_group='/coincidences'</em>, <em>overwrite=False</em>, <em>progress=True</em>, <em>destination='reconstructions'</em>, <em>cluster=None</em><big>)</big><a class="headerlink" href="#sapphire.analysis.reconstructions.ReconstructESDCoincidences" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct coincidences, e.g. event between multiple stations</p>
 <p>Example usage:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">tables</span>
@@ -183,6 +183,7 @@ NaN as reconstructed value.</p>
 <li><strong>overwrite</strong> &#8211; if True, overwrite existing reconstruction table.</li>
 <li><strong>progress</strong> &#8211; if True, show a progressbar while reconstructing.</li>
 <li><strong>destination</strong> &#8211; alternative name for reconstruction table.</li>
+<li><strong>cluster</strong> &#8211; a Cluster object to use for the reconstructions.</li>
 </ul>
 </td>
 </tr>
@@ -312,7 +313,7 @@ NaN as reconstructed value.</p>
         <li class="right" >
           <a href="process_events.html" title="Processing of HiSPARC events"
              >previous</a> |</li>
-        <li><a href="../index.html">SAPPHiRE 0.11 documentation</a> &raquo;</li>
+        <li><a href="../index.html">SAPPHiRE 0.12 documentation</a> &raquo;</li>
           <li><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li><a href="../analysis.html" >Data analysis</a> &raquo;</li> 
       </ul>

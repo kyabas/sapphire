@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Common utility functions &mdash; SAPPHiRE 0.11 documentation</title>
+    <title>Common utility functions &mdash; SAPPHiRE 0.12 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.11',
+        VERSION:     '0.12',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.11 documentation" href="index.html" />
+    <link rel="top" title="SAPPHiRE 0.12 documentation" href="index.html" />
     <link rel="up" title="SAPPHiRE Reference" href="sapphire.html" />
     <link rel="next" title="Sphinx documentation builds in gh-pages branch" href="README.html" />
     <link rel="prev" title="Transformations between geographic coordinate systems" href="transformations/geographic.html" /> 
@@ -47,7 +47,7 @@
         <li class="right" >
           <a href="transformations/geographic.html" title="Transformations between geographic coordinate systems"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">SAPPHiRE 0.11 documentation</a> &raquo;</li>
+        <li><a href="index.html">SAPPHiRE 0.12 documentation</a> &raquo;</li>
           <li><a href="sapphire.html" accesskey="U">SAPPHiRE Reference</a> &raquo;</li> 
       </ul>
     </div>  
@@ -104,6 +104,27 @@ the input, but shows a progressbar if possible.</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="sapphire.utils.get_active_index">
+<tt class="descclassname">sapphire.utils.</tt><tt class="descname">get_active_index</tt><big>(</big><em>values</em>, <em>value</em><big>)</big><a class="headerlink" href="#sapphire.utils.get_active_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the index where the value fits.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>values</strong> &#8211; sorted list of values (e.g. list of timestamps).</li>
+<li><strong>value</strong> &#8211; value for which to find the position (e.g. a timestamp).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">index into the values list.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
 <dt id="sapphire.utils.gauss">
 <tt class="descclassname">sapphire.utils.</tt><tt class="descname">gauss</tt><big>(</big><em>x</em>, <em>N</em>, <em>mu</em>, <em>sigma</em><big>)</big><a class="headerlink" href="#sapphire.utils.gauss" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gaussian distribution</p>
@@ -122,8 +143,8 @@ angles.</p>
 <dt id="sapphire.utils.angle_between">
 <tt class="descclassname">sapphire.utils.</tt><tt class="descname">angle_between</tt><big>(</big><em>zenith1</em>, <em>azimuth1</em>, <em>zenith2</em>, <em>azimuth2</em><big>)</big><a class="headerlink" href="#sapphire.utils.angle_between" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate the angle between two (zenith, azimuth) coordinates</p>
-<p>Using the spherical law of cosines,
-from: <a class="reference external" href="http://www.movable-type.co.uk/scripts/latlong.html#cosine-law">http://www.movable-type.co.uk/scripts/latlong.html#cosine-law</a></p>
+<p>Using the haversine formula,
+from: <a class="reference external" href="http://www.movable-type.co.uk/scripts/latlong.html">http://www.movable-type.co.uk/scripts/latlong.html</a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -135,6 +156,27 @@ from: <a class="reference external" href="http://www.movable-type.co.uk/scripts/
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Angle between the two coordinates.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.utils.distance_between">
+<tt class="descclassname">sapphire.utils.</tt><tt class="descname">distance_between</tt><big>(</big><em>x1</em>, <em>y1</em>, <em>x2</em>, <em>y2</em><big>)</big><a class="headerlink" href="#sapphire.utils.distance_between" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the distance between two (x, y) coordinates</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x#</strong> &#8211; x parts of the coordinates.</li>
+<li><strong>y#</strong> &#8211; y parts of the coordinates.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">distance between the two coordinates.</p>
 </td>
 </tr>
 </tbody>
@@ -195,7 +237,7 @@ from: <a class="reference external" href="http://www.movable-type.co.uk/scripts/
         <li class="right" >
           <a href="transformations/geographic.html" title="Transformations between geographic coordinate systems"
              >previous</a> |</li>
-        <li><a href="index.html">SAPPHiRE 0.11 documentation</a> &raquo;</li>
+        <li><a href="index.html">SAPPHiRE 0.12 documentation</a> &raquo;</li>
           <li><a href="sapphire.html" >SAPPHiRE Reference</a> &raquo;</li> 
       </ul>
     </div>

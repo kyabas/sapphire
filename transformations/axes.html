@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Conversion between axes coordinate systems &mdash; SAPPHiRE 0.11 documentation</title>
+    <title>Conversion between axes coordinate systems &mdash; SAPPHiRE 0.12 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.11',
+        VERSION:     '0.12',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.11 documentation" href="../index.html" />
+    <link rel="top" title="SAPPHiRE 0.12 documentation" href="../index.html" />
     <link rel="up" title="Transformations" href="../transformations.html" />
     <link rel="next" title="Conversion between different bases" href="base.html" />
     <link rel="prev" title="Conversion between different angle notations" href="angles.html" /> 
@@ -47,7 +47,7 @@
         <li class="right" >
           <a href="angles.html" title="Conversion between different angle notations"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">SAPPHiRE 0.11 documentation</a> &raquo;</li>
+        <li><a href="../index.html">SAPPHiRE 0.12 documentation</a> &raquo;</li>
           <li><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li><a href="../transformations.html" accesskey="U">Transformations</a> &raquo;</li> 
       </ul>
@@ -62,10 +62,23 @@
 <span id="conversion-between-axes-coordinate-systems"></span><h1>Conversion between axes coordinate systems<a class="headerlink" href="#module-sapphire.transformations.axes" title="Permalink to this headline">¶</a></h1>
 <p>Perform various axes related transformations</p>
 <ul class="simple">
-<li>Transformation between Cartesian, polar, cylindrical and spherical
+<li>Transformation between Cartesian, polar, cylindrical, spherical and compass
 coordinate systems.</li>
 <li>Create a rotation matrix for rotations around a certain axis.</li>
 </ul>
+<p>Cartesian coordinates: x, y, z axes.</p>
+<p>Spherical coordinates:
+- r: length of vector.
+- theta: angle of the vector to the z-axis.
+- phi: angle of vector to the x-axis in x,y-plane, rotating counterclockwise.</p>
+<p>Cylindrical and polar coordinates:
+- r: length of vector in x,y-plane.
+- phi: angle of vector to the x-axis in x,y-plane, rotating counterclockwise.
+- z: height above x,y-plane.</p>
+<p>Compass coordinates:
+- r: length of vector in x,y-plane.
+- alpha: angle of vector to the y-axis in x,y-plane, rotating clockwise.
+- z: height above x,y-plane.</p>
 <dl class="function">
 <dt id="sapphire.transformations.axes.cartesian_to_spherical">
 <tt class="descclassname">sapphire.transformations.axes.</tt><tt class="descname">cartesian_to_spherical</tt><big>(</big><em>x</em>, <em>y</em>, <em>z</em><big>)</big><a class="headerlink" href="#sapphire.transformations.axes.cartesian_to_spherical" title="Permalink to this definition">¶</a></dt>
@@ -117,6 +130,23 @@ phi in radians.</td>
 </dd></dl>
 
 <dl class="function">
+<dt id="sapphire.transformations.axes.cartesian_to_compass">
+<tt class="descclassname">sapphire.transformations.axes.</tt><tt class="descname">cartesian_to_compass</tt><big>(</big><em>x</em>, <em>y</em>, <em>z</em><big>)</big><a class="headerlink" href="#sapphire.transformations.axes.cartesian_to_compass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts Cartesian coordinates into compass coordinates</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>x,y,z</strong> &#8211; Cartesian coordinates</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">tuple of compass coordinates (r, alpha, z),
+with alpha in degrees.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
 <dt id="sapphire.transformations.axes.spherical_to_cartesian">
 <tt class="descclassname">sapphire.transformations.axes.</tt><tt class="descname">spherical_to_cartesian</tt><big>(</big><em>r</em>, <em>theta</em>, <em>phi</em><big>)</big><a class="headerlink" href="#sapphire.transformations.axes.spherical_to_cartesian" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert spherical coordinates into Cartesian coordinates</p>
@@ -159,6 +189,45 @@ phi in radians.</td>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>r,phi</strong> &#8211; polar coordinates, with phi in radians.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">tuple of Cartesian coordinates (x, y)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.transformations.axes.compass_to_cartesian">
+<tt class="descclassname">sapphire.transformations.axes.</tt><tt class="descname">compass_to_cartesian</tt><big>(</big><em>r</em>, <em>alpha</em>, <em>z</em><big>)</big><a class="headerlink" href="#sapphire.transformations.axes.compass_to_cartesian" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts compass coordinates into Cartesian coordinates</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>r,alpha,z</strong> &#8211; compass coordinates, with alpha in degrees.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">tuple of Cartesian coordinates (x, y, z).</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.transformations.axes.rotate_cartesian">
+<tt class="descclassname">sapphire.transformations.axes.</tt><tt class="descname">rotate_cartesian</tt><big>(</big><em>x</em>, <em>y</em>, <em>z</em>, <em>angle</em>, <em>axis='z'</em><big>)</big><a class="headerlink" href="#sapphire.transformations.axes.rotate_cartesian" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotate Cartesian coordinates</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x,y,z</strong> &#8211; Cartesian coordinates.</li>
+<li><strong>angle</strong> &#8211; amount of rotation in radians.</li>
+<li><strong>axis</strong> &#8211; the axis to rotate around, either <tt class="docutils literal"><span class="pre">'x',</span> <span class="pre">'y',</span> <span class="pre">'z'</span></tt>,
+or a (x,y,z) tuple specifying the axis to rotate about.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">tuple of Cartesian coordinates (x, y, z).</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -240,7 +309,7 @@ or a (x,y,z) tuple specifying the axis to rotate about.</li>
         <li class="right" >
           <a href="angles.html" title="Conversion between different angle notations"
              >previous</a> |</li>
-        <li><a href="../index.html">SAPPHiRE 0.11 documentation</a> &raquo;</li>
+        <li><a href="../index.html">SAPPHiRE 0.12 documentation</a> &raquo;</li>
           <li><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li><a href="../transformations.html" >Transformations</a> &raquo;</li> 
       </ul>
