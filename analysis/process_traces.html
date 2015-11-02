@@ -24,15 +24,15 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="SAPPHiRE 0.12.6 documentation" href="../index.html" />
     <link rel="up" title="Data analysis" href="../analysis.html" />
     <link rel="next" title="Reconstructions" href="reconstructions.html" />
     <link rel="prev" title="Processing of HiSPARC events" href="process_events.html" /> 
   </head>
-  <body role="document">
-    <div class="related" role="navigation" aria-label="related navigation">
+  <body>
+    <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -47,27 +47,27 @@
         <li class="right" >
           <a href="process_events.html" title="Processing of HiSPARC events"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
-          <li class="nav-item nav-item-2"><a href="../analysis.html" accesskey="U">Data analysis</a> &raquo;</li> 
+        <li><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li><a href="../analysis.html" accesskey="U">Data analysis</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body" role="main">
+          <div class="body">
             
   <div class="section" id="module-sapphire.analysis.process_traces">
 <span id="processing-of-hisparc-traces"></span><h1>Processing of HiSPARC traces<a class="headerlink" href="#module-sapphire.analysis.process_traces" title="Permalink to this headline">¶</a></h1>
 <p>Process HiSPARC traces</p>
 <p>This module can be used analyse (raw) traces. It implements the same
 algorithms as are implemented in the HiSPARC DAQ.</p>
-<p>The <a class="reference internal" href="#sapphire.analysis.process_traces.MeanFilter" title="sapphire.analysis.process_traces.MeanFilter"><code class="xref py py-class docutils literal"><span class="pre">MeanFilter</span></code></a> is meant to mimic the filter in the HiSPARC DAQ.
+<p>The <a class="reference internal" href="#sapphire.analysis.process_traces.MeanFilter" title="sapphire.analysis.process_traces.MeanFilter"><tt class="xref py py-class docutils literal"><span class="pre">MeanFilter</span></tt></a> is meant to mimic the filter in the HiSPARC DAQ.
 It is reproduced here to make it easy to read the algorithm.</p>
 <dl class="class">
 <dt id="sapphire.analysis.process_traces.TraceObservables">
-<em class="property">class </em><code class="descclassname">sapphire.analysis.process_traces.</code><code class="descname">TraceObservables</code><span class="sig-paren">(</span><em>traces</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.process_traces.TraceObservables" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sapphire.analysis.process_traces.</tt><tt class="descname">TraceObservables</tt><big>(</big><em>traces</em><big>)</big><a class="headerlink" href="#sapphire.analysis.process_traces.TraceObservables" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct trace observables</p>
 <p>If one wants to reconstruct trace observables from existing data some
 caveats apply. If the station applied the Mean Filter the trace values
@@ -94,7 +94,7 @@ element is the first sample of each trace.</td>
 </table>
 <dl class="attribute">
 <dt id="sapphire.analysis.process_traces.TraceObservables.baselines">
-<code class="descname">baselines</code><a class="headerlink" href="#sapphire.analysis.process_traces.TraceObservables.baselines" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">baselines</tt><a class="headerlink" href="#sapphire.analysis.process_traces.TraceObservables.baselines" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mean value of the first 50 samples of the trace</p>
 <p>This does not perfectly match the implementation in the DAQ which
 is more complicated, this does provide the correct value in most
@@ -113,7 +113,7 @@ version of the DAQ.</p>
 
 <dl class="attribute">
 <dt id="sapphire.analysis.process_traces.TraceObservables.std_dev">
-<code class="descname">std_dev</code><a class="headerlink" href="#sapphire.analysis.process_traces.TraceObservables.std_dev" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">std_dev</tt><a class="headerlink" href="#sapphire.analysis.process_traces.TraceObservables.std_dev" title="Permalink to this definition">¶</a></dt>
 <dd><p>Standard deviation of the first 50 samples of the trace</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -127,7 +127,7 @@ version of the DAQ.</p>
 
 <dl class="attribute">
 <dt id="sapphire.analysis.process_traces.TraceObservables.pulseheights">
-<code class="descname">pulseheights</code><a class="headerlink" href="#sapphire.analysis.process_traces.TraceObservables.pulseheights" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">pulseheights</tt><a class="headerlink" href="#sapphire.analysis.process_traces.TraceObservables.pulseheights" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maximum peak to baseline value in trace</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -141,7 +141,7 @@ version of the DAQ.</p>
 
 <dl class="attribute">
 <dt id="sapphire.analysis.process_traces.TraceObservables.integrals">
-<code class="descname">integrals</code><a class="headerlink" href="#sapphire.analysis.process_traces.TraceObservables.integrals" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">integrals</tt><a class="headerlink" href="#sapphire.analysis.process_traces.TraceObservables.integrals" title="Permalink to this definition">¶</a></dt>
 <dd><p>Integral of trace for all values over threshold</p>
 <p>The threshold is defined by BASELINE_THRESHOLD</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -156,7 +156,7 @@ version of the DAQ.</p>
 
 <dl class="attribute">
 <dt id="sapphire.analysis.process_traces.TraceObservables.n_peaks">
-<code class="descname">n_peaks</code><a class="headerlink" href="#sapphire.analysis.process_traces.TraceObservables.n_peaks" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">n_peaks</tt><a class="headerlink" href="#sapphire.analysis.process_traces.TraceObservables.n_peaks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of peaks in the trace</p>
 <p>The peak threshold is defined by LOW_THRESHOLD</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -173,7 +173,7 @@ version of the DAQ.</p>
 
 <dl class="class">
 <dt id="sapphire.analysis.process_traces.MeanFilter">
-<em class="property">class </em><code class="descclassname">sapphire.analysis.process_traces.</code><code class="descname">MeanFilter</code><span class="sig-paren">(</span><em>use_threshold=True</em>, <em>threshold=10</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.process_traces.MeanFilter" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sapphire.analysis.process_traces.</tt><tt class="descname">MeanFilter</tt><big>(</big><em>use_threshold=True</em>, <em>threshold=10</em><big>)</big><a class="headerlink" href="#sapphire.analysis.process_traces.MeanFilter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Filter raw traces</p>
 <p>This class replicates the behavior of the Mean_Filter.vi in the HiSPARC
 DAQ. A sawtooth-like pattern may be visible in traces due to ADC
@@ -200,13 +200,13 @@ from the data.</p>
 </table>
 <dl class="method">
 <dt id="sapphire.analysis.process_traces.MeanFilter.filter_traces">
-<code class="descname">filter_traces</code><span class="sig-paren">(</span><em>raw_traces</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.process_traces.MeanFilter.filter_traces" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">filter_traces</tt><big>(</big><em>raw_traces</em><big>)</big><a class="headerlink" href="#sapphire.analysis.process_traces.MeanFilter.filter_traces" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply the mean filter to multiple traces</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sapphire.analysis.process_traces.MeanFilter.filter_trace">
-<code class="descname">filter_trace</code><span class="sig-paren">(</span><em>raw_trace</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.process_traces.MeanFilter.filter_trace" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">filter_trace</tt><big>(</big><em>raw_trace</em><big>)</big><a class="headerlink" href="#sapphire.analysis.process_traces.MeanFilter.filter_trace" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply the mean filter to a single trace</p>
 <p>First separate the even and odd ADC traces, filter each separately.
 Then recombine them and pass the entire trace through the filter.</p>
@@ -214,13 +214,13 @@ Then recombine them and pass the entire trace through the filter.</p>
 
 <dl class="method">
 <dt id="sapphire.analysis.process_traces.MeanFilter.mean_filter_with_threshold">
-<code class="descname">mean_filter_with_threshold</code><span class="sig-paren">(</span><em>trace</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.process_traces.MeanFilter.mean_filter_with_threshold" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">mean_filter_with_threshold</tt><big>(</big><em>trace</em><big>)</big><a class="headerlink" href="#sapphire.analysis.process_traces.MeanFilter.mean_filter_with_threshold" title="Permalink to this definition">¶</a></dt>
 <dd><p>The mean filter in case use_threshold is True</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sapphire.analysis.process_traces.MeanFilter.mean_filter_without_threshold">
-<code class="descname">mean_filter_without_threshold</code><span class="sig-paren">(</span><em>trace</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.process_traces.MeanFilter.mean_filter_without_threshold" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">mean_filter_without_threshold</tt><big>(</big><em>trace</em><big>)</big><a class="headerlink" href="#sapphire.analysis.process_traces.MeanFilter.mean_filter_without_threshold" title="Permalink to this definition">¶</a></dt>
 <dd><p>The mean filter in case use_threshold is False</p>
 </dd></dl>
 
@@ -232,7 +232,7 @@ Then recombine them and pass the entire trace through the filter.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/header.png" alt="Logo"/>
@@ -243,14 +243,12 @@ Then recombine them and pass the entire trace through the filter.</p>
   <h4>Next topic</h4>
   <p class="topless"><a href="reconstructions.html"
                         title="next chapter">Reconstructions</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../_sources/analysis/process_traces.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/analysis/process_traces.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
@@ -267,7 +265,7 @@ Then recombine them and pass the entire trace through the filter.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -282,14 +280,14 @@ Then recombine them and pass the entire trace through the filter.</p>
         <li class="right" >
           <a href="process_events.html" title="Processing of HiSPARC events"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
-          <li class="nav-item nav-item-2"><a href="../analysis.html" >Data analysis</a> &raquo;</li> 
+        <li><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li><a href="../analysis.html" >Data analysis</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer" role="contentinfo">
+    <div class="footer">
         &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>

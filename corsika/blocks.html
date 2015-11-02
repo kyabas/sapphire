@@ -24,15 +24,15 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="SAPPHiRE 0.12.6 documentation" href="../index.html" />
-    <link rel="up" title="CORSIKA Reader" href="../corsika.html" />
-    <link rel="next" title="CORSIKA Units" href="units.html" />
-    <link rel="prev" title="CORSIKA Reader" href="reader.html" /> 
+    <link rel="up" title="CORSIKA simulations" href="../corsika.html" />
+    <link rel="next" title="Query CORSIKA overview for simulations" href="corsika_queries.html" />
+    <link rel="prev" title="CORSIKA simulations" href="../corsika.html" /> 
   </head>
-  <body role="document">
-    <div class="related" role="navigation" aria-label="related navigation">
+  <body>
+    <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -42,21 +42,21 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="units.html" title="CORSIKA Units"
+          <a href="corsika_queries.html" title="Query CORSIKA overview for simulations"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="reader.html" title="CORSIKA Reader"
+          <a href="../corsika.html" title="CORSIKA simulations"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
-          <li class="nav-item nav-item-2"><a href="../corsika.html" accesskey="U">CORSIKA Reader</a> &raquo;</li> 
+        <li><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li><a href="../corsika.html" accesskey="U">CORSIKA simulations</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body" role="main">
+          <div class="body">
             
   <div class="section" id="module-sapphire.corsika.blocks">
 <span id="corsika-blocks"></span><h1>CORSIKA Blocks<a class="headerlink" href="#module-sapphire.corsika.blocks" title="Permalink to this headline">¶</a></h1>
@@ -66,26 +66,26 @@
 <p>Author: Javier Gonzalez &lt;<a class="reference external" href="mailto:jgonzalez&#37;&#52;&#48;ik&#46;fzk&#46;de">jgonzalez<span>&#64;</span>ik<span>&#46;</span>fzk<span>&#46;</span>de</a>&gt;</p>
 <dl class="class">
 <dt id="sapphire.corsika.blocks.Format">
-<em class="property">class </em><code class="descclassname">sapphire.corsika.blocks.</code><code class="descname">Format</code><a class="headerlink" href="#sapphire.corsika.blocks.Format" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sapphire.corsika.blocks.</tt><tt class="descname">Format</tt><a class="headerlink" href="#sapphire.corsika.blocks.Format" title="Permalink to this definition">¶</a></dt>
 <dd><p>The binary format information of the file.</p>
 <p>As specified in the CORSIKA user manual, Section 10.2.1.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="sapphire.corsika.blocks.RunHeader">
-<em class="property">class </em><code class="descclassname">sapphire.corsika.blocks.</code><code class="descname">RunHeader</code><span class="sig-paren">(</span><em>subblock</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.blocks.RunHeader" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sapphire.corsika.blocks.</tt><tt class="descname">RunHeader</tt><big>(</big><em>subblock</em><big>)</big><a class="headerlink" href="#sapphire.corsika.blocks.RunHeader" title="Permalink to this definition">¶</a></dt>
 <dd><p>The run header sub-block</p>
 <p>As specified in the CORSIKA user manual, Table 7.</p>
 <dl class="method">
 <dt id="sapphire.corsika.blocks.RunHeader.thickness_to_height">
-<code class="descname">thickness_to_height</code><span class="sig-paren">(</span><em>thickness</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.blocks.RunHeader.thickness_to_height" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">thickness_to_height</tt><big>(</big><em>thickness</em><big>)</big><a class="headerlink" href="#sapphire.corsika.blocks.RunHeader.thickness_to_height" title="Permalink to this definition">¶</a></dt>
 <dd><p>&#8220;Calculate height (m) for given thickness (gramms/cm**2)</p>
 <p>As specified in the CORSIKA user manual, Appendix D.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sapphire.corsika.blocks.RunHeader.height_to_thickness">
-<code class="descname">height_to_thickness</code><span class="sig-paren">(</span><em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.blocks.RunHeader.height_to_thickness" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">height_to_thickness</tt><big>(</big><em>height</em><big>)</big><a class="headerlink" href="#sapphire.corsika.blocks.RunHeader.height_to_thickness" title="Permalink to this definition">¶</a></dt>
 <dd><p>Thickness (gramms/cm**2) of atmosphere given a height (m)</p>
 <p>As specified in the CORSIKA user manual, Appendix D.</p>
 </dd></dl>
@@ -94,43 +94,43 @@
 
 <dl class="class">
 <dt id="sapphire.corsika.blocks.EventHeader">
-<em class="property">class </em><code class="descclassname">sapphire.corsika.blocks.</code><code class="descname">EventHeader</code><span class="sig-paren">(</span><em>subblock</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.blocks.EventHeader" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sapphire.corsika.blocks.</tt><tt class="descname">EventHeader</tt><big>(</big><em>subblock</em><big>)</big><a class="headerlink" href="#sapphire.corsika.blocks.EventHeader" title="Permalink to this definition">¶</a></dt>
 <dd><p>The event header sub-block</p>
 <p>As specified in the CORSIKA user manual, Table 8.</p>
 <dl class="attribute">
 <dt id="sapphire.corsika.blocks.EventHeader.hadron_model_low">
-<code class="descname">hadron_model_low</code><a class="headerlink" href="#sapphire.corsika.blocks.EventHeader.hadron_model_low" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">hadron_model_low</tt><a class="headerlink" href="#sapphire.corsika.blocks.EventHeader.hadron_model_low" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sapphire.corsika.blocks.EventHeader.hadron_model_high">
-<code class="descname">hadron_model_high</code><a class="headerlink" href="#sapphire.corsika.blocks.EventHeader.hadron_model_high" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">hadron_model_high</tt><a class="headerlink" href="#sapphire.corsika.blocks.EventHeader.hadron_model_high" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sapphire.corsika.blocks.EventHeader.computer">
-<code class="descname">computer</code><a class="headerlink" href="#sapphire.corsika.blocks.EventHeader.computer" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">computer</tt><a class="headerlink" href="#sapphire.corsika.blocks.EventHeader.computer" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="sapphire.corsika.blocks.RunEnd">
-<em class="property">class </em><code class="descclassname">sapphire.corsika.blocks.</code><code class="descname">RunEnd</code><span class="sig-paren">(</span><em>subblock</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.blocks.RunEnd" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sapphire.corsika.blocks.</tt><tt class="descname">RunEnd</tt><big>(</big><em>subblock</em><big>)</big><a class="headerlink" href="#sapphire.corsika.blocks.RunEnd" title="Permalink to this definition">¶</a></dt>
 <dd><p>The run end sub-block</p>
 <p>As specified in the CORSIKA user manual, Table 14.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="sapphire.corsika.blocks.EventEnd">
-<em class="property">class </em><code class="descclassname">sapphire.corsika.blocks.</code><code class="descname">EventEnd</code><span class="sig-paren">(</span><em>subblock</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.blocks.EventEnd" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sapphire.corsika.blocks.</tt><tt class="descname">EventEnd</tt><big>(</big><em>subblock</em><big>)</big><a class="headerlink" href="#sapphire.corsika.blocks.EventEnd" title="Permalink to this definition">¶</a></dt>
 <dd><p>The event end sub-block</p>
 <p>As specified in the CORSIKA user manual, Table 13.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="sapphire.corsika.blocks.particle_data">
-<code class="descclassname">sapphire.corsika.blocks.</code><code class="descname">particle_data</code><span class="sig-paren">(</span><em>subblock</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.blocks.particle_data" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.corsika.blocks.</tt><tt class="descname">particle_data</tt><big>(</big><em>subblock</em><big>)</big><a class="headerlink" href="#sapphire.corsika.blocks.particle_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get particle data.</p>
 <p>As specified in the CORSIKA user manual, Table 10. High-performing
 version of the ParticleData class, but without all the easy-to-use
@@ -150,51 +150,51 @@ observation_level, phi data.</td>
 
 <dl class="class">
 <dt id="sapphire.corsika.blocks.ParticleData">
-<em class="property">class </em><code class="descclassname">sapphire.corsika.blocks.</code><code class="descname">ParticleData</code><span class="sig-paren">(</span><em>subblock</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.blocks.ParticleData" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sapphire.corsika.blocks.</tt><tt class="descname">ParticleData</tt><big>(</big><em>subblock</em><big>)</big><a class="headerlink" href="#sapphire.corsika.blocks.ParticleData" title="Permalink to this definition">¶</a></dt>
 <dd><p>The particle data sub-block</p>
 <p>As specified in the CORSIKA user manual, Table 10.</p>
 <dl class="attribute">
 <dt id="sapphire.corsika.blocks.ParticleData.is_detectable">
-<code class="descname">is_detectable</code><a class="headerlink" href="#sapphire.corsika.blocks.ParticleData.is_detectable" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">is_detectable</tt><a class="headerlink" href="#sapphire.corsika.blocks.ParticleData.is_detectable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get True or False if the particle is detectable</p>
 <p>Note: gamma particles are currently not included.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="sapphire.corsika.blocks.ParticleData.particle">
-<code class="descname">particle</code><a class="headerlink" href="#sapphire.corsika.blocks.ParticleData.particle" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">particle</tt><a class="headerlink" href="#sapphire.corsika.blocks.ParticleData.particle" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sapphire.corsika.blocks.ParticleData.is_particle">
-<code class="descname">is_particle</code><a class="headerlink" href="#sapphire.corsika.blocks.ParticleData.is_particle" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">is_particle</tt><a class="headerlink" href="#sapphire.corsika.blocks.ParticleData.is_particle" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sapphire.corsika.blocks.ParticleData.is_nucleus">
-<code class="descname">is_nucleus</code><a class="headerlink" href="#sapphire.corsika.blocks.ParticleData.is_nucleus" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">is_nucleus</tt><a class="headerlink" href="#sapphire.corsika.blocks.ParticleData.is_nucleus" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sapphire.corsika.blocks.ParticleData.is_Cherenkov">
-<code class="descname">is_Cherenkov</code><a class="headerlink" href="#sapphire.corsika.blocks.ParticleData.is_Cherenkov" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">is_Cherenkov</tt><a class="headerlink" href="#sapphire.corsika.blocks.ParticleData.is_Cherenkov" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sapphire.corsika.blocks.ParticleData.atomic_number">
-<code class="descname">atomic_number</code><a class="headerlink" href="#sapphire.corsika.blocks.ParticleData.atomic_number" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">atomic_number</tt><a class="headerlink" href="#sapphire.corsika.blocks.ParticleData.atomic_number" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sapphire.corsika.blocks.ParticleData.atom">
-<code class="descname">atom</code><a class="headerlink" href="#sapphire.corsika.blocks.ParticleData.atom" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">atom</tt><a class="headerlink" href="#sapphire.corsika.blocks.ParticleData.atom" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="sapphire.corsika.blocks.CherenkovData">
-<em class="property">class </em><code class="descclassname">sapphire.corsika.blocks.</code><code class="descname">CherenkovData</code><span class="sig-paren">(</span><em>subblock</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.blocks.CherenkovData" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sapphire.corsika.blocks.</tt><tt class="descname">CherenkovData</tt><big>(</big><em>subblock</em><big>)</big><a class="headerlink" href="#sapphire.corsika.blocks.CherenkovData" title="Permalink to this definition">¶</a></dt>
 <dd><p>The cherenkov photon sub-block</p>
 <p>As specified in CORSIKA user manual, Table 11.</p>
 <p>The number of CherenkovData records in a sub-block depends on
@@ -203,21 +203,21 @@ compilation options.</p>
 
 <dl class="class">
 <dt id="sapphire.corsika.blocks.FormatThin">
-<em class="property">class </em><code class="descclassname">sapphire.corsika.blocks.</code><code class="descname">FormatThin</code><a class="headerlink" href="#sapphire.corsika.blocks.FormatThin" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sapphire.corsika.blocks.</tt><tt class="descname">FormatThin</tt><a class="headerlink" href="#sapphire.corsika.blocks.FormatThin" title="Permalink to this definition">¶</a></dt>
 <dd><p>The format information of the thinned file</p>
 <p>As specified in CORSIKA user manual, Section 10.2.2.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="sapphire.corsika.blocks.ParticleDataThin">
-<em class="property">class </em><code class="descclassname">sapphire.corsika.blocks.</code><code class="descname">ParticleDataThin</code><span class="sig-paren">(</span><em>subblock</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.blocks.ParticleDataThin" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sapphire.corsika.blocks.</tt><tt class="descname">ParticleDataThin</tt><big>(</big><em>subblock</em><big>)</big><a class="headerlink" href="#sapphire.corsika.blocks.ParticleDataThin" title="Permalink to this definition">¶</a></dt>
 <dd><p>The thinned particle data sub-block</p>
 <p>As specified in the CORSIKA user manual, Table 10.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="sapphire.corsika.blocks.CherenkovDataThin">
-<em class="property">class </em><code class="descclassname">sapphire.corsika.blocks.</code><code class="descname">CherenkovDataThin</code><span class="sig-paren">(</span><em>subblock</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.blocks.CherenkovDataThin" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sapphire.corsika.blocks.</tt><tt class="descname">CherenkovDataThin</tt><big>(</big><em>subblock</em><big>)</big><a class="headerlink" href="#sapphire.corsika.blocks.CherenkovDataThin" title="Permalink to this definition">¶</a></dt>
 <dd><p>The thinned cherenkov photon sub-block</p>
 <p>As specified in CORSIKA user manual, Table 11.</p>
 <p>The number of CherenkovData records in a sub-block depends on
@@ -230,25 +230,23 @@ compilation options.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/header.png" alt="Logo"/>
             </a></p>
   <h4>Previous topic</h4>
-  <p class="topless"><a href="reader.html"
-                        title="previous chapter">CORSIKA Reader</a></p>
+  <p class="topless"><a href="../corsika.html"
+                        title="previous chapter">CORSIKA simulations</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="units.html"
-                        title="next chapter">CORSIKA Units</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../_sources/corsika/blocks.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
+  <p class="topless"><a href="corsika_queries.html"
+                        title="next chapter">Query CORSIKA overview for simulations</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/corsika/blocks.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
@@ -265,7 +263,7 @@ compilation options.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -275,19 +273,19 @@ compilation options.</p>
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="units.html" title="CORSIKA Units"
+          <a href="corsika_queries.html" title="Query CORSIKA overview for simulations"
              >next</a> |</li>
         <li class="right" >
-          <a href="reader.html" title="CORSIKA Reader"
+          <a href="../corsika.html" title="CORSIKA simulations"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
-          <li class="nav-item nav-item-2"><a href="../corsika.html" >CORSIKA Reader</a> &raquo;</li> 
+        <li><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li><a href="../corsika.html" >CORSIKA simulations</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer" role="contentinfo">
+    <div class="footer">
         &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>

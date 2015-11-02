@@ -24,15 +24,15 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="top" title="SAPPHiRE 0.12.6 documentation" href="index.html" />
     <link rel="up" title="SAPPHiRE Reference" href="sapphire.html" />
     <link rel="next" title="KASCADE data" href="kascade.html" />
-    <link rel="prev" title="Store CORSIKA data as HDF5" href="corsika/store_corsika_data.html" /> 
+    <link rel="prev" title="CORSIKA Units" href="corsika/units.html" /> 
   </head>
-  <body role="document">
-    <div class="related" role="navigation" aria-label="related navigation">
+  <body>
+    <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -45,33 +45,33 @@
           <a href="kascade.html" title="KASCADE data"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="corsika/store_corsika_data.html" title="Store CORSIKA data as HDF5"
+          <a href="corsika/units.html" title="CORSIKA Units"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="sapphire.html" accesskey="U">SAPPHiRE Reference</a> &raquo;</li> 
+        <li><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li><a href="sapphire.html" accesskey="U">SAPPHiRE Reference</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body" role="main">
+          <div class="body">
             
   <div class="section" id="module-sapphire.esd">
 <span id="event-summary-data"></span><h1>Event Summary Data<a class="headerlink" href="#module-sapphire.esd" title="Permalink to this headline">¶</a></h1>
 <p>Fetch events and other data from the event summary data (ESD).</p>
 <p>This module enables you to access the event summary data.</p>
 <p>If you are in a real hurry and know what you&#8217;re doing (and took the
-time to read this far), you can call the <a class="reference internal" href="#sapphire.esd.quick_download" title="sapphire.esd.quick_download"><code class="xref py py-func docutils literal"><span class="pre">quick_download()</span></code></a>
+time to read this far), you can call the <a class="reference internal" href="#sapphire.esd.quick_download" title="sapphire.esd.quick_download"><tt class="xref py py-func docutils literal"><span class="pre">quick_download()</span></tt></a>
 function like this:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sapphire</span> <span class="kn">import</span> <span class="n">quick_download</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">quick_download</span><span class="p">(</span><span class="mi">501</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>For regular use, look up <a class="reference internal" href="#sapphire.esd.download_data" title="sapphire.esd.download_data"><code class="xref py py-func docutils literal"><span class="pre">download_data()</span></code></a>.</p>
+<p>For regular use, look up <a class="reference internal" href="#sapphire.esd.download_data" title="sapphire.esd.download_data"><tt class="xref py py-func docutils literal"><span class="pre">download_data()</span></tt></a>.</p>
 <dl class="function">
 <dt id="sapphire.esd.quick_download">
-<code class="descclassname">sapphire.esd.</code><code class="descname">quick_download</code><span class="sig-paren">(</span><em>station_number</em>, <em>date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.esd.quick_download" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.esd.</tt><tt class="descname">quick_download</tt><big>(</big><em>station_number</em>, <em>date=None</em><big>)</big><a class="headerlink" href="#sapphire.esd.quick_download" title="Permalink to this definition">¶</a></dt>
 <dd><p>Quickly download some data</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -80,7 +80,7 @@ function like this:</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>station_number</strong> &#8211; The HiSPARC station number</li>
 <li><strong>date</strong> &#8211; the date for which to get data (datetime.datetime
-instance), passed unchanged to the <a class="reference internal" href="#sapphire.esd.download_data" title="sapphire.esd.download_data"><code class="xref py py-func docutils literal"><span class="pre">download_data()</span></code></a> as
+instance), passed unchanged to the <a class="reference internal" href="#sapphire.esd.download_data" title="sapphire.esd.download_data"><tt class="xref py py-func docutils literal"><span class="pre">download_data()</span></tt></a> as
 :param start:.</li>
 </ul>
 </td>
@@ -108,12 +108,12 @@ Expect no frills: you just get yesterday&#8217;s data.</p>
 
 <dl class="function">
 <dt id="sapphire.esd.load_data">
-<code class="descclassname">sapphire.esd.</code><code class="descname">load_data</code><span class="sig-paren">(</span><em>file</em>, <em>group</em>, <em>csv_file</em>, <em>type='events'</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.esd.load_data" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.esd.</tt><tt class="descname">load_data</tt><big>(</big><em>file</em>, <em>group</em>, <em>csv_file</em>, <em>type='events'</em><big>)</big><a class="headerlink" href="#sapphire.esd.load_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load downloaded event summary data into PyTables file.</p>
 <p>If you&#8217;ve previously downloaded event summary data from
 <a class="reference external" href="http://data.hisparc.nl/">http://data.hisparc.nl/</a> in CSV format, you can load them into a PyTables
 file using this method. The data is then indistinguishable from data
-downloaded using <a class="reference internal" href="#sapphire.esd.download_data" title="sapphire.esd.download_data"><code class="xref py py-func docutils literal"><span class="pre">download_data()</span></code></a>.</p>
+downloaded using <a class="reference internal" href="#sapphire.esd.download_data" title="sapphire.esd.download_data"><tt class="xref py py-func docutils literal"><span class="pre">download_data()</span></tt></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -140,7 +140,7 @@ Public Database</li>
 
 <dl class="function">
 <dt id="sapphire.esd.download_data">
-<code class="descclassname">sapphire.esd.</code><code class="descname">download_data</code><span class="sig-paren">(</span><em>file</em>, <em>group</em>, <em>station_number</em>, <em>start=None</em>, <em>end=None</em>, <em>type='events'</em>, <em>progress=True</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.esd.download_data" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.esd.</tt><tt class="descname">download_data</tt><big>(</big><em>file</em>, <em>group</em>, <em>station_number</em>, <em>start=None</em>, <em>end=None</em>, <em>type='events'</em>, <em>progress=True</em><big>)</big><a class="headerlink" href="#sapphire.esd.download_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Download event summary data</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -179,7 +179,7 @@ start.</p>
 
 <dl class="function">
 <dt id="sapphire.esd.download_coincidences">
-<code class="descclassname">sapphire.esd.</code><code class="descname">download_coincidences</code><span class="sig-paren">(</span><em>file</em>, <em>cluster=None</em>, <em>stations=None</em>, <em>start=None</em>, <em>end=None</em>, <em>n=2</em>, <em>progress=True</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.esd.download_coincidences" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.esd.</tt><tt class="descname">download_coincidences</tt><big>(</big><em>file</em>, <em>cluster=None</em>, <em>stations=None</em>, <em>start=None</em>, <em>end=None</em>, <em>n=2</em>, <em>progress=True</em><big>)</big><a class="headerlink" href="#sapphire.esd.download_coincidences" title="Permalink to this definition">¶</a></dt>
 <dd><p>Download event summary data coincidences</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -223,25 +223,23 @@ results to include only events from those stations.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="index.html">
               <img class="logo" src="_static/header.png" alt="Logo"/>
             </a></p>
   <h4>Previous topic</h4>
-  <p class="topless"><a href="corsika/store_corsika_data.html"
-                        title="previous chapter">Store CORSIKA data as HDF5</a></p>
+  <p class="topless"><a href="corsika/units.html"
+                        title="previous chapter">CORSIKA Units</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="kascade.html"
                         title="next chapter">KASCADE data</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/esd.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/esd.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -258,7 +256,7 @@ results to include only events from those stations.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -271,15 +269,15 @@ results to include only events from those stations.</p>
           <a href="kascade.html" title="KASCADE data"
              >next</a> |</li>
         <li class="right" >
-          <a href="corsika/store_corsika_data.html" title="Store CORSIKA data as HDF5"
+          <a href="corsika/units.html" title="CORSIKA Units"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="sapphire.html" >SAPPHiRE Reference</a> &raquo;</li> 
+        <li><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li><a href="sapphire.html" >SAPPHiRE Reference</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer" role="contentinfo">
+    <div class="footer">
         &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>

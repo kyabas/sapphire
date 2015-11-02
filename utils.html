@@ -24,15 +24,15 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="top" title="SAPPHiRE 0.12.6 documentation" href="index.html" />
     <link rel="up" title="SAPPHiRE Reference" href="sapphire.html" />
     <link rel="next" title="Sphinx documentation builds in gh-pages branch" href="README.html" />
     <link rel="prev" title="Transformations between geographic coordinate systems" href="transformations/geographic.html" /> 
   </head>
-  <body role="document">
-    <div class="related" role="navigation" aria-label="related navigation">
+  <body>
+    <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -47,15 +47,15 @@
         <li class="right" >
           <a href="transformations/geographic.html" title="Transformations between geographic coordinate systems"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="sapphire.html" accesskey="U">SAPPHiRE Reference</a> &raquo;</li> 
+        <li><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li><a href="sapphire.html" accesskey="U">SAPPHiRE Reference</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body" role="main">
+          <div class="body">
             
   <div class="section" id="module-sapphire.utils">
 <span id="common-utility-functions"></span><h1>Common utility functions<a class="headerlink" href="#module-sapphire.utils" title="Permalink to this headline">¶</a></h1>
@@ -63,7 +63,7 @@
 <p>The module contains some commonly functions and classes.</p>
 <dl class="function">
 <dt id="sapphire.utils.pbar">
-<code class="descclassname">sapphire.utils.</code><code class="descname">pbar</code><span class="sig-paren">(</span><em>iterable</em>, <em>length=None</em>, <em>show=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.utils.pbar" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.utils.</tt><tt class="descname">pbar</tt><big>(</big><em>iterable</em>, <em>length=None</em>, <em>show=True</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#sapphire.utils.pbar" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a new progressbar with our default widgets</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -87,25 +87,25 @@ the input, but shows a progressbar if possible.</p>
 
 <dl class="function">
 <dt id="sapphire.utils.ceil_in_base">
-<code class="descclassname">sapphire.utils.</code><code class="descname">ceil_in_base</code><span class="sig-paren">(</span><em>value</em>, <em>base</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.utils.ceil_in_base" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.utils.</tt><tt class="descname">ceil_in_base</tt><big>(</big><em>value</em>, <em>base</em><big>)</big><a class="headerlink" href="#sapphire.utils.ceil_in_base" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get nearest multiple of base above the value</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="sapphire.utils.floor_in_base">
-<code class="descclassname">sapphire.utils.</code><code class="descname">floor_in_base</code><span class="sig-paren">(</span><em>value</em>, <em>base</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.utils.floor_in_base" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.utils.</tt><tt class="descname">floor_in_base</tt><big>(</big><em>value</em>, <em>base</em><big>)</big><a class="headerlink" href="#sapphire.utils.floor_in_base" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get nearest multiple of base below the value</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="sapphire.utils.round_in_base">
-<code class="descclassname">sapphire.utils.</code><code class="descname">round_in_base</code><span class="sig-paren">(</span><em>value</em>, <em>base</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.utils.round_in_base" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.utils.</tt><tt class="descname">round_in_base</tt><big>(</big><em>value</em>, <em>base</em><big>)</big><a class="headerlink" href="#sapphire.utils.round_in_base" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get nearest multiple of base to the value</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="sapphire.utils.get_active_index">
-<code class="descclassname">sapphire.utils.</code><code class="descname">get_active_index</code><span class="sig-paren">(</span><em>values</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.utils.get_active_index" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.utils.</tt><tt class="descname">get_active_index</tt><big>(</big><em>values</em>, <em>value</em><big>)</big><a class="headerlink" href="#sapphire.utils.get_active_index" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the index where the value fits.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -126,14 +126,14 @@ the input, but shows a progressbar if possible.</p>
 
 <dl class="function">
 <dt id="sapphire.utils.gauss">
-<code class="descclassname">sapphire.utils.</code><code class="descname">gauss</code><span class="sig-paren">(</span><em>x</em>, <em>N</em>, <em>mu</em>, <em>sigma</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.utils.gauss" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.utils.</tt><tt class="descname">gauss</tt><big>(</big><em>x</em>, <em>N</em>, <em>mu</em>, <em>sigma</em><big>)</big><a class="headerlink" href="#sapphire.utils.gauss" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gaussian distribution</p>
 <p>To be used for fitting where the integral is not 1.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="sapphire.utils.norm_angle">
-<code class="descclassname">sapphire.utils.</code><code class="descname">norm_angle</code><span class="sig-paren">(</span><em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.utils.norm_angle" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.utils.</tt><tt class="descname">norm_angle</tt><big>(</big><em>angle</em><big>)</big><a class="headerlink" href="#sapphire.utils.norm_angle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Normalize an angle to the range [-pi, pi)</p>
 <p>We use the range from -pi upto but not including pi to represent
 angles.</p>
@@ -141,7 +141,7 @@ angles.</p>
 
 <dl class="function">
 <dt id="sapphire.utils.angle_between">
-<code class="descclassname">sapphire.utils.</code><code class="descname">angle_between</code><span class="sig-paren">(</span><em>zenith1</em>, <em>azimuth1</em>, <em>zenith2</em>, <em>azimuth2</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.utils.angle_between" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.utils.</tt><tt class="descname">angle_between</tt><big>(</big><em>zenith1</em>, <em>azimuth1</em>, <em>zenith2</em>, <em>azimuth2</em><big>)</big><a class="headerlink" href="#sapphire.utils.angle_between" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate the angle between two (zenith, azimuth) coordinates</p>
 <p>Using the haversine formula,
 from: <a class="reference external" href="http://www.movable-type.co.uk/scripts/latlong.html">http://www.movable-type.co.uk/scripts/latlong.html</a></p>
@@ -164,7 +164,7 @@ from: <a class="reference external" href="http://www.movable-type.co.uk/scripts/
 
 <dl class="function">
 <dt id="sapphire.utils.distance_between">
-<code class="descclassname">sapphire.utils.</code><code class="descname">distance_between</code><span class="sig-paren">(</span><em>x1</em>, <em>y1</em>, <em>x2</em>, <em>y2</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.utils.distance_between" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.utils.</tt><tt class="descname">distance_between</tt><big>(</big><em>x1</em>, <em>y1</em>, <em>x2</em>, <em>y2</em><big>)</big><a class="headerlink" href="#sapphire.utils.distance_between" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate the distance between two (x, y) coordinates</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -185,7 +185,7 @@ from: <a class="reference external" href="http://www.movable-type.co.uk/scripts/
 
 <dl class="function">
 <dt id="sapphire.utils.which">
-<code class="descclassname">sapphire.utils.</code><code class="descname">which</code><span class="sig-paren">(</span><em>program</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.utils.which" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.utils.</tt><tt class="descname">which</tt><big>(</big><em>program</em><big>)</big><a class="headerlink" href="#sapphire.utils.which" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if a command line program is available</p>
 <p>An Exception is raised if the program is not available.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -204,7 +204,7 @@ from: <a class="reference external" href="http://www.movable-type.co.uk/scripts/
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="index.html">
               <img class="logo" src="_static/header.png" alt="Logo"/>
@@ -215,14 +215,12 @@ from: <a class="reference external" href="http://www.movable-type.co.uk/scripts/
   <h4>Next topic</h4>
   <p class="topless"><a href="README.html"
                         title="next chapter">Sphinx documentation builds in gh-pages branch</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/utils.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/utils.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -239,7 +237,7 @@ from: <a class="reference external" href="http://www.movable-type.co.uk/scripts/
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -254,13 +252,13 @@ from: <a class="reference external" href="http://www.movable-type.co.uk/scripts/
         <li class="right" >
           <a href="transformations/geographic.html" title="Transformations between geographic coordinate systems"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="sapphire.html" >SAPPHiRE Reference</a> &raquo;</li> 
+        <li><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li><a href="sapphire.html" >SAPPHiRE Reference</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer" role="contentinfo">
+    <div class="footer">
         &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>

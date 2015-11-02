@@ -24,15 +24,15 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="top" title="SAPPHiRE 0.12.6 documentation" href="index.html" />
     <link rel="up" title="SAPPHiRE Reference" href="sapphire.html" />
     <link rel="next" title="Simulation of the detection of EAS events" href="simulations.html" />
     <link rel="prev" title="Public data access" href="publicdb.html" /> 
   </head>
-  <body role="document">
-    <div class="related" role="navigation" aria-label="related navigation">
+  <body>
+    <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -47,15 +47,15 @@
         <li class="right" >
           <a href="publicdb.html" title="Public data access"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="sapphire.html" accesskey="U">SAPPHiRE Reference</a> &raquo;</li> 
+        <li><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li><a href="sapphire.html" accesskey="U">SAPPHiRE Reference</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body" role="main">
+          <div class="body">
             
   <div class="section" id="module-sapphire.qsub">
 <span id="nikhef-stoomboot-facilities"></span><h1>Nikhef Stoomboot facilities<a class="headerlink" href="#module-sapphire.qsub" title="Permalink to this headline">¶</a></h1>
@@ -77,10 +77,10 @@ scripts to submit, submits the jobs, and cleans up afterwards.</p>
 </div>
 <dl class="function">
 <dt id="sapphire.qsub.check_queue">
-<code class="descclassname">sapphire.qsub.</code><code class="descname">check_queue</code><span class="sig-paren">(</span><em>queue</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.qsub.check_queue" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.qsub.</tt><tt class="descname">check_queue</tt><big>(</big><em>queue</em><big>)</big><a class="headerlink" href="#sapphire.qsub.check_queue" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check for available job slots on the selected queue for current user</p>
 <p>Maximum numbers from:
-<code class="docutils literal"><span class="pre">qstat</span> <span class="pre">-Q</span> <span class="pre">-f</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-e</span> <span class="pre">Queue:</span> <span class="pre">-e</span> <span class="pre">max_user_queuable</span> <span class="pre">-e</span> <span class="pre">max_queuable</span></code>.
+<tt class="docutils literal"><span class="pre">qstat</span> <span class="pre">-Q</span> <span class="pre">-f</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-e</span> <span class="pre">Queue:</span> <span class="pre">-e</span> <span class="pre">max_user_queuable</span> <span class="pre">-e</span> <span class="pre">max_queuable</span></tt>.
 Note that some queues also have global maximum number of jobs.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -97,7 +97,7 @@ slots in use.</td>
 
 <dl class="function">
 <dt id="sapphire.qsub.submit_job">
-<code class="descclassname">sapphire.qsub.</code><code class="descname">submit_job</code><span class="sig-paren">(</span><em>script</em>, <em>name</em>, <em>queue</em>, <em>extra=''</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.qsub.submit_job" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.qsub.</tt><tt class="descname">submit_job</tt><big>(</big><em>script</em>, <em>name</em>, <em>queue</em>, <em>extra=''</em><big>)</big><a class="headerlink" href="#sapphire.qsub.submit_job" title="Permalink to this definition">¶</a></dt>
 <dd><p>Submit a job to Stoomboot</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -117,13 +117,13 @@ slots in use.</td>
 
 <dl class="function">
 <dt id="sapphire.qsub.create_script">
-<code class="descclassname">sapphire.qsub.</code><code class="descname">create_script</code><span class="sig-paren">(</span><em>script</em>, <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.qsub.create_script" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.qsub.</tt><tt class="descname">create_script</tt><big>(</big><em>script</em>, <em>name</em><big>)</big><a class="headerlink" href="#sapphire.qsub.create_script" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create script as temp file to be run on Stoomboot</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="sapphire.qsub.delete_script">
-<code class="descclassname">sapphire.qsub.</code><code class="descname">delete_script</code><span class="sig-paren">(</span><em>script_path</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.qsub.delete_script" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.qsub.</tt><tt class="descname">delete_script</tt><big>(</big><em>script_path</em><big>)</big><a class="headerlink" href="#sapphire.qsub.delete_script" title="Permalink to this definition">¶</a></dt>
 <dd><p>Delete script after submitting to Stoomboot</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -141,7 +141,7 @@ slots in use.</td>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="index.html">
               <img class="logo" src="_static/header.png" alt="Logo"/>
@@ -152,14 +152,12 @@ slots in use.</td>
   <h4>Next topic</h4>
   <p class="topless"><a href="simulations.html"
                         title="next chapter">Simulation of the detection of EAS events</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/qsub.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/qsub.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -176,7 +174,7 @@ slots in use.</td>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -191,13 +189,13 @@ slots in use.</td>
         <li class="right" >
           <a href="publicdb.html" title="Public data access"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="sapphire.html" >SAPPHiRE Reference</a> &raquo;</li> 
+        <li><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li><a href="sapphire.html" >SAPPHiRE Reference</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer" role="contentinfo">
+    <div class="footer">
         &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>

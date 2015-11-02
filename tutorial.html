@@ -24,14 +24,14 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="top" title="SAPPHiRE 0.12.6 documentation" href="index.html" />
     <link rel="next" title="SAPPHiRE Reference" href="sapphire.html" />
     <link rel="prev" title="Installation" href="installation.html" /> 
   </head>
-  <body role="document">
-    <div class="related" role="navigation" aria-label="related navigation">
+  <body>
+    <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -46,14 +46,14 @@
         <li class="right" >
           <a href="installation.html" title="Installation"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li> 
+        <li><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body" role="main">
+          <div class="body">
             
   <div class="section" id="tutorial">
 <h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
@@ -89,10 +89,10 @@ or type short commands in the command prompt in the bottom right. The first thin
 <span class="go">Hello, world</span>
 </pre></div>
 </div>
-<p>it means we&#8217;re typing in Python code.  The <code class="docutils literal"><span class="pre">&gt;&gt;&gt;</span></code> is the Python <em>prompt</em>.
+<p>it means we&#8217;re typing in Python code.  The <tt class="docutils literal"><span class="pre">&gt;&gt;&gt;</span></tt> is the Python <em>prompt</em>.
 It tells you that the Python interpreter is waiting for you to give it
-some instructions.  In the above example, we&#8217;ve typed in <code class="docutils literal"><span class="pre">print</span> <span class="pre">'Hello,</span>
-<span class="pre">world'</span></code>.  The interpreter subsequently executed the code and printed
+some instructions.  In the above example, we&#8217;ve typed in <tt class="docutils literal"><span class="pre">print</span> <span class="pre">'Hello,</span>
+<span class="pre">world'</span></tt>.  The interpreter subsequently executed the code and printed
 <em>Hello, world</em> on the screen.</p>
 <p>The first thing we&#8217;ll have to do to start using SAPPHiRE is to <em>import</em>
 the SAPPHiRE module:</p>
@@ -105,7 +105,7 @@ some help from inside the Python terminal.  Just say:</p>
 </pre></div>
 </div>
 <p>and you&#8217;ll be presented with a basic help screen.  Instead of
-<code class="docutils literal"><span class="pre">sapphire</span></code>, you can throw in modules, packages, functions, classes,
+<tt class="docutils literal"><span class="pre">sapphire</span></tt>, you can throw in modules, packages, functions, classes,
 objects, etc.  Everything in Python has <em>some</em> help text associated with
 it.  Not all of it is very helpful to a newcomer, hence this tutorial.
 All help text is also available in the <a class="reference internal" href="sapphire.html"><em>SAPPHiRE Reference</em></a>.</p>
@@ -113,7 +113,7 @@ All help text is also available in the <a class="reference internal" href="sapph
 <div class="section" id="downloading-and-accessing-hisparc-data">
 <h2>Downloading and accessing HiSPARC data<a class="headerlink" href="#downloading-and-accessing-hisparc-data" title="Permalink to this headline">¶</a></h2>
 <p>The SAPPHiRE package comprises multiple modules and packages. To access data
-from the public database, we&#8217;ll have to import the <a class="reference internal" href="esd.html#module-sapphire.esd" title="sapphire.esd"><code class="xref py py-mod docutils literal"><span class="pre">sapphire.esd</span></code></a> module.
+from the public database, we&#8217;ll have to import the <a class="reference internal" href="esd.html#module-sapphire.esd" title="sapphire.esd"><tt class="xref py py-mod docutils literal"><span class="pre">sapphire.esd</span></tt></a> module.
 This module gives us access to the <em>event summary data</em>, which is the raw
 HiSPARC data with preliminary analysis already included. It is simple to
 quickly start playing with data:</p>
@@ -129,29 +129,29 @@ quickly start playing with data:</p>
 <span class="go">/s102/events (Table(46382,)) &#39;&#39;</span>
 </pre></div>
 </div>
-<p>First, we import the <a class="reference internal" href="esd.html#module-sapphire.esd" title="sapphire.esd"><code class="xref py py-mod docutils literal"><span class="pre">sapphire.esd</span></code></a> module. Then, we download data from
-station 102 using the <a class="reference internal" href="esd.html#sapphire.esd.quick_download" title="sapphire.esd.quick_download"><code class="xref py py-func docutils literal"><span class="pre">sapphire.esd.quick_download()</span></code></a> function. This
+<p>First, we import the <a class="reference internal" href="esd.html#module-sapphire.esd" title="sapphire.esd"><tt class="xref py py-mod docutils literal"><span class="pre">sapphire.esd</span></tt></a> module. Then, we download data from
+station 102 using the <a class="reference internal" href="esd.html#sapphire.esd.quick_download" title="sapphire.esd.quick_download"><tt class="xref py py-func docutils literal"><span class="pre">sapphire.esd.quick_download()</span></tt></a> function. This
 function downloads yesterday&#8217;s data, and creates a datafile on the fly. More on
 that later.</p>
 <p>If we want to exercise more control, we need to do some things manually. First,
-we need the <code class="docutils literal"><span class="pre">tables</span></code> module to actually store the data. <a class="reference external" href="pytables.org">PyTables</a> is based on the open HDF5 data format, which is used by <a class="reference external" href="http://www.hdfgroup.org/HDF5/users5.html">many
+we need the <tt class="docutils literal"><span class="pre">tables</span></tt> module to actually store the data. <a class="reference external" href="pytables.org">PyTables</a> is based on the open HDF5 data format, which is used by <a class="reference external" href="http://www.hdfgroup.org/HDF5/users5.html">many
 (research) institutes</a>.  For
 example, it is used by the KNMI and by NASA.  To specify the date and time for
-which to download the data, we need the <code class="docutils literal"><span class="pre">datetime</span></code> module.  Thus, we have:</p>
+which to download the data, we need the <tt class="docutils literal"><span class="pre">datetime</span></tt> module.  Thus, we have:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">tables</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">datetime</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sapphire</span> <span class="kn">import</span> <span class="n">esd</span>
 </pre></div>
 </div>
-<p>Creating an empty data file, with the name <code class="docutils literal"><span class="pre">mydata.h5</span></code>, is done easily:</p>
+<p>Creating an empty data file, with the name <tt class="docutils literal"><span class="pre">mydata.h5</span></tt>, is done easily:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="s">&#39;mydata.h5&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal"><span class="pre">'w'</span></code> means <em>write</em>, which creates a file for writing (and reading).
+<p>The <tt class="docutils literal"><span class="pre">'w'</span></tt> means <em>write</em>, which creates a file for writing (and reading).
 Mind that this will create an empty file.  If there already was a file
 with that name, it will be overwritten!  Alternatively, you can say
-<code class="docutils literal"><span class="pre">'a'</span></code>, which means <em>append</em>, thus adding to an existing file without
-overwriting its contents.  Finally, you can specify <code class="docutils literal"><span class="pre">'r'</span></code> for
+<tt class="docutils literal"><span class="pre">'a'</span></tt>, which means <em>append</em>, thus adding to an existing file without
+overwriting its contents.  Finally, you can specify <tt class="docutils literal"><span class="pre">'r'</span></tt> for
 <em>read-only</em>.</p>
 <div class="section" id="downloading-data">
 <h3>Downloading data<a class="headerlink" href="#downloading-data" title="Permalink to this headline">¶</a></h3>
@@ -176,50 +176,50 @@ data for a station in the Netherlands, we have just said from 20:00 to 22:00
 local time (when it&#8217;s not summer time).  You can specify the time up to the
 second.</p>
 <p>We have not actually done anything yet.  We have just stored our time
-window in two arbitrarily-named variables, <code class="docutils literal"><span class="pre">start</span></code> and <code class="docutils literal"><span class="pre">end</span></code>.  To
-download data from station 501 and store it in a group with name <code class="docutils literal"><span class="pre">/s501</span></code>,
-we can use the <a class="reference internal" href="esd.html#sapphire.esd.download_data" title="sapphire.esd.download_data"><code class="xref py py-func docutils literal"><span class="pre">sapphire.esd.download_data()</span></code></a> function:</p>
+window in two arbitrarily-named variables, <tt class="docutils literal"><span class="pre">start</span></tt> and <tt class="docutils literal"><span class="pre">end</span></tt>.  To
+download data from station 501 and store it in a group with name <tt class="docutils literal"><span class="pre">/s501</span></tt>,
+we can use the <a class="reference internal" href="esd.html#sapphire.esd.download_data" title="sapphire.esd.download_data"><tt class="xref py py-func docutils literal"><span class="pre">sapphire.esd.download_data()</span></tt></a> function:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">download_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s">&#39;/s501&#39;</span><span class="p">,</span> <span class="mi">501</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
 <span class="go">100%|####################################|Time: 0:00:16</span>
 </pre></div>
 </div>
 <p>It will show a progressbar to indicate the progress of the download.</p>
 <p>As you can see in the reference documentation of
-<a class="reference internal" href="esd.html#sapphire.esd.download_data" title="sapphire.esd.download_data"><code class="xref py py-func docutils literal"><span class="pre">sapphire.esd.download_data()</span></code></a>, available by either clicking on
-the link or typing in <code class="docutils literal"><span class="pre">help(esd.download_data)</span></code> in the
+<a class="reference internal" href="esd.html#sapphire.esd.download_data" title="sapphire.esd.download_data"><tt class="xref py py-func docutils literal"><span class="pre">sapphire.esd.download_data()</span></tt></a>, available by either clicking on
+the link or typing in <tt class="docutils literal"><span class="pre">help(esd.download_data)</span></tt> in the
 interpreter, the function takes six arguments: <em>file, group, station_number,
 start, end</em> and <em>type</em>.  The last one has the default argument
 <em>&#8216;events&#8217;</em>, and may be omitted, as we have done here.  In our example, we
-have opened a file, <code class="docutils literal"><span class="pre">mydata.h5</span></code>, and have stored the file <em>handler</em> in
-the variable <code class="docutils literal"><span class="pre">data</span></code>.  So, we passed <code class="docutils literal"><span class="pre">data</span></code> to the function.  The group
-name is <code class="docutils literal"><span class="pre">/s501</span></code>.  Group names in PyTables are just like folders in a
+have opened a file, <tt class="docutils literal"><span class="pre">mydata.h5</span></tt>, and have stored the file <em>handler</em> in
+the variable <tt class="docutils literal"><span class="pre">data</span></tt>.  So, we passed <tt class="docutils literal"><span class="pre">data</span></tt> to the function.  The group
+name is <tt class="docutils literal"><span class="pre">/s501</span></tt>.  Group names in PyTables are just like folders in a
 directory hierarchy.  So, we might have specified
-<code class="docutils literal"><span class="pre">/path/to/my/hisparc/data/files/for_station/s501</span></code>.  It is important to
+<tt class="docutils literal"><span class="pre">/path/to/my/hisparc/data/files/for_station/s501</span></tt>.  It is important to
 note that this has absolutely nothing to do with <em>files</em>.  Whatever path
 you specify, it is all contained <em>inside</em> your data file.  Since this is
 just a small data file, we have opted for a simple structure.  At the
-moment, just one group named <code class="docutils literal"><span class="pre">s501</span></code> at the root of the hierarchy.  Group
-names must start with a letter, hence the <code class="docutils literal"><span class="pre">s</span></code> for station.</p>
+moment, just one group named <tt class="docutils literal"><span class="pre">s501</span></tt> at the root of the hierarchy.  Group
+names must start with a letter, hence the <tt class="docutils literal"><span class="pre">s</span></tt> for station.</p>
 <p>The <em>station_number</em> is simply the station number.  Here, we&#8217;ve chosen to
 download data for station 501, located at Nikhef.  The <em>start</em> and <em>end</em>
 parameters specify the date/time range.</p>
 <p>Finally, <em>type</em> selects whether to download event or weather data should
 be downloaded.  We&#8217;ve selected the default, which is <em>events</em>. We can also
-download the weather data by changing the type to <code class="docutils literal"><span class="pre">'weather'</span></code>:</p>
+download the weather data by changing the type to <tt class="docutils literal"><span class="pre">'weather'</span></tt>:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">download_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s">&#39;/s501&#39;</span><span class="p">,</span> <span class="mi">501</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s">&#39;weather&#39;</span><span class="p">)</span>
 <span class="go">100%|####################################|Time: 0:00:10</span>
 </pre></div>
 </div>
 <p>To access the raw data that includes the original detector traces the
-<a class="reference internal" href="publicdb.html#sapphire.publicdb.download_data" title="sapphire.publicdb.download_data"><code class="xref py py-func docutils literal"><span class="pre">sapphire.publicdb.download_data()</span></code></a> function can be used instead. However,
+<a class="reference internal" href="publicdb.html#sapphire.publicdb.download_data" title="sapphire.publicdb.download_data"><tt class="xref py py-func docutils literal"><span class="pre">sapphire.publicdb.download_data()</span></tt></a> function can be used instead. However,
 downloading data will take much longer that way. If only some traces need to be
-accessed, the <a class="reference internal" href="api.html#module-sapphire.api" title="sapphire.api"><code class="xref py py-mod docutils literal"><span class="pre">sapphire.api</span></code></a> is a better choice. We&#8217;ll use that module
+accessed, the <a class="reference internal" href="api.html#module-sapphire.api" title="sapphire.api"><tt class="xref py py-mod docutils literal"><span class="pre">sapphire.api</span></tt></a> is a better choice. We&#8217;ll use that module
 later in the tutorial.</p>
 </div>
 <div class="section" id="looking-around">
 <h3>Looking around<a class="headerlink" href="#looking-around" title="Permalink to this headline">¶</a></h3>
 <p>If you want to know what groups and tables are contained within the data
-file, just <code class="docutils literal"><span class="pre">print</span></code> it:</p>
+file, just <tt class="docutils literal"><span class="pre">print</span></tt> it:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">data</span>
 <span class="go">mydata.h5 (File) &#39;&#39;</span>
 <span class="go">Last modif.: &#39;Sat Dec 29 14:50:55 2012&#39;</span>
@@ -231,18 +231,18 @@ file, just <code class="docutils literal"><span class="pre">print</span></code> 
 </pre></div>
 </div>
 <p>The <em>object tree</em> gives an overview of all groups and tables.  As you can
-see, the <code class="docutils literal"><span class="pre">/s501</span></code> group contains two tables, <code class="docutils literal"><span class="pre">events</span></code> and <code class="docutils literal"><span class="pre">weather</span></code>.
+see, the <tt class="docutils literal"><span class="pre">/s501</span></tt> group contains two tables, <tt class="docutils literal"><span class="pre">events</span></tt> and <tt class="docutils literal"><span class="pre">weather</span></tt>.
 The events table contains the data from the HiSPARC scintillators, while
 the weather table contains data from the (optional) weather station.</p>
 <p>To directly access any object in the hierarchy, you can make use of the
-<code class="docutils literal"><span class="pre">data.root</span></code> object, which points to the root group.  Then, just specify
+<tt class="docutils literal"><span class="pre">data.root</span></tt> object, which points to the root group.  Then, just specify
 the remaining path, with dots instead of slashes.  For example, to access
 the events table:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">data</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">s501</span><span class="o">.</span><span class="n">events</span>
 <span class="go">/s501/events (Table(137600,)) &#39;HiSPARC coincidences table&#39;</span>
 </pre></div>
 </div>
-<p>If you want, you can also access the object using its name as a string, by calling <code class="docutils literal"><span class="pre">get_node</span></code> on the file handler:</p>
+<p>If you want, you can also access the object using its name as a string, by calling <tt class="docutils literal"><span class="pre">get_node</span></tt> on the file handler:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">data</span><span class="o">.</span><span class="n">get_node</span><span class="p">(</span><span class="s">&#39;/s501/events&#39;</span><span class="p">)</span>
 <span class="go">/s501/events (Table(137600,)) &#39;HiSPARC coincidences table&#39;</span>
 </pre></div>
@@ -277,19 +277,19 @@ object directly:</p>
 the bottom of it, read the <a class="reference external" href="http://pytables.github.com/usersguide/index.html">PyTables documentation</a>.  We&#8217;ll give a quick
 overview here.</p>
 <p>First, this table contains 137600 rows.  In total, there are fourteen
-columns: <code class="docutils literal"><span class="pre">event_id</span></code>, <code class="docutils literal"><span class="pre">timestamp</span></code>, <code class="docutils literal"><span class="pre">nanoseconds</span></code>, <code class="docutils literal"><span class="pre">ext_timestamp</span></code>,
-<code class="docutils literal"><span class="pre">pulseheights</span></code>, <code class="docutils literal"><span class="pre">integrals</span></code>, <code class="docutils literal"><span class="pre">n1</span></code>-<code class="docutils literal"><span class="pre">n4</span></code>, <code class="docutils literal"><span class="pre">t1</span></code>-<code class="docutils literal"><span class="pre">t4</span></code> and
-<code class="docutils literal"><span class="pre">t_trigger</span></code>.</p>
-<p>Each event has a unique <a class="footnote-reference" href="#event-id" id="id1">[1]</a> identifier, <code class="docutils literal"><span class="pre">event_id</span></code>.  Each
+columns: <tt class="docutils literal"><span class="pre">event_id</span></tt>, <tt class="docutils literal"><span class="pre">timestamp</span></tt>, <tt class="docutils literal"><span class="pre">nanoseconds</span></tt>, <tt class="docutils literal"><span class="pre">ext_timestamp</span></tt>,
+<tt class="docutils literal"><span class="pre">pulseheights</span></tt>, <tt class="docutils literal"><span class="pre">integrals</span></tt>, <tt class="docutils literal"><span class="pre">n1</span></tt>-<tt class="docutils literal"><span class="pre">n4</span></tt>, <tt class="docutils literal"><span class="pre">t1</span></tt>-<tt class="docutils literal"><span class="pre">t4</span></tt> and
+<tt class="docutils literal"><span class="pre">t_trigger</span></tt>.</p>
+<p>Each event has a unique <a class="footnote-reference" href="#event-id" id="id1">[1]</a> identifier, <tt class="docutils literal"><span class="pre">event_id</span></tt>.  Each
 event has a Unix timestamp in GPS time, <em>not</em> UTC.  A <a class="reference external" href="http://en.wikipedia.org/wiki/Unix_time">Unix timestamp</a> is the number of seconds that
 have passed since January 1, 1970.  The sub-second part of the timestamp
-is given in <code class="docutils literal"><span class="pre">nanoseconds</span></code>.  The <code class="docutils literal"><span class="pre">ext_timestamp</span></code> is the full
+is given in <tt class="docutils literal"><span class="pre">nanoseconds</span></tt>.  The <tt class="docutils literal"><span class="pre">ext_timestamp</span></tt> is the full
 timestamp in nanoseconds. Since there cannot exist another event with the same
 timestamp, this field in combination with the station number uniquely
-identifies the event. The <code class="docutils literal"><span class="pre">pulseheights</span></code> and <code class="docutils literal"><span class="pre">integrals</span></code> fields are
-values derived from the PMT traces by the HiSPARC DAQ.  The <code class="docutils literal"><span class="pre">n#</span></code>
-columns are derived from the <code class="docutils literal"><span class="pre">integrals</span></code> and the <code class="docutils literal"><span class="pre">t#</span></code> and
-<code class="docutils literal"><span class="pre">t_trigger</span></code> fields are obtained after analyzing the event traces on
+identifies the event. The <tt class="docutils literal"><span class="pre">pulseheights</span></tt> and <tt class="docutils literal"><span class="pre">integrals</span></tt> fields are
+values derived from the PMT traces by the HiSPARC DAQ.  The <tt class="docutils literal"><span class="pre">n#</span></tt>
+columns are derived from the <tt class="docutils literal"><span class="pre">integrals</span></tt> and the <tt class="docutils literal"><span class="pre">t#</span></tt> and
+<tt class="docutils literal"><span class="pre">t_trigger</span></tt> fields are obtained after analyzing the event traces on
 the server. For some fields there are four values, one for each detector.
 If a station only has two detectors, the values for the missing two
 detectors are -1.  If the baseline of the trace could not be determined
@@ -346,13 +346,13 @@ interested in:</p>
 </div>
 <p>Which gives us the pulseheights of the first event.  You can recognize the same
 numbers in the full event data above. The pulseheights are 16-bit integers
-(that&#8217;s the <code class="docutils literal"><span class="pre">dtype=int16</span></code>) and are determined after digitizing the events
+(that&#8217;s the <tt class="docutils literal"><span class="pre">dtype=int16</span></tt>) and are determined after digitizing the events
 using an analog-digital converter (ADC).  Each unit corresponds to about -0.57
 mV.  You can tell that all but the first detector had relatively large
 pulseheights, and that they were registered as a significant <em>peak</em> in the
 signal.</p>
 <p>If you&#8217;re interested in the pulseheights of <em>all</em> events, the fastest way
-to do it is to make use of the <code class="docutils literal"><span class="pre">Table.col</span></code> method of the table:</p>
+to do it is to make use of the <tt class="docutils literal"><span class="pre">Table.col</span></tt> method of the table:</p>
 <div class="highlight-python"><div class="highlight"><pre>&gt;&gt; events.col(&#39;pulseheights&#39;)
 array([[  3, 266, 400, 372],
        [  4, 277, 887,   7],
@@ -373,8 +373,8 @@ time span):</p>
 <span class="go">2836</span>
 </pre></div>
 </div>
-<p>Thus, we have selected 2836 events.  The variable <code class="docutils literal"><span class="pre">sel_events</span></code> no longer
-points to a table.  We can no longer make use of the <code class="docutils literal"><span class="pre">Table.col</span></code>
+<p>Thus, we have selected 2836 events.  The variable <tt class="docutils literal"><span class="pre">sel_events</span></tt> no longer
+points to a table.  We can no longer make use of the <tt class="docutils literal"><span class="pre">Table.col</span></tt>
 method, but we <em>can</em> access all pulseheights in the following way:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sel_events</span><span class="p">[</span><span class="s">&#39;pulseheights&#39;</span><span class="p">]</span>
 <span class="go">array([[173,   3, 407,   3],</span>
@@ -387,11 +387,11 @@ method, but we <em>can</em> access all pulseheights in the following way:</p>
 </pre></div>
 </div>
 <p>This notation is possible for arrays, but not for tables.  So, for tables,
-use the <code class="docutils literal"><span class="pre">Table.col</span></code> method.  For arrays, use this special notation.</p>
+use the <tt class="docutils literal"><span class="pre">Table.col</span></tt> method.  For arrays, use this special notation.</p>
 </div>
 <div class="section" id="the-sapphire-time-util-module">
-<h3>The <a class="reference internal" href="time_util.html#module-sapphire.time_util" title="sapphire.time_util"><code class="xref py py-mod docutils literal"><span class="pre">sapphire.time_util</span></code></a> module<a class="headerlink" href="#the-sapphire-time-util-module" title="Permalink to this headline">¶</a></h3>
-<p>SAPPHiRE includes a handy module: <a class="reference internal" href="time_util.html#module-sapphire.time_util" title="sapphire.time_util"><code class="xref py py-mod docutils literal"><span class="pre">sapphire.time_util</span></code></a>.  This saves you
+<h3>The <a class="reference internal" href="time_util.html#module-sapphire.time_util" title="sapphire.time_util"><tt class="xref py py-mod docutils literal"><span class="pre">sapphire.time_util</span></tt></a> module<a class="headerlink" href="#the-sapphire-time-util-module" title="Permalink to this headline">¶</a></h3>
+<p>SAPPHiRE includes a handy module: <a class="reference internal" href="time_util.html#module-sapphire.time_util" title="sapphire.time_util"><tt class="xref py py-mod docutils literal"><span class="pre">sapphire.time_util</span></tt></a>.  This saves you
 from the hassle of converting timestamps and confusing local time and GPS (or
 UTC) time.  It is important to realize that the HiSPARC station uses a GPS
 clock, and thus saves all timestamps in GPS time, which is certainly not local
@@ -410,7 +410,7 @@ conversion between a GPS date/time and a GPS timestamp is given by:</p>
 </div>
 <p>Which is, at best, cumbersome.  It is easy, however, to screw up and
 inadvertently convert to local time.  For your benefit, we have included
-the <a class="reference internal" href="time_util.html#sapphire.time_util.GPSTime" title="sapphire.time_util.GPSTime"><code class="xref py py-class docutils literal"><span class="pre">sapphire.time_util.GPSTime</span></code></a> class.  You instantiate the class
+the <a class="reference internal" href="time_util.html#sapphire.time_util.GPSTime" title="sapphire.time_util.GPSTime"><tt class="xref py py-class docutils literal"><span class="pre">sapphire.time_util.GPSTime</span></tt></a> class.  You instantiate the class
 by giving it a GPS time to work with.  It can either be in date/time
 notation, or as a timestamp.  For example, the exact same result is
 obtained by these two last lines of code:</p>
@@ -472,7 +472,7 @@ classes from modules into your own namespace:</p>
 <p>Now that we can access the data, we want to visualize it.  Plotting data
 is a great way to do that.  And of course, the venerable histogram is
 still very useful to condense thousands of events into one display.  Pylab
-contains an easy function to do just that: <code class="docutils literal"><span class="pre">hist</span></code>.  Let&#8217;s try to
+contains an easy function to do just that: <tt class="docutils literal"><span class="pre">hist</span></tt>.  Let&#8217;s try to
 recreate a few graphs as seen on the HiSPARC <a class="reference external" href="http://data.hisparc.nl/show/stations/501/2012/12/1/">data display</a>:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">ph</span> <span class="o">=</span> <span class="n">events</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s">&#39;pulseheights&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hist</span><span class="p">(</span><span class="n">ph</span><span class="p">)</span>
@@ -492,7 +492,7 @@ four side-by-side colored bars.  Secondly, the number of bins is very low;
 it is only ten.  Thirdly, the data range continues up to very high values
 with hardly any events.</p>
 <p>To fix this, we&#8217;ll make use of several arguments that can be passed to the
-<code class="docutils literal"><span class="pre">hist</span></code> function.  We&#8217;ll also make use of some NumPy (<a class="reference external" href="http://docs.scipy.org/doc/numpy/user/">documentation</a>) functionality.  For Pylab
+<tt class="docutils literal"><span class="pre">hist</span></tt> function.  We&#8217;ll also make use of some NumPy (<a class="reference external" href="http://docs.scipy.org/doc/numpy/user/">documentation</a>) functionality.  For Pylab
 documentation, see the <a class="reference external" href="http://matplotlib.org">Matplotlib site</a>
 (<a class="reference external" href="http://matplotlib.org/1.2.0/api/pyplot_summary.html">function reference</a>).  Try this:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">bins</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
@@ -502,10 +502,10 @@ documentation, see the <a class="reference external" href="http://matplotlib.org
 <span class="gp">&gt;&gt;&gt; </span><span class="n">title</span><span class="p">(</span><span class="s">&quot;Pulseheight histogram (log scale)&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal"><span class="pre">linspace</span></code> function returns an array with range from 0 to 2000 with a
+<p>The <tt class="docutils literal"><span class="pre">linspace</span></tt> function returns an array with range from 0 to 2000 with a
 total number of 101 values. The first value is 0, the last is 2000. These are
 the <em>edges</em> of the bins. So, 101 values means exactly 100 bins between 0 and
-2000. The <code class="docutils literal"><span class="pre">hist</span></code> function will then plot a <em>stepped</em> histogram with a log
+2000. The <tt class="docutils literal"><span class="pre">hist</span></tt> function will then plot a <em>stepped</em> histogram with a log
 scale.  Finally, we add some labels and a title.  This is the result:</p>
 <a class="reference internal image-reference" href="_images/tutorial-hist-better.png"><img alt="_images/tutorial-hist-better.png" src="_images/tutorial-hist-better.png" style="width: 500px;" /></a>
 <p>In this plot, the gamma and charged particle part of the spectrum are easy
@@ -521,7 +521,7 @@ page 44–45, and 49–51.</p>
 <p>If you work with HiSPARC data, invariably you&#8217;ll be interested in
 <em>coincidences</em> between HiSPARC stations.  That is, are there showers
 which have been observed by multiple stations?  To find out, we&#8217;ll make
-use of the <a class="reference internal" href="analysis/coincidences.html#module-sapphire.analysis.coincidences" title="sapphire.analysis.coincidences"><code class="xref py py-mod docutils literal"><span class="pre">sapphire.analysis.coincidences</span></code></a> module.</p>
+use of the <a class="reference internal" href="analysis/coincidences.html#module-sapphire.analysis.coincidences" title="sapphire.analysis.coincidences"><tt class="xref py py-mod docutils literal"><span class="pre">sapphire.analysis.coincidences</span></tt></a> module.</p>
 <div class="section" id="performing-the-search">
 <h3>Performing the search<a class="headerlink" href="#performing-the-search" title="Permalink to this headline">¶</a></h3>
 <p>Consider the following script, which you can hopefully understand by now
@@ -547,7 +547,7 @@ use of the <a class="reference internal" href="analysis/coincidences.html#module
 </pre></div>
 </div>
 <p>At this point, we have downloaded data for three stations. Note that we
-used the <a class="reference internal" href="esd.html#module-sapphire.esd" title="sapphire.esd"><code class="xref py py-mod docutils literal"><span class="pre">sapphire.esd</span></code></a>. Thus, we have no traces and the download
+used the <a class="reference internal" href="esd.html#module-sapphire.esd" title="sapphire.esd"><tt class="xref py py-mod docutils literal"><span class="pre">sapphire.esd</span></tt></a>. Thus, we have no traces and the download
 is quick. Let&#8217;s see what the datafile now contains:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">data</span>
 <span class="go">data.h5 (File) &#39;&#39;</span>
@@ -564,14 +564,14 @@ is quick. Let&#8217;s see what the datafile now contains:</p>
 </div>
 <p>It contains three groups, one for each station.  To search for
 coincidences between these stations, we first initialize the
-<a class="reference internal" href="analysis/coincidences.html#sapphire.analysis.coincidences.CoincidencesESD" title="sapphire.analysis.coincidences.CoincidencesESD"><code class="xref py py-class docutils literal"><span class="pre">sapphire.analysis.coincidences.CoincidencesESD</span></code></a> class like so:</p>
+<a class="reference internal" href="analysis/coincidences.html#sapphire.analysis.coincidences.CoincidencesESD" title="sapphire.analysis.coincidences.CoincidencesESD"><tt class="xref py py-class docutils literal"><span class="pre">sapphire.analysis.coincidences.CoincidencesESD</span></tt></a> class like so:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">coincidences</span> <span class="o">=</span> <span class="n">CoincidencesESD</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s">&#39;/coincidences&#39;</span><span class="p">,</span> <span class="n">station_groups</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>From the documentation (click on the class above the example to go to the
 documentation) it is clear that we have to specify the datafile
-(<code class="docutils literal"><span class="pre">data</span></code>), the destination group (<code class="docutils literal"><span class="pre">/coincidences</span></code>) and the groups
-containing the station data (<code class="docutils literal"><span class="pre">station_groups</span></code>).  Once that&#8217;s done, there
+(<tt class="docutils literal"><span class="pre">data</span></tt>), the destination group (<tt class="docutils literal"><span class="pre">/coincidences</span></tt>) and the groups
+containing the station data (<tt class="docutils literal"><span class="pre">station_groups</span></tt>).  Once that&#8217;s done, there
 is an easy way to search for coincidences, process the events making up
 the coincidences, and store them in the destination group:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">coincidences</span><span class="o">.</span><span class="n">search_and_store_coincidences</span><span class="p">()</span>
@@ -580,7 +580,7 @@ the coincidences, and store them in the destination group:</p>
 </pre></div>
 </div>
 <p>If you want to tweak the process using non-default parameters, see the
-module documentation (<a class="reference internal" href="analysis/coincidences.html#module-sapphire.analysis.coincidences" title="sapphire.analysis.coincidences"><code class="xref py py-mod docutils literal"><span class="pre">sapphire.analysis.coincidences</span></code></a>).  For now,
+module documentation (<a class="reference internal" href="analysis/coincidences.html#module-sapphire.analysis.coincidences" title="sapphire.analysis.coincidences"><tt class="xref py py-mod docutils literal"><span class="pre">sapphire.analysis.coincidences</span></tt></a>).  For now,
 let us turn to the results:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">data</span>
 <span class="go">data.h5 (File) &#39;&#39;</span>
@@ -599,9 +599,9 @@ let us turn to the results:</p>
 <span class="go">/s506/events (Table(65935,)) &#39;&#39;</span>
 </pre></div>
 </div>
-<p>The new addition is the <code class="docutils literal"><span class="pre">/coincidences</span></code> group.  It contains three
-tables, which are <code class="docutils literal"><span class="pre">c_index</span></code>, <code class="docutils literal"><span class="pre">coincidences</span></code> and <code class="docutils literal"><span class="pre">s_index</span></code>.
-Information about the coincidences is stored in the <code class="docutils literal"><span class="pre">coincidences</span></code>
+<p>The new addition is the <tt class="docutils literal"><span class="pre">/coincidences</span></tt> group.  It contains three
+tables, which are <tt class="docutils literal"><span class="pre">c_index</span></tt>, <tt class="docutils literal"><span class="pre">coincidences</span></tt> and <tt class="docutils literal"><span class="pre">s_index</span></tt>.
+Information about the coincidences is stored in the <tt class="docutils literal"><span class="pre">coincidences</span></tt>
 table.  Let&#8217;s look at the columns:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -659,13 +659,13 @@ table.  Let&#8217;s look at the columns:</p>
 </tbody>
 </table>
 <p>The columns included for compatibility reasons are used by the event
-simulation code.  In that case, the <code class="docutils literal"><span class="pre">x</span></code>, <code class="docutils literal"><span class="pre">y</span></code> columns give the
-position in cartesian coordinates.  Furthermore, the <code class="docutils literal"><span class="pre">size</span></code> and
-<code class="docutils literal"><span class="pre">energy</span></code> give the so-called <em>shower size</em>, and <code class="docutils literal"><span class="pre">zenith</span></code> and
-<code class="docutils literal"><span class="pre">azimuth</span></code> contain the direction of the (simulated) shower.  These are
+simulation code.  In that case, the <tt class="docutils literal"><span class="pre">x</span></tt>, <tt class="docutils literal"><span class="pre">y</span></tt> columns give the
+position in cartesian coordinates.  Furthermore, the <tt class="docutils literal"><span class="pre">size</span></tt> and
+<tt class="docutils literal"><span class="pre">energy</span></tt> give the so-called <em>shower size</em>, and <tt class="docutils literal"><span class="pre">zenith</span></tt> and
+<tt class="docutils literal"><span class="pre">azimuth</span></tt> contain the direction of the (simulated) shower.  These are
 not known for certain when working with HiSPARC data, but are included
 nonetheless.  These columns are all set to 0.0.</p>
-<p>The <code class="docutils literal"><span class="pre">c_index</span></code> array is used as an index to look up the tables and
+<p>The <tt class="docutils literal"><span class="pre">c_index</span></tt> array is used as an index to look up the tables and
 individual events making up a coincidence.  The second coincidence is
 accessed by:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">coincidences</span><span class="o">.</span><span class="n">coincidences</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
@@ -684,7 +684,7 @@ accessed by:</p>
 </pre></div>
 </div>
 <p>To lookup the indexes of the events taking part in this coincidence,
-access the <code class="docutils literal"><span class="pre">c_index</span></code> array using the same id:</p>
+access the <tt class="docutils literal"><span class="pre">c_index</span></tt> array using the same id:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">coincidences</span><span class="o">.</span><span class="n">c_index</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 <span class="go">array([[ 0, 40],</span>
 <span class="go">       [ 2, 57]], dtype=uint32)</span>
@@ -693,7 +693,7 @@ access the <code class="docutils literal"><span class="pre">c_index</span></code
 <p>That is, event id 40 from station 0, event id 57 from station 2 are part
 of this coincidence.  The event observables are still stored in their
 original location and can be accessed using the ids. To find the
-location of the station group the <code class="docutils literal"><span class="pre">s_index</span></code> contains the paths to the
+location of the station group the <tt class="docutils literal"><span class="pre">s_index</span></tt> contains the paths to the
 station groups.:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">coincidences</span><span class="o">.</span><span class="n">s_index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="go">&#39;/s501&#39;</span>
@@ -708,9 +708,9 @@ station groups.:</p>
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Unique in this table.  When data is downloaded for analysis and
-combined with other data into one table, the <code class="docutils literal"><span class="pre">event_id</span></code> will be
+combined with other data into one table, the <tt class="docutils literal"><span class="pre">event_id</span></tt> will be
 different.  To uniquely define an event, use a station number /
-<code class="docutils literal"><span class="pre">ext_timestamp</span></code> combination.</td></tr>
+<tt class="docutils literal"><span class="pre">ext_timestamp</span></tt> combination.</td></tr>
 </tbody>
 </table>
 </div>
@@ -721,7 +721,7 @@ different.  To uniquely define an event, use a station number /
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="index.html">
               <img class="logo" src="_static/header.png" alt="Logo"/>
@@ -734,7 +734,7 @@ different.  To uniquely define an event, use a station number /
 <li><a class="reference internal" href="#downloading-data">Downloading data</a></li>
 <li><a class="reference internal" href="#looking-around">Looking around</a></li>
 <li><a class="reference internal" href="#accessing-the-data">Accessing the data</a></li>
-<li><a class="reference internal" href="#the-sapphire-time-util-module">The <code class="docutils literal"><span class="pre">sapphire.time_util</span></code> module</a></li>
+<li><a class="reference internal" href="#the-sapphire-time-util-module">The <tt class="docutils literal"><span class="pre">sapphire.time_util</span></tt> module</a></li>
 <li><a class="reference internal" href="#plotting-data">Plotting data</a></li>
 </ul>
 </li>
@@ -752,14 +752,12 @@ different.  To uniquely define an event, use a station number /
   <h4>Next topic</h4>
   <p class="topless"><a href="sapphire.html"
                         title="next chapter">SAPPHiRE Reference</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/tutorial.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/tutorial.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -776,7 +774,7 @@ different.  To uniquely define an event, use a station number /
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -791,12 +789,12 @@ different.  To uniquely define an event, use a station number /
         <li class="right" >
           <a href="installation.html" title="Installation"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li> 
+        <li><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer" role="contentinfo">
+    <div class="footer">
         &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>

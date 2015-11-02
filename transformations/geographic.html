@@ -24,15 +24,15 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="SAPPHiRE 0.12.6 documentation" href="../index.html" />
     <link rel="up" title="Coordinate and time transformations" href="../transformations.html" />
     <link rel="next" title="Common utility functions" href="../utils.html" />
     <link rel="prev" title="Time conversion functions" href="clock.html" /> 
   </head>
-  <body role="document">
-    <div class="related" role="navigation" aria-label="related navigation">
+  <body>
+    <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -47,16 +47,16 @@
         <li class="right" >
           <a href="clock.html" title="Time conversion functions"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
-          <li class="nav-item nav-item-2"><a href="../transformations.html" accesskey="U">Coordinate and time transformations</a> &raquo;</li> 
+        <li><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li><a href="../transformations.html" accesskey="U">Coordinate and time transformations</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body" role="main">
+          <div class="body">
             
   <div class="section" id="module-sapphire.transformations.geographic">
 <span id="transformations-between-geographic-coordinate-systems"></span><h1>Transformations between geographic coordinate systems<a class="headerlink" href="#module-sapphire.transformations.geographic" title="Permalink to this headline">¶</a></h1>
@@ -65,67 +65,67 @@
 well-known formulas.</p>
 <dl class="class">
 <dt id="sapphire.transformations.geographic.WGS84Datum">
-<em class="property">class </em><code class="descclassname">sapphire.transformations.geographic.</code><code class="descname">WGS84Datum</code><a class="headerlink" href="#sapphire.transformations.geographic.WGS84Datum" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sapphire.transformations.geographic.</tt><tt class="descname">WGS84Datum</tt><a class="headerlink" href="#sapphire.transformations.geographic.WGS84Datum" title="Permalink to this definition">¶</a></dt>
 <dd><p>Definition of the WGS84 datum</p>
 <p>These definitions are taken from
 <a class="reference external" href="http://en.wikipedia.org/wiki/Geodetic_system">http://en.wikipedia.org/wiki/Geodetic_system</a>, believing that enough
 editors have gone over them to make sure they are correct.</p>
 <dl class="attribute">
 <dt id="sapphire.transformations.geographic.WGS84Datum.a">
-<code class="descname">a</code><em class="property"> = 6378137.0</em><a class="headerlink" href="#sapphire.transformations.geographic.WGS84Datum.a" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">a</tt><em class="property"> = 6378137.0</em><a class="headerlink" href="#sapphire.transformations.geographic.WGS84Datum.a" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sapphire.transformations.geographic.WGS84Datum.f">
-<code class="descname">f</code><em class="property"> = 0.0033528106647474805</em><a class="headerlink" href="#sapphire.transformations.geographic.WGS84Datum.f" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">f</tt><em class="property"> = 0.0033528106647474805</em><a class="headerlink" href="#sapphire.transformations.geographic.WGS84Datum.f" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sapphire.transformations.geographic.WGS84Datum.b">
-<code class="descname">b</code><em class="property"> = 6356752.314245179</em><a class="headerlink" href="#sapphire.transformations.geographic.WGS84Datum.b" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">b</tt><em class="property"> = 6356752.314245179</em><a class="headerlink" href="#sapphire.transformations.geographic.WGS84Datum.b" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sapphire.transformations.geographic.WGS84Datum.e">
-<code class="descname">e</code><em class="property"> = 0.08181919084262149</em><a class="headerlink" href="#sapphire.transformations.geographic.WGS84Datum.e" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">e</tt><em class="property"> = 0.08181919084262149</em><a class="headerlink" href="#sapphire.transformations.geographic.WGS84Datum.e" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sapphire.transformations.geographic.WGS84Datum.eprime">
-<code class="descname">eprime</code><em class="property"> = 0.08209443794969568</em><a class="headerlink" href="#sapphire.transformations.geographic.WGS84Datum.eprime" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">eprime</tt><em class="property"> = 0.08209443794969568</em><a class="headerlink" href="#sapphire.transformations.geographic.WGS84Datum.eprime" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="sapphire.transformations.geographic.FromWGS84ToENUTransformation">
-<em class="property">class </em><code class="descclassname">sapphire.transformations.geographic.</code><code class="descname">FromWGS84ToENUTransformation</code><span class="sig-paren">(</span><em>ref_llacoordinates</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.transformations.geographic.FromWGS84ToENUTransformation" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sapphire.transformations.geographic.</tt><tt class="descname">FromWGS84ToENUTransformation</tt><big>(</big><em>ref_llacoordinates</em><big>)</big><a class="headerlink" href="#sapphire.transformations.geographic.FromWGS84ToENUTransformation" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="sapphire.transformations.geographic.FromWGS84ToENUTransformation.geode">
-<code class="descname">geode</code><em class="property"> = &lt;sapphire.transformations.geographic.WGS84Datum object&gt;</em><a class="headerlink" href="#sapphire.transformations.geographic.FromWGS84ToENUTransformation.geode" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">geode</tt><em class="property"> = &lt;sapphire.transformations.geographic.WGS84Datum object at 0x106290e90&gt;</em><a class="headerlink" href="#sapphire.transformations.geographic.FromWGS84ToENUTransformation.geode" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="sapphire.transformations.geographic.FromWGS84ToENUTransformation.transform">
-<code class="descname">transform</code><span class="sig-paren">(</span><em>coordinates</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.transformations.geographic.FromWGS84ToENUTransformation.transform" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">transform</tt><big>(</big><em>coordinates</em><big>)</big><a class="headerlink" href="#sapphire.transformations.geographic.FromWGS84ToENUTransformation.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transfrom WGS84 coordinates to ENU coordinates</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sapphire.transformations.geographic.FromWGS84ToENUTransformation.lla_to_enu">
-<code class="descname">lla_to_enu</code><span class="sig-paren">(</span><em>coordinates</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.transformations.geographic.FromWGS84ToENUTransformation.lla_to_enu" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">lla_to_enu</tt><big>(</big><em>coordinates</em><big>)</big><a class="headerlink" href="#sapphire.transformations.geographic.FromWGS84ToENUTransformation.lla_to_enu" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transfrom WGS84 coordinates to ENU coordinates</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sapphire.transformations.geographic.FromWGS84ToENUTransformation.enu_to_lla">
-<code class="descname">enu_to_lla</code><span class="sig-paren">(</span><em>coordinates</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.transformations.geographic.FromWGS84ToENUTransformation.enu_to_lla" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">enu_to_lla</tt><big>(</big><em>coordinates</em><big>)</big><a class="headerlink" href="#sapphire.transformations.geographic.FromWGS84ToENUTransformation.enu_to_lla" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transfrom WGS84 coordinates to ENU coordinates</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sapphire.transformations.geographic.FromWGS84ToENUTransformation.lla_to_ecef">
-<code class="descname">lla_to_ecef</code><span class="sig-paren">(</span><em>coordinates</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.transformations.geographic.FromWGS84ToENUTransformation.lla_to_ecef" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">lla_to_ecef</tt><big>(</big><em>coordinates</em><big>)</big><a class="headerlink" href="#sapphire.transformations.geographic.FromWGS84ToENUTransformation.lla_to_ecef" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert from LLA coordinates to ECEF coordinates</p>
 <p>LLA: Latitude, Longitude, Altitude
 ECEF: Earth-Centered, Earth-Fixed</p>
@@ -149,7 +149,7 @@ and altitude (in meters).</td>
 
 <dl class="method">
 <dt id="sapphire.transformations.geographic.FromWGS84ToENUTransformation.ecef_to_lla">
-<code class="descname">ecef_to_lla</code><span class="sig-paren">(</span><em>coordinates</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.transformations.geographic.FromWGS84ToENUTransformation.ecef_to_lla" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">ecef_to_lla</tt><big>(</big><em>coordinates</em><big>)</big><a class="headerlink" href="#sapphire.transformations.geographic.FromWGS84ToENUTransformation.ecef_to_lla" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert from ECEF coordinates to LLA coordinates</p>
 <p>ECEF: Earth-Centered, Earth-Fixed
 LLA: Latitude, Longitude, Altitude</p>
@@ -169,7 +169,7 @@ LLA: Latitude, Longitude, Altitude</p>
 
 <dl class="method">
 <dt id="sapphire.transformations.geographic.FromWGS84ToENUTransformation.ecef_to_enu">
-<code class="descname">ecef_to_enu</code><span class="sig-paren">(</span><em>coordinates</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.transformations.geographic.FromWGS84ToENUTransformation.ecef_to_enu" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">ecef_to_enu</tt><big>(</big><em>coordinates</em><big>)</big><a class="headerlink" href="#sapphire.transformations.geographic.FromWGS84ToENUTransformation.ecef_to_enu" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert from ECEF coordinates to ENU coordinates</p>
 <p>ECEF: Earth-Centered, Earth-Fixed
 ENU: East, North, Up</p>
@@ -190,7 +190,7 @@ of the point to transform</td>
 
 <dl class="method">
 <dt id="sapphire.transformations.geographic.FromWGS84ToENUTransformation.enu_to_ecef">
-<code class="descname">enu_to_ecef</code><span class="sig-paren">(</span><em>coordinates</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.transformations.geographic.FromWGS84ToENUTransformation.enu_to_ecef" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">enu_to_ecef</tt><big>(</big><em>coordinates</em><big>)</big><a class="headerlink" href="#sapphire.transformations.geographic.FromWGS84ToENUTransformation.enu_to_ecef" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert from ENU coordinates to ECEF coordinates</p>
 <p>ENU: East, North, Up
 ECEF: Earth-Centered, Earth-Fixed</p>
@@ -214,7 +214,7 @@ ECEF: Earth-Centered, Earth-Fixed</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/header.png" alt="Logo"/>
@@ -225,14 +225,12 @@ ECEF: Earth-Centered, Earth-Fixed</p>
   <h4>Next topic</h4>
   <p class="topless"><a href="../utils.html"
                         title="next chapter">Common utility functions</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../_sources/transformations/geographic.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/transformations/geographic.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
@@ -249,7 +247,7 @@ ECEF: Earth-Centered, Earth-Fixed</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -264,14 +262,14 @@ ECEF: Earth-Centered, Earth-Fixed</p>
         <li class="right" >
           <a href="clock.html" title="Time conversion functions"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
-          <li class="nav-item nav-item-2"><a href="../transformations.html" >Coordinate and time transformations</a> &raquo;</li> 
+        <li><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li><a href="../transformations.html" >Coordinate and time transformations</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer" role="contentinfo">
+    <div class="footer">
         &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>

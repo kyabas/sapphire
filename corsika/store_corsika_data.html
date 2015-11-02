@@ -24,15 +24,15 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="SAPPHiRE 0.12.6 documentation" href="../index.html" />
-    <link rel="up" title="CORSIKA Reader" href="../corsika.html" />
-    <link rel="next" title="Event Summary Data" href="../esd.html" />
-    <link rel="prev" title="Corsika on Stoomboot" href="qsub.html" /> 
+    <link rel="up" title="CORSIKA simulations" href="../corsika.html" />
+    <link rel="next" title="CORSIKA Units" href="units.html" />
+    <link rel="prev" title="CORSIKA Reader" href="reader.html" /> 
   </head>
-  <body role="document">
-    <div class="related" role="navigation" aria-label="related navigation">
+  <body>
+    <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -42,21 +42,21 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="../esd.html" title="Event Summary Data"
+          <a href="units.html" title="CORSIKA Units"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="qsub.html" title="Corsika on Stoomboot"
+          <a href="reader.html" title="CORSIKA Reader"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
-          <li class="nav-item nav-item-2"><a href="../corsika.html" accesskey="U">CORSIKA Reader</a> &raquo;</li> 
+        <li><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li><a href="../corsika.html" accesskey="U">CORSIKA simulations</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body" role="main">
+          <div class="body">
             
   <div class="section" id="module-sapphire.corsika.store_corsika_data">
 <span id="store-corsika-data-as-hdf5"></span><h1>Store CORSIKA data as HDF5<a class="headerlink" href="#module-sapphire.corsika.store_corsika_data" title="Permalink to this headline">¶</a></h1>
@@ -75,19 +75,19 @@ DAT000000 to a HDF5 called corsika.h5 with a progress bar run:</p>
 </div>
 <dl class="function">
 <dt id="sapphire.corsika.store_corsika_data.save_particle">
-<code class="descclassname">sapphire.corsika.store_corsika_data.</code><code class="descname">save_particle</code><span class="sig-paren">(</span><em>row</em>, <em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.store_corsika_data.save_particle" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.corsika.store_corsika_data.</tt><tt class="descname">save_particle</tt><big>(</big><em>row</em>, <em>p</em><big>)</big><a class="headerlink" href="#sapphire.corsika.store_corsika_data.save_particle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write the information of a particle into a row</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="sapphire.corsika.store_corsika_data.store_and_sort_corsika_data">
-<code class="descclassname">sapphire.corsika.store_corsika_data.</code><code class="descname">store_and_sort_corsika_data</code><span class="sig-paren">(</span><em>source</em>, <em>destination</em>, <em>overwrite=False</em>, <em>progress=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.store_corsika_data.store_and_sort_corsika_data" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.corsika.store_corsika_data.</tt><tt class="descname">store_and_sort_corsika_data</tt><big>(</big><em>source</em>, <em>destination</em>, <em>overwrite=False</em>, <em>progress=False</em><big>)</big><a class="headerlink" href="#sapphire.corsika.store_corsika_data.store_and_sort_corsika_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>First convert the data to HDF5 and create a sorted version</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="sapphire.corsika.store_corsika_data.store_corsika_data">
-<code class="descclassname">sapphire.corsika.store_corsika_data.</code><code class="descname">store_corsika_data</code><span class="sig-paren">(</span><em>source</em>, <em>destination</em>, <em>table_name='groundparticles'</em>, <em>progress=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.store_corsika_data.store_corsika_data" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.corsika.store_corsika_data.</tt><tt class="descname">store_corsika_data</tt><big>(</big><em>source</em>, <em>destination</em>, <em>table_name='groundparticles'</em>, <em>progress=False</em><big>)</big><a class="headerlink" href="#sapphire.corsika.store_corsika_data.store_corsika_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Store particles from a CORSIKA simulation in a HDF5 file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -105,27 +105,27 @@ DAT000000 to a HDF5 called corsika.h5 with a progress bar run:</p>
 
 <dl class="function">
 <dt id="sapphire.corsika.store_corsika_data.create_index">
-<code class="descclassname">sapphire.corsika.store_corsika_data.</code><code class="descname">create_index</code><span class="sig-paren">(</span><em>hdf_data</em>, <em>table_name='groundparticles'</em>, <em>progress=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.store_corsika_data.create_index" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.corsika.store_corsika_data.</tt><tt class="descname">create_index</tt><big>(</big><em>hdf_data</em>, <em>table_name='groundparticles'</em>, <em>progress=False</em><big>)</big><a class="headerlink" href="#sapphire.corsika.store_corsika_data.create_index" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a completely sorted index for the x column</p>
 <p>This can speed up queries to select data based on the x column.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="sapphire.corsika.store_corsika_data.copy_and_sort_node">
-<code class="descclassname">sapphire.corsika.store_corsika_data.</code><code class="descname">copy_and_sort_node</code><span class="sig-paren">(</span><em>hdf_temp</em>, <em>hdf_data</em>, <em>table_name='groundparticles'</em>, <em>progress=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.store_corsika_data.copy_and_sort_node" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.corsika.store_corsika_data.</tt><tt class="descname">copy_and_sort_node</tt><big>(</big><em>hdf_temp</em>, <em>hdf_data</em>, <em>table_name='groundparticles'</em>, <em>progress=False</em><big>)</big><a class="headerlink" href="#sapphire.corsika.store_corsika_data.copy_and_sort_node" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sort the data in the tables by the x column</p>
 <p>This speeds up queries to select data based on the x column.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="sapphire.corsika.store_corsika_data.create_tempfile_path">
-<code class="descclassname">sapphire.corsika.store_corsika_data.</code><code class="descname">create_tempfile_path</code><span class="sig-paren">(</span><em>temp_dir=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.store_corsika_data.create_tempfile_path" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.corsika.store_corsika_data.</tt><tt class="descname">create_tempfile_path</tt><big>(</big><em>temp_dir=None</em><big>)</big><a class="headerlink" href="#sapphire.corsika.store_corsika_data.create_tempfile_path" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a temporary file, close it, and return the path</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="sapphire.corsika.store_corsika_data.main">
-<code class="descclassname">sapphire.corsika.store_corsika_data.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.store_corsika_data.main" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">sapphire.corsika.store_corsika_data.</tt><tt class="descname">main</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.corsika.store_corsika_data.main" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -134,25 +134,23 @@ DAT000000 to a HDF5 called corsika.h5 with a progress bar run:</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/header.png" alt="Logo"/>
             </a></p>
   <h4>Previous topic</h4>
-  <p class="topless"><a href="qsub.html"
-                        title="previous chapter">Corsika on Stoomboot</a></p>
+  <p class="topless"><a href="reader.html"
+                        title="previous chapter">CORSIKA Reader</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../esd.html"
-                        title="next chapter">Event Summary Data</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../_sources/corsika/store_corsika_data.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
+  <p class="topless"><a href="units.html"
+                        title="next chapter">CORSIKA Units</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/corsika/store_corsika_data.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
@@ -169,7 +167,7 @@ DAT000000 to a HDF5 called corsika.h5 with a progress bar run:</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -179,19 +177,19 @@ DAT000000 to a HDF5 called corsika.h5 with a progress bar run:</p>
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="../esd.html" title="Event Summary Data"
+          <a href="units.html" title="CORSIKA Units"
              >next</a> |</li>
         <li class="right" >
-          <a href="qsub.html" title="Corsika on Stoomboot"
+          <a href="reader.html" title="CORSIKA Reader"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
-          <li class="nav-item nav-item-2"><a href="../corsika.html" >CORSIKA Reader</a> &raquo;</li> 
+        <li><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li><a href="../corsika.html" >CORSIKA simulations</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer" role="contentinfo">
+    <div class="footer">
         &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>
