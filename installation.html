@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Installation &mdash; SAPPHiRE 0.12 documentation</title>
+    <title>Installation &mdash; SAPPHiRE 0.12.6 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.12',
+        VERSION:     '0.12.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,14 +24,14 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.12 documentation" href="index.html" />
+    <link rel="top" title="SAPPHiRE 0.12.6 documentation" href="index.html" />
     <link rel="next" title="Tutorial" href="tutorial.html" />
     <link rel="prev" title="Welcome to SAPPHiRE’s documentation!" href="index.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -46,35 +46,64 @@
         <li class="right" >
           <a href="index.html" title="Welcome to SAPPHiRE’s documentation!"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">SAPPHiRE 0.12 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<p>In theory, installing a Python package should be as easy as py.  Er, pie.
-Using <a class="reference external" href="http://www.pip-installer.org/">Pip</a>.  Like so:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ pip install hisparc-sapphire
-</pre></div>
-</div>
-<p>Then, the Python package called <tt class="docutils literal"><span class="pre">sapphire</span></tt> would be retrieved from the
-internet.  It would have its dependencies listed and <tt class="docutils literal"><span class="pre">pip</span></tt> would pull
-them in and all should be well.  In fact, SAPPHiRE <em>does</em> have its
-dependencies listed and Pip <em>will</em> pull them in.  It is only then, that
-things start go wrong.  Whether you&#8217;ll experience difficulties depends on
-the operating system you&#8217;re using and any previously installed software.
-But don&#8217;t worry, we&#8217;ve got you covered.  Before I&#8217;ll go on describing how
-to install SAPPHiRE itself, we will first install the prerequisites.</p>
+<p>Python is a very versatile language. As such, it can be either installed with
+lots and lots of packages to create an environment for e.g. data analysis or
+game development, or it can be installed for a very specific task, taking up
+much less space. To install a complete environment without all the hassle, you
+can install a <em>Python distribution</em> which includes Python and a long list of
+packages. This is the recommended approach, certainly if you&#8217;re new to Python.
+If you really want, you can install a much smaller set of packages for which
+we&#8217;ll provide minimal instructions only.</p>
+<p>Before we&#8217;ll go on describing how to install SAPPHiRE itself, we will first
+install the prerequisites.</p>
 <div class="section" id="installing-the-prerequisites">
 <h2>Installing the prerequisites<a class="headerlink" href="#installing-the-prerequisites" title="Permalink to this headline">¶</a></h2>
-<p>Follow the instructions below for your operating system of choice.</p>
+<div class="section" id="python-distributions">
+<h3>Python distributions<a class="headerlink" href="#python-distributions" title="Permalink to this headline">¶</a></h3>
+<p>If you don&#8217;t mind to install a large package, use a distribution. This mostly
+includes everything you&#8217;ll ever need. One such distribution is <a class="reference external" href="https://www.continuum.io/downloads">Anaconda</a>. It includes many scientific python
+packages, as well as graphical environments for doing your work. Anaconda has
+packages available for the three major platforms: Windows, OS X and Linux.</p>
+<p>Anaconda includes a graphical programming environment (<a class="reference external" href="http://pythonhosted.org/spyder/">Spyder</a>) which makes it easy to write analysis
+scripts while creating plots, testing small snippets of code, or inspecting
+your variables.</p>
+</div>
+<div class="section" id="minimal-installation-miniconda">
+<h3>Minimal installation (miniconda)<a class="headerlink" href="#minimal-installation-miniconda" title="Permalink to this headline">¶</a></h3>
+<p>In theory, installing a Python package should be very easy. To install
+SAPPHiRE, the Python package called <code class="docutils literal"><span class="pre">sapphire</span></code> would be retrieved from the
+internet.  It would have its dependencies listed and <code class="docutils literal"><span class="pre">pip</span></code> would pull them in
+and all should be well.  In fact, SAPPHiRE <em>does</em> have its dependencies
+listed and Pip <em>will</em> pull them in.  It is only then, that things start go
+wrong.  Whether you&#8217;ll experience difficulties depends on the operating system
+you&#8217;re using and any previously installed software. But don&#8217;t worry, we&#8217;ve got
+you covered.</p>
+<p>Miniconda is the package manager used by the Anaconda distribution.
+Installation instructions can be found at
+<a class="reference external" href="http://conda.pydata.org/docs/install/quick.html">http://conda.pydata.org/docs/install/quick.html</a>. After installation, install
+the following packages:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ conda install matplotlib scipy pytables
+</pre></div>
+</div>
+<p>This is enough to simply install SAPPHiRE using Pip (see below).</p>
+</div>
+<div class="section" id="minimal-installation-os-specific">
+<h3>Minimal installation (OS-specific)<a class="headerlink" href="#minimal-installation-os-specific" title="Permalink to this headline">¶</a></h3>
+<p>If you want to use a package manager specifically for your OS, follow the
+(minimal) instructions below for your operating system of choice.</p>
 <div class="section" id="mac-os-x">
-<h3>Mac OS X<a class="headerlink" href="#mac-os-x" title="Permalink to this headline">¶</a></h3>
+<h4>Mac OS X<a class="headerlink" href="#mac-os-x" title="Permalink to this headline">¶</a></h4>
 <p>If you&#8217;re using Mac OS X, the easiest way to install open source software
 (like Python, the program language we&#8217;re using) including lots and lots of
 great packages, is done using <a class="reference external" href="https://mxcl.github.com/homebrew/">Homebrew</a>.  Please follow the installation
@@ -85,114 +114,46 @@ terminal:</p>
 </div>
 <p>This will install Python and Pip.</p>
 <p>As of this writing, several of the dependencies listed by SAPPHiRE do not
-have their own dependencies listed in a way that Pip (or other tools, for
-that matter) know how to handle.  Furthermore, matplotlib needs to be
-installed all by itself, and its dependencies must be installed before it.</p>
-<p>After trial and error, this is the magic incantation which works on my
-system:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ pip install numpy
-$ pip install numexpr
-$ pip install cython
-$ pip install matplotlib
+have their own dependencies listed in a way that Pip (or other tools, for that
+matter) know how to handle. To install matplotlib with its requirements, you
+can type:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ brew install homebrew/python/matplotlib
 </pre></div>
 </div>
-<p>There are more prerequisites to be installed, but they are correctly
-handled by the Python package management software.</p>
-</div>
-<div class="section" id="windows">
-<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
-<p>While Python follows a <em>batteries included</em> philosophy with an extensive
-standard library, the Unix philosophy favors minimalism.  Therefore, it is
-custom to install Python and then continue to install additional packages
-as needed.  Not so with Windows.  Windows does not have a package manager
-which can handle many software packages.  Instead, it favors installing
-relatively few software packages encompassing lots of functionality.
-Installing a package requires running a separate installer.</p>
-<p>Luckily, the <a class="reference external" href="http://code.google.com/p/pythonxy/">Python(x,y)</a> project
-solves this problem by installing not only Python, but a complete
-scientific environment.  This means that all our prerequisites are
-automatically covered.  Please install Python(x,y).</p>
-<p>In a Unix environment it is common to use the <em>terminal</em> for management
-tasks.  It is a text-only environment that lets you basically do anything.
-In windows, people are accustomed to performing all kinds of tasks using
-graphical interfaces.  However, these graphical interfaces are much harder
-to write than text-only interfaces.  As a result, graphical interfaces are
-usually somewhat limited.  Luckily, there <em>is</em> a terminal-like environment
-in Windows, called the <em>command prompt</em>.  You can open a command prompt in
-the following ways:</p>
-<blockquote>
-<div><p><strong>Windows XP:</strong>  Click Start.  Click Run.  Type <tt class="docutils literal"><span class="pre">cmd</span></tt> and press
-<em>Enter</em>.</p>
-<p><strong>Windows Vista, 7:</strong>  Click Start.  Type <tt class="docutils literal"><span class="pre">cmd</span></tt> and press <em>Enter</em>.</p>
-<p><strong>Windows 8:</strong>  From the Start Screen, type <tt class="docutils literal"><span class="pre">cmd</span></tt> and press <em>Enter</em>.</p>
-</div></blockquote>
-<p>First, we&#8217;ll install the modern Python package manager Pip:</p>
-<div class="highlight-python"><div class="highlight"><pre>c:\&gt; easy_install pip
+<p>Warning: this will install gcc and start a very long compilation process. Alternatively, with the introduction of <em>wheels</em> in Python, you can simply try to install packages like numpy, scipy and matplotlib using Pip:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ pip install numpy scipy matplotlib
 </pre></div>
 </div>
-<p>This will probably try to open another terminal window, install Pip, close
-the window, and <em>then</em> complain that easy_install is probably not
-installed correctly (at least, this is how it went for us on Windows 7).
-Just tell Windows the program <em>was</em> installed correctly.  Pip will not
-have such idiosyncrasies and this was the last time we&#8217;ll have used
-<tt class="docutils literal"><span class="pre">easy_install</span></tt>.  Note that it is also possible to install Python(x,y)
-and select the Pip package under <em>Python</em> in the installation options
-menu.  This makes it unnecessary to manually run <tt class="docutils literal"><span class="pre">easy_install</span></tt>.  The
-end result is the same, however.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>In the rest of this document, we will follow the Unix convention of
-displaying a dollar sign ($) whenever we work from a terminal.  In
-Unix environments, the dollar sign signifies the <em>command prompt</em>.  In
-Windows, the command prompt is something like <tt class="docutils literal"><span class="pre">c:\&gt;</span></tt>.  Thus, whenever
-you see:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ pip install foo
-</pre></div>
-</div>
-<p>we mean that you should open a command window, and then type <tt class="docutils literal"><span class="pre">pip</span>
-<span class="pre">install</span> <span class="pre">foo</span></tt> at the prompt.  In Windows, this looks something like:</p>
-<div class="last highlight-python"><div class="highlight"><pre>c:\&gt; pip install foo
-</pre></div>
-</div>
-</div>
-<p>When you run Python(x,y), we found it best to select <em>IPython (Qt)</em> under
-<em>Interactive consoles</em>, and run it in <em>Console 2</em> (the left, green, one).
-See below.  This will automatically import Pylab, a plotting package.</p>
-<img alt="_images/pythonxy-console.png" src="_images/pythonxy-console.png" />
+<p>If you&#8217;re lucky, using a wheel will not need a compiler. We haven&#8217;t tried this
+ourselves for quite a while. YMMV.</p>
 </div>
 <div class="section" id="debian-and-derivatives-like-ubuntu">
-<h3>Debian and derivatives (like Ubuntu)<a class="headerlink" href="#debian-and-derivatives-like-ubuntu" title="Permalink to this headline">¶</a></h3>
+<h4>Debian and derivatives (like Ubuntu)<a class="headerlink" href="#debian-and-derivatives-like-ubuntu" title="Permalink to this headline">¶</a></h4>
 <p>Debian has a first-class package manager which other distributions and
-operating systems have a hard time competing with.  In my personal
-opinion, anyway.  Lots of Python packages can be installed using
-<tt class="docutils literal"><span class="pre">apt-get</span></tt>, but some of them might be outdated, depending on the age of
-your distribution.  Use <tt class="docutils literal"><span class="pre">apt-get</span></tt> for Python packages at your own
-discretion (read: risk).  Pip handles Python packages very well, so I&#8217;ll
-give some instructions using Pip.</p>
+operating systems have a hard time competing with.  In my personal opinion,
+anyway.  Lots of Python packages can be installed using <code class="docutils literal"><span class="pre">apt-get</span></code>, but some
+of them might be outdated, depending on the age of your distribution.  Use
+<code class="docutils literal"><span class="pre">apt-get</span></code> for Python packages at your own discretion (read: risk).  Pip
+handles Python packages very well, so you&#8217;ll probably need some packages to
+install using Pip.</p>
 <p>As of this writing, several of the dependencies listed by SAPPHiRE do not
 have their own dependencies listed in a way that Pip (or other tools, for
 that matter) know how to handle.  Furthermore, matplotlib needs to be
 installed all by itself, and its dependencies must be installed before it.</p>
-<p>You need to install some development libraries:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ sudo apt-get install gfortran
-$ sudo apt-get install python-dev
-$ sudo apt-get install libfreetype6-dev
-$ sudo apt-get install libpng-dev
-$ sudo apt-get install libatlas-base-dev
-$ sudo apt-get install libhdf5-dev
-$ sudo apt-get install tk-dev
+<p>You can try to install packages using <code class="docutils literal"><span class="pre">apt-get</span></code>, for example:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ sudo apt-get install python-matplotlib
 </pre></div>
 </div>
-<p>After trial and error, this is the magic incantation which works on my
-system:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ sudo pip install numpy
-$ sudo pip install numexpr
-$ sudo pip install cython
-$ sudo pip install matplotlib
+<p>To figure out what you need, look at the prerequisites for SAPPHiRE, listed
+in the setup.py file in the code repository. You can also try to install
+SAPPHiRE using pip, and waiting for the installation to fail on some
+prerequisites. If you then need development libraries, <code class="docutils literal"><span class="pre">apt-get</span></code> can help you
+with that:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ sudo apt-get build-dep python-numpy
 </pre></div>
 </div>
-<p>There are more prerequisites to be installed, but they are correctly
-handled by the Python package management software.</p>
+<p>will install everything you need to build numpy from source.</p>
+</div>
 </div>
 </div>
 <div class="section" id="installing-sapphire">
@@ -218,25 +179,22 @@ SAPPHiRE, get the latest development version:</p>
 </div>
 <div class="section" id="let-me-see-the-code">
 <h3>Let me see the code!<a class="headerlink" href="#let-me-see-the-code" title="Permalink to this headline">¶</a></h3>
-<p>You want to see the code so that you can change it, or follow the progress
-of SAPPHiRE.  If you&#8217;re interested in the development of SAPPHiRE, you
-can either go to the <a class="reference external" href="https://github.com/hisparc/sapphire/">GitHub page</a>
-or install the version control system (we use <a class="reference external" href="http://git-scm.com">Git</a>
-yourself.  For that, please see the <a class="reference external" href="https://help.github.com/articles/set-up-git">GitHub Help pages</a>.</p>
-<p>To just download the code and install SAPPHiRE, first go to
-<a class="reference external" href="https://github.com/hisparc/sapphire/">https://github.com/hisparc/sapphire/</a>.  Then, click on the <em>Download ZIP</em>
-button (see image below).  This will start a download of all the code
-bundled in a zip file.</p>
+<p>If you&#8217;re interested in the development of SAPPHiRE, you can either go to the
+<a class="reference external" href="https://github.com/hisparc/sapphire/">GitHub page</a> or install the version
+control system (we use <a class="reference external" href="http://git-scm.com">Git</a>) yourself.  For that, please
+see the <a class="reference external" href="https://help.github.com/articles/set-up-git">GitHub Help pages</a>.</p>
+<p>To download the code and install SAPPHiRE, first go to
+<a class="reference external" href="https://github.com/hisparc/sapphire/">https://github.com/hisparc/sapphire/</a>.  Then, click on the <em>Clone in Desktop</em>,
+which will prompt you to download the GitHub Desktop app (recommended).</p>
 <img alt="_images/github-zipball.png" src="_images/github-zipball.png" />
-<p>You can also click the following link:
-<a class="reference external" href="https://github.com/hisparc/sapphire/zipball/master">https://github.com/hisparc/sapphire/zipball/master</a>.  Uncompress the zip
-file, open a terminal and navigate to the top-level directory containing
-the code.  Then issue:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ python setup.py install
+<p>Open a terminal and navigate to the top-level directory containing the code.
+Then issue:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ python setup.py develop
 </pre></div>
 </div>
-<p>This takes care of installing the missing dependencies and SAPPHiRE
-itself.</p>
+<p>This takes care of installing the missing dependencies and SAPPHiRE itself.
+Whenever you update the code using the GitHub Desktop application, the new code
+is immediately available.</p>
 </div>
 </div>
 <div class="section" id="checking-that-sapphire-is-installed-correctly">
@@ -261,8 +219,8 @@ from Python(x,y)), or open a terminal and type:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ ipython
 </pre></div>
 </div>
-<p>In fact, we recommend using IPython for interactive use (install IPython
-using <tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">ipython</span></tt>).  Then, try to import SAPPHiRE:</p>
+<p>In fact, we recommend using IPython for interactive use.  Then, try to import
+SAPPHiRE:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sapphire</span>
 </pre></div>
 </div>
@@ -275,7 +233,7 @@ correctly installed.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="index.html">
               <img class="logo" src="_static/header.png" alt="Logo"/>
@@ -284,9 +242,13 @@ correctly installed.</p>
   <ul>
 <li><a class="reference internal" href="#">Installation</a><ul>
 <li><a class="reference internal" href="#installing-the-prerequisites">Installing the prerequisites</a><ul>
+<li><a class="reference internal" href="#python-distributions">Python distributions</a></li>
+<li><a class="reference internal" href="#minimal-installation-miniconda">Minimal installation (miniconda)</a></li>
+<li><a class="reference internal" href="#minimal-installation-os-specific">Minimal installation (OS-specific)</a><ul>
 <li><a class="reference internal" href="#mac-os-x">Mac OS X</a></li>
-<li><a class="reference internal" href="#windows">Windows</a></li>
 <li><a class="reference internal" href="#debian-and-derivatives-like-ubuntu">Debian and derivatives (like Ubuntu)</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#installing-sapphire">Installing SAPPHiRE</a><ul>
@@ -305,12 +267,14 @@ correctly installed.</p>
   <h4>Next topic</h4>
   <p class="topless"><a href="tutorial.html"
                         title="next chapter">Tutorial</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/installation.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/installation.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -327,7 +291,7 @@ correctly installed.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -342,12 +306,12 @@ correctly installed.</p>
         <li class="right" >
           <a href="index.html" title="Welcome to SAPPHiRE’s documentation!"
              >previous</a> |</li>
-        <li><a href="index.html">SAPPHiRE 0.12 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

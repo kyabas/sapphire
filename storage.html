@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Low-level storage constructs &mdash; SAPPHiRE 0.12 documentation</title>
+    <title>Low-level storage constructs &mdash; SAPPHiRE 0.12.6 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.12',
+        VERSION:     '0.12.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,15 +24,15 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.12 documentation" href="index.html" />
+    <link rel="top" title="SAPPHiRE 0.12.6 documentation" href="index.html" />
     <link rel="up" title="SAPPHiRE Reference" href="sapphire.html" />
     <link rel="next" title="GPS date/time utility functions" href="time_util.html" />
     <link rel="prev" title="Simulations based on time structure of EAS shower fronts" href="simulations/showerfront.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -47,28 +47,214 @@
         <li class="right" >
           <a href="simulations/showerfront.html" title="Simulations based on time structure of EAS shower fronts"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">SAPPHiRE 0.12 documentation</a> &raquo;</li>
-          <li><a href="sapphire.html" accesskey="U">SAPPHiRE Reference</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="sapphire.html" accesskey="U">SAPPHiRE Reference</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-sapphire.storage">
 <span id="low-level-storage-constructs"></span><h1>Low-level storage constructs<a class="headerlink" href="#module-sapphire.storage" title="Permalink to this headline">¶</a></h1>
 <p>PyTables table descriptions for data storage</p>
 <p>This module contains the table descriptions used by the detector
 simulation to store intermediate and final data in a HDF5 file.</p>
+<dl class="class">
+<dt id="sapphire.storage.EventObservables">
+<em class="property">class </em><code class="descclassname">sapphire.storage.</code><code class="descname">EventObservables</code><a class="headerlink" href="#sapphire.storage.EventObservables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store information about the observables of an event.</p>
+<p>The observables are described for each station independently.  So, for each
+event (with a unique <a class="reference internal" href="#sapphire.storage.EventObservables.id" title="sapphire.storage.EventObservables.id"><code class="xref py py-attr docutils literal"><span class="pre">id</span></code></a>), there is a table row for each station
+(with a unique <a class="reference internal" href="#sapphire.storage.EventObservables.station_id" title="sapphire.storage.EventObservables.station_id"><code class="xref py py-attr docutils literal"><span class="pre">station_id</span></code></a>), such that only the (id, station_id)
+combinations are unique in the table.</p>
+<dl class="attribute">
+<dt id="sapphire.storage.EventObservables.id">
+<code class="descname">id</code><a class="headerlink" href="#sapphire.storage.EventObservables.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>a unique identifier for the simulated event (only unique in this table)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sapphire.storage.EventObservables.station_id">
+<code class="descname">station_id</code><a class="headerlink" href="#sapphire.storage.EventObservables.station_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>station identifier, such that you can do:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">station</span> <span class="o">=</span> <span class="n">cluster</span><span class="o">.</span><span class="n">stations</span><span class="p">[</span><span class="n">station_id</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">r, phi, x, y</code></dt>
+<dd><p>coordinates of the station.  Depending on the simulation, this might be
+constant throughout the simulation, or it might change event by event.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sapphire.storage.EventObservables.alpha">
+<code class="descname">alpha</code><a class="headerlink" href="#sapphire.storage.EventObservables.alpha" title="Permalink to this definition">¶</a></dt>
+<dd><p>rotation of the station around its center</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sapphire.storage.EventObservables.N">
+<code class="descname">N</code><a class="headerlink" href="#sapphire.storage.EventObservables.N" title="Permalink to this definition">¶</a></dt>
+<dd><p>number of detectors with at least one particle</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sapphire.storage.EventObservables.columns">
+<code class="descname">columns</code><em class="property"> = {'phi': Float32Col(shape=(), dflt=0.0, pos=None), 'timestamp': Time32Col(shape=(), dflt=0, pos=None), 'nanoseconds': UInt32Col(shape=(), dflt=0, pos=None), 'n1': Float32Col(shape=(), dflt=0.0, pos=None), 't2': Float32Col(shape=(), dflt=0.0, pos=None), 't3': Float32Col(shape=(), dflt=0.0, pos=None), 'station_id': UInt8Col(shape=(), dflt=0, pos=None), 't1': Float32Col(shape=(), dflt=0.0, pos=None), 'ext_timestamp': UInt64Col(shape=(), dflt=0, pos=None), 'N': UInt8Col(shape=(), dflt=0, pos=None), 'r': Float32Col(shape=(), dflt=0.0, pos=None), 't4': Float32Col(shape=(), dflt=0.0, pos=None), 'x': Float32Col(shape=(), dflt=0.0, pos=None), 'y': Float32Col(shape=(), dflt=0.0, pos=None), 'alpha': Float32Col(shape=(), dflt=0.0, pos=None), 'n2': Float32Col(shape=(), dflt=0.0, pos=None), 'n3': Float32Col(shape=(), dflt=0.0, pos=None), 'n4': Float32Col(shape=(), dflt=0.0, pos=None), 'id': UInt32Col(shape=(), dflt=0, pos=None)}</em><a class="headerlink" href="#sapphire.storage.EventObservables.columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sapphire.storage.Coincidence">
+<em class="property">class </em><code class="descclassname">sapphire.storage.</code><code class="descname">Coincidence</code><a class="headerlink" href="#sapphire.storage.Coincidence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store information about a coincidence of stations within a cluster.</p>
+<p>An extensive air shower can trigger multiple stations, resulting in a set
+of events which are from the same shower.  This is called a coincidence.</p>
+<p>This table assigns an <a class="reference internal" href="#sapphire.storage.Coincidence.id" title="sapphire.storage.Coincidence.id"><code class="xref py py-attr docutils literal"><span class="pre">id</span></code></a> to a coincidence and provides some
+additional information.  The events making up the coincidence can be looked
+up using the <code class="docutils literal"><span class="pre">c_index</span></code> table.  Let <code class="docutils literal"><span class="pre">coincidence</span></code> be a row from
+this table, then you can do:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">coincidence_id</span> <span class="o">=</span> <span class="n">coincidence</span><span class="p">[</span><span class="s">&#39;id&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">event_ids</span> <span class="o">=</span> <span class="n">c_index</span><span class="p">[</span><span class="n">coincidence_id</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">coincidence_event_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">events</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">event_ids</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Note that all events included in the coincidence are not required to
+actually have measured particles.  For example, simulations include all
+events from the same shower in the coincidence, regardless of observed
+particles.  On the other hand, experimental datasets only include stations
+which have triggered, but may include events which have not actually
+measured the same shower, but simply measured other particles at the same
+time, by chance.</p>
+<p>Simulations may set the <a class="reference internal" href="#sapphire.storage.Coincidence.x" title="sapphire.storage.Coincidence.x"><code class="xref py py-attr docutils literal"><span class="pre">x</span></code></a>, <a class="reference internal" href="#sapphire.storage.Coincidence.y" title="sapphire.storage.Coincidence.y"><code class="xref py py-attr docutils literal"><span class="pre">y</span></code></a>, <a class="reference internal" href="#sapphire.storage.Coincidence.zenith" title="sapphire.storage.Coincidence.zenith"><code class="xref py py-attr docutils literal"><span class="pre">zenith</span></code></a>,
+<a class="reference internal" href="#sapphire.storage.Coincidence.azimuth" title="sapphire.storage.Coincidence.azimuth"><code class="xref py py-attr docutils literal"><span class="pre">azimuth</span></code></a>, <a class="reference internal" href="#sapphire.storage.Coincidence.size" title="sapphire.storage.Coincidence.size"><code class="xref py py-attr docutils literal"><span class="pre">size</span></code></a>, and <a class="reference internal" href="#sapphire.storage.Coincidence.energy" title="sapphire.storage.Coincidence.energy"><code class="xref py py-attr docutils literal"><span class="pre">energy</span></code></a> attributes to simulation
+parameters, like core position and shower parameters.</p>
+<dl class="attribute">
+<dt id="sapphire.storage.Coincidence.id">
+<code class="descname">id</code><a class="headerlink" href="#sapphire.storage.Coincidence.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>a unique identifier for the coincidence (only unique in this table)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sapphire.storage.Coincidence.N">
+<code class="descname">N</code><a class="headerlink" href="#sapphire.storage.Coincidence.N" title="Permalink to this definition">¶</a></dt>
+<dd><p>the number of triggered stations</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sapphire.storage.Coincidence.x">
+<code class="descname">x</code><a class="headerlink" href="#sapphire.storage.Coincidence.x" title="Permalink to this definition">¶</a></dt>
+<dd><p>The x coordinate of the shower core in a simulation.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sapphire.storage.Coincidence.y">
+<code class="descname">y</code><a class="headerlink" href="#sapphire.storage.Coincidence.y" title="Permalink to this definition">¶</a></dt>
+<dd><p>The y coordinate of the shower core in a simulation.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sapphire.storage.Coincidence.zenith">
+<code class="descname">zenith</code><a class="headerlink" href="#sapphire.storage.Coincidence.zenith" title="Permalink to this definition">¶</a></dt>
+<dd><p>The zenith direction of the (simulated) shower.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sapphire.storage.Coincidence.azimuth">
+<code class="descname">azimuth</code><a class="headerlink" href="#sapphire.storage.Coincidence.azimuth" title="Permalink to this definition">¶</a></dt>
+<dd><p>The azimuth direction of the (simulated) shower.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sapphire.storage.Coincidence.size">
+<code class="descname">size</code><a class="headerlink" href="#sapphire.storage.Coincidence.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>The size (number of leptons) of the (simulated) shower.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sapphire.storage.Coincidence.energy">
+<code class="descname">energy</code><a class="headerlink" href="#sapphire.storage.Coincidence.energy" title="Permalink to this definition">¶</a></dt>
+<dd><p>The primary particle energy of the (simulated) shower.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sapphire.storage.Coincidence.columns">
+<code class="descname">columns</code><em class="property"> = {'zenith': Float32Col(shape=(), dflt=0.0, pos=7), 'timestamp': Time32Col(shape=(), dflt=0, pos=1), 'nanoseconds': UInt32Col(shape=(), dflt=0, pos=2), 'id': UInt32Col(shape=(), dflt=0, pos=0), 'ext_timestamp': UInt64Col(shape=(), dflt=0, pos=3), 'azimuth': Float32Col(shape=(), dflt=0.0, pos=8), 'y': Float32Col(shape=(), dflt=0.0, pos=6), 'x': Float32Col(shape=(), dflt=0.0, pos=5), 'N': UInt8Col(shape=(), dflt=0, pos=4), 'energy': Float32Col(shape=(), dflt=0.0, pos=10), 'size': Float32Col(shape=(), dflt=0.0, pos=9)}</em><a class="headerlink" href="#sapphire.storage.Coincidence.columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sapphire.storage.ReconstructedCoincidence">
+<em class="property">class </em><code class="descclassname">sapphire.storage.</code><code class="descname">ReconstructedCoincidence</code><a class="headerlink" href="#sapphire.storage.ReconstructedCoincidence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store information about reconstructed coincidences</p>
+<dl class="attribute">
+<dt id="sapphire.storage.ReconstructedCoincidence.columns">
+<code class="descname">columns</code><em class="property"> = {'x': Float32Col(shape=(), dflt=0.0, pos=4), 'reference_zenith': Float32Col(shape=(), dflt=0.0, pos=18), 'error_x': Float32Col(shape=(), dflt=0.0, pos=10), 'error_y': Float32Col(shape=(), dflt=0.0, pos=11), 'zenith': Float32Col(shape=(), dflt=0.0, pos=6), 'ext_timestamp': UInt64Col(shape=(), dflt=0, pos=2), 'energy': Float32Col(shape=(), dflt=0.0, pos=9), 'reference_azimuth': Float32Col(shape=(), dflt=0.0, pos=19), 'error_zenith': Float32Col(shape=(), dflt=0.0, pos=12), 'reference_x': Float32Col(shape=(), dflt=0.0, pos=16), 'error_energy': Float32Col(shape=(), dflt=0.0, pos=15), 'min_n': Float32Col(shape=(), dflt=0.0, pos=3), 'reference_size': Float32Col(shape=(), dflt=0.0, pos=20), 'error_size': Float32Col(shape=(), dflt=0.0, pos=14), 'azimuth': Float32Col(shape=(), dflt=0.0, pos=7), 'error_azimuth': Float32Col(shape=(), dflt=0.0, pos=13), 'reference_y': Float32Col(shape=(), dflt=0.0, pos=17), 'reference_energy': Float32Col(shape=(), dflt=0.0, pos=21), 'id': UInt32Col(shape=(), dflt=0, pos=1), 'y': Float32Col(shape=(), dflt=0.0, pos=5), 'size': Float32Col(shape=(), dflt=0.0, pos=8)}</em><a class="headerlink" href="#sapphire.storage.ReconstructedCoincidence.columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sapphire.storage.ReconstructedEvent">
+<em class="property">class </em><code class="descclassname">sapphire.storage.</code><code class="descname">ReconstructedEvent</code><a class="headerlink" href="#sapphire.storage.ReconstructedEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store information about reconstructed events</p>
+<dl class="attribute">
+<dt id="sapphire.storage.ReconstructedEvent.id">
+<code class="descname">id</code><a class="headerlink" href="#sapphire.storage.ReconstructedEvent.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Index referring to the id of the event that was reconstructed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">d1,d2,d3,d4</code></dt>
+<dd><p>Booleans indicating which detectors participated in the
+reconstruction.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sapphire.storage.ReconstructedEvent.columns">
+<code class="descname">columns</code><em class="property"> = {'zenith': Float32Col(shape=(), dflt=0.0, pos=6), 'd1': BoolCol(shape=(), dflt=False, pos=22), 'energy': Float32Col(shape=(), dflt=0.0, pos=9), 'error_zenith': Float32Col(shape=(), dflt=0.0, pos=12), 'error_energy': Float32Col(shape=(), dflt=0.0, pos=15), 'error_azimuth': Float32Col(shape=(), dflt=0.0, pos=13), 'reference_size': Float32Col(shape=(), dflt=0.0, pos=20), 'reference_y': Float32Col(shape=(), dflt=0.0, pos=17), 'd4': BoolCol(shape=(), dflt=False, pos=25), 'd2': BoolCol(shape=(), dflt=False, pos=23), 'id': UInt32Col(shape=(), dflt=0, pos=1), 'reference_x': Float32Col(shape=(), dflt=0.0, pos=16), 'reference_zenith': Float32Col(shape=(), dflt=0.0, pos=18), 'error_x': Float32Col(shape=(), dflt=0.0, pos=10), 'error_y': Float32Col(shape=(), dflt=0.0, pos=11), 'reference_azimuth': Float32Col(shape=(), dflt=0.0, pos=19), 'd3': BoolCol(shape=(), dflt=False, pos=24), 'ext_timestamp': UInt64Col(shape=(), dflt=0, pos=2), 'min_n': Float32Col(shape=(), dflt=0.0, pos=3), 'error_size': Float32Col(shape=(), dflt=0.0, pos=14), 'azimuth': Float32Col(shape=(), dflt=0.0, pos=7), 'y': Float32Col(shape=(), dflt=0.0, pos=5), 'x': Float32Col(shape=(), dflt=0.0, pos=4), 'reference_energy': Float32Col(shape=(), dflt=0.0, pos=21), 'size': Float32Col(shape=(), dflt=0.0, pos=8)}</em><a class="headerlink" href="#sapphire.storage.ReconstructedEvent.columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sapphire.storage.KascadeEvent">
+<em class="property">class </em><code class="descclassname">sapphire.storage.</code><code class="descname">KascadeEvent</code><a class="headerlink" href="#sapphire.storage.KascadeEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store events from KASCADE</p>
+<dl class="attribute">
+<dt id="sapphire.storage.KascadeEvent.columns">
+<code class="descname">columns</code><em class="property"> = {'dens_mu': Float64Col(shape=(4,), dflt=0.0, pos=None), 'zenith': Float64Col(shape=(), dflt=0.0, pos=None), 'run_id': Int32Col(shape=(), dflt=0, pos=None), 'event_id': Int64Col(shape=(), dflt=0, pos=None), 'timestamp': Time32Col(shape=(), dflt=0, pos=None), 'energy': Float64Col(shape=(), dflt=0.0, pos=None), 'Num_e': Float64Col(shape=(), dflt=0.0, pos=None), 'ext_timestamp': UInt64Col(shape=(), dflt=0, pos=None), 'dens_e': Float64Col(shape=(4,), dflt=0.0, pos=None), 'Num_mu': Float64Col(shape=(), dflt=0.0, pos=None), 'P200': Float64Col(shape=(), dflt=0.0, pos=None), 'azimuth': Float64Col(shape=(), dflt=0.0, pos=None), 'T200': Float64Col(shape=(), dflt=0.0, pos=None), 'nanoseconds': UInt32Col(shape=(), dflt=0, pos=None), 'core_pos': Float64Col(shape=(2,), dflt=0.0, pos=None)}</em><a class="headerlink" href="#sapphire.storage.KascadeEvent.columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sapphire.storage.ReconstructedKascadeEvent">
+<em class="property">class </em><code class="descclassname">sapphire.storage.</code><code class="descname">ReconstructedKascadeEvent</code><a class="headerlink" href="#sapphire.storage.ReconstructedKascadeEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store information about reconstructed events</p>
+<dl class="attribute">
+<dt id="sapphire.storage.ReconstructedKascadeEvent.columns">
+<code class="descname">columns</code><em class="property"> = {'k_dens_e': Float64Col(shape=(4,), dflt=0.0, pos=None), 'min_n134': Float32Col(shape=(), dflt=0.0, pos=None), 'id': UInt32Col(shape=(), dflt=0, pos=None), 'k_T200': Float64Col(shape=(), dflt=0.0, pos=None), 'k_Num_mu': Float64Col(shape=(), dflt=0.0, pos=None), 'k_core_pos': Float64Col(shape=(2,), dflt=0.0, pos=None), 'reconstructed_theta': Float32Col(shape=(), dflt=0.0, pos=None), 'phi': Float32Col(shape=(), dflt=0.0, pos=None), 'reconstructed_phi': Float32Col(shape=(), dflt=0.0, pos=None), 'k_energy': Float64Col(shape=(), dflt=0.0, pos=None), 'station_id': UInt8Col(shape=(), dflt=0, pos=None), 'k_dens_mu': Float64Col(shape=(4,), dflt=0.0, pos=None), 'alpha': Float32Col(shape=(), dflt=0.0, pos=None), 'reference_phi': Float32Col(shape=(), dflt=0.0, pos=None), 'reference_theta': Float32Col(shape=(), dflt=0.0, pos=None), 'k_P200': Float64Col(shape=(), dflt=0.0, pos=None), 't2': Float32Col(shape=(), dflt=0.0, pos=None), 't3': Float32Col(shape=(), dflt=0.0, pos=None), 't1': Float32Col(shape=(), dflt=0.0, pos=None), 'r': Float32Col(shape=(), dflt=0.0, pos=None), 'n1': Float32Col(shape=(), dflt=0.0, pos=None), 'n2': Float32Col(shape=(), dflt=0.0, pos=None), 'n3': Float32Col(shape=(), dflt=0.0, pos=None), 'n4': Float32Col(shape=(), dflt=0.0, pos=None), 't4': Float32Col(shape=(), dflt=0.0, pos=None), 'k_Num_e': Float64Col(shape=(), dflt=0.0, pos=None)}</em><a class="headerlink" href="#sapphire.storage.ReconstructedKascadeEvent.columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 
 
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="index.html">
               <img class="logo" src="_static/header.png" alt="Logo"/>
@@ -79,12 +265,14 @@ simulation to store intermediate and final data in a HDF5 file.</p>
   <h4>Next topic</h4>
   <p class="topless"><a href="time_util.html"
                         title="next chapter">GPS date/time utility functions</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/storage.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/storage.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -101,7 +289,7 @@ simulation to store intermediate and final data in a HDF5 file.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -116,13 +304,13 @@ simulation to store intermediate and final data in a HDF5 file.</p>
         <li class="right" >
           <a href="simulations/showerfront.html" title="Simulations based on time structure of EAS shower fronts"
              >previous</a> |</li>
-        <li><a href="index.html">SAPPHiRE 0.12 documentation</a> &raquo;</li>
-          <li><a href="sapphire.html" >SAPPHiRE Reference</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="sapphire.html" >SAPPHiRE Reference</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

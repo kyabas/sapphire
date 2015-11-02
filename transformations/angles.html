@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Conversion between different angle notations &mdash; SAPPHiRE 0.12 documentation</title>
+    <title>Conversion between different angle notations &mdash; SAPPHiRE 0.12.6 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.12',
+        VERSION:     '0.12.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,15 +24,15 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.12 documentation" href="../index.html" />
-    <link rel="up" title="Transformations" href="../transformations.html" />
+    <link rel="top" title="SAPPHiRE 0.12.6 documentation" href="../index.html" />
+    <link rel="up" title="Coordinate and time transformations" href="../transformations.html" />
     <link rel="next" title="Conversion between axes coordinate systems" href="axes.html" />
-    <link rel="prev" title="Transformations" href="../transformations.html" /> 
+    <link rel="prev" title="Coordinate and time transformations" href="../transformations.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -45,18 +45,18 @@
           <a href="axes.html" title="Conversion between axes coordinate systems"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../transformations.html" title="Transformations"
+          <a href="../transformations.html" title="Coordinate and time transformations"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">SAPPHiRE 0.12 documentation</a> &raquo;</li>
-          <li><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
-          <li><a href="../transformations.html" accesskey="U">Transformations</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../transformations.html" accesskey="U">Coordinate and time transformations</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-sapphire.transformations.angles">
 <span id="conversion-between-different-angle-notations"></span><h1>Conversion between different angle notations<a class="headerlink" href="#module-sapphire.transformations.angles" title="Permalink to this headline">¶</a></h1>
@@ -65,7 +65,7 @@
 Degrees, radians and hours.</p>
 <dl class="function">
 <dt id="sapphire.transformations.angles.hours_to_degrees">
-<tt class="descclassname">sapphire.transformations.angles.</tt><tt class="descname">hours_to_degrees</tt><big>(</big><em>angle</em><big>)</big><a class="headerlink" href="#sapphire.transformations.angles.hours_to_degrees" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">sapphire.transformations.angles.</code><code class="descname">hours_to_degrees</code><span class="sig-paren">(</span><em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.transformations.angles.hours_to_degrees" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts decimal hours to degrees</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -81,7 +81,7 @@ Degrees, radians and hours.</p>
 
 <dl class="function">
 <dt id="sapphire.transformations.angles.hours_to_radians">
-<tt class="descclassname">sapphire.transformations.angles.</tt><tt class="descname">hours_to_radians</tt><big>(</big><em>angle</em><big>)</big><a class="headerlink" href="#sapphire.transformations.angles.hours_to_radians" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">sapphire.transformations.angles.</code><code class="descname">hours_to_radians</code><span class="sig-paren">(</span><em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.transformations.angles.hours_to_radians" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts decimal hours to radians</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -97,7 +97,7 @@ Degrees, radians and hours.</p>
 
 <dl class="function">
 <dt id="sapphire.transformations.angles.degrees_to_hours">
-<tt class="descclassname">sapphire.transformations.angles.</tt><tt class="descname">degrees_to_hours</tt><big>(</big><em>angle</em><big>)</big><a class="headerlink" href="#sapphire.transformations.angles.degrees_to_hours" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">sapphire.transformations.angles.</code><code class="descname">degrees_to_hours</code><span class="sig-paren">(</span><em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.transformations.angles.degrees_to_hours" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts degrees to decimal hours</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -113,7 +113,7 @@ Degrees, radians and hours.</p>
 
 <dl class="function">
 <dt id="sapphire.transformations.angles.radians_to_hours">
-<tt class="descclassname">sapphire.transformations.angles.</tt><tt class="descname">radians_to_hours</tt><big>(</big><em>angle</em><big>)</big><a class="headerlink" href="#sapphire.transformations.angles.radians_to_hours" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">sapphire.transformations.angles.</code><code class="descname">radians_to_hours</code><span class="sig-paren">(</span><em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.transformations.angles.radians_to_hours" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts degrees to decimal hours</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -133,23 +133,25 @@ Degrees, radians and hours.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/header.png" alt="Logo"/>
             </a></p>
   <h4>Previous topic</h4>
   <p class="topless"><a href="../transformations.html"
-                        title="previous chapter">Transformations</a></p>
+                        title="previous chapter">Coordinate and time transformations</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="axes.html"
                         title="next chapter">Conversion between axes coordinate systems</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../_sources/transformations/angles.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/transformations/angles.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
@@ -166,7 +168,7 @@ Degrees, radians and hours.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -179,16 +181,16 @@ Degrees, radians and hours.</p>
           <a href="axes.html" title="Conversion between axes coordinate systems"
              >next</a> |</li>
         <li class="right" >
-          <a href="../transformations.html" title="Transformations"
+          <a href="../transformations.html" title="Coordinate and time transformations"
              >previous</a> |</li>
-        <li><a href="../index.html">SAPPHiRE 0.12 documentation</a> &raquo;</li>
-          <li><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
-          <li><a href="../transformations.html" >Transformations</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../transformations.html" >Coordinate and time transformations</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

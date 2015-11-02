@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Nikhef Stoomboot facilities &mdash; SAPPHiRE 0.12.6 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/hisparc_style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.12.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="SAPPHiRE 0.12.6 documentation" href="index.html" />
+    <link rel="up" title="SAPPHiRE Reference" href="sapphire.html" />
+    <link rel="next" title="Simulation of the detection of EAS events" href="simulations.html" />
+    <link rel="prev" title="Public data access" href="publicdb.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="simulations.html" title="Simulation of the detection of EAS events"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="publicdb.html" title="Public data access"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="sapphire.html" accesskey="U">SAPPHiRE Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-sapphire.qsub">
+<span id="nikhef-stoomboot-facilities"></span><h1>Nikhef Stoomboot facilities<a class="headerlink" href="#module-sapphire.qsub" title="Permalink to this headline">¶</a></h1>
+<p>Access the Nikhef Stoomboot cluster.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This module is only for use at Nikhef. The Stoomboot cluster is only
+accessible for Nikhef users.</p>
+</div>
+<p>Easy to use functions to make use of the Nikhef Stoomboot facilities.
+This checks the available slots on the requested queue, creates the
+scripts to submit, submits the jobs, and cleans up afterwards.</p>
+<p>Example usage:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sapphire</span> <span class="kn">import</span> <span class="n">qsub</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">qsub</span><span class="o">.</span><span class="n">check_queue</span><span class="p">(</span><span class="s">&#39;long&#39;</span><span class="p">)</span>
+<span class="go">340</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">qsub</span><span class="o">.</span><span class="n">submit_job</span><span class="p">(</span><span class="s">&#39;touch /data/hisparc/test&#39;</span><span class="p">,</span> <span class="s">&#39;job_1&#39;</span><span class="p">,</span> <span class="s">&#39;express&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="function">
+<dt id="sapphire.qsub.check_queue">
+<code class="descclassname">sapphire.qsub.</code><code class="descname">check_queue</code><span class="sig-paren">(</span><em>queue</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.qsub.check_queue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check for available job slots on the selected queue for current user</p>
+<p>Maximum numbers from:
+<code class="docutils literal"><span class="pre">qstat</span> <span class="pre">-Q</span> <span class="pre">-f</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-e</span> <span class="pre">Queue:</span> <span class="pre">-e</span> <span class="pre">max_user_queuable</span> <span class="pre">-e</span> <span class="pre">max_queuable</span></code>.
+Note that some queues also have global maximum number of jobs.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>queue</strong> &#8211; queue name for which to check current number of job
+slots in use.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">number of available slots.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.qsub.submit_job">
+<code class="descclassname">sapphire.qsub.</code><code class="descname">submit_job</code><span class="sig-paren">(</span><em>script</em>, <em>name</em>, <em>queue</em>, <em>extra=''</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.qsub.submit_job" title="Permalink to this definition">¶</a></dt>
+<dd><p>Submit a job to Stoomboot</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>script</strong> &#8211; contents of the script to run.</li>
+<li><strong>name</strong> &#8211; name for the job.</li>
+<li><strong>queue</strong> &#8211; name of the queue to run the job on.</li>
+<li><strong>extra</strong> &#8211; optional extra arguments for the qsub command.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.qsub.create_script">
+<code class="descclassname">sapphire.qsub.</code><code class="descname">create_script</code><span class="sig-paren">(</span><em>script</em>, <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.qsub.create_script" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create script as temp file to be run on Stoomboot</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.qsub.delete_script">
+<code class="descclassname">sapphire.qsub.</code><code class="descname">delete_script</code><span class="sig-paren">(</span><em>script_path</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.qsub.delete_script" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete script after submitting to Stoomboot</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>script_path</strong> &#8211; path to the script to be removed</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/header.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="publicdb.html"
+                        title="previous chapter">Public data access</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="simulations.html"
+                        title="next chapter">Simulation of the detection of EAS events</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/qsub.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="simulations.html" title="Simulation of the detection of EAS events"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="publicdb.html" title="Public data access"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="sapphire.html" >SAPPHiRE Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

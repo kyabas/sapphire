@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Search for coincidences between HiSPARC stations &mdash; SAPPHiRE 0.12 documentation</title>
+    <title>Search for coincidences between HiSPARC stations &mdash; SAPPHiRE 0.12.6 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.12',
+        VERSION:     '0.12.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,15 +24,15 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.12 documentation" href="../index.html" />
+    <link rel="top" title="SAPPHiRE 0.12.6 documentation" href="../index.html" />
     <link rel="up" title="Data analysis" href="../analysis.html" />
     <link rel="next" title="Reconstruction of EAS core and size" href="core_reconstruction.html" />
     <link rel="prev" title="Query coincidences from a datafile" href="coincidence_queries.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -47,25 +47,26 @@
         <li class="right" >
           <a href="coincidence_queries.html" title="Query coincidences from a datafile"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">SAPPHiRE 0.12 documentation</a> &raquo;</li>
-          <li><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
-          <li><a href="../analysis.html" accesskey="U">Data analysis</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../analysis.html" accesskey="U">Data analysis</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-sapphire.analysis.coincidences">
 <span id="search-for-coincidences-between-hisparc-stations"></span><h1>Search for coincidences between HiSPARC stations<a class="headerlink" href="#module-sapphire.analysis.coincidences" title="Permalink to this headline">¶</a></h1>
 <p>Search for coincidences between HiSPARC stations</p>
 <p>This module can be used to search for coincidences between several
 HiSPARC stations. To skip this and directly download coincidences
-use <a class="reference internal" href="../esd.html#sapphire.esd.download_coincidences" title="sapphire.esd.download_coincidences"><tt class="xref py py-func docutils literal"><span class="pre">download_coincidences()</span></tt></a>, this is slightly
+use <a class="reference internal" href="../esd.html#sapphire.esd.download_coincidences" title="sapphire.esd.download_coincidences"><code class="xref py py-func docutils literal"><span class="pre">download_coincidences()</span></code></a>, this is slightly
 less flexible because you can not choose the coincidence window.</p>
-<p>Example usage:</p>
+<p>For regular usage, download events from the ESD and use the
+<a class="reference internal" href="#sapphire.analysis.coincidences.CoincidencesESD" title="sapphire.analysis.coincidences.CoincidencesESD"><code class="xref py py-class docutils literal"><span class="pre">CoincidencesESD</span></code></a> class. Example usage:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">datetime</span>
 
 <span class="kn">import</span> <span class="nn">tables</span>
@@ -90,8 +91,16 @@ less flexible because you can not choose the coincidence window.</p>
 </div>
 <dl class="class">
 <dt id="sapphire.analysis.coincidences.Coincidences">
-<em class="property">class </em><tt class="descclassname">sapphire.analysis.coincidences.</tt><tt class="descname">Coincidences</tt><big>(</big><em>data</em>, <em>coincidence_group</em>, <em>station_groups</em>, <em>overwrite=False</em>, <em>progress=True</em><big>)</big><a class="headerlink" href="#sapphire.analysis.coincidences.Coincidences" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.analysis.coincidences.</code><code class="descname">Coincidences</code><span class="sig-paren">(</span><em>data</em>, <em>coincidence_group</em>, <em>station_groups</em>, <em>overwrite=False</em>, <em>progress=True</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.coincidences.Coincidences" title="Permalink to this definition">¶</a></dt>
 <dd><p>Search for and store coincidences between HiSPARC stations.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For better compatibility with other modules, such as
+<a class="reference internal" href="reconstructions.html#module-sapphire.analysis.reconstructions" title="sapphire.analysis.reconstructions"><code class="xref py py-mod docutils literal"><span class="pre">reconstructions</span></code></a>, it is recommended to use the
+subclass <a class="reference internal" href="#sapphire.analysis.coincidences.CoincidencesESD" title="sapphire.analysis.coincidences.CoincidencesESD"><code class="xref py py-class docutils literal"><span class="pre">CoincidencesESD</span></code></a> instead. This is an old class with a
+different way to store the results. It can be used, however, on <em>raw</em>
+data downloaded from the public database.</p>
+</div>
 <p>Suppose you want to search for coincidences between stations 501 and
 503.  First, download the data for these stations (with, or without
 traces, depending on your intentions).  Suppose you stored the data in
@@ -109,12 +118,44 @@ the &#8216;/s501&#8217; and &#8216;/s503&#8217; groups in the &#8216;data&#8217;
 </div>
 <p>You can then provide different parameters to the individual methods.
 See the corresponding docstrings.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">For better compatibility with other modules, such as
-<a class="reference internal" href="reconstructions.html#module-sapphire.analysis.reconstructions" title="sapphire.analysis.reconstructions"><tt class="xref py py-mod docutils literal"><span class="pre">reconstructions</span></tt></a>, it is recommended
-to use the subclass <a class="reference internal" href="#sapphire.analysis.coincidences.CoincidencesESD" title="sapphire.analysis.coincidences.CoincidencesESD"><tt class="xref py py-class docutils literal"><span class="pre">CoincidencesESD</span></tt></a> instead.</p>
+<p>Once the coincidences are stored, there will be a <cite>coincidences</cite> table in
+the group. This table has multiple columns used for storing simulation
+inputs like shower direction and energy. At this point, they contain no
+information. They are only useful if the original event tables were created
+by simulations, instead of real detector data. The useful columns are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">id</span></code>: the index of this coincidence. This index is identical for
+the <code class="docutils literal"><span class="pre">coincidence</span></code> and <code class="docutils literal"><span class="pre">c_index</span></code> tables.</li>
+<li><code class="docutils literal"><span class="pre">timestamp</span></code>: the timestamp of the event in seconds</li>
+<li><code class="docutils literal"><span class="pre">nanoseconds</span></code>: the subsecond part of the timestamp in nanoseconds</li>
+<li><code class="docutils literal"><span class="pre">ext_timestamp</span></code>: the timestamp of the event in nanoseconds (equal
+to timestamp * 1000000000 + nanoseconds)</li>
+<li><code class="docutils literal"><span class="pre">N</span></code>: the number of stations participating in this coincidence</li>
+<li><code class="docutils literal"><span class="pre">s0</span></code>, <code class="docutils literal"><span class="pre">s1</span></code>, ...: whether the first (0), second (1) or other
+stations participated in the coincidence.</li>
+</ul>
+</div></blockquote>
+<p>The coincidences group furthermore contains the table <code class="docutils literal"><span class="pre">c_index</span></code> to track
+down the individual events making up the coincidence. The <code class="docutils literal"><span class="pre">c_index</span></code> table
+gives indexes for the individual events inside the original event tables.</p>
+<p>If you have obtained a particular coincidence from the <code class="docutils literal"><span class="pre">coincidences</span></code>
+table, the <code class="docutils literal"><span class="pre">id</span></code> is the index into all these tables. For example, looking
+up the source events making up the 40th coincidence:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">group</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">coincidences</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">idx</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">group</span><span class="o">.</span><span class="n">coincidences</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+</pre></div>
 </div>
+<p>can be done in the following way (each row in the <code class="docutils literal"><span class="pre">c_index</span></code> table is a
+(station index, event index) pair):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">event_idx</span> <span class="ow">in</span> <span class="n">group</span><span class="o">.</span><span class="n">c_index</span><span class="p">[</span><span class="n">idx</span><span class="p">]:</span>
+<span class="gp">... </span>    <span class="n">event</span> <span class="o">=</span> <span class="n">group</span><span class="o">.</span><span class="n">observables</span><span class="p">[</span><span class="n">event_idx</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">event</span></code> is one of the source events, processed to determine particle
+arrival times from the raw traces (if available). It has a
+<code class="docutils literal"><span class="pre">station_id</span></code> attribute which is an index into <code class="docutils literal"><span class="pre">station_groups</span></code>.</p>
 <p>Initialize the class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -136,7 +177,7 @@ coincidences.</li>
 </table>
 <dl class="method">
 <dt id="sapphire.analysis.coincidences.Coincidences.search_and_store_coincidences">
-<tt class="descname">search_and_store_coincidences</tt><big>(</big><em>window=2000</em>, <em>cluster=None</em><big>)</big><a class="headerlink" href="#sapphire.analysis.coincidences.Coincidences.search_and_store_coincidences" title="Permalink to this definition">¶</a></dt>
+<code class="descname">search_and_store_coincidences</code><span class="sig-paren">(</span><em>window=2000</em>, <em>cluster=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.coincidences.Coincidences.search_and_store_coincidences" title="Permalink to this definition">¶</a></dt>
 <dd><p>Search, process and store coincidences.</p>
 <p>This is a semi-automatic method to search for coincidences,
 process the events making up the coincidences and then store the
@@ -148,12 +189,12 @@ the individual methods.  See the class docstring.</p>
 
 <dl class="method">
 <dt id="sapphire.analysis.coincidences.Coincidences.search_coincidences">
-<tt class="descname">search_coincidences</tt><big>(</big><em>window=2000</em>, <em>shifts=None</em>, <em>limit=None</em><big>)</big><a class="headerlink" href="#sapphire.analysis.coincidences.Coincidences.search_coincidences" title="Permalink to this definition">¶</a></dt>
+<code class="descname">search_coincidences</code><span class="sig-paren">(</span><em>window=2000</em>, <em>shifts=None</em>, <em>limit=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.coincidences.Coincidences.search_coincidences" title="Permalink to this definition">¶</a></dt>
 <dd><p>Search for coincidences.</p>
 <p>Search all data in the station_groups for coincidences, and store
 rudimentary coincidence data in the coincidences group.  This data
 might be useful, but is very basic.  You can call the
-<a class="reference internal" href="#sapphire.analysis.coincidences.Coincidences.store_coincidences" title="sapphire.analysis.coincidences.Coincidences.store_coincidences"><tt class="xref py py-meth docutils literal"><span class="pre">store_coincidences()</span></tt></a> method to store the coincidences in an
+<a class="reference internal" href="#sapphire.analysis.coincidences.Coincidences.store_coincidences" title="sapphire.analysis.coincidences.Coincidences.store_coincidences"><code class="xref py py-meth docutils literal"><span class="pre">store_coincidences()</span></code></a> method to store the coincidences in an
 easier format in the coincidences group.</p>
 <p>If you want to process the preliminary results: they are stored in
 _src_c_index and _src_timestamps.  The former is a list of
@@ -172,7 +213,8 @@ finally an index into that station&#8217;s event table.</p>
 t&#8217;s smaller than this window will be considered a coincidence.</li>
 <li><strong>shifts</strong> &#8211; optionally shift a station&#8217;s data in time.  This
 can be useful if a station has a misconfigured GPS clock.
-Expects a list of shifts, one for each station.</li>
+Expects a list of shifts, one for each station, in seconds.
+Use &#8216;None&#8217; for no shift.</li>
 <li><strong>limit</strong> &#8211; optionally limit the search for this number of
 events.</li>
 </ul>
@@ -184,8 +226,8 @@ events.</li>
 
 <dl class="method">
 <dt id="sapphire.analysis.coincidences.Coincidences.process_events">
-<tt class="descname">process_events</tt><big>(</big><em>overwrite=None</em><big>)</big><a class="headerlink" href="#sapphire.analysis.coincidences.Coincidences.process_events" title="Permalink to this definition">¶</a></dt>
-<dd><p>Process events using <a class="reference internal" href="process_events.html#module-sapphire.analysis.process_events" title="sapphire.analysis.process_events"><tt class="xref py py-mod docutils literal"><span class="pre">process_events</span></tt></a></p>
+<code class="descname">process_events</code><span class="sig-paren">(</span><em>overwrite=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.coincidences.Coincidences.process_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process events using <a class="reference internal" href="process_events.html#module-sapphire.analysis.process_events" title="sapphire.analysis.process_events"><code class="xref py py-mod docutils literal"><span class="pre">process_events</span></code></a></p>
 <p>Events making up the coincidences are processed to obtain
 observables like number of particles and particle arrival times.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -201,7 +243,7 @@ station groups.</td>
 
 <dl class="method">
 <dt id="sapphire.analysis.coincidences.Coincidences.store_coincidences">
-<tt class="descname">store_coincidences</tt><big>(</big><em>cluster=None</em><big>)</big><a class="headerlink" href="#sapphire.analysis.coincidences.Coincidences.store_coincidences" title="Permalink to this definition">¶</a></dt>
+<code class="descname">store_coincidences</code><span class="sig-paren">(</span><em>cluster=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.coincidences.Coincidences.store_coincidences" title="Permalink to this definition">¶</a></dt>
 <dd><p>Store the previously found coincidences.</p>
 <p>After you have searched for coincidences, you can store the
 more user-friendly results in the coincidences group using this
@@ -211,7 +253,7 @@ method.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cluster</strong> &#8211; optionally store a
-<a class="reference internal" href="../clusters.html#sapphire.clusters.BaseCluster" title="sapphire.clusters.BaseCluster"><tt class="xref py py-class docutils literal"><span class="pre">BaseCluster</span></tt></a> instance in the
+<a class="reference internal" href="../clusters.html#sapphire.clusters.BaseCluster" title="sapphire.clusters.BaseCluster"><code class="xref py py-class docutils literal"><span class="pre">BaseCluster</span></code></a> instance in the
 coincidences group for future reference.</td>
 </tr>
 </tbody>
@@ -222,11 +264,70 @@ coincidences group for future reference.</td>
 
 <dl class="class">
 <dt id="sapphire.analysis.coincidences.CoincidencesESD">
-<em class="property">class </em><tt class="descclassname">sapphire.analysis.coincidences.</tt><tt class="descname">CoincidencesESD</tt><big>(</big><em>data</em>, <em>coincidence_group</em>, <em>station_groups</em>, <em>overwrite=False</em>, <em>progress=True</em><big>)</big><a class="headerlink" href="#sapphire.analysis.coincidences.CoincidencesESD" title="Permalink to this definition">¶</a></dt>
-<dd><p>Store coincidences differently for the ESD</p>
-<p>This subclass stores the paths to the station_groups that where
-used to look for coincidences in a lookup-table, and also
-stores the original station info and event_id for each coincidence.</p>
+<em class="property">class </em><code class="descclassname">sapphire.analysis.coincidences.</code><code class="descname">CoincidencesESD</code><span class="sig-paren">(</span><em>data</em>, <em>coincidence_group</em>, <em>station_groups</em>, <em>overwrite=False</em>, <em>progress=True</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.coincidences.CoincidencesESD" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store coincidences specifically using the ESD</p>
+<p>This is a subclass of <a class="reference internal" href="#sapphire.analysis.coincidences.Coincidences" title="sapphire.analysis.coincidences.Coincidences"><code class="xref py py-class docutils literal"><span class="pre">Coincidences</span></code></a>. In addition to searching for
+coincidences, this subclass stores the paths to the station_groups that
+where used to look for coincidences in a lookup-table, and also stores the
+original station info and event_id for each coincidence.</p>
+<p>Suppose you want to search for coincidences between stations 501 and 503.
+First, download the data for these stations from the ESD. Suppose you
+stored the data in the &#8216;/s501&#8217; and &#8216;/s503&#8217; groups in the &#8216;data&#8217; file.
+Then:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">station_groups</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;/s501&#39;</span><span class="p">,</span> <span class="s">&#39;/s503&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">coin</span> <span class="o">=</span> <span class="n">CoincidencesESD</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s">&#39;/coincidences&#39;</span><span class="p">,</span> <span class="n">station_groups</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">coin</span><span class="o">.</span><span class="n">search_and_store_coincidences</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>If you want a more manual method, replace the last line with:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">coin</span><span class="o">.</span><span class="n">search_coincidences</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="mi">50000</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">coin</span><span class="o">.</span><span class="n">process_events</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">coin</span><span class="o">.</span><span class="n">store_coincidences</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>You can then provide different parameters to the individual methods.
+See the corresponding docstrings.</p>
+<p>Once the coincidences are stored, there will be a <cite>coincidences</cite> table in
+the group. This table has multiple columns used for storing simulation
+inputs like shower direction and energy. At this point, they contain no
+information. They are only useful if the original event tables were created
+by simulations, instead of real detector data. The useful columns are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">id</span></code>: the index of this coincidence. This index is identical for
+the <code class="docutils literal"><span class="pre">coincidence</span></code> and <code class="docutils literal"><span class="pre">c_index</span></code> tables.</li>
+<li><code class="docutils literal"><span class="pre">timestamp</span></code>: the timestamp of the event in seconds</li>
+<li><code class="docutils literal"><span class="pre">nanoseconds</span></code>: the subsecond part of the timestamp in nanoseconds</li>
+<li><code class="docutils literal"><span class="pre">ext_timestamp</span></code>: the timestamp of the event in nanoseconds (equal
+to timestamp * 1000000000 + nanoseconds)</li>
+<li><code class="docutils literal"><span class="pre">N</span></code>: the number of stations participating in this coincidence</li>
+<li><code class="docutils literal"><span class="pre">s0</span></code>, <code class="docutils literal"><span class="pre">s1</span></code>, ...: whether the first (0), second (1) or other
+stations participated in the coincidence.</li>
+</ul>
+</div></blockquote>
+<p>The coincidences group furthermore contains the tables <code class="docutils literal"><span class="pre">s_index</span></code> and
+<code class="docutils literal"><span class="pre">c_index</span></code> to track down the individual events making up the coincidence.
+The <code class="docutils literal"><span class="pre">s_index</span></code> table contains a row for each station, pointing to the
+station&#8217;s event tables. The <code class="docutils literal"><span class="pre">c_index</span></code> table gives indexes for the
+individual events inside those tables.</p>
+<p>If you have obtained a particular coincidence from the <code class="docutils literal"><span class="pre">coincidences</span></code>
+table, the <code class="docutils literal"><span class="pre">id</span></code> is the index into all these tables. For example, looking
+up the source events making up the 40th coincidence:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">group</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">coincidences</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">idx</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">group</span><span class="o">.</span><span class="n">coincidences</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>can be done in the following way (each row in the <code class="docutils literal"><span class="pre">c_index</span></code> table is a
+(station index, event index) pair):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">station_paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">get_node</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s">&#39;events&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span>
+<span class="gp">... </span><span class="n">group</span><span class="o">.</span><span class="n">s_index</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">station_idx</span><span class="p">,</span> <span class="n">event_idx</span> <span class="ow">in</span> <span class="n">group</span><span class="o">.</span><span class="n">c_index</span><span class="p">[</span><span class="n">idx</span><span class="p">]:</span>
+<span class="gp">... </span>    <span class="n">event_group</span> <span class="o">=</span> <span class="n">station_paths</span><span class="p">[</span><span class="n">station_idx</span><span class="p">]</span>
+<span class="gp">... </span>    <span class="n">event</span> <span class="o">=</span> <span class="n">event_group</span><span class="p">[</span><span class="n">event_idx</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">event</span></code> is one of the source events.</p>
 <p>Initialize the class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -248,7 +349,7 @@ coincidences.</li>
 </table>
 <dl class="method">
 <dt id="sapphire.analysis.coincidences.CoincidencesESD.search_and_store_coincidences">
-<tt class="descname">search_and_store_coincidences</tt><big>(</big><em>window=2000</em>, <em>cluster=None</em><big>)</big><a class="headerlink" href="#sapphire.analysis.coincidences.CoincidencesESD.search_and_store_coincidences" title="Permalink to this definition">¶</a></dt>
+<code class="descname">search_and_store_coincidences</code><span class="sig-paren">(</span><em>window=2000</em>, <em>cluster=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.coincidences.CoincidencesESD.search_and_store_coincidences" title="Permalink to this definition">¶</a></dt>
 <dd><p>Search and store coincidences.</p>
 <p>This is a semi-automatic method to search for coincidences
 and then store the results in the coincidences group.</p>
@@ -256,20 +357,47 @@ and then store the results in the coincidences group.</p>
 
 <dl class="method">
 <dt id="sapphire.analysis.coincidences.CoincidencesESD.search_coincidences">
-<tt class="descname">search_coincidences</tt><big>(</big><em>window=2000</em>, <em>shifts=None</em>, <em>limit=None</em><big>)</big><a class="headerlink" href="#sapphire.analysis.coincidences.CoincidencesESD.search_coincidences" title="Permalink to this definition">¶</a></dt>
+<code class="descname">search_coincidences</code><span class="sig-paren">(</span><em>window=2000</em>, <em>shifts=None</em>, <em>limit=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.coincidences.CoincidencesESD.search_coincidences" title="Permalink to this definition">¶</a></dt>
 <dd><p>Search for coincidences.</p>
-<p>Instead of storing the results in the tables <tt class="docutils literal"><span class="pre">_src_c_index</span></tt> and
-<tt class="docutils literal"><span class="pre">_src_timestamps</span></tt>, they are stored in attributes by the same
-name in the class.</p>
+<p>Search all data in the station_groups for coincidences, and store
+rudimentary coincidence data in attributes.  This data might be useful,
+but is very basic.  You can call the <a class="reference internal" href="#sapphire.analysis.coincidences.CoincidencesESD.store_coincidences" title="sapphire.analysis.coincidences.CoincidencesESD.store_coincidences"><code class="xref py py-meth docutils literal"><span class="pre">store_coincidences()</span></code></a> method
+to store the coincidences in an easier format in the coincidences
+group.</p>
+<p>If you want to process the preliminary results: they are stored in the
+attributes <code class="docutils literal"><span class="pre">_src_c_index</span></code> and <code class="docutils literal"><span class="pre">_src_timestamps</span></code>.  The
+former is a list of coincidences, which each consist of a list with
+indexes into the timestamps array as a pointer to the events making up
+the coincidence. The latter is a list of tuples.  Each tuple consists
+of a timestamp followed by an index into the stations list which
+designates the detector station which measured the event, and finally
+an index into that station&#8217;s event table.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>window</strong> &#8211; the coincidence time window.  All events with delta
+t&#8217;s smaller than this window will be considered a coincidence.</li>
+<li><strong>shifts</strong> &#8211; optionally shift a station&#8217;s data in time.  This
+can be useful if a station has a misconfigured GPS clock.
+Expects a list of shifts, one for each station.</li>
+<li><strong>limit</strong> &#8211; optionally limit the search for this number of
+events.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="sapphire.analysis.coincidences.CoincidencesESD.store_coincidences">
-<tt class="descname">store_coincidences</tt><big>(</big><em>cluster=None</em><big>)</big><a class="headerlink" href="#sapphire.analysis.coincidences.CoincidencesESD.store_coincidences" title="Permalink to this definition">¶</a></dt>
+<code class="descname">store_coincidences</code><span class="sig-paren">(</span><em>cluster=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.coincidences.CoincidencesESD.store_coincidences" title="Permalink to this definition">¶</a></dt>
 <dd><p>Store the previously found coincidences.</p>
 <p>After having searched for coincidences, you can store the more
-user-friendly results in the <tt class="docutils literal"><span class="pre">coincidences</span></tt> group using this
-method. It also created a <tt class="docutils literal"><span class="pre">c_index</span></tt> and <tt class="docutils literal"><span class="pre">s_index</span></tt> table to
+user-friendly results in the <code class="docutils literal"><span class="pre">coincidences</span></code> group using this
+method. It also created a <code class="docutils literal"><span class="pre">c_index</span></code> and <code class="docutils literal"><span class="pre">s_index</span></code> table to
 find the source events.</p>
 </dd></dl>
 
@@ -277,7 +405,7 @@ find the source events.</p>
 
 <dl class="function">
 <dt id="sapphire.analysis.coincidences.get_events">
-<tt class="descclassname">sapphire.analysis.coincidences.</tt><tt class="descname">get_events</tt><big>(</big><em>data</em>, <em>stations</em>, <em>coincidence</em>, <em>timestamps</em>, <em>get_raw_traces=False</em><big>)</big><a class="headerlink" href="#sapphire.analysis.coincidences.get_events" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">sapphire.analysis.coincidences.</code><code class="descname">get_events</code><span class="sig-paren">(</span><em>data</em>, <em>stations</em>, <em>coincidence</em>, <em>timestamps</em>, <em>get_raw_traces=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.coincidences.get_events" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get event data of a coincidence</p>
 <p>Return a list of events making up a coincidence.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -289,9 +417,9 @@ find the source events.</p>
 <li><strong>stations</strong> &#8211; a list of HiSPARC event tables (normally from
 different stations, hence the name)</li>
 <li><strong>coincidence</strong> &#8211; a coincidence, as returned by
-<a class="reference internal" href="#sapphire.analysis.coincidences.Coincidences.search_coincidences" title="sapphire.analysis.coincidences.Coincidences.search_coincidences"><tt class="xref py py-meth docutils literal"><span class="pre">search_coincidences()</span></tt></a>.</li>
+<a class="reference internal" href="#sapphire.analysis.coincidences.Coincidences.search_coincidences" title="sapphire.analysis.coincidences.Coincidences.search_coincidences"><code class="xref py py-meth docutils literal"><span class="pre">search_coincidences()</span></code></a>.</li>
 <li><strong>timestamps</strong> &#8211; the list of timestamps, as returned by
-<a class="reference internal" href="#sapphire.analysis.coincidences.Coincidences.search_coincidences" title="sapphire.analysis.coincidences.Coincidences.search_coincidences"><tt class="xref py py-meth docutils literal"><span class="pre">search_coincidences()</span></tt></a>.</li>
+<a class="reference internal" href="#sapphire.analysis.coincidences.Coincidences.search_coincidences" title="sapphire.analysis.coincidences.Coincidences.search_coincidences"><code class="xref py py-meth docutils literal"><span class="pre">search_coincidences()</span></code></a>.</li>
 <li><strong>get_raw_traces</strong> &#8211; boolean.  If true, return the compressed ADC
 values instead of the uncompressed traces.</li>
 </ul>
@@ -312,7 +440,7 @@ a list of the uncompressed traces.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/header.png" alt="Logo"/>
@@ -323,12 +451,14 @@ a list of the uncompressed traces.</p>
   <h4>Next topic</h4>
   <p class="topless"><a href="core_reconstruction.html"
                         title="next chapter">Reconstruction of EAS core and size</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../_sources/analysis/coincidences.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/analysis/coincidences.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
@@ -345,7 +475,7 @@ a list of the uncompressed traces.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -360,14 +490,14 @@ a list of the uncompressed traces.</p>
         <li class="right" >
           <a href="coincidence_queries.html" title="Query coincidences from a datafile"
              >previous</a> |</li>
-        <li><a href="../index.html">SAPPHiRE 0.12 documentation</a> &raquo;</li>
-          <li><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
-          <li><a href="../analysis.html" >Data analysis</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../analysis.html" >Data analysis</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

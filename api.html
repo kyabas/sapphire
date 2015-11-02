@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>HiSPARC API &mdash; SAPPHiRE 0.12 documentation</title>
+    <title>HiSPARC API &mdash; SAPPHiRE 0.12.6 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.12',
+        VERSION:     '0.12.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,15 +24,15 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.12 documentation" href="index.html" />
+    <link rel="top" title="SAPPHiRE 0.12.6 documentation" href="index.html" />
     <link rel="up" title="SAPPHiRE Reference" href="sapphire.html" />
     <link rel="next" title="HiSPARC clusters" href="clusters.html" />
     <link rel="prev" title="Reconstructions" href="analysis/reconstructions.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -47,42 +47,39 @@
         <li class="right" >
           <a href="analysis/reconstructions.html" title="Reconstructions"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">SAPPHiRE 0.12 documentation</a> &raquo;</li>
-          <li><a href="sapphire.html" accesskey="U">SAPPHiRE Reference</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="sapphire.html" accesskey="U">SAPPHiRE Reference</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-sapphire.api">
 <span id="hisparc-api"></span><h1>HiSPARC API<a class="headerlink" href="#module-sapphire.api" title="Permalink to this headline">¶</a></h1>
-<p>HiSPARC API interface</p>
+<p>Access the HiSPARC public database API.</p>
 <p>This provides easy classes and functions to access the HiSPARC
 publicdb API. This takes care of the url retrieval and conversion
 from JSON to Python dictionaries.</p>
 <p>Example usage:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sapphire</span> <span class="kn">import</span> <span class="n">Station</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">stations</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">301</span><span class="p">,</span> <span class="mi">3102</span><span class="p">,</span> <span class="mi">504</span><span class="p">,</span> <span class="mi">7101</span><span class="p">,</span> <span class="mi">8008</span><span class="p">,</span> <span class="mi">13005</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">clusters</span> <span class="o">=</span> <span class="p">[</span><span class="n">Station</span><span class="p">(</span><span class="n">station</span><span class="p">)</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-<span class="gp">... </span>            <span class="k">for</span> <span class="n">station</span> <span class="ow">in</span> <span class="n">stations</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">station_groups</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;/hisparc/cluster_</span><span class="si">%s</span><span class="s">/station_</span><span class="si">%d</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
-<span class="gp">... </span>                  <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">clusters</span><span class="p">,</span> <span class="n">stations</span><span class="p">)]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">station_groups</span>
-<span class="go">[u&#39;/hisparc/cluster_amsterdam/station_5&#39;,</span>
-<span class="go"> u&#39;/hisparc/cluster_amsterdam/station_301&#39;,</span>
-<span class="go"> u&#39;/hisparc/cluster_leiden/station_3102&#39;,</span>
-<span class="go"> u&#39;/hisparc/cluster_amsterdam/station_504&#39;,</span>
-<span class="go"> u&#39;/hisparc/cluster_enschede/station_7101&#39;,</span>
-<span class="go"> u&#39;/hisparc/cluster_eindhoven/station_8008&#39;,</span>
-<span class="go"> u&#39;/hisparc/cluster_bristol/station_13005&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stations</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3102</span><span class="p">,</span> <span class="mi">504</span><span class="p">,</span> <span class="mi">7101</span><span class="p">,</span> <span class="mi">8008</span><span class="p">,</span> <span class="mi">13005</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">clusters</span> <span class="o">=</span> <span class="p">[</span><span class="n">Station</span><span class="p">(</span><span class="n">station</span><span class="p">)</span><span class="o">.</span><span class="n">cluster</span> <span class="k">for</span> <span class="n">station</span> <span class="ow">in</span> <span class="n">stations</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">station</span><span class="p">,</span> <span class="n">cluster</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">stations</span><span class="p">,</span> <span class="n">clusters</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">print</span> <span class="s">&#39;Station </span><span class="si">%d</span><span class="s"> is in cluster </span><span class="si">%s</span><span class="s">.&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">station</span><span class="p">,</span> <span class="n">cluster</span><span class="p">)</span>
+<span class="go">Station 5 is in cluster Amsterdam.</span>
+<span class="go">Station 3102 is in cluster Leiden.</span>
+<span class="go">Station 504 is in cluster Amsterdam.</span>
+<span class="go">Station 7101 is in cluster Enschede.</span>
+<span class="go">Station 8008 is in cluster Eindhoven.</span>
+<span class="go">Station 13005 is in cluster Bristol.</span>
 </pre></div>
 </div>
 <dl class="class">
 <dt id="sapphire.api.API">
-<em class="property">class </em><tt class="descclassname">sapphire.api.</tt><tt class="descname">API</tt><a class="headerlink" href="#sapphire.api.API" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.api.</code><code class="descname">API</code><a class="headerlink" href="#sapphire.api.API" title="Permalink to this definition">¶</a></dt>
 <dd><p>Base API class</p>
 <p>This provided the methods to retrieve data from the API. The results
 are converted from JSON data to Python objects (dict/list/etc).
@@ -90,17 +87,17 @@ Support is also provided for the retrieval of Source CSV data, which
 is returned as NumPy arrays.</p>
 <dl class="attribute">
 <dt id="sapphire.api.API.urls">
-<tt class="descname">urls</tt><em class="property"> = {'stations_in_subcluster': 'subclusters/{subcluster_number}/', 'event_trace': 'station/{station_number}/trace/{ext_timestamp}/', 'subclusters_in_cluster': 'clusters/{cluster_number}/', 'pulseheight_drift': 'station/{station_number}/plate/{plate_number}/pulseheight/drift/{year}/{month}/{day}/{number_of_days}/', 'stations': 'stations/', 'clusters_in_country': 'countries/{country_number}/', 'station_info': 'station/{station_number}/{year}/{month}/{day}/', 'countries': 'countries/', 'subclusters': 'subclusters/', 'pulseheight_fit': 'station/{station_number}/plate/{plate_number}/pulseheight/fit/{year}/{month}/{day}/', 'stations_with_data': 'stations/data/{year}/{month}/{day}/', 'number_of_events': 'station/{station_number}/num_events/{year}/{month}/{day}/{hour}/', 'clusters': 'clusters/', 'configuration': 'station/{station_number}/config/{year}/{month}/{day}/', 'has_weather': 'station/{station_number}/weather/{year}/{month}/{day}/', 'stations_with_weather': 'stations/weather/{year}/{month}/{day}/', 'has_data': 'station/{station_number}/data/{year}/{month}/{day}/'}</em><a class="headerlink" href="#sapphire.api.API.urls" title="Permalink to this definition">¶</a></dt>
+<code class="descname">urls</code><em class="property"> = {'stations_in_subcluster': 'subclusters/{subcluster_number}/', 'event_trace': 'station/{station_number}/trace/{ext_timestamp}/', 'subclusters_in_cluster': 'clusters/{cluster_number}/', 'pulseheight_drift': 'station/{station_number}/plate/{plate_number}/pulseheight/drift/{year}/{month}/{day}/{number_of_days}/', 'stations': 'stations/', 'clusters_in_country': 'countries/{country_number}/', 'station_info': 'station/{station_number}/{year}/{month}/{day}/', 'countries': 'countries/', 'subclusters': 'subclusters/', 'pulseheight_fit': 'station/{station_number}/plate/{plate_number}/pulseheight/fit/{year}/{month}/{day}/', 'stations_with_data': 'stations/data/{year}/{month}/{day}/', 'number_of_events': 'station/{station_number}/num_events/{year}/{month}/{day}/{hour}/', 'clusters': 'clusters/', 'configuration': 'station/{station_number}/config/{year}/{month}/{day}/', 'has_weather': 'station/{station_number}/weather/{year}/{month}/{day}/', 'stations_with_weather': 'stations/weather/{year}/{month}/{day}/', 'has_data': 'station/{station_number}/data/{year}/{month}/{day}/'}</em><a class="headerlink" href="#sapphire.api.API.urls" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sapphire.api.API.src_urls">
-<tt class="descname">src_urls</tt><em class="property"> = {'eventtime': 'eventtime/{station_number}/{year}/{month}/{day}/', 'barometer': 'barometer/{station_number}/{year}/{month}/{day}/', 'integral': 'pulseintegral/{station_number}/{year}/{month}/{day}/', 'voltage': 'voltage/{station_number}/', 'coincidencenumber': 'coincidencenumber/{year}/{month}/{day}/', 'coincidencetime': 'coincidencetime/{year}/{month}/{day}/', 'layout': 'layout/{station_number}/', 'temperature': 'temperature/{station_number}/{year}/{month}/{day}/', 'pulseheight': 'pulseheight/{station_number}/{year}/{month}/{day}/', 'detector_timing_offsets': 'detector_timing_offsets/{station_number}/', 'current': 'current/{station_number}/', 'gps': 'gps/{station_number}/'}</em><a class="headerlink" href="#sapphire.api.API.src_urls" title="Permalink to this definition">¶</a></dt>
+<code class="descname">src_urls</code><em class="property"> = {'eventtime': 'eventtime/{station_number}/{year}/{month}/{day}/', 'barometer': 'barometer/{station_number}/{year}/{month}/{day}/', 'integral': 'pulseintegral/{station_number}/{year}/{month}/{day}/', 'voltage': 'voltage/{station_number}/', 'coincidencenumber': 'coincidencenumber/{year}/{month}/{day}/', 'coincidencetime': 'coincidencetime/{year}/{month}/{day}/', 'layout': 'layout/{station_number}/', 'temperature': 'temperature/{station_number}/{year}/{month}/{day}/', 'pulseheight': 'pulseheight/{station_number}/{year}/{month}/{day}/', 'detector_timing_offsets': 'detector_timing_offsets/{station_number}/', 'current': 'current/{station_number}/', 'gps': 'gps/{station_number}/'}</em><a class="headerlink" href="#sapphire.api.API.src_urls" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="staticmethod">
 <dt id="sapphire.api.API.check_connection">
-<em class="property">static </em><tt class="descname">check_connection</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.api.API.check_connection" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">check_connection</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.API.check_connection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Open the API man page URL to test the connection</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -116,12 +113,12 @@ is returned as NumPy arrays.</p>
 
 <dl class="class">
 <dt id="sapphire.api.Network">
-<em class="property">class </em><tt class="descclassname">sapphire.api.</tt><tt class="descname">Network</tt><a class="headerlink" href="#sapphire.api.Network" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.api.</code><code class="descname">Network</code><a class="headerlink" href="#sapphire.api.Network" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get info about the network (countries/clusters/subclusters/stations)</p>
 <p>Initialize network</p>
 <dl class="method">
 <dt id="sapphire.api.Network.countries">
-<tt class="descname">countries</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.api.Network.countries" title="Permalink to this definition">¶</a></dt>
+<code class="descname">countries</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Network.countries" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of countries</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -135,13 +132,13 @@ is returned as NumPy arrays.</p>
 
 <dl class="method">
 <dt id="sapphire.api.Network.country_numbers">
-<tt class="descname">country_numbers</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.api.Network.country_numbers" title="Permalink to this definition">¶</a></dt>
+<code class="descname">country_numbers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Network.country_numbers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as countries but only retuns a list of country numbers</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sapphire.api.Network.clusters">
-<tt class="descname">clusters</tt><big>(</big><em>country=None</em><big>)</big><a class="headerlink" href="#sapphire.api.Network.clusters" title="Permalink to this definition">¶</a></dt>
+<code class="descname">clusters</code><span class="sig-paren">(</span><em>country=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Network.clusters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of clusters</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -158,13 +155,13 @@ clusters.</td>
 
 <dl class="method">
 <dt id="sapphire.api.Network.cluster_numbers">
-<tt class="descname">cluster_numbers</tt><big>(</big><em>country=None</em><big>)</big><a class="headerlink" href="#sapphire.api.Network.cluster_numbers" title="Permalink to this definition">¶</a></dt>
+<code class="descname">cluster_numbers</code><span class="sig-paren">(</span><em>country=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Network.cluster_numbers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as clusters but only retuns a list of cluster numbers</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sapphire.api.Network.subclusters">
-<tt class="descname">subclusters</tt><big>(</big><em>country=None</em>, <em>cluster=None</em><big>)</big><a class="headerlink" href="#sapphire.api.Network.subclusters" title="Permalink to this definition">¶</a></dt>
+<code class="descname">subclusters</code><span class="sig-paren">(</span><em>country=None</em>, <em>cluster=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Network.subclusters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of subclusters</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -182,13 +179,13 @@ be specified.</td>
 
 <dl class="method">
 <dt id="sapphire.api.Network.subcluster_numbers">
-<tt class="descname">subcluster_numbers</tt><big>(</big><em>country=None</em>, <em>cluster=None</em><big>)</big><a class="headerlink" href="#sapphire.api.Network.subcluster_numbers" title="Permalink to this definition">¶</a></dt>
+<code class="descname">subcluster_numbers</code><span class="sig-paren">(</span><em>country=None</em>, <em>cluster=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Network.subcluster_numbers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as subclusters but only retuns a list of subcluster numbers</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sapphire.api.Network.stations">
-<tt class="descname">stations</tt><big>(</big><em>country=None</em>, <em>cluster=None</em>, <em>subcluster=None</em><big>)</big><a class="headerlink" href="#sapphire.api.Network.stations" title="Permalink to this definition">¶</a></dt>
+<code class="descname">stations</code><span class="sig-paren">(</span><em>country=None</em>, <em>cluster=None</em>, <em>subcluster=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Network.stations" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of stations</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -206,19 +203,19 @@ be specified.</td>
 
 <dl class="method">
 <dt id="sapphire.api.Network.station_numbers">
-<tt class="descname">station_numbers</tt><big>(</big><em>country=None</em>, <em>cluster=None</em>, <em>subcluster=None</em>, <em>allow_stale=True</em><big>)</big><a class="headerlink" href="#sapphire.api.Network.station_numbers" title="Permalink to this definition">¶</a></dt>
+<code class="descname">station_numbers</code><span class="sig-paren">(</span><em>country=None</em>, <em>cluster=None</em>, <em>subcluster=None</em>, <em>allow_stale=True</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Network.station_numbers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as stations but only retuns a list of station numbers</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sapphire.api.Network.nested_network">
-<tt class="descname">nested_network</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.api.Network.nested_network" title="Permalink to this definition">¶</a></dt>
+<code class="descname">nested_network</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Network.nested_network" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a nested list of the full network</p>
 </dd></dl>
 
 <dl class="classmethod">
 <dt id="sapphire.api.Network.stations_with_data">
-<em class="property">classmethod </em><tt class="descname">stations_with_data</tt><big>(</big><em>year=''</em>, <em>month=''</em>, <em>day=''</em><big>)</big><a class="headerlink" href="#sapphire.api.Network.stations_with_data" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">stations_with_data</code><span class="sig-paren">(</span><em>year=''</em>, <em>month=''</em>, <em>day=''</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Network.stations_with_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of stations with data on the specified date</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -235,7 +232,7 @@ possible to be less specific.</td>
 
 <dl class="classmethod">
 <dt id="sapphire.api.Network.stations_with_weather">
-<em class="property">classmethod </em><tt class="descname">stations_with_weather</tt><big>(</big><em>year=''</em>, <em>month=''</em>, <em>day=''</em><big>)</big><a class="headerlink" href="#sapphire.api.Network.stations_with_weather" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">stations_with_weather</code><span class="sig-paren">(</span><em>year=''</em>, <em>month=''</em>, <em>day=''</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Network.stations_with_weather" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of stations with weather data on the specified date</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -252,7 +249,7 @@ possible to be less specific.</td>
 
 <dl class="classmethod">
 <dt id="sapphire.api.Network.coincidence_time">
-<em class="property">classmethod </em><tt class="descname">coincidence_time</tt><big>(</big><em>year</em>, <em>month</em>, <em>day</em><big>)</big><a class="headerlink" href="#sapphire.api.Network.coincidence_time" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">coincidence_time</code><span class="sig-paren">(</span><em>year</em>, <em>month</em>, <em>day</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Network.coincidence_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the coincidences per hour histogram</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -268,7 +265,7 @@ possible to be less specific.</td>
 
 <dl class="classmethod">
 <dt id="sapphire.api.Network.coincidence_number">
-<em class="property">classmethod </em><tt class="descname">coincidence_number</tt><big>(</big><em>year</em>, <em>month</em>, <em>day</em><big>)</big><a class="headerlink" href="#sapphire.api.Network.coincidence_number" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">coincidence_number</code><span class="sig-paren">(</span><em>year</em>, <em>month</em>, <em>day</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Network.coincidence_number" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of stations in coincidence histogram</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -284,14 +281,14 @@ possible to be less specific.</td>
 
 <dl class="staticmethod">
 <dt id="sapphire.api.Network.validate_numbers">
-<em class="property">static </em><tt class="descname">validate_numbers</tt><big>(</big><em>country=None</em>, <em>cluster=None</em>, <em>subcluster=None</em><big>)</big><a class="headerlink" href="#sapphire.api.Network.validate_numbers" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">validate_numbers</code><span class="sig-paren">(</span><em>country=None</em>, <em>cluster=None</em>, <em>subcluster=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Network.validate_numbers" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="sapphire.api.Station">
-<em class="property">class </em><tt class="descclassname">sapphire.api.</tt><tt class="descname">Station</tt><big>(</big><em>station</em>, <em>date=None</em>, <em>allow_stale=True</em><big>)</big><a class="headerlink" href="#sapphire.api.Station" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.api.</code><code class="descname">Station</code><span class="sig-paren">(</span><em>station</em>, <em>date=None</em>, <em>allow_stale=True</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Station" title="Permalink to this definition">¶</a></dt>
 <dd><p>Access data about a single station</p>
 <p>Initialize station</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -310,28 +307,28 @@ from the server.</li>
 </table>
 <dl class="method">
 <dt id="sapphire.api.Station.country">
-<tt class="descname">country</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.api.Station.country" title="Permalink to this definition">¶</a></dt>
+<code class="descname">country</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Station.country" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="sapphire.api.Station.cluster">
-<tt class="descname">cluster</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.api.Station.cluster" title="Permalink to this definition">¶</a></dt>
+<code class="descname">cluster</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Station.cluster" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="sapphire.api.Station.subcluster">
-<tt class="descname">subcluster</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.api.Station.subcluster" title="Permalink to this definition">¶</a></dt>
+<code class="descname">subcluster</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Station.subcluster" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="sapphire.api.Station.n_detectors">
-<tt class="descname">n_detectors</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.api.Station.n_detectors" title="Permalink to this definition">¶</a></dt>
+<code class="descname">n_detectors</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Station.n_detectors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of detectors in this station</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sapphire.api.Station.detectors">
-<tt class="descname">detectors</tt><big>(</big><em>date=None</em><big>)</big><a class="headerlink" href="#sapphire.api.Station.detectors" title="Permalink to this definition">¶</a></dt>
+<code class="descname">detectors</code><span class="sig-paren">(</span><em>date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Station.detectors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the locations of detectors</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -347,7 +344,7 @@ from the server.</li>
 
 <dl class="method">
 <dt id="sapphire.api.Station.location">
-<tt class="descname">location</tt><big>(</big><em>date=None</em><big>)</big><a class="headerlink" href="#sapphire.api.Station.location" title="Permalink to this definition">¶</a></dt>
+<code class="descname">location</code><span class="sig-paren">(</span><em>date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Station.location" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get gps location of the station</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -363,7 +360,7 @@ from the server.</li>
 
 <dl class="method">
 <dt id="sapphire.api.Station.config">
-<tt class="descname">config</tt><big>(</big><em>date=None</em><big>)</big><a class="headerlink" href="#sapphire.api.Station.config" title="Permalink to this definition">¶</a></dt>
+<code class="descname">config</code><span class="sig-paren">(</span><em>date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Station.config" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get station config</p>
 <p>Retrieve either the latest, or a config for a specific date.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -380,7 +377,7 @@ from the server.</li>
 
 <dl class="method">
 <dt id="sapphire.api.Station.n_events">
-<tt class="descname">n_events</tt><big>(</big><em>year=''</em>, <em>month=''</em>, <em>day=''</em>, <em>hour=''</em><big>)</big><a class="headerlink" href="#sapphire.api.Station.n_events" title="Permalink to this definition">¶</a></dt>
+<code class="descname">n_events</code><span class="sig-paren">(</span><em>year=''</em>, <em>month=''</em>, <em>day=''</em>, <em>hour=''</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Station.n_events" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get number of events</p>
 <p>Note that it is possible to give only the year to get the total
 number of events in that year. If both year and month are given,
@@ -400,7 +397,7 @@ get the number. It is possible to be less specific.</td>
 
 <dl class="method">
 <dt id="sapphire.api.Station.has_data">
-<tt class="descname">has_data</tt><big>(</big><em>year=''</em>, <em>month=''</em>, <em>day=''</em><big>)</big><a class="headerlink" href="#sapphire.api.Station.has_data" title="Permalink to this definition">¶</a></dt>
+<code class="descname">has_data</code><span class="sig-paren">(</span><em>year=''</em>, <em>month=''</em>, <em>day=''</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Station.has_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check for HiSPARC data</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -418,7 +415,7 @@ data on the date.</td>
 
 <dl class="method">
 <dt id="sapphire.api.Station.has_weather">
-<tt class="descname">has_weather</tt><big>(</big><em>year=''</em>, <em>month=''</em>, <em>day=''</em><big>)</big><a class="headerlink" href="#sapphire.api.Station.has_weather" title="Permalink to this definition">¶</a></dt>
+<code class="descname">has_weather</code><span class="sig-paren">(</span><em>year=''</em>, <em>month=''</em>, <em>day=''</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Station.has_weather" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check for weather data</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -436,7 +433,7 @@ on the date.</td>
 
 <dl class="method">
 <dt id="sapphire.api.Station.event_trace">
-<tt class="descname">event_trace</tt><big>(</big><em>timestamp</em>, <em>nanoseconds</em>, <em>raw=False</em><big>)</big><a class="headerlink" href="#sapphire.api.Station.event_trace" title="Permalink to this definition">¶</a></dt>
+<code class="descname">event_trace</code><span class="sig-paren">(</span><em>timestamp</em>, <em>nanoseconds</em>, <em>raw=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Station.event_trace" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the traces for a specific event</p>
 <p>The exact timestamp and nanoseconds for the event have to be
 given.</p>
@@ -460,7 +457,7 @@ to get the traces.</li>
 
 <dl class="method">
 <dt id="sapphire.api.Station.event_time">
-<tt class="descname">event_time</tt><big>(</big><em>year</em>, <em>month</em>, <em>day</em><big>)</big><a class="headerlink" href="#sapphire.api.Station.event_time" title="Permalink to this definition">¶</a></dt>
+<code class="descname">event_time</code><span class="sig-paren">(</span><em>year</em>, <em>month</em>, <em>day</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Station.event_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of events per hour histogram</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -476,7 +473,7 @@ to get the traces.</li>
 
 <dl class="method">
 <dt id="sapphire.api.Station.pulse_height">
-<tt class="descname">pulse_height</tt><big>(</big><em>year</em>, <em>month</em>, <em>day</em><big>)</big><a class="headerlink" href="#sapphire.api.Station.pulse_height" title="Permalink to this definition">¶</a></dt>
+<code class="descname">pulse_height</code><span class="sig-paren">(</span><em>year</em>, <em>month</em>, <em>day</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Station.pulse_height" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the pulseheight histogram</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -492,7 +489,7 @@ to get the traces.</li>
 
 <dl class="method">
 <dt id="sapphire.api.Station.pulse_integral">
-<tt class="descname">pulse_integral</tt><big>(</big><em>year</em>, <em>month</em>, <em>day</em><big>)</big><a class="headerlink" href="#sapphire.api.Station.pulse_integral" title="Permalink to this definition">¶</a></dt>
+<code class="descname">pulse_integral</code><span class="sig-paren">(</span><em>year</em>, <em>month</em>, <em>day</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Station.pulse_integral" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the pulseintegral histogram</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -508,7 +505,7 @@ to get the traces.</li>
 
 <dl class="method">
 <dt id="sapphire.api.Station.barometer">
-<tt class="descname">barometer</tt><big>(</big><em>year</em>, <em>month</em>, <em>day</em><big>)</big><a class="headerlink" href="#sapphire.api.Station.barometer" title="Permalink to this definition">¶</a></dt>
+<code class="descname">barometer</code><span class="sig-paren">(</span><em>year</em>, <em>month</em>, <em>day</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Station.barometer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the barometer dataset</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -524,7 +521,7 @@ to get the traces.</li>
 
 <dl class="method">
 <dt id="sapphire.api.Station.temperature">
-<tt class="descname">temperature</tt><big>(</big><em>year</em>, <em>month</em>, <em>day</em><big>)</big><a class="headerlink" href="#sapphire.api.Station.temperature" title="Permalink to this definition">¶</a></dt>
+<code class="descname">temperature</code><span class="sig-paren">(</span><em>year</em>, <em>month</em>, <em>day</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Station.temperature" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the temperature dataset</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -540,7 +537,7 @@ to get the traces.</li>
 
 <dl class="attribute">
 <dt id="sapphire.api.Station.voltages">
-<tt class="descname">voltages</tt><a class="headerlink" href="#sapphire.api.Station.voltages" title="Permalink to this definition">¶</a></dt>
+<code class="descname">voltages</code><a class="headerlink" href="#sapphire.api.Station.voltages" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the PMT voltage data</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -554,7 +551,7 @@ to get the traces.</li>
 
 <dl class="method">
 <dt id="sapphire.api.Station.voltage">
-<tt class="descname">voltage</tt><big>(</big><em>timestamp</em><big>)</big><a class="headerlink" href="#sapphire.api.Station.voltage" title="Permalink to this definition">¶</a></dt>
+<code class="descname">voltage</code><span class="sig-paren">(</span><em>timestamp</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Station.voltage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get PMT coltage data for specific timestamp</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -570,7 +567,7 @@ to get the traces.</li>
 
 <dl class="attribute">
 <dt id="sapphire.api.Station.currents">
-<tt class="descname">currents</tt><a class="headerlink" href="#sapphire.api.Station.currents" title="Permalink to this definition">¶</a></dt>
+<code class="descname">currents</code><a class="headerlink" href="#sapphire.api.Station.currents" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the PMT current data</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -584,7 +581,7 @@ to get the traces.</li>
 
 <dl class="method">
 <dt id="sapphire.api.Station.current">
-<tt class="descname">current</tt><big>(</big><em>timestamp</em><big>)</big><a class="headerlink" href="#sapphire.api.Station.current" title="Permalink to this definition">¶</a></dt>
+<code class="descname">current</code><span class="sig-paren">(</span><em>timestamp</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Station.current" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get PMT current data for specific timestamp</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -600,7 +597,7 @@ to get the traces.</li>
 
 <dl class="attribute">
 <dt id="sapphire.api.Station.gps_locations">
-<tt class="descname">gps_locations</tt><a class="headerlink" href="#sapphire.api.Station.gps_locations" title="Permalink to this definition">¶</a></dt>
+<code class="descname">gps_locations</code><a class="headerlink" href="#sapphire.api.Station.gps_locations" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the GPS location data</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -614,7 +611,7 @@ to get the traces.</li>
 
 <dl class="method">
 <dt id="sapphire.api.Station.gps_location">
-<tt class="descname">gps_location</tt><big>(</big><em>timestamp</em><big>)</big><a class="headerlink" href="#sapphire.api.Station.gps_location" title="Permalink to this definition">¶</a></dt>
+<code class="descname">gps_location</code><span class="sig-paren">(</span><em>timestamp</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Station.gps_location" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get GPS location for specific timestamp</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -630,7 +627,7 @@ to get the traces.</li>
 
 <dl class="attribute">
 <dt id="sapphire.api.Station.station_layouts">
-<tt class="descname">station_layouts</tt><a class="headerlink" href="#sapphire.api.Station.station_layouts" title="Permalink to this definition">¶</a></dt>
+<code class="descname">station_layouts</code><a class="headerlink" href="#sapphire.api.Station.station_layouts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the station layout data</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -644,7 +641,7 @@ to get the traces.</li>
 
 <dl class="method">
 <dt id="sapphire.api.Station.station_layout">
-<tt class="descname">station_layout</tt><big>(</big><em>timestamp</em><big>)</big><a class="headerlink" href="#sapphire.api.Station.station_layout" title="Permalink to this definition">¶</a></dt>
+<code class="descname">station_layout</code><span class="sig-paren">(</span><em>timestamp</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Station.station_layout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get station layout data for specific timestamp</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -660,7 +657,7 @@ to get the traces.</li>
 
 <dl class="attribute">
 <dt id="sapphire.api.Station.detector_timing_offsets">
-<tt class="descname">detector_timing_offsets</tt><a class="headerlink" href="#sapphire.api.Station.detector_timing_offsets" title="Permalink to this definition">¶</a></dt>
+<code class="descname">detector_timing_offsets</code><a class="headerlink" href="#sapphire.api.Station.detector_timing_offsets" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the detector timing offsets data</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -674,7 +671,7 @@ to get the traces.</li>
 
 <dl class="method">
 <dt id="sapphire.api.Station.detector_timing_offset">
-<tt class="descname">detector_timing_offset</tt><big>(</big><em>timestamp</em><big>)</big><a class="headerlink" href="#sapphire.api.Station.detector_timing_offset" title="Permalink to this definition">¶</a></dt>
+<code class="descname">detector_timing_offset</code><span class="sig-paren">(</span><em>timestamp</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Station.detector_timing_offset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get detector timing offset data for specific timestamp</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -696,7 +693,7 @@ to get the traces.</li>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="index.html">
               <img class="logo" src="_static/header.png" alt="Logo"/>
@@ -707,12 +704,14 @@ to get the traces.</li>
   <h4>Next topic</h4>
   <p class="topless"><a href="clusters.html"
                         title="next chapter">HiSPARC clusters</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/api.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/api.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -729,7 +728,7 @@ to get the traces.</li>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -744,13 +743,13 @@ to get the traces.</li>
         <li class="right" >
           <a href="analysis/reconstructions.html" title="Reconstructions"
              >previous</a> |</li>
-        <li><a href="index.html">SAPPHiRE 0.12 documentation</a> &raquo;</li>
-          <li><a href="sapphire.html" >SAPPHiRE Reference</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="sapphire.html" >SAPPHiRE Reference</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

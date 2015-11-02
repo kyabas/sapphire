@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Get signal and timing values from events &mdash; SAPPHiRE 0.12 documentation</title>
+    <title>Get signal and timing values from events &mdash; SAPPHiRE 0.12.6 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.12',
+        VERSION:     '0.12.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,15 +24,15 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.12 documentation" href="../index.html" />
+    <link rel="top" title="SAPPHiRE 0.12.6 documentation" href="../index.html" />
     <link rel="up" title="Data analysis" href="../analysis.html" />
     <link rel="next" title="MPV fit" href="find_mpv.html" />
     <link rel="prev" title="Reconstruction of EAS direction" href="direction_reconstruction.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -47,16 +47,16 @@
         <li class="right" >
           <a href="direction_reconstruction.html" title="Reconstruction of EAS direction"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">SAPPHiRE 0.12 documentation</a> &raquo;</li>
-          <li><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
-          <li><a href="../analysis.html" accesskey="U">Data analysis</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../analysis.html" accesskey="U">Data analysis</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-sapphire.analysis.event_utils">
 <span id="get-signal-and-timing-values-from-events"></span><h1>Get signal and timing values from events<a class="headerlink" href="#module-sapphire.analysis.event_utils" title="Permalink to this headline">¶</a></h1>
@@ -68,7 +68,7 @@ aware of processed events (i.e. reconstructed number of MIPs, arrival
 times and trigger time) and stations.</p>
 <dl class="function">
 <dt id="sapphire.analysis.event_utils.station_density">
-<tt class="descclassname">sapphire.analysis.event_utils.</tt><tt class="descname">station_density</tt><big>(</big><em>event</em>, <em>detector_ids=None</em>, <em>station=None</em><big>)</big><a class="headerlink" href="#sapphire.analysis.event_utils.station_density" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">sapphire.analysis.event_utils.</code><code class="descname">station_density</code><span class="sig-paren">(</span><em>event</em>, <em>detector_ids=None</em>, <em>station=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.event_utils.station_density" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get particle density in a station</p>
 <p>Detectors with error values will be ignored.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -92,7 +92,7 @@ detectors in the station object will be used.</li>
 
 <dl class="function">
 <dt id="sapphire.analysis.event_utils.detector_densities">
-<tt class="descclassname">sapphire.analysis.event_utils.</tt><tt class="descname">detector_densities</tt><big>(</big><em>event</em>, <em>detector_ids=None</em>, <em>station=None</em><big>)</big><a class="headerlink" href="#sapphire.analysis.event_utils.detector_densities" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">sapphire.analysis.event_utils.</code><code class="descname">detector_densities</code><span class="sig-paren">(</span><em>event</em>, <em>detector_ids=None</em>, <em>station=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.event_utils.detector_densities" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get particle density in station detectors</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -115,7 +115,7 @@ densities.</li>
 
 <dl class="function">
 <dt id="sapphire.analysis.event_utils.detector_density">
-<tt class="descclassname">sapphire.analysis.event_utils.</tt><tt class="descname">detector_density</tt><big>(</big><em>event</em>, <em>detector_id</em>, <em>station=None</em><big>)</big><a class="headerlink" href="#sapphire.analysis.event_utils.detector_density" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">sapphire.analysis.event_utils.</code><code class="descname">detector_density</code><span class="sig-paren">(</span><em>event</em>, <em>detector_id</em>, <em>station=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.event_utils.detector_density" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get particle density in station detector</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -137,7 +137,7 @@ densities.</li>
 
 <dl class="function">
 <dt id="sapphire.analysis.event_utils.station_arrival_time">
-<tt class="descclassname">sapphire.analysis.event_utils.</tt><tt class="descname">station_arrival_time</tt><big>(</big><em>event, reference_ext_timestamp, detector_ids=None, offsets=[0.0, 0.0, 0.0, 0.0], station=None</em><big>)</big><a class="headerlink" href="#sapphire.analysis.event_utils.station_arrival_time" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">sapphire.analysis.event_utils.</code><code class="descname">station_arrival_time</code><span class="sig-paren">(</span><em>event, reference_ext_timestamp, detector_ids=None, offsets=[0.0, 0.0, 0.0, 0.0], station=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.event_utils.station_arrival_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get station arrival time, i.e. first detector hit</p>
 <p>Arrival time of first detector hit in the station. The returned time
 is relative to reference_ext_timestamp, because floats do not have
@@ -167,7 +167,7 @@ reference timestamp.</p>
 
 <dl class="function">
 <dt id="sapphire.analysis.event_utils.relative_detector_arrival_times">
-<tt class="descclassname">sapphire.analysis.event_utils.</tt><tt class="descname">relative_detector_arrival_times</tt><big>(</big><em>event, reference_ext_timestamp, detector_ids=None, offsets=[0.0, 0.0, 0.0, 0.0], station=None</em><big>)</big><a class="headerlink" href="#sapphire.analysis.event_utils.relative_detector_arrival_times" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">sapphire.analysis.event_utils.</code><code class="descname">relative_detector_arrival_times</code><span class="sig-paren">(</span><em>event, reference_ext_timestamp, detector_ids=None, offsets=[0.0, 0.0, 0.0, 0.0], station=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.event_utils.relative_detector_arrival_times" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get relative arrival times for all detectors</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -193,7 +193,7 @@ Often best to use the timestamp of the first event in a coincidence.</li>
 
 <dl class="function">
 <dt id="sapphire.analysis.event_utils.detector_arrival_times">
-<tt class="descclassname">sapphire.analysis.event_utils.</tt><tt class="descname">detector_arrival_times</tt><big>(</big><em>event, detector_ids=None, offsets=[0.0, 0.0, 0.0, 0.0], station=None</em><big>)</big><a class="headerlink" href="#sapphire.analysis.event_utils.detector_arrival_times" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">sapphire.analysis.event_utils.</code><code class="descname">detector_arrival_times</code><span class="sig-paren">(</span><em>event, detector_ids=None, offsets=[0.0, 0.0, 0.0, 0.0], station=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.event_utils.detector_arrival_times" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get corrected arrival times for all detectors</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -216,7 +216,7 @@ Often best to use the timestamp of the first event in a coincidence.</li>
 
 <dl class="function">
 <dt id="sapphire.analysis.event_utils.detector_arrival_time">
-<tt class="descclassname">sapphire.analysis.event_utils.</tt><tt class="descname">detector_arrival_time</tt><big>(</big><em>event, detector_id, offsets=[0.0, 0.0, 0.0, 0.0]</em><big>)</big><a class="headerlink" href="#sapphire.analysis.event_utils.detector_arrival_time" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">sapphire.analysis.event_utils.</code><code class="descname">detector_arrival_time</code><span class="sig-paren">(</span><em>event, detector_id, offsets=[0.0, 0.0, 0.0, 0.0]</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.event_utils.detector_arrival_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get corrected arrival time for a detector</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -238,7 +238,7 @@ Often best to use the timestamp of the first event in a coincidence.</li>
 
 <dl class="function">
 <dt id="sapphire.analysis.event_utils.get_detector_ids">
-<tt class="descclassname">sapphire.analysis.event_utils.</tt><tt class="descname">get_detector_ids</tt><big>(</big><em>station=None</em>, <em>event=None</em><big>)</big><a class="headerlink" href="#sapphire.analysis.event_utils.get_detector_ids" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">sapphire.analysis.event_utils.</code><code class="descname">get_detector_ids</code><span class="sig-paren">(</span><em>station=None</em>, <em>event=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.event_utils.get_detector_ids" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determine the detector ids based on the station object or event data</p>
 <p>Returns a list of detectors that should be present.</p>
 <p>Note: Event based determination might not work for simulated data,
@@ -266,7 +266,7 @@ since it currently does not simulate pulseheights.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/header.png" alt="Logo"/>
@@ -277,12 +277,14 @@ since it currently does not simulate pulseheights.</p>
   <h4>Next topic</h4>
   <p class="topless"><a href="find_mpv.html"
                         title="next chapter">MPV fit</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../_sources/analysis/event_utils.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/analysis/event_utils.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
@@ -299,7 +301,7 @@ since it currently does not simulate pulseheights.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -314,14 +316,14 @@ since it currently does not simulate pulseheights.</p>
         <li class="right" >
           <a href="direction_reconstruction.html" title="Reconstruction of EAS direction"
              >previous</a> |</li>
-        <li><a href="../index.html">SAPPHiRE 0.12 documentation</a> &raquo;</li>
-          <li><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
-          <li><a href="../analysis.html" >Data analysis</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../analysis.html" >Data analysis</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

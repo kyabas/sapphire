@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Simulation base classes &mdash; SAPPHiRE 0.12 documentation</title>
+    <title>Simulation base classes &mdash; SAPPHiRE 0.12.6 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.12',
+        VERSION:     '0.12.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,15 +24,15 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.12 documentation" href="../index.html" />
-    <link rel="up" title="Performing simulations" href="../simulations.html" />
+    <link rel="top" title="SAPPHiRE 0.12.6 documentation" href="../index.html" />
+    <link rel="up" title="Simulation of the detection of EAS events" href="../simulations.html" />
     <link rel="next" title="Detector simulations" href="detector.html" />
-    <link rel="prev" title="Performing simulations" href="../simulations.html" /> 
+    <link rel="prev" title="Simulation of the detection of EAS events" href="../simulations.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -45,18 +45,18 @@
           <a href="detector.html" title="Detector simulations"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../simulations.html" title="Performing simulations"
+          <a href="../simulations.html" title="Simulation of the detection of EAS events"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">SAPPHiRE 0.12 documentation</a> &raquo;</li>
-          <li><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
-          <li><a href="../simulations.html" accesskey="U">Performing simulations</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../simulations.html" accesskey="U">Simulation of the detection of EAS events</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-sapphire.simulations.base">
 <span id="simulation-base-classes"></span><h1>Simulation base classes<a class="headerlink" href="#module-sapphire.simulations.base" title="Permalink to this headline">¶</a></h1>
@@ -67,28 +67,28 @@ this class, including the creation of event and coincidence tables to
 store the results, which will look similar to regular HiSPARC data, such
 that the same reconstruction analysis can be applied to both.</p>
 <p>Example usage:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">tables</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">tables</span>
 
-<span class="kn">from</span> <span class="nn">sapphire.simulations.base</span> <span class="kn">import</span> <span class="n">BaseSimulation</span>
-<span class="kn">from</span> <span class="nn">sapphire</span> <span class="kn">import</span> <span class="n">ScienceParkCluster</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sapphire.simulations.base</span> <span class="kn">import</span> <span class="n">BaseSimulation</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sapphire</span> <span class="kn">import</span> <span class="n">ScienceParkCluster</span>
 
-<span class="n">datafile</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="s">&#39;/tmp/test_base_simulation.h5&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
-<span class="n">cluster</span> <span class="o">=</span> <span class="n">ScienceParkCluster</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">datafile</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="s">&#39;/tmp/test_base_simulation.h5&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cluster</span> <span class="o">=</span> <span class="n">ScienceParkCluster</span><span class="p">()</span>
 
-<span class="n">sim</span> <span class="o">=</span> <span class="n">BaseSimulation</span><span class="p">(</span><span class="n">cluster</span><span class="p">,</span> <span class="n">datafile</span><span class="p">,</span> <span class="s">&#39;/simulations/this_run&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">sim</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sim</span> <span class="o">=</span> <span class="n">BaseSimulation</span><span class="p">(</span><span class="n">cluster</span><span class="p">,</span> <span class="n">datafile</span><span class="p">,</span> <span class="s">&#39;/simulations/this_run&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sim</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
 </div>
 <dl class="class">
 <dt id="sapphire.simulations.base.BaseSimulation">
-<em class="property">class </em><tt class="descclassname">sapphire.simulations.base.</tt><tt class="descname">BaseSimulation</tt><big>(</big><em>cluster</em>, <em>datafile</em>, <em>output_path='/'</em>, <em>N=1</em>, <em>seed=None</em>, <em>progress=True</em><big>)</big><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.simulations.base.</code><code class="descname">BaseSimulation</code><span class="sig-paren">(</span><em>cluster</em>, <em>datafile</em>, <em>output_path='/'</em>, <em>N=1</em>, <em>seed=None</em>, <em>progress=True</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Base class for simulations.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>cluster</strong> &#8211; <a class="reference internal" href="../clusters.html#sapphire.clusters.BaseCluster" title="sapphire.clusters.BaseCluster"><tt class="xref py py-class docutils literal"><span class="pre">BaseCluster</span></tt></a> instance.</li>
+<li><strong>cluster</strong> &#8211; <a class="reference internal" href="../clusters.html#sapphire.clusters.BaseCluster" title="sapphire.clusters.BaseCluster"><code class="xref py py-class docutils literal"><span class="pre">BaseCluster</span></code></a> instance.</li>
 <li><strong>datafile</strong> &#8211; writeable PyTables file handle.</li>
 <li><strong>output_path</strong> &#8211; path (as string) to the PyTables group (need not
 exist) in which the result tables will be created.</li>
@@ -102,31 +102,31 @@ exist) in which the result tables will be created.</li>
 </table>
 <dl class="method">
 <dt id="sapphire.simulations.base.BaseSimulation.run">
-<tt class="descname">run</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.run" title="Permalink to this definition">¶</a></dt>
+<code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.run" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run the simulations.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sapphire.simulations.base.BaseSimulation.generate_shower_parameters">
-<tt class="descname">generate_shower_parameters</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.generate_shower_parameters" title="Permalink to this definition">¶</a></dt>
+<code class="descname">generate_shower_parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.generate_shower_parameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate shower parameters like core position, energy, etc.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sapphire.simulations.base.BaseSimulation.simulate_events_for_shower">
-<tt class="descname">simulate_events_for_shower</tt><big>(</big><em>shower_parameters</em><big>)</big><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.simulate_events_for_shower" title="Permalink to this definition">¶</a></dt>
+<code class="descname">simulate_events_for_shower</code><span class="sig-paren">(</span><em>shower_parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.simulate_events_for_shower" title="Permalink to this definition">¶</a></dt>
 <dd><p>Simulate station events for a single shower</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sapphire.simulations.base.BaseSimulation.simulate_station_response">
-<tt class="descname">simulate_station_response</tt><big>(</big><em>station</em>, <em>shower_parameters</em><big>)</big><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.simulate_station_response" title="Permalink to this definition">¶</a></dt>
+<code class="descname">simulate_station_response</code><span class="sig-paren">(</span><em>station</em>, <em>shower_parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.simulate_station_response" title="Permalink to this definition">¶</a></dt>
 <dd><p>Simulate station response to a shower.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sapphire.simulations.base.BaseSimulation.simulate_all_detectors">
-<tt class="descname">simulate_all_detectors</tt><big>(</big><em>detectors</em>, <em>shower_parameters</em><big>)</big><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.simulate_all_detectors" title="Permalink to this definition">¶</a></dt>
+<code class="descname">simulate_all_detectors</code><span class="sig-paren">(</span><em>detectors</em>, <em>shower_parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.simulate_all_detectors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Simulate response of all detectors in a station.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -144,14 +144,14 @@ exist) in which the result tables will be created.</li>
 
 <dl class="method">
 <dt id="sapphire.simulations.base.BaseSimulation.simulate_detector_response">
-<tt class="descname">simulate_detector_response</tt><big>(</big><em>detector</em>, <em>shower_parameters</em><big>)</big><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.simulate_detector_response" title="Permalink to this definition">¶</a></dt>
+<code class="descname">simulate_detector_response</code><span class="sig-paren">(</span><em>detector</em>, <em>shower_parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.simulate_detector_response" title="Permalink to this definition">¶</a></dt>
 <dd><p>Simulate detector response to a shower.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>detector</strong> &#8211; <a class="reference internal" href="../clusters.html#sapphire.clusters.Detector" title="sapphire.clusters.Detector"><tt class="xref py py-class docutils literal"><span class="pre">Detector</span></tt></a> instance</li>
+<li><strong>detector</strong> &#8211; <a class="reference internal" href="../clusters.html#sapphire.clusters.Detector" title="sapphire.clusters.Detector"><code class="xref py py-class docutils literal"><span class="pre">Detector</span></code></a> instance</li>
 <li><strong>shower_parameters</strong> &#8211; shower parameters</li>
 </ul>
 </td>
@@ -166,19 +166,19 @@ detector) and &#8216;t&#8217; (time of arrival of first detected particle).</p>
 
 <dl class="method">
 <dt id="sapphire.simulations.base.BaseSimulation.simulate_trigger">
-<tt class="descname">simulate_trigger</tt><big>(</big><em>detector_observables</em><big>)</big><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.simulate_trigger" title="Permalink to this definition">¶</a></dt>
+<code class="descname">simulate_trigger</code><span class="sig-paren">(</span><em>detector_observables</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.simulate_trigger" title="Permalink to this definition">¶</a></dt>
 <dd><p>Simulate a trigger response.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sapphire.simulations.base.BaseSimulation.simulate_gps">
-<tt class="descname">simulate_gps</tt><big>(</big><em>station_observables</em>, <em>shower_parameters</em>, <em>station</em><big>)</big><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.simulate_gps" title="Permalink to this definition">¶</a></dt>
+<code class="descname">simulate_gps</code><span class="sig-paren">(</span><em>station_observables</em>, <em>shower_parameters</em>, <em>station</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.simulate_gps" title="Permalink to this definition">¶</a></dt>
 <dd><p>Simulate gps timestamp.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sapphire.simulations.base.BaseSimulation.process_detector_observables">
-<tt class="descname">process_detector_observables</tt><big>(</big><em>detector_observables</em><big>)</big><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.process_detector_observables" title="Permalink to this definition">¶</a></dt>
+<code class="descname">process_detector_observables</code><span class="sig-paren">(</span><em>detector_observables</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.process_detector_observables" title="Permalink to this definition">¶</a></dt>
 <dd><p>Process detector observables for a station.</p>
 <p>The list of detector observables is converted into a dictionary
 containing the familiar observables like pulseheights, n1, n2,
@@ -199,7 +199,7 @@ like n1, n2, n3, etc.</td>
 
 <dl class="method">
 <dt id="sapphire.simulations.base.BaseSimulation.store_station_observables">
-<tt class="descname">store_station_observables</tt><big>(</big><em>station_id</em>, <em>station_observables</em><big>)</big><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.store_station_observables" title="Permalink to this definition">¶</a></dt>
+<code class="descname">store_station_observables</code><span class="sig-paren">(</span><em>station_id</em>, <em>station_observables</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.store_station_observables" title="Permalink to this definition">¶</a></dt>
 <dd><p>Store station observables.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -221,7 +221,7 @@ variables to be stored for this event.</li>
 
 <dl class="method">
 <dt id="sapphire.simulations.base.BaseSimulation.store_coincidence">
-<tt class="descname">store_coincidence</tt><big>(</big><em>shower_id</em>, <em>shower_parameters</em>, <em>station_events</em><big>)</big><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.store_coincidence" title="Permalink to this definition">¶</a></dt>
+<code class="descname">store_coincidence</code><span class="sig-paren">(</span><em>shower_id</em>, <em>shower_parameters</em>, <em>station_events</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.base.BaseSimulation.store_coincidence" title="Permalink to this definition">¶</a></dt>
 <dd><p>Store coincidence.</p>
 <p>Store the information to find events of different stations
 belonging to the same simulated shower in the coincidences
@@ -252,23 +252,25 @@ participated in the coincidence.</li>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/header.png" alt="Logo"/>
             </a></p>
   <h4>Previous topic</h4>
   <p class="topless"><a href="../simulations.html"
-                        title="previous chapter">Performing simulations</a></p>
+                        title="previous chapter">Simulation of the detection of EAS events</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="detector.html"
                         title="next chapter">Detector simulations</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../_sources/simulations/base.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/simulations/base.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
@@ -285,7 +287,7 @@ participated in the coincidence.</li>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -298,16 +300,16 @@ participated in the coincidence.</li>
           <a href="detector.html" title="Detector simulations"
              >next</a> |</li>
         <li class="right" >
-          <a href="../simulations.html" title="Performing simulations"
+          <a href="../simulations.html" title="Simulation of the detection of EAS events"
              >previous</a> |</li>
-        <li><a href="../index.html">SAPPHiRE 0.12 documentation</a> &raquo;</li>
-          <li><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
-          <li><a href="../simulations.html" >Performing simulations</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../simulations.html" >Simulation of the detection of EAS events</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2012, David Fokkema.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>
