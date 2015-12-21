@@ -24,15 +24,15 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="SAPPHiRE 0.12.6 documentation" href="../index.html" />
     <link rel="up" title="CORSIKA simulations" href="../corsika.html" />
     <link rel="next" title="Convert CORSIKA simulations on Stoomboot" href="qsub_store_corsika_data.html" />
     <link rel="prev" title="CORSIKA Particles" href="particles.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -47,16 +47,16 @@
         <li class="right" >
           <a href="particles.html" title="CORSIKA Particles"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
-          <li><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
-          <li><a href="../corsika.html" accesskey="U">CORSIKA simulations</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../corsika.html" accesskey="U">CORSIKA simulations</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-sapphire.corsika.qsub_corsika">
 <span id="corsika-on-stoomboot"></span><h1>CORSIKA on Stoomboot<a class="headerlink" href="#module-sapphire.corsika.qsub_corsika" title="Permalink to this headline">¶</a></h1>
@@ -64,7 +64,7 @@
 <p>In order to quickly get a good sample of simulated showers we use the
 Nikhef computer cluster Stoomboot to run multiple jobs simultaneously.
 For this purpose a script has been written that will make this easy.
-The <a class="reference internal" href="#module-sapphire.corsika.qsub_corsika" title="sapphire.corsika.qsub_corsika"><tt class="xref py py-mod docutils literal"><span class="pre">qsub_corsika</span></tt></a> script can submit as many
+The <a class="reference internal" href="#module-sapphire.corsika.qsub_corsika" title="sapphire.corsika.qsub_corsika"><code class="xref py py-mod docutils literal"><span class="pre">qsub_corsika</span></code></a> script can submit as many
 jobs as you want with the parameters that you desire. It automatically
 ensures that a unique combination of seeds for the random number
 sequences are used for each simulation.</p>
@@ -84,7 +84,7 @@ standard Stoomboot queue with the default CORSIKA configuration:</p>
 </div>
 <dl class="class">
 <dt id="sapphire.corsika.qsub_corsika.CorsikaBatch">
-<em class="property">class </em><tt class="descclassname">sapphire.corsika.qsub_corsika.</tt><tt class="descname">CorsikaBatch</tt><big>(</big><em>energy=16</em>, <em>particle='proton'</em>, <em>zenith=22.5</em>, <em>azimuth=180</em>, <em>queue='generic'</em>, <em>corsika='corsika74000Linux_QGSII_gheisha'</em><big>)</big><a class="headerlink" href="#sapphire.corsika.qsub_corsika.CorsikaBatch" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.corsika.qsub_corsika.</code><code class="descname">CorsikaBatch</code><span class="sig-paren">(</span><em>energy=16</em>, <em>particle='proton'</em>, <em>zenith=22.5</em>, <em>azimuth=180</em>, <em>queue='generic'</em>, <em>corsika='corsika74000Linux_QGSII_gheisha'</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.qsub_corsika.CorsikaBatch" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run many simultaneous CORSIKA simulations using Stoomboot</p>
 <p>Stoomboot is the Nikhef computer cluster.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -117,30 +117,30 @@ corsika74000Linux_SIBYLL_gheisha</li>
 </table>
 <dl class="method">
 <dt id="sapphire.corsika.qsub_corsika.CorsikaBatch.run">
-<tt class="descname">run</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.corsika.qsub_corsika.CorsikaBatch.run" title="Permalink to this definition">¶</a></dt>
+<code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.qsub_corsika.CorsikaBatch.run" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="sapphire.corsika.qsub_corsika.CorsikaBatch.prepare_env">
-<tt class="descname">prepare_env</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.corsika.qsub_corsika.CorsikaBatch.prepare_env" title="Permalink to this definition">¶</a></dt>
+<code class="descname">prepare_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.qsub_corsika.CorsikaBatch.prepare_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Setup CORSIKA environment</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sapphire.corsika.qsub_corsika.CorsikaBatch.submit_job">
-<tt class="descname">submit_job</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.corsika.qsub_corsika.CorsikaBatch.submit_job" title="Permalink to this definition">¶</a></dt>
+<code class="descname">submit_job</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.qsub_corsika.CorsikaBatch.submit_job" title="Permalink to this definition">¶</a></dt>
 <dd><p>Submit job to Stoomboot</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sapphire.corsika.qsub_corsika.CorsikaBatch.taken_seeds">
-<tt class="descname">taken_seeds</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.corsika.qsub_corsika.CorsikaBatch.taken_seeds" title="Permalink to this definition">¶</a></dt>
+<code class="descname">taken_seeds</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.qsub_corsika.CorsikaBatch.taken_seeds" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get list of seeds already used</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sapphire.corsika.qsub_corsika.CorsikaBatch.generate_random_seeds">
-<tt class="descname">generate_random_seeds</tt><big>(</big><em>taken</em><big>)</big><a class="headerlink" href="#sapphire.corsika.qsub_corsika.CorsikaBatch.generate_random_seeds" title="Permalink to this definition">¶</a></dt>
+<code class="descname">generate_random_seeds</code><span class="sig-paren">(</span><em>taken</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.qsub_corsika.CorsikaBatch.generate_random_seeds" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get unused combination of two seeds for CORSIKA</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -155,37 +155,37 @@ each is formatted like this: &#8216;seed1_seed2&#8217;</td>
 
 <dl class="method">
 <dt id="sapphire.corsika.qsub_corsika.CorsikaBatch.make_rundir">
-<tt class="descname">make_rundir</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.corsika.qsub_corsika.CorsikaBatch.make_rundir" title="Permalink to this definition">¶</a></dt>
+<code class="descname">make_rundir</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.qsub_corsika.CorsikaBatch.make_rundir" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make the run directory</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sapphire.corsika.qsub_corsika.CorsikaBatch.goto_rundir">
-<tt class="descname">goto_rundir</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.corsika.qsub_corsika.CorsikaBatch.goto_rundir" title="Permalink to this definition">¶</a></dt>
+<code class="descname">goto_rundir</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.qsub_corsika.CorsikaBatch.goto_rundir" title="Permalink to this definition">¶</a></dt>
 <dd><p>Move into the run directory</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sapphire.corsika.qsub_corsika.CorsikaBatch.get_rundir">
-<tt class="descname">get_rundir</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.corsika.qsub_corsika.CorsikaBatch.get_rundir" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_rundir</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.qsub_corsika.CorsikaBatch.get_rundir" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get run directory path</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sapphire.corsika.qsub_corsika.CorsikaBatch.create_input">
-<tt class="descname">create_input</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.corsika.qsub_corsika.CorsikaBatch.create_input" title="Permalink to this definition">¶</a></dt>
+<code class="descname">create_input</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.qsub_corsika.CorsikaBatch.create_input" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make CORSIKA steering file</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sapphire.corsika.qsub_corsika.CorsikaBatch.create_script">
-<tt class="descname">create_script</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.corsika.qsub_corsika.CorsikaBatch.create_script" title="Permalink to this definition">¶</a></dt>
+<code class="descname">create_script</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.qsub_corsika.CorsikaBatch.create_script" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make Stoomboot script file</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sapphire.corsika.qsub_corsika.CorsikaBatch.copy_config">
-<tt class="descname">copy_config</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.corsika.qsub_corsika.CorsikaBatch.copy_config" title="Permalink to this definition">¶</a></dt>
+<code class="descname">copy_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.qsub_corsika.CorsikaBatch.copy_config" title="Permalink to this definition">¶</a></dt>
 <dd><p>Copy the CORSIKA config file to the output directory</p>
 <p>This way we can always check how CORSIKA was configured for each
 run.</p>
@@ -195,7 +195,7 @@ run.</p>
 
 <dl class="function">
 <dt id="sapphire.corsika.qsub_corsika.multiple_jobs">
-<tt class="descclassname">sapphire.corsika.qsub_corsika.</tt><tt class="descname">multiple_jobs</tt><big>(</big><em>n</em>, <em>energy</em>, <em>particle</em>, <em>zenith</em>, <em>azimuth</em>, <em>queue</em>, <em>corsika</em>, <em>progress=True</em><big>)</big><a class="headerlink" href="#sapphire.corsika.qsub_corsika.multiple_jobs" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">sapphire.corsika.qsub_corsika.</code><code class="descname">multiple_jobs</code><span class="sig-paren">(</span><em>n</em>, <em>energy</em>, <em>particle</em>, <em>zenith</em>, <em>azimuth</em>, <em>queue</em>, <em>corsika</em>, <em>progress=True</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.qsub_corsika.multiple_jobs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use this to sumbit multiple jobs to Stoomboot</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -205,7 +205,7 @@ run.</p>
 <li><strong>n</strong> &#8211; Number of jobs to submit</li>
 <li><strong>energy</strong> &#8211; log10(E[eV]) energy of primary particle</li>
 <li><strong>particle</strong> &#8211; Particle kind (as string, see
-<a class="reference internal" href="particles.html#module-sapphire.corsika.particles" title="sapphire.corsika.particles"><tt class="xref py py-mod docutils literal"><span class="pre">particles</span></tt></a> for possibilities)</li>
+<a class="reference internal" href="particles.html#module-sapphire.corsika.particles" title="sapphire.corsika.particles"><code class="xref py py-mod docutils literal"><span class="pre">particles</span></code></a> for possibilities)</li>
 <li><strong>zenith</strong> &#8211; Zenith angle in degrees of the primary particle</li>
 <li><strong>azimuth</strong> &#8211; Azimuth angle in degrees of the primary particle</li>
 <li><strong>queue</strong> &#8211; Stoomboot queue to submit to</li>
@@ -220,7 +220,7 @@ run.</p>
 
 <dl class="function">
 <dt id="sapphire.corsika.qsub_corsika.main">
-<tt class="descclassname">sapphire.corsika.qsub_corsika.</tt><tt class="descname">main</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.corsika.qsub_corsika.main" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">sapphire.corsika.qsub_corsika.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.qsub_corsika.main" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -229,7 +229,7 @@ run.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/header.png" alt="Logo"/>
@@ -240,12 +240,14 @@ run.</p>
   <h4>Next topic</h4>
   <p class="topless"><a href="qsub_store_corsika_data.html"
                         title="next chapter">Convert CORSIKA simulations on Stoomboot</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../_sources/corsika/qsub_corsika.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/corsika/qsub_corsika.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
@@ -262,7 +264,7 @@ run.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -277,14 +279,14 @@ run.</p>
         <li class="right" >
           <a href="particles.html" title="CORSIKA Particles"
              >previous</a> |</li>
-        <li><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
-          <li><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
-          <li><a href="../corsika.html" >CORSIKA simulations</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../corsika.html" >CORSIKA simulations</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

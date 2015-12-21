@@ -24,15 +24,15 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="SAPPHiRE 0.12.6 documentation" href="../index.html" />
     <link rel="up" title="CORSIKA simulations" href="../corsika.html" />
     <link rel="next" title="CORSIKA Particles" href="particles.html" />
     <link rel="prev" title="Query CORSIKA overview for simulations" href="corsika_queries.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -47,16 +47,16 @@
         <li class="right" >
           <a href="corsika_queries.html" title="Query CORSIKA overview for simulations"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
-          <li><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
-          <li><a href="../corsika.html" accesskey="U">CORSIKA simulations</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../corsika.html" accesskey="U">CORSIKA simulations</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-sapphire.corsika.generate_corsika_overview">
 <span id="create-an-overview-of-corsika-simulations"></span><h1>Create an overview of CORSIKA simulations<a class="headerlink" href="#module-sapphire.corsika.generate_corsika_overview" title="Permalink to this headline">¶</a></h1>
@@ -66,12 +66,12 @@ simulations in the given data path. Information about each
 simulation is collected and then summarized in a new h5 file as an
 overview.</p>
 <p>The given source path should contain subdirectories named after the
-seeds used for the simulation in the format <tt class="docutils literal"><span class="pre">{seed1}_{seed2}</span></tt>,
-e.g. <tt class="docutils literal"><span class="pre">821280921_182096636</span></tt>. These in turn should contain converted
-CORSIKA simulation results called <tt class="docutils literal"><span class="pre">corsika.h5</span></tt>.</p>
+seeds used for the simulation in the format <code class="docutils literal"><span class="pre">{seed1}_{seed2}</span></code>,
+e.g. <code class="docutils literal"><span class="pre">821280921_182096636</span></code>. These in turn should contain converted
+CORSIKA simulation results called <code class="docutils literal"><span class="pre">corsika.h5</span></code>.</p>
 <dl class="function">
 <dt id="sapphire.corsika.generate_corsika_overview.write_row">
-<tt class="descclassname">sapphire.corsika.generate_corsika_overview.</tt><tt class="descname">write_row</tt><big>(</big><em>table</em>, <em>seeds</em>, <em>header</em>, <em>end</em><big>)</big><a class="headerlink" href="#sapphire.corsika.generate_corsika_overview.write_row" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">sapphire.corsika.generate_corsika_overview.</code><code class="descname">write_row</code><span class="sig-paren">(</span><em>table</em>, <em>seeds</em>, <em>header</em>, <em>end</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.generate_corsika_overview.write_row" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write the information of one simulation into a row</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -90,7 +90,7 @@ CORSIKA simulation results called <tt class="docutils literal"><span class="pre"
 
 <dl class="function">
 <dt id="sapphire.corsika.generate_corsika_overview.read_seeds">
-<tt class="descclassname">sapphire.corsika.generate_corsika_overview.</tt><tt class="descname">read_seeds</tt><big>(</big><em>simulations_table</em>, <em>source</em>, <em>seeds</em><big>)</big><a class="headerlink" href="#sapphire.corsika.generate_corsika_overview.read_seeds" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">sapphire.corsika.generate_corsika_overview.</code><code class="descname">read_seeds</code><span class="sig-paren">(</span><em>simulations_table</em>, <em>source</em>, <em>seeds</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.generate_corsika_overview.read_seeds" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read the header and end of a simulation and write to overview.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -110,13 +110,13 @@ overview is stored.</li>
 
 <dl class="function">
 <dt id="sapphire.corsika.generate_corsika_overview.get_simulations">
-<tt class="descclassname">sapphire.corsika.generate_corsika_overview.</tt><tt class="descname">get_simulations</tt><big>(</big><em>source</em>, <em>simulations</em>, <em>overview</em>, <em>progress=False</em><big>)</big><a class="headerlink" href="#sapphire.corsika.generate_corsika_overview.get_simulations" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">sapphire.corsika.generate_corsika_overview.</code><code class="descname">get_simulations</code><span class="sig-paren">(</span><em>source</em>, <em>simulations</em>, <em>overview</em>, <em>progress=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.generate_corsika_overview.get_simulations" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the information of the simulations and create a table.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="sapphire.corsika.generate_corsika_overview.prepare_output">
-<tt class="descclassname">sapphire.corsika.generate_corsika_overview.</tt><tt class="descname">prepare_output</tt><big>(</big><em>n</em><big>)</big><a class="headerlink" href="#sapphire.corsika.generate_corsika_overview.prepare_output" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">sapphire.corsika.generate_corsika_overview.</code><code class="descname">prepare_output</code><span class="sig-paren">(</span><em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.generate_corsika_overview.prepare_output" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a temporary file in which to store the overview</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -132,22 +132,22 @@ overview is stored.</li>
 
 <dl class="function">
 <dt id="sapphire.corsika.generate_corsika_overview.create_tempfile_path">
-<tt class="descclassname">sapphire.corsika.generate_corsika_overview.</tt><tt class="descname">create_tempfile_path</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.corsika.generate_corsika_overview.create_tempfile_path" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">sapphire.corsika.generate_corsika_overview.</code><code class="descname">create_tempfile_path</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.generate_corsika_overview.create_tempfile_path" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="sapphire.corsika.generate_corsika_overview.move_tempfile_to_destination">
-<tt class="descclassname">sapphire.corsika.generate_corsika_overview.</tt><tt class="descname">move_tempfile_to_destination</tt><big>(</big><em>tmp_path</em>, <em>destination</em><big>)</big><a class="headerlink" href="#sapphire.corsika.generate_corsika_overview.move_tempfile_to_destination" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">sapphire.corsika.generate_corsika_overview.</code><code class="descname">move_tempfile_to_destination</code><span class="sig-paren">(</span><em>tmp_path</em>, <em>destination</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.generate_corsika_overview.move_tempfile_to_destination" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="sapphire.corsika.generate_corsika_overview.generate_corsika_overview">
-<tt class="descclassname">sapphire.corsika.generate_corsika_overview.</tt><tt class="descname">generate_corsika_overview</tt><big>(</big><em>source</em>, <em>destination</em>, <em>progress=False</em><big>)</big><a class="headerlink" href="#sapphire.corsika.generate_corsika_overview.generate_corsika_overview" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">sapphire.corsika.generate_corsika_overview.</code><code class="descname">generate_corsika_overview</code><span class="sig-paren">(</span><em>source</em>, <em>destination</em>, <em>progress=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.generate_corsika_overview.generate_corsika_overview" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="sapphire.corsika.generate_corsika_overview.main">
-<tt class="descclassname">sapphire.corsika.generate_corsika_overview.</tt><tt class="descname">main</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.corsika.generate_corsika_overview.main" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">sapphire.corsika.generate_corsika_overview.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.generate_corsika_overview.main" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -156,7 +156,7 @@ overview is stored.</li>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/header.png" alt="Logo"/>
@@ -167,12 +167,14 @@ overview is stored.</li>
   <h4>Next topic</h4>
   <p class="topless"><a href="particles.html"
                         title="next chapter">CORSIKA Particles</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../_sources/corsika/generate_corsika_overview.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/corsika/generate_corsika_overview.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
@@ -189,7 +191,7 @@ overview is stored.</li>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -204,14 +206,14 @@ overview is stored.</li>
         <li class="right" >
           <a href="corsika_queries.html" title="Query CORSIKA overview for simulations"
              >previous</a> |</li>
-        <li><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
-          <li><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
-          <li><a href="../corsika.html" >CORSIKA simulations</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../corsika.html" >CORSIKA simulations</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

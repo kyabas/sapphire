@@ -24,15 +24,15 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="SAPPHiRE 0.12.6 documentation" href="../index.html" />
     <link rel="up" title="Simulation of the detection of EAS events" href="../simulations.html" />
     <link rel="next" title="Simulations based on time structure of EAS shower fronts" href="showerfront.html" />
     <link rel="prev" title="Simulations based on Monte Carlo EAS ground particle data" href="groundparticles.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -47,16 +47,16 @@
         <li class="right" >
           <a href="groundparticles.html" title="Simulations based on Monte Carlo EAS ground particle data"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
-          <li><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
-          <li><a href="../simulations.html" accesskey="U">Simulation of the detection of EAS events</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../simulations.html" accesskey="U">Simulation of the detection of EAS events</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-sapphire.simulations.ldf">
 <span id="simulations-based-on-theoretical-models-of-eas-lateral-distributions"></span><h1>Simulations based on theoretical models of EAS lateral distributions<a class="headerlink" href="#module-sapphire.simulations.ldf" title="Permalink to this headline">¶</a></h1>
@@ -78,7 +78,7 @@ densities and for fitting to data.</p>
 </div>
 <dl class="class">
 <dt id="sapphire.simulations.ldf.BaseLdfSimulation">
-<em class="property">class </em><tt class="descclassname">sapphire.simulations.ldf.</tt><tt class="descname">BaseLdfSimulation</tt><big>(</big><em>max_core_distance</em>, <em>min_energy</em>, <em>max_energy</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#sapphire.simulations.ldf.BaseLdfSimulation" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.simulations.ldf.</code><code class="descname">BaseLdfSimulation</code><span class="sig-paren">(</span><em>max_core_distance</em>, <em>min_energy</em>, <em>max_energy</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.ldf.BaseLdfSimulation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Simulation initialization</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -96,7 +96,7 @@ shower (in eV).</li>
 </table>
 <dl class="method">
 <dt id="sapphire.simulations.ldf.BaseLdfSimulation.generate_shower_parameters">
-<tt class="descname">generate_shower_parameters</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.simulations.ldf.BaseLdfSimulation.generate_shower_parameters" title="Permalink to this definition">¶</a></dt>
+<code class="descname">generate_shower_parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.ldf.BaseLdfSimulation.generate_shower_parameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate shower parameters, i.e. core position</p>
 <p>For the simple LDF only the core position is relevant. It
 assumes the shower to come from the Zenith.</p>
@@ -113,7 +113,7 @@ assumes the shower to come from the Zenith.</p>
 
 <dl class="method">
 <dt id="sapphire.simulations.ldf.BaseLdfSimulation.simulate_detector_response">
-<tt class="descname">simulate_detector_response</tt><big>(</big><em>detector</em>, <em>shower_parameters</em><big>)</big><a class="headerlink" href="#sapphire.simulations.ldf.BaseLdfSimulation.simulate_detector_response" title="Permalink to this definition">¶</a></dt>
+<code class="descname">simulate_detector_response</code><span class="sig-paren">(</span><em>detector</em>, <em>shower_parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.ldf.BaseLdfSimulation.simulate_detector_response" title="Permalink to this definition">¶</a></dt>
 <dd><p>Simulate detector response to a shower</p>
 <p>Get the mips in a detector from the LDF.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -121,7 +121,7 @@ assumes the shower to come from the Zenith.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>detector</strong> &#8211; <a class="reference internal" href="../clusters.html#sapphire.clusters.Detector" title="sapphire.clusters.Detector"><tt class="xref py py-class docutils literal"><span class="pre">Detector</span></tt></a> for which
+<li><strong>detector</strong> &#8211; <a class="reference internal" href="../clusters.html#sapphire.clusters.Detector" title="sapphire.clusters.Detector"><code class="xref py py-class docutils literal"><span class="pre">Detector</span></code></a> for which
 the observables will be determined.</li>
 <li><strong>shower_parameters</strong> &#8211; dictionary with the shower parameters.</li>
 </ul>
@@ -133,14 +133,14 @@ the observables will be determined.</li>
 
 <dl class="method">
 <dt id="sapphire.simulations.ldf.BaseLdfSimulation.get_num_particles_in_detector">
-<tt class="descname">get_num_particles_in_detector</tt><big>(</big><em>detector</em>, <em>shower_parameters</em><big>)</big><a class="headerlink" href="#sapphire.simulations.ldf.BaseLdfSimulation.get_num_particles_in_detector" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_num_particles_in_detector</code><span class="sig-paren">(</span><em>detector</em>, <em>shower_parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.ldf.BaseLdfSimulation.get_num_particles_in_detector" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of particles in a detector</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>detector</strong> &#8211; <a class="reference internal" href="../clusters.html#sapphire.clusters.Detector" title="sapphire.clusters.Detector"><tt class="xref py py-class docutils literal"><span class="pre">Detector</span></tt></a> for which
+<li><strong>detector</strong> &#8211; <a class="reference internal" href="../clusters.html#sapphire.clusters.Detector" title="sapphire.clusters.Detector"><code class="xref py py-class docutils literal"><span class="pre">Detector</span></code></a> for which
 the number of particles will be determined.</li>
 <li><strong>shower_parameters</strong> &#8211; dictionary with the shower parameters.</li>
 </ul>
@@ -152,7 +152,7 @@ the number of particles will be determined.</li>
 
 <dl class="staticmethod">
 <dt id="sapphire.simulations.ldf.BaseLdfSimulation.simulate_particles_for_density">
-<em class="property">static </em><tt class="descname">simulate_particles_for_density</tt><big>(</big><em>p</em><big>)</big><a class="headerlink" href="#sapphire.simulations.ldf.BaseLdfSimulation.simulate_particles_for_density" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">simulate_particles_for_density</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.ldf.BaseLdfSimulation.simulate_particles_for_density" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get number of particles in detector given a particle density</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -170,7 +170,7 @@ the number of particles will be determined.</li>
 
 <dl class="class">
 <dt id="sapphire.simulations.ldf.BaseLdfSimulationWithoutErrors">
-<em class="property">class </em><tt class="descclassname">sapphire.simulations.ldf.</tt><tt class="descname">BaseLdfSimulationWithoutErrors</tt><big>(</big><em>max_core_distance</em>, <em>min_energy</em>, <em>max_energy</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#sapphire.simulations.ldf.BaseLdfSimulationWithoutErrors" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.simulations.ldf.</code><code class="descname">BaseLdfSimulationWithoutErrors</code><span class="sig-paren">(</span><em>max_core_distance</em>, <em>min_energy</em>, <em>max_energy</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.ldf.BaseLdfSimulationWithoutErrors" title="Permalink to this definition">¶</a></dt>
 <dd><p>This simulation does not simulate errors/uncertainties</p>
 <p>This should result in perfect particle counting for the detectors.</p>
 <p>Simulation initialization</p>
@@ -190,7 +190,7 @@ shower (in eV).</li>
 </table>
 <dl class="staticmethod">
 <dt id="sapphire.simulations.ldf.BaseLdfSimulationWithoutErrors.simulate_particles_for_density">
-<em class="property">static </em><tt class="descname">simulate_particles_for_density</tt><big>(</big><em>p</em><big>)</big><a class="headerlink" href="#sapphire.simulations.ldf.BaseLdfSimulationWithoutErrors.simulate_particles_for_density" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">simulate_particles_for_density</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.ldf.BaseLdfSimulationWithoutErrors.simulate_particles_for_density" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exact number</p>
 </dd></dl>
 
@@ -198,35 +198,35 @@ shower (in eV).</li>
 
 <dl class="class">
 <dt id="sapphire.simulations.ldf.NkgLdfSimulation">
-<em class="property">class </em><tt class="descclassname">sapphire.simulations.ldf.</tt><tt class="descname">NkgLdfSimulation</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#sapphire.simulations.ldf.NkgLdfSimulation" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.simulations.ldf.</code><code class="descname">NkgLdfSimulation</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.ldf.NkgLdfSimulation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as the BaseLdfSimulation but uses the NkgLdf as LDF</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="sapphire.simulations.ldf.NkgLdfSimulationWithoutErrors">
-<em class="property">class </em><tt class="descclassname">sapphire.simulations.ldf.</tt><tt class="descname">NkgLdfSimulationWithoutErrors</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#sapphire.simulations.ldf.NkgLdfSimulationWithoutErrors" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.simulations.ldf.</code><code class="descname">NkgLdfSimulationWithoutErrors</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.ldf.NkgLdfSimulationWithoutErrors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as the NkgLdfSimulation but without error simulation</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="sapphire.simulations.ldf.KascadeLdfSimulation">
-<em class="property">class </em><tt class="descclassname">sapphire.simulations.ldf.</tt><tt class="descname">KascadeLdfSimulation</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#sapphire.simulations.ldf.KascadeLdfSimulation" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.simulations.ldf.</code><code class="descname">KascadeLdfSimulation</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.ldf.KascadeLdfSimulation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as the BaseLdfSimulation but uses the KascadeLdf as LDF</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="sapphire.simulations.ldf.KascadeLdfSimulationWithoutErrors">
-<em class="property">class </em><tt class="descclassname">sapphire.simulations.ldf.</tt><tt class="descname">KascadeLdfSimulationWithoutErrors</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#sapphire.simulations.ldf.KascadeLdfSimulationWithoutErrors" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.simulations.ldf.</code><code class="descname">KascadeLdfSimulationWithoutErrors</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.ldf.KascadeLdfSimulationWithoutErrors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as the KascadeLdfSimulation but without error simulation</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="sapphire.simulations.ldf.EllipsLdfSimulation">
-<em class="property">class </em><tt class="descclassname">sapphire.simulations.ldf.</tt><tt class="descname">EllipsLdfSimulation</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#sapphire.simulations.ldf.EllipsLdfSimulation" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.simulations.ldf.</code><code class="descname">EllipsLdfSimulation</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.ldf.EllipsLdfSimulation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as BaseLdfSimulation but uses the EllipsLdF as LDF</p>
 <dl class="method">
 <dt id="sapphire.simulations.ldf.EllipsLdfSimulation.generate_shower_parameters">
-<tt class="descname">generate_shower_parameters</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.simulations.ldf.EllipsLdfSimulation.generate_shower_parameters" title="Permalink to this definition">¶</a></dt>
+<code class="descname">generate_shower_parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.ldf.EllipsLdfSimulation.generate_shower_parameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate shower parameters, i.e. core position</p>
 <p>For the elliptic LDF both the core position and the zenith angle
 are relevant.</p>
@@ -243,14 +243,14 @@ are relevant.</p>
 
 <dl class="method">
 <dt id="sapphire.simulations.ldf.EllipsLdfSimulation.get_num_particles_in_detector">
-<tt class="descname">get_num_particles_in_detector</tt><big>(</big><em>detector</em>, <em>shower_parameters</em><big>)</big><a class="headerlink" href="#sapphire.simulations.ldf.EllipsLdfSimulation.get_num_particles_in_detector" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_num_particles_in_detector</code><span class="sig-paren">(</span><em>detector</em>, <em>shower_parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.ldf.EllipsLdfSimulation.get_num_particles_in_detector" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of particles in a detector</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>detector</strong> &#8211; <a class="reference internal" href="../clusters.html#sapphire.clusters.Detector" title="sapphire.clusters.Detector"><tt class="xref py py-class docutils literal"><span class="pre">Detector</span></tt></a> for which
+<li><strong>detector</strong> &#8211; <a class="reference internal" href="../clusters.html#sapphire.clusters.Detector" title="sapphire.clusters.Detector"><code class="xref py py-class docutils literal"><span class="pre">Detector</span></code></a> for which
 the number of particles will be determined.</li>
 <li><strong>shower_parameters</strong> &#8211; dictionary with the shower parameters.</li>
 </ul>
@@ -264,15 +264,15 @@ the number of particles will be determined.</li>
 
 <dl class="class">
 <dt id="sapphire.simulations.ldf.BaseLdf">
-<em class="property">class </em><tt class="descclassname">sapphire.simulations.ldf.</tt><tt class="descname">BaseLdf</tt><a class="headerlink" href="#sapphire.simulations.ldf.BaseLdf" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.simulations.ldf.</code><code class="descname">BaseLdf</code><a class="headerlink" href="#sapphire.simulations.ldf.BaseLdf" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
 <dt id="sapphire.simulations.ldf.BaseLdf.calculate_ldf_value">
-<tt class="descname">calculate_ldf_value</tt><big>(</big><em>r</em>, <em>Ne=None</em>, <em>s=None</em><big>)</big><a class="headerlink" href="#sapphire.simulations.ldf.BaseLdf.calculate_ldf_value" title="Permalink to this definition">¶</a></dt>
+<code class="descname">calculate_ldf_value</code><span class="sig-paren">(</span><em>r</em>, <em>Ne=None</em>, <em>s=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.ldf.BaseLdf.calculate_ldf_value" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="sapphire.simulations.ldf.BaseLdf.calculate_core_distance">
-<tt class="descname">calculate_core_distance</tt><big>(</big><em>x</em>, <em>y</em>, <em>x0</em>, <em>y0</em>, <em>theta</em>, <em>phi</em><big>)</big><a class="headerlink" href="#sapphire.simulations.ldf.BaseLdf.calculate_core_distance" title="Permalink to this definition">¶</a></dt>
+<code class="descname">calculate_core_distance</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>x0</em>, <em>y0</em>, <em>theta</em>, <em>phi</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.ldf.BaseLdf.calculate_core_distance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate core distance</p>
 <p>The core distance is the distance of the detector to the shower core,
 measured <em>on the shower front</em>.  For derivations, see logbook.</p>
@@ -299,7 +299,7 @@ front plane in m.</p>
 
 <dl class="class">
 <dt id="sapphire.simulations.ldf.NkgLdf">
-<em class="property">class </em><tt class="descclassname">sapphire.simulations.ldf.</tt><tt class="descname">NkgLdf</tt><big>(</big><em>Ne=None</em>, <em>s=None</em><big>)</big><a class="headerlink" href="#sapphire.simulations.ldf.NkgLdf" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.simulations.ldf.</code><code class="descname">NkgLdf</code><span class="sig-paren">(</span><em>Ne=None</em>, <em>s=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.ldf.NkgLdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Nishimura-Kamata-Greisen function</p>
 <p>NKG LDF setup</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -316,7 +316,7 @@ front plane in m.</p>
 </table>
 <dl class="method">
 <dt id="sapphire.simulations.ldf.NkgLdf.calculate_ldf_value">
-<tt class="descname">calculate_ldf_value</tt><big>(</big><em>r</em>, <em>Ne=None</em>, <em>s=None</em><big>)</big><a class="headerlink" href="#sapphire.simulations.ldf.NkgLdf.calculate_ldf_value" title="Permalink to this definition">¶</a></dt>
+<code class="descname">calculate_ldf_value</code><span class="sig-paren">(</span><em>r</em>, <em>Ne=None</em>, <em>s=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.ldf.NkgLdf.calculate_ldf_value" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate the LDF value</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -338,7 +338,7 @@ front plane in m.</p>
 
 <dl class="method">
 <dt id="sapphire.simulations.ldf.NkgLdf.ldf_value">
-<tt class="descname">ldf_value</tt><big>(</big><em>r</em>, <em>Ne</em>, <em>s</em><big>)</big><a class="headerlink" href="#sapphire.simulations.ldf.NkgLdf.ldf_value" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ldf_value</code><span class="sig-paren">(</span><em>r</em>, <em>Ne</em>, <em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.ldf.NkgLdf.ldf_value" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate the LDF value</p>
 <p>Given a core distance, shower size, and shower age.
 As given in Fokkema2012 eq 7.2.</p>
@@ -364,7 +364,7 @@ As given in Fokkema2012 eq 7.2.</p>
 
 <dl class="class">
 <dt id="sapphire.simulations.ldf.KascadeLdf">
-<em class="property">class </em><tt class="descclassname">sapphire.simulations.ldf.</tt><tt class="descname">KascadeLdf</tt><big>(</big><em>Ne=None</em>, <em>s=None</em><big>)</big><a class="headerlink" href="#sapphire.simulations.ldf.KascadeLdf" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.simulations.ldf.</code><code class="descname">KascadeLdf</code><span class="sig-paren">(</span><em>Ne=None</em>, <em>s=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.ldf.KascadeLdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>The KASCADE modified NKG function</p>
 <p>NKG LDF setup</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -381,7 +381,7 @@ As given in Fokkema2012 eq 7.2.</p>
 </table>
 <dl class="method">
 <dt id="sapphire.simulations.ldf.KascadeLdf.ldf_value">
-<tt class="descname">ldf_value</tt><big>(</big><em>r</em>, <em>Ne</em>, <em>s</em><big>)</big><a class="headerlink" href="#sapphire.simulations.ldf.KascadeLdf.ldf_value" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ldf_value</code><span class="sig-paren">(</span><em>r</em>, <em>Ne</em>, <em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.ldf.KascadeLdf.ldf_value" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate the LDF value</p>
 <p>Given a core distance, shower size, and shower age.
 As given in Fokkema2012 eq 7.4.</p>
@@ -407,11 +407,11 @@ As given in Fokkema2012 eq 7.4.</p>
 
 <dl class="class">
 <dt id="sapphire.simulations.ldf.EllipsLdf">
-<em class="property">class </em><tt class="descclassname">sapphire.simulations.ldf.</tt><tt class="descname">EllipsLdf</tt><big>(</big><em>Ne=None</em>, <em>zenith=None</em>, <em>azimuth=None</em>, <em>s1=None</em>, <em>s2=None</em><big>)</big><a class="headerlink" href="#sapphire.simulations.ldf.EllipsLdf" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.simulations.ldf.</code><code class="descname">EllipsLdf</code><span class="sig-paren">(</span><em>Ne=None</em>, <em>zenith=None</em>, <em>azimuth=None</em>, <em>s1=None</em>, <em>s2=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.ldf.EllipsLdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>The NKG function modified for leptons and azimuthal asymmetry</p>
 <dl class="method">
 <dt id="sapphire.simulations.ldf.EllipsLdf.calculate_ldf_value">
-<tt class="descname">calculate_ldf_value</tt><big>(</big><em>r</em>, <em>phi</em>, <em>Ne=None</em>, <em>zenith=None</em>, <em>azimuth=None</em><big>)</big><a class="headerlink" href="#sapphire.simulations.ldf.EllipsLdf.calculate_ldf_value" title="Permalink to this definition">¶</a></dt>
+<code class="descname">calculate_ldf_value</code><span class="sig-paren">(</span><em>r</em>, <em>phi</em>, <em>Ne=None</em>, <em>zenith=None</em>, <em>azimuth=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.ldf.EllipsLdf.calculate_ldf_value" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate the LDF value for a given core distance and polar angle</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -433,7 +433,7 @@ As given in Fokkema2012 eq 7.4.</p>
 
 <dl class="method">
 <dt id="sapphire.simulations.ldf.EllipsLdf.ldf_value">
-<tt class="descname">ldf_value</tt><big>(</big><em>r</em>, <em>phi</em>, <em>Ne</em>, <em>zenith</em>, <em>azimuth</em>, <em>s1</em>, <em>s2</em><big>)</big><a class="headerlink" href="#sapphire.simulations.ldf.EllipsLdf.ldf_value" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ldf_value</code><span class="sig-paren">(</span><em>r</em>, <em>phi</em>, <em>Ne</em>, <em>zenith</em>, <em>azimuth</em>, <em>s1</em>, <em>s2</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.ldf.EllipsLdf.ldf_value" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate the LDF value</p>
 <p>Given a core distance, core polar angle, zenith angle, azimuth angle,
 shower size and three shape parameters (r0, s1, s2) .
@@ -467,7 +467,7 @@ for: s1 = -.5, s2 = - 2.6 and r0 = 30.</p>
 
 <dl class="method">
 <dt id="sapphire.simulations.ldf.EllipsLdf.calculate_core_distance_and_angle">
-<tt class="descname">calculate_core_distance_and_angle</tt><big>(</big><em>x</em>, <em>y</em>, <em>x0</em>, <em>y0</em><big>)</big><a class="headerlink" href="#sapphire.simulations.ldf.EllipsLdf.calculate_core_distance_and_angle" title="Permalink to this definition">¶</a></dt>
+<code class="descname">calculate_core_distance_and_angle</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>x0</em>, <em>y0</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.ldf.EllipsLdf.calculate_core_distance_and_angle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate core distance</p>
 <p>The core distance is the distance of the detector to the shower core,
 measured <em>in the horizontal observation plane</em>.</p>
@@ -497,7 +497,7 @@ horizontal observation plane in m resp. rad.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/header.png" alt="Logo"/>
@@ -508,12 +508,14 @@ horizontal observation plane in m resp. rad.</p>
   <h4>Next topic</h4>
   <p class="topless"><a href="showerfront.html"
                         title="next chapter">Simulations based on time structure of EAS shower fronts</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../_sources/simulations/ldf.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/simulations/ldf.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
@@ -530,7 +532,7 @@ horizontal observation plane in m resp. rad.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -545,14 +547,14 @@ horizontal observation plane in m resp. rad.</p>
         <li class="right" >
           <a href="groundparticles.html" title="Simulations based on Monte Carlo EAS ground particle data"
              >previous</a> |</li>
-        <li><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
-          <li><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
-          <li><a href="../simulations.html" >Simulation of the detection of EAS events</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../simulations.html" >Simulation of the detection of EAS events</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

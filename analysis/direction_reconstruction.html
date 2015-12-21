@@ -24,15 +24,15 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="SAPPHiRE 0.12.6 documentation" href="../index.html" />
     <link rel="up" title="Data analysis" href="../analysis.html" />
     <link rel="next" title="Get signal and timing values from events" href="event_utils.html" />
     <link rel="prev" title="Reconstruction of EAS core and size" href="core_reconstruction.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -47,16 +47,16 @@
         <li class="right" >
           <a href="core_reconstruction.html" title="Reconstruction of EAS core and size"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
-          <li><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
-          <li><a href="../analysis.html" accesskey="U">Data analysis</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../analysis.html" accesskey="U">Data analysis</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-sapphire.analysis.direction_reconstruction">
 <span id="reconstruction-of-eas-direction"></span><h1>Reconstruction of EAS direction<a class="headerlink" href="#module-sapphire.analysis.direction_reconstruction" title="Permalink to this headline">¶</a></h1>
@@ -67,31 +67,31 @@ relevant information from the station and event or cluster and
 coincidence. Various algorithms which do the reconstruction are also
 defined here. The algorithms require positions and arrival times to
 do the reconstruction.</p>
-<p>Each algorithm has a <a class="reference internal" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithm.reconstruct_common" title="sapphire.analysis.direction_reconstruction.DirectAlgorithm.reconstruct_common"><tt class="xref py py-meth docutils literal"><span class="pre">reconstruct_common()</span></tt></a>
+<p>Each algorithm has a <a class="reference internal" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithm.reconstruct_common" title="sapphire.analysis.direction_reconstruction.DirectAlgorithm.reconstruct_common"><code class="xref py py-meth docutils literal"><span class="pre">reconstruct_common()</span></code></a>
 method which always requires arrival times, x, and y positions and
 optionally z positions and previous reconstruction results. The data
 is then prepared for the algorithm and passed to
-the <a class="reference internal" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithm.reconstruct" title="sapphire.analysis.direction_reconstruction.DirectAlgorithm.reconstruct"><tt class="xref py py-meth docutils literal"><span class="pre">reconstruct()</span></tt></a> method which returns the
+the <a class="reference internal" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithm.reconstruct" title="sapphire.analysis.direction_reconstruction.DirectAlgorithm.reconstruct"><code class="xref py py-meth docutils literal"><span class="pre">reconstruct()</span></code></a> method which returns the
 reconstructed theta and phi coordinates.</p>
 <dl class="class">
 <dt id="sapphire.analysis.direction_reconstruction.EventDirectionReconstruction">
-<em class="property">class </em><tt class="descclassname">sapphire.analysis.direction_reconstruction.</tt><tt class="descname">EventDirectionReconstruction</tt><big>(</big><em>station</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.EventDirectionReconstruction" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.analysis.direction_reconstruction.</code><code class="descname">EventDirectionReconstruction</code><span class="sig-paren">(</span><em>station</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.EventDirectionReconstruction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct direction for station events</p>
 <p>This class is aware of &#8216;events&#8217; and &#8216;stations&#8217;.  Initialize this class
 with a &#8216;station&#8217; and you can reconstruct events using
-<a class="reference internal" href="#sapphire.analysis.direction_reconstruction.EventDirectionReconstruction.reconstruct_event" title="sapphire.analysis.direction_reconstruction.EventDirectionReconstruction.reconstruct_event"><tt class="xref py py-meth docutils literal"><span class="pre">reconstruct_event()</span></tt></a>. To use other algorithms overwrite the
-<tt class="docutils literal"><span class="pre">direct</span></tt> and <tt class="docutils literal"><span class="pre">fit</span></tt> attributes.</p>
+<a class="reference internal" href="#sapphire.analysis.direction_reconstruction.EventDirectionReconstruction.reconstruct_event" title="sapphire.analysis.direction_reconstruction.EventDirectionReconstruction.reconstruct_event"><code class="xref py py-meth docutils literal"><span class="pre">reconstruct_event()</span></code></a>. To use other algorithms overwrite the
+<code class="docutils literal"><span class="pre">direct</span></code> and <code class="docutils literal"><span class="pre">fit</span></code> attributes.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>station</strong> &#8211; <a class="reference internal" href="../clusters.html#sapphire.clusters.Station" title="sapphire.clusters.Station"><tt class="xref py py-class docutils literal"><span class="pre">Station</span></tt></a> object.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>station</strong> &#8211; <a class="reference internal" href="../clusters.html#sapphire.clusters.Station" title="sapphire.clusters.Station"><code class="xref py py-class docutils literal"><span class="pre">Station</span></code></a> object.</td>
 </tr>
 </tbody>
 </table>
 <dl class="method">
 <dt id="sapphire.analysis.direction_reconstruction.EventDirectionReconstruction.reconstruct_event">
-<tt class="descname">reconstruct_event</tt><big>(</big><em>event, detector_ids=None, offsets=[0.0, 0.0, 0.0, 0.0]</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.EventDirectionReconstruction.reconstruct_event" title="Permalink to this definition">¶</a></dt>
+<code class="descname">reconstruct_event</code><span class="sig-paren">(</span><em>event, detector_ids=None, offsets=[0.0, 0.0, 0.0, 0.0]</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.EventDirectionReconstruction.reconstruct_event" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct a single event</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -104,7 +104,8 @@ reconstructing the direction of a shower (e.g. arrival times).</li>
 <li><strong>detector_ids</strong> &#8211; list of the detectors to use for
 reconstruction. The detector ids are 0-based, unlike the
 column names in the esd data.</li>
-<li><strong>offsets</strong> &#8211; time offsets for each detector.</li>
+<li><strong>offsets</strong> &#8211; time offsets for each detector or a
+<a class="reference internal" href="../api.html#sapphire.api.Station" title="sapphire.api.Station"><code class="xref py py-class docutils literal"><span class="pre">Station</span></code></a> object.</li>
 </ul>
 </td>
 </tr>
@@ -117,7 +118,7 @@ column names in the esd data.</li>
 
 <dl class="method">
 <dt id="sapphire.analysis.direction_reconstruction.EventDirectionReconstruction.reconstruct_events">
-<tt class="descname">reconstruct_events</tt><big>(</big><em>events, detector_ids=None, offsets=[0.0, 0.0, 0.0, 0.0], progress=True</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.EventDirectionReconstruction.reconstruct_events" title="Permalink to this definition">¶</a></dt>
+<code class="descname">reconstruct_events</code><span class="sig-paren">(</span><em>events, detector_ids=None, offsets=[0.0, 0.0, 0.0, 0.0], progress=True</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.EventDirectionReconstruction.reconstruct_events" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct events</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -127,7 +128,8 @@ column names in the esd data.</li>
 <li><strong>events</strong> &#8211; the events table for the station from an ESD data
 file.</li>
 <li><strong>detector_ids</strong> &#8211; detectors to use for the reconstructions.</li>
-<li><strong>offsets</strong> &#8211; time offsets for each detector.</li>
+<li><strong>offsets</strong> &#8211; time offsets for each detector or a
+<a class="reference internal" href="../api.html#sapphire.api.Station" title="sapphire.api.Station"><code class="xref py py-class docutils literal"><span class="pre">Station</span></code></a> object.</li>
 </ul>
 </td>
 </tr>
@@ -142,23 +144,23 @@ file.</li>
 
 <dl class="class">
 <dt id="sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstruction">
-<em class="property">class </em><tt class="descclassname">sapphire.analysis.direction_reconstruction.</tt><tt class="descname">CoincidenceDirectionReconstruction</tt><big>(</big><em>cluster</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstruction" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.analysis.direction_reconstruction.</code><code class="descname">CoincidenceDirectionReconstruction</code><span class="sig-paren">(</span><em>cluster</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstruction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct direction for coincidences</p>
 <p>This class is aware of &#8216;coincidences&#8217; and &#8216;clusters&#8217;.  Initialize
 this class with a &#8216;cluster&#8217; and you can reconstruct a coincidence
-using <a class="reference internal" href="#sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstruction.reconstruct_coincidence" title="sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstruction.reconstruct_coincidence"><tt class="xref py py-meth docutils literal"><span class="pre">reconstruct_coincidence()</span></tt></a>. To use other algorithms
-overwrite the <tt class="docutils literal"><span class="pre">direct</span></tt> and <tt class="docutils literal"><span class="pre">fit</span></tt> attributes.</p>
+using <a class="reference internal" href="#sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstruction.reconstruct_coincidence" title="sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstruction.reconstruct_coincidence"><code class="xref py py-meth docutils literal"><span class="pre">reconstruct_coincidence()</span></code></a>. To use other algorithms
+overwrite the <code class="docutils literal"><span class="pre">direct</span></code> and <code class="docutils literal"><span class="pre">fit</span></code> attributes.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cluster</strong> &#8211; <a class="reference internal" href="../clusters.html#sapphire.clusters.BaseCluster" title="sapphire.clusters.BaseCluster"><tt class="xref py py-class docutils literal"><span class="pre">BaseCluster</span></tt></a> object.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cluster</strong> &#8211; <a class="reference internal" href="../clusters.html#sapphire.clusters.BaseCluster" title="sapphire.clusters.BaseCluster"><code class="xref py py-class docutils literal"><span class="pre">BaseCluster</span></code></a> object.</td>
 </tr>
 </tbody>
 </table>
 <dl class="method">
 <dt id="sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstruction.reconstruct_coincidence">
-<tt class="descname">reconstruct_coincidence</tt><big>(</big><em>coincidence_events</em>, <em>station_numbers=None</em>, <em>offsets={}</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstruction.reconstruct_coincidence" title="Permalink to this definition">¶</a></dt>
+<code class="descname">reconstruct_coincidence</code><span class="sig-paren">(</span><em>coincidence_events</em>, <em>station_numbers=None</em>, <em>offsets={}</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstruction.reconstruct_coincidence" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct a single coincidence</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -184,7 +186,7 @@ detector from a specific station.</li>
 
 <dl class="method">
 <dt id="sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstruction.reconstruct_coincidences">
-<tt class="descname">reconstruct_coincidences</tt><big>(</big><em>coincidences</em>, <em>station_numbers=None</em>, <em>offsets={}</em>, <em>progress=True</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstruction.reconstruct_coincidences" title="Permalink to this definition">¶</a></dt>
+<code class="descname">reconstruct_coincidences</code><span class="sig-paren">(</span><em>coincidences</em>, <em>station_numbers=None</em>, <em>offsets={}</em>, <em>progress=True</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstruction.reconstruct_coincidences" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct all coincidences</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -211,8 +213,42 @@ detector from a specific station.</li>
 </dd></dl>
 
 <dl class="class">
+<dt id="sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstructionDetectors">
+<em class="property">class </em><code class="descclassname">sapphire.analysis.direction_reconstruction.</code><code class="descname">CoincidenceDirectionReconstructionDetectors</code><span class="sig-paren">(</span><em>cluster</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstructionDetectors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reconstruct direction for coincidences using each detector</p>
+<p>Instead of only the first arrival time per station this class
+uses the arrival time in each detector for the reconstruction.</p>
+<dl class="method">
+<dt id="sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstructionDetectors.reconstruct_coincidence">
+<code class="descname">reconstruct_coincidence</code><span class="sig-paren">(</span><em>coincidence_events</em>, <em>station_numbers=None</em>, <em>offsets={}</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstructionDetectors.reconstruct_coincidence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reconstruct a single coincidence</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>coincidence_events</strong> &#8211; a coincidence list consisting of three
+or more (station_number, event) tuples.</li>
+<li><strong>station_numbers</strong> &#8211; list of station numbers, to only use
+events from those stations.</li>
+<li><strong>offsets</strong> &#8211; dictionary with detector offsets for each station.
+These detector offsets should be relative to one
+detector from a specific station.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of theta, phi, and station numbers.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="sapphire.analysis.direction_reconstruction.DirectAlgorithm">
-<em class="property">class </em><tt class="descclassname">sapphire.analysis.direction_reconstruction.</tt><tt class="descname">DirectAlgorithm</tt><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithm" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.analysis.direction_reconstruction.</code><code class="descname">DirectAlgorithm</code><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct angles using direct analytical formula.</p>
 <p>This implements the equations derived in Fokkema2012 sec 4.2.
 (DOI: 10.3990/1.9789036534383)</p>
@@ -221,7 +257,7 @@ detector from a specific station.</li>
 <p>Speed of light is in [m / ns]</p>
 <dl class="classmethod">
 <dt id="sapphire.analysis.direction_reconstruction.DirectAlgorithm.reconstruct_common">
-<em class="property">classmethod </em><tt class="descname">reconstruct_common</tt><big>(</big><em>t</em>, <em>x</em>, <em>y</em>, <em>z=None</em>, <em>initial={}</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithm.reconstruct_common" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">reconstruct_common</code><span class="sig-paren">(</span><em>t</em>, <em>x</em>, <em>y</em>, <em>z=None</em>, <em>initial={}</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithm.reconstruct_common" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct angles from 3 detections</p>
 <p>This function converts the coordinates to be suitable for the
 algorithm.</p>
@@ -244,7 +280,7 @@ reconstructions is ignored.</li>
 
 <dl class="classmethod">
 <dt id="sapphire.analysis.direction_reconstruction.DirectAlgorithm.reconstruct">
-<em class="property">classmethod </em><tt class="descname">reconstruct</tt><big>(</big><em>dt1</em>, <em>dt2</em>, <em>r1</em>, <em>r2</em>, <em>phi1</em>, <em>phi2</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithm.reconstruct" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">reconstruct</code><span class="sig-paren">(</span><em>dt1</em>, <em>dt2</em>, <em>r1</em>, <em>r2</em>, <em>phi1</em>, <em>phi2</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithm.reconstruct" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct angles from 3 detections</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -268,37 +304,37 @@ phi as given by Fokkema2012 eq 4.13.</p>
 
 <dl class="classmethod">
 <dt id="sapphire.analysis.direction_reconstruction.DirectAlgorithm.rel_theta1_errorsq">
-<em class="property">classmethod </em><tt class="descname">rel_theta1_errorsq</tt><big>(</big><em>theta</em>, <em>phi</em>, <em>phi1</em>, <em>phi2</em>, <em>r1=10</em>, <em>r2=10</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithm.rel_theta1_errorsq" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">rel_theta1_errorsq</code><span class="sig-paren">(</span><em>theta</em>, <em>phi</em>, <em>phi1</em>, <em>phi2</em>, <em>r1=10</em>, <em>r2=10</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithm.rel_theta1_errorsq" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fokkema2012, eq 4.23</p>
 </dd></dl>
 
 <dl class="classmethod">
 <dt id="sapphire.analysis.direction_reconstruction.DirectAlgorithm.rel_theta2_errorsq">
-<em class="property">classmethod </em><tt class="descname">rel_theta2_errorsq</tt><big>(</big><em>theta</em>, <em>phi</em>, <em>phi1</em>, <em>phi2</em>, <em>r1=10</em>, <em>r2=10</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithm.rel_theta2_errorsq" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">rel_theta2_errorsq</code><span class="sig-paren">(</span><em>theta</em>, <em>phi</em>, <em>phi1</em>, <em>phi2</em>, <em>r1=10</em>, <em>r2=10</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithm.rel_theta2_errorsq" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fokkema2012, eq 4.23</p>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="sapphire.analysis.direction_reconstruction.DirectAlgorithm.rel_phi_errorsq">
-<em class="property">static </em><tt class="descname">rel_phi_errorsq</tt><big>(</big><em>theta</em>, <em>phi</em>, <em>phi1</em>, <em>phi2</em>, <em>r1=10</em>, <em>r2=10</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithm.rel_phi_errorsq" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">rel_phi_errorsq</code><span class="sig-paren">(</span><em>theta</em>, <em>phi</em>, <em>phi1</em>, <em>phi2</em>, <em>r1=10</em>, <em>r2=10</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithm.rel_phi_errorsq" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fokkema2012, eq 4.22</p>
 </dd></dl>
 
 <dl class="classmethod">
 <dt id="sapphire.analysis.direction_reconstruction.DirectAlgorithm.dphi_dt0">
-<em class="property">classmethod </em><tt class="descname">dphi_dt0</tt><big>(</big><em>theta</em>, <em>phi</em>, <em>phi1</em>, <em>phi2</em>, <em>r1=10</em>, <em>r2=10</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithm.dphi_dt0" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">dphi_dt0</code><span class="sig-paren">(</span><em>theta</em>, <em>phi</em>, <em>phi1</em>, <em>phi2</em>, <em>r1=10</em>, <em>r2=10</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithm.dphi_dt0" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fokkema2012, eq 4.19</p>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="sapphire.analysis.direction_reconstruction.DirectAlgorithm.dphi_dt1">
-<em class="property">static </em><tt class="descname">dphi_dt1</tt><big>(</big><em>theta</em>, <em>phi</em>, <em>phi1</em>, <em>phi2</em>, <em>r1=10</em>, <em>r2=10</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithm.dphi_dt1" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">dphi_dt1</code><span class="sig-paren">(</span><em>theta</em>, <em>phi</em>, <em>phi1</em>, <em>phi2</em>, <em>r1=10</em>, <em>r2=10</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithm.dphi_dt1" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fokkema2012, eq 4.20</p>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="sapphire.analysis.direction_reconstruction.DirectAlgorithm.dphi_dt2">
-<em class="property">static </em><tt class="descname">dphi_dt2</tt><big>(</big><em>theta</em>, <em>phi</em>, <em>phi1</em>, <em>phi2</em>, <em>r1=10</em>, <em>r2=10</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithm.dphi_dt2" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">dphi_dt2</code><span class="sig-paren">(</span><em>theta</em>, <em>phi</em>, <em>phi1</em>, <em>phi2</em>, <em>r1=10</em>, <em>r2=10</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithm.dphi_dt2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fokkema2012, eq 4.21</p>
 </dd></dl>
 
@@ -306,7 +342,7 @@ phi as given by Fokkema2012 eq 4.13.</p>
 
 <dl class="class">
 <dt id="sapphire.analysis.direction_reconstruction.DirectAlgorithmCartesian2D">
-<em class="property">class </em><tt class="descclassname">sapphire.analysis.direction_reconstruction.</tt><tt class="descname">DirectAlgorithmCartesian2D</tt><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithmCartesian2D" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.analysis.direction_reconstruction.</code><code class="descname">DirectAlgorithmCartesian2D</code><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithmCartesian2D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct angles using direct analytical formula.</p>
 <p>This implements the equations derived in Montanus2014.
 &#8220;Direction reconstruction of cosmic air showers with
@@ -315,7 +351,7 @@ detectorstations at different altitudes&#8221;</p>
 altitude.</p>
 <dl class="classmethod">
 <dt id="sapphire.analysis.direction_reconstruction.DirectAlgorithmCartesian2D.reconstruct_common">
-<em class="property">classmethod </em><tt class="descname">reconstruct_common</tt><big>(</big><em>t</em>, <em>x</em>, <em>y</em>, <em>z=None</em>, <em>initial={}</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithmCartesian2D.reconstruct_common" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">reconstruct_common</code><span class="sig-paren">(</span><em>t</em>, <em>x</em>, <em>y</em>, <em>z=None</em>, <em>initial={}</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithmCartesian2D.reconstruct_common" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct angles from 3 detections</p>
 <p>This function converts the coordinates to be suitable for the
 algorithm.</p>
@@ -338,7 +374,7 @@ reconstructions is ignored.</li>
 
 <dl class="staticmethod">
 <dt id="sapphire.analysis.direction_reconstruction.DirectAlgorithmCartesian2D.reconstruct">
-<em class="property">static </em><tt class="descname">reconstruct</tt><big>(</big><em>dt1</em>, <em>dt2</em>, <em>dx1</em>, <em>dx2</em>, <em>dy1</em>, <em>dy2</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithmCartesian2D.reconstruct" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">reconstruct</code><span class="sig-paren">(</span><em>dt1</em>, <em>dt2</em>, <em>dx1</em>, <em>dx2</em>, <em>dy1</em>, <em>dy2</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithmCartesian2D.reconstruct" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct angles from 3 detections</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -364,7 +400,7 @@ phi as given by Montanus2014 eq 26.</p>
 
 <dl class="class">
 <dt id="sapphire.analysis.direction_reconstruction.DirectAlgorithmCartesian3D">
-<em class="property">class </em><tt class="descclassname">sapphire.analysis.direction_reconstruction.</tt><tt class="descname">DirectAlgorithmCartesian3D</tt><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithmCartesian3D" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.analysis.direction_reconstruction.</code><code class="descname">DirectAlgorithmCartesian3D</code><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithmCartesian3D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct angles using direct analytical formula.</p>
 <p>This implements the equations derived in Montanus2014.
 &#8220;Direction reconstruction of cosmic air showers with
@@ -373,7 +409,7 @@ detectorstations at different altitudes&#8221;</p>
 altitude.</p>
 <dl class="classmethod">
 <dt id="sapphire.analysis.direction_reconstruction.DirectAlgorithmCartesian3D.reconstruct_common">
-<em class="property">classmethod </em><tt class="descname">reconstruct_common</tt><big>(</big><em>t</em>, <em>x</em>, <em>y</em>, <em>z=None</em>, <em>initial={}</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithmCartesian3D.reconstruct_common" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">reconstruct_common</code><span class="sig-paren">(</span><em>t</em>, <em>x</em>, <em>y</em>, <em>z=None</em>, <em>initial={}</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithmCartesian3D.reconstruct_common" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct angles from 3 detections</p>
 <p>This function converts the coordinates to be suitable for the
 algorithm.</p>
@@ -395,7 +431,7 @@ reconstructions is ignored.</li>
 
 <dl class="staticmethod">
 <dt id="sapphire.analysis.direction_reconstruction.DirectAlgorithmCartesian3D.reconstruct">
-<em class="property">static </em><tt class="descname">reconstruct</tt><big>(</big><em>dt1</em>, <em>dt2</em>, <em>dx1</em>, <em>dx2</em>, <em>dy1</em>, <em>dy2</em>, <em>dz1=0</em>, <em>dz2=0</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithmCartesian3D.reconstruct" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">reconstruct</code><span class="sig-paren">(</span><em>dt1</em>, <em>dt2</em>, <em>dx1</em>, <em>dx2</em>, <em>dy1</em>, <em>dy2</em>, <em>dz1=0</em>, <em>dz2=0</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithmCartesian3D.reconstruct" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct angles from 3 detections</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -421,7 +457,7 @@ phi as given by Montanus2014 eq 22.</p>
 
 <dl class="class">
 <dt id="sapphire.analysis.direction_reconstruction.SphereAlgorithm">
-<em class="property">class </em><tt class="descclassname">sapphire.analysis.direction_reconstruction.</tt><tt class="descname">SphereAlgorithm</tt><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.SphereAlgorithm" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.analysis.direction_reconstruction.</code><code class="descname">SphereAlgorithm</code><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.SphereAlgorithm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct the direction in equatorial coordinates</p>
 <p>Note: currently incompatible with the other algorithms!</p>
 <p>This class uses a different coordinate systems than the other
@@ -430,7 +466,7 @@ timestamp is required to connect the direction to the equatorial
 coordinates.</p>
 <dl class="classmethod">
 <dt id="sapphire.analysis.direction_reconstruction.SphereAlgorithm.reconstruct_source_ECS">
-<em class="property">classmethod </em><tt class="descname">reconstruct_source_ECS</tt><big>(</big><em>t</em>, <em>x</em>, <em>y</em>, <em>z</em>, <em>timestamp</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.SphereAlgorithm.reconstruct_source_ECS" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">reconstruct_source_ECS</code><span class="sig-paren">(</span><em>t</em>, <em>x</em>, <em>y</em>, <em>z</em>, <em>timestamp</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.SphereAlgorithm.reconstruct_source_ECS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstructs the source in the Equatorial Coordinate System.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -455,7 +491,7 @@ Equatorial Coordinate System.</p>
 
 <dl class="staticmethod">
 <dt id="sapphire.analysis.direction_reconstruction.SphereAlgorithm.interaction_curve">
-<em class="property">static </em><tt class="descname">interaction_curve</tt><big>(</big><em>x</em>, <em>y</em>, <em>z</em>, <em>t</em>, <em>t_int</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.SphereAlgorithm.interaction_curve" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">interaction_curve</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>z</em>, <em>t</em>, <em>t_int</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.SphereAlgorithm.interaction_curve" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates the curve of possible primary interactions</p>
 <p>This uses the arrival times in three detectors. The algorithm is
 based on location calculations used for LORAN, DECCA, RACAL, GPS
@@ -484,10 +520,10 @@ in ns.</li>
 
 <dl class="class">
 <dt id="sapphire.analysis.direction_reconstruction.FitAlgorithm">
-<em class="property">class </em><tt class="descclassname">sapphire.analysis.direction_reconstruction.</tt><tt class="descname">FitAlgorithm</tt><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.FitAlgorithm" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.analysis.direction_reconstruction.</code><code class="descname">FitAlgorithm</code><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.FitAlgorithm" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="classmethod">
 <dt id="sapphire.analysis.direction_reconstruction.FitAlgorithm.reconstruct_common">
-<em class="property">classmethod </em><tt class="descname">reconstruct_common</tt><big>(</big><em>t</em>, <em>x</em>, <em>y</em>, <em>z=None</em>, <em>initial={}</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.FitAlgorithm.reconstruct_common" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">reconstruct_common</code><span class="sig-paren">(</span><em>t</em>, <em>x</em>, <em>y</em>, <em>z=None</em>, <em>initial={}</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.FitAlgorithm.reconstruct_common" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct angles from 3 or more detections</p>
 <p>This function converts the arguments to be suitable for the
 algorithm.</p>
@@ -510,7 +546,7 @@ reconstructions is ignored.</li>
 
 <dl class="classmethod">
 <dt id="sapphire.analysis.direction_reconstruction.FitAlgorithm.reconstruct">
-<em class="property">classmethod </em><tt class="descname">reconstruct</tt><big>(</big><em>t</em>, <em>x</em>, <em>y</em>, <em>z</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.FitAlgorithm.reconstruct" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">reconstruct</code><span class="sig-paren">(</span><em>t</em>, <em>x</em>, <em>y</em>, <em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.FitAlgorithm.reconstruct" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct angles for many detections</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -532,19 +568,19 @@ phi as given by Montanus2014 eq 22.</p>
 
 <dl class="staticmethod">
 <dt id="sapphire.analysis.direction_reconstruction.FitAlgorithm.make_relative">
-<em class="property">static </em><tt class="descname">make_relative</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.FitAlgorithm.make_relative" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">make_relative</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.FitAlgorithm.make_relative" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make first element the origin and make rest relative to it.</p>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="sapphire.analysis.direction_reconstruction.FitAlgorithm.constraint_normal_vector">
-<em class="property">static </em><tt class="descname">constraint_normal_vector</tt><big>(</big><em>n</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.FitAlgorithm.constraint_normal_vector" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">constraint_normal_vector</code><span class="sig-paren">(</span><em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.FitAlgorithm.constraint_normal_vector" title="Permalink to this definition">¶</a></dt>
 <dd><p>This should be equal to zero</p>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="sapphire.analysis.direction_reconstruction.FitAlgorithm.best_fit">
-<em class="property">static </em><tt class="descname">best_fit</tt><big>(</big><em>n_xyz</em>, <em>dt</em>, <em>dx</em>, <em>dy</em>, <em>dz</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.FitAlgorithm.best_fit" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">best_fit</code><span class="sig-paren">(</span><em>n_xyz</em>, <em>dt</em>, <em>dx</em>, <em>dy</em>, <em>dz</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.FitAlgorithm.best_fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>The function to be minimized to find the direction</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -568,7 +604,7 @@ phi as given by Montanus2014 eq 22.</p>
 
 <dl class="class">
 <dt id="sapphire.analysis.direction_reconstruction.RegressionAlgorithm">
-<em class="property">class </em><tt class="descclassname">sapphire.analysis.direction_reconstruction.</tt><tt class="descname">RegressionAlgorithm</tt><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.RegressionAlgorithm" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.analysis.direction_reconstruction.</code><code class="descname">RegressionAlgorithm</code><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.RegressionAlgorithm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct angles using an analytical regression formula.</p>
 <p>This implements the equations as for ISVHECRI (Montanus 2014).
 &#8220;Direction reconstruction of cosmic air showers with
@@ -576,7 +612,7 @@ three or more detectorstations in a horizontal (for the
 moment) plane&#8221;</p>
 <dl class="classmethod">
 <dt id="sapphire.analysis.direction_reconstruction.RegressionAlgorithm.reconstruct_common">
-<em class="property">classmethod </em><tt class="descname">reconstruct_common</tt><big>(</big><em>t</em>, <em>x</em>, <em>y</em>, <em>z=None</em>, <em>initial={}</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.RegressionAlgorithm.reconstruct_common" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">reconstruct_common</code><span class="sig-paren">(</span><em>t</em>, <em>x</em>, <em>y</em>, <em>z=None</em>, <em>initial={}</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.RegressionAlgorithm.reconstruct_common" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct angles from 3 or more detections</p>
 <p>This function converts the arguments to be suitable for the
 algorithm.</p>
@@ -599,7 +635,7 @@ reconstructions is ignored.</li>
 
 <dl class="classmethod">
 <dt id="sapphire.analysis.direction_reconstruction.RegressionAlgorithm.reconstruct">
-<em class="property">classmethod </em><tt class="descname">reconstruct</tt><big>(</big><em>t</em>, <em>x</em>, <em>y</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.RegressionAlgorithm.reconstruct" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">reconstruct</code><span class="sig-paren">(</span><em>t</em>, <em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.RegressionAlgorithm.reconstruct" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct angles for many detections</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -621,7 +657,7 @@ phi as derived by Montanus2014.</p>
 
 <dl class="staticmethod">
 <dt id="sapphire.analysis.direction_reconstruction.RegressionAlgorithm.make_relative">
-<em class="property">static </em><tt class="descname">make_relative</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.RegressionAlgorithm.make_relative" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">make_relative</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.RegressionAlgorithm.make_relative" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make first element the origin and make rest relative to it.</p>
 </dd></dl>
 
@@ -629,14 +665,14 @@ phi as derived by Montanus2014.</p>
 
 <dl class="class">
 <dt id="sapphire.analysis.direction_reconstruction.RegressionAlgorithm3D">
-<em class="property">class </em><tt class="descclassname">sapphire.analysis.direction_reconstruction.</tt><tt class="descname">RegressionAlgorithm3D</tt><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.RegressionAlgorithm3D" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.analysis.direction_reconstruction.</code><code class="descname">RegressionAlgorithm3D</code><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.RegressionAlgorithm3D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct angles by iteratively applying a regression formula.</p>
 <p>This implements the equations as recently derived (Montanus 2014).
 &#8220;Direction reconstruction of cosmic air showers with
 three or more detectorstations at arbitrary altitudes&#8221;</p>
 <dl class="classmethod">
 <dt id="sapphire.analysis.direction_reconstruction.RegressionAlgorithm3D.reconstruct_common">
-<em class="property">classmethod </em><tt class="descname">reconstruct_common</tt><big>(</big><em>t</em>, <em>x</em>, <em>y</em>, <em>z=None</em>, <em>initial={}</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.RegressionAlgorithm3D.reconstruct_common" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">reconstruct_common</code><span class="sig-paren">(</span><em>t</em>, <em>x</em>, <em>y</em>, <em>z=None</em>, <em>initial={}</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.RegressionAlgorithm3D.reconstruct_common" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct angles from 3 or more detections</p>
 <p>This function converts the arguments to be suitable for the
 algorithm.</p>
@@ -659,7 +695,7 @@ reconstructions is ignored.</li>
 
 <dl class="classmethod">
 <dt id="sapphire.analysis.direction_reconstruction.RegressionAlgorithm3D.reconstruct">
-<em class="property">classmethod </em><tt class="descname">reconstruct</tt><big>(</big><em>t</em>, <em>x</em>, <em>y</em>, <em>z</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.RegressionAlgorithm3D.reconstruct" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">reconstruct</code><span class="sig-paren">(</span><em>t</em>, <em>x</em>, <em>y</em>, <em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.RegressionAlgorithm3D.reconstruct" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct angles for many detections</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -681,7 +717,7 @@ phi as derived by Montanus2014.</p>
 
 <dl class="staticmethod">
 <dt id="sapphire.analysis.direction_reconstruction.RegressionAlgorithm3D.make_relative">
-<em class="property">static </em><tt class="descname">make_relative</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.RegressionAlgorithm3D.make_relative" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">make_relative</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.RegressionAlgorithm3D.make_relative" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make first element the origin and make rest relative to it.</p>
 </dd></dl>
 
@@ -689,7 +725,7 @@ phi as derived by Montanus2014.</p>
 
 <dl class="function">
 <dt id="sapphire.analysis.direction_reconstruction.logic_checks">
-<tt class="descclassname">sapphire.analysis.direction_reconstruction.</tt><tt class="descname">logic_checks</tt><big>(</big><em>t</em>, <em>x</em>, <em>y</em>, <em>z</em><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.logic_checks" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">sapphire.analysis.direction_reconstruction.</code><code class="descname">logic_checks</code><span class="sig-paren">(</span><em>t</em>, <em>x</em>, <em>y</em>, <em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.logic_checks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check for impossible reconstructions</p>
 <p>Criteria:</p>
 <ul class="simple">
@@ -721,7 +757,7 @@ distance becomes relevant.</li>
 
 <dl class="function">
 <dt id="sapphire.analysis.direction_reconstruction.warning_only_three">
-<tt class="descclassname">sapphire.analysis.direction_reconstruction.</tt><tt class="descname">warning_only_three</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.warning_only_three" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">sapphire.analysis.direction_reconstruction.</code><code class="descname">warning_only_three</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.warning_only_three" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -730,7 +766,7 @@ distance becomes relevant.</li>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/header.png" alt="Logo"/>
@@ -741,12 +777,14 @@ distance becomes relevant.</li>
   <h4>Next topic</h4>
   <p class="topless"><a href="event_utils.html"
                         title="next chapter">Get signal and timing values from events</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../_sources/analysis/direction_reconstruction.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/analysis/direction_reconstruction.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
@@ -763,7 +801,7 @@ distance becomes relevant.</li>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -778,14 +816,14 @@ distance becomes relevant.</li>
         <li class="right" >
           <a href="core_reconstruction.html" title="Reconstruction of EAS core and size"
              >previous</a> |</li>
-        <li><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
-          <li><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
-          <li><a href="../analysis.html" >Data analysis</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../analysis.html" >Data analysis</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

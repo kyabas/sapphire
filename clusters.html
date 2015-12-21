@@ -24,15 +24,15 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="top" title="SAPPHiRE 0.12.6 documentation" href="index.html" />
     <link rel="up" title="SAPPHiRE Reference" href="sapphire.html" />
     <link rel="next" title="CORSIKA simulations" href="corsika.html" />
     <link rel="prev" title="HiSPARC API" href="api.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -47,25 +47,25 @@
         <li class="right" >
           <a href="api.html" title="HiSPARC API"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
-          <li><a href="sapphire.html" accesskey="U">SAPPHiRE Reference</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="sapphire.html" accesskey="U">SAPPHiRE Reference</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-sapphire.clusters">
 <span id="hisparc-clusters"></span><h1>HiSPARC clusters<a class="headerlink" href="#module-sapphire.clusters" title="Permalink to this headline">¶</a></h1>
 <p>Define HiSPARC detectors, stations and clusters.</p>
 <p>The BaseCluster class defines a HiSPARC cluster consisting of one or
 more stations.  The Station class defines a HiSPARC station,
-consisting of one or more detectors.</p>
+consisting of one or more Detectors.</p>
 <dl class="class">
 <dt id="sapphire.clusters.Detector">
-<em class="property">class </em><tt class="descclassname">sapphire.clusters.</tt><tt class="descname">Detector</tt><big>(</big><em>station, position, orientation='UD', detector_timestamps=[0]</em><big>)</big><a class="headerlink" href="#sapphire.clusters.Detector" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.clusters.</code><code class="descname">Detector</code><span class="sig-paren">(</span><em>station, position, orientation='UD', detector_timestamps=[0]</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.Detector" title="Permalink to this definition">¶</a></dt>
 <dd><p>A HiSPARC detector</p>
 <p>Initialize detector</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -87,42 +87,42 @@ detector respectively.</li>
 </table>
 <dl class="attribute">
 <dt id="sapphire.clusters.Detector.detector_size">
-<tt class="descname">detector_size</tt><a class="headerlink" href="#sapphire.clusters.Detector.detector_size" title="Permalink to this definition">¶</a></dt>
+<code class="descname">detector_size</code><a class="headerlink" href="#sapphire.clusters.Detector.detector_size" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="sapphire.clusters.Detector.get_area">
-<tt class="descname">get_area</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.clusters.Detector.get_area" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_area</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.Detector.get_area" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="sapphire.clusters.Detector.get_xy_coordinates">
-<tt class="descname">get_xy_coordinates</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.clusters.Detector.get_xy_coordinates" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_xy_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.Detector.get_xy_coordinates" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="sapphire.clusters.Detector.get_coordinates">
-<tt class="descname">get_coordinates</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.clusters.Detector.get_coordinates" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.Detector.get_coordinates" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="sapphire.clusters.Detector.get_polar_coordinates">
-<tt class="descname">get_polar_coordinates</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.clusters.Detector.get_polar_coordinates" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_polar_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.Detector.get_polar_coordinates" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="sapphire.clusters.Detector.get_cylindrical_coordinates">
-<tt class="descname">get_cylindrical_coordinates</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.clusters.Detector.get_cylindrical_coordinates" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_cylindrical_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.Detector.get_cylindrical_coordinates" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="sapphire.clusters.Detector.get_lla_coordinates">
-<tt class="descname">get_lla_coordinates</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.clusters.Detector.get_lla_coordinates" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_lla_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.Detector.get_lla_coordinates" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="sapphire.clusters.Detector.get_corners">
-<tt class="descname">get_corners</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.clusters.Detector.get_corners" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_corners</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.Detector.get_corners" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the x, y coordinates of the detector corners</p>
 <p>The z-coordinate is not returned because all detectors are
 assumed to be laying flat.</p>
@@ -140,7 +140,7 @@ assumed to be laying flat.</p>
 
 <dl class="class">
 <dt id="sapphire.clusters.Station">
-<em class="property">class </em><tt class="descclassname">sapphire.clusters.</tt><tt class="descname">Station</tt><big>(</big><em>cluster, station_id, position, angle=None, detectors=None, station_timestamps=[0], detector_timestamps=[0], number=None</em><big>)</big><a class="headerlink" href="#sapphire.clusters.Station" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.clusters.</code><code class="descname">Station</code><span class="sig-paren">(</span><em>cluster, station_id, position, angle=None, detectors=None, station_timestamps=[0], detector_timestamps=[0], number=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.Station" title="Permalink to this definition">¶</a></dt>
 <dd><p>A HiSPARC station</p>
 <p>Initialize station</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -170,12 +170,12 @@ equal to the station_id.</li>
 </table>
 <dl class="attribute">
 <dt id="sapphire.clusters.Station.detectors">
-<tt class="descname">detectors</tt><a class="headerlink" href="#sapphire.clusters.Station.detectors" title="Permalink to this definition">¶</a></dt>
+<code class="descname">detectors</code><a class="headerlink" href="#sapphire.clusters.Station.detectors" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="sapphire.clusters.Station.get_area">
-<tt class="descname">get_area</tt><big>(</big><em>detector_ids=None</em><big>)</big><a class="headerlink" href="#sapphire.clusters.Station.get_area" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_area</code><span class="sig-paren">(</span><em>detector_ids=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.Station.get_area" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the total area covered by the detectors</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -191,19 +191,19 @@ equal to the station_id.</li>
 
 <dl class="method">
 <dt id="sapphire.clusters.Station.get_xy_coordinates">
-<tt class="descname">get_xy_coordinates</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.clusters.Station.get_xy_coordinates" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_xy_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.Station.get_xy_coordinates" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as get_coordinates but without the z and alpha</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sapphire.clusters.Station.get_xyalpha_coordinates">
-<tt class="descname">get_xyalpha_coordinates</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.clusters.Station.get_xyalpha_coordinates" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_xyalpha_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.Station.get_xyalpha_coordinates" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as get_coordinates but without the z</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sapphire.clusters.Station.get_coordinates">
-<tt class="descname">get_coordinates</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.clusters.Station.get_coordinates" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.Station.get_coordinates" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate coordinates of a station</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -218,27 +218,27 @@ relative to absolute coordinate system</td>
 
 <dl class="method">
 <dt id="sapphire.clusters.Station.get_polar_alpha_coordinates">
-<tt class="descname">get_polar_alpha_coordinates</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.clusters.Station.get_polar_alpha_coordinates" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_polar_alpha_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.Station.get_polar_alpha_coordinates" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="sapphire.clusters.Station.get_cylindrical_alpha_coordinates">
-<tt class="descname">get_cylindrical_alpha_coordinates</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.clusters.Station.get_cylindrical_alpha_coordinates" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_cylindrical_alpha_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.Station.get_cylindrical_alpha_coordinates" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="sapphire.clusters.Station.get_lla_coordinates">
-<tt class="descname">get_lla_coordinates</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.clusters.Station.get_lla_coordinates" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_lla_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.Station.get_lla_coordinates" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="sapphire.clusters.Station.calc_r_and_phi_for_detectors">
-<tt class="descname">calc_r_and_phi_for_detectors</tt><big>(</big><em>d0</em>, <em>d1</em><big>)</big><a class="headerlink" href="#sapphire.clusters.Station.calc_r_and_phi_for_detectors" title="Permalink to this definition">¶</a></dt>
+<code class="descname">calc_r_and_phi_for_detectors</code><span class="sig-paren">(</span><em>d0</em>, <em>d1</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.Station.calc_r_and_phi_for_detectors" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="sapphire.clusters.Station.calc_rphiz_for_detectors">
-<tt class="descname">calc_rphiz_for_detectors</tt><big>(</big><em>d0</em>, <em>d1</em><big>)</big><a class="headerlink" href="#sapphire.clusters.Station.calc_rphiz_for_detectors" title="Permalink to this definition">¶</a></dt>
+<code class="descname">calc_rphiz_for_detectors</code><span class="sig-paren">(</span><em>d0</em>, <em>d1</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.Station.calc_rphiz_for_detectors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate angle and distance between detectors</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -254,12 +254,12 @@ relative to absolute coordinate system</td>
 
 <dl class="method">
 <dt id="sapphire.clusters.Station.calc_xy_center_of_mass_coordinates">
-<tt class="descname">calc_xy_center_of_mass_coordinates</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.clusters.Station.calc_xy_center_of_mass_coordinates" title="Permalink to this definition">¶</a></dt>
+<code class="descname">calc_xy_center_of_mass_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.Station.calc_xy_center_of_mass_coordinates" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="sapphire.clusters.Station.calc_center_of_mass_coordinates">
-<tt class="descname">calc_center_of_mass_coordinates</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.clusters.Station.calc_center_of_mass_coordinates" title="Permalink to this definition">¶</a></dt>
+<code class="descname">calc_center_of_mass_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.Station.calc_center_of_mass_coordinates" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate center of mass coordinates of detectors in station</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -276,7 +276,7 @@ absolute coordinate system</td>
 
 <dl class="class">
 <dt id="sapphire.clusters.BaseCluster">
-<em class="property">class </em><tt class="descclassname">sapphire.clusters.</tt><tt class="descname">BaseCluster</tt><big>(</big><em>position=(0</em>, <em>0</em>, <em>0)</em>, <em>angle=0</em>, <em>lla=(52.35592417</em>, <em>4.95114402</em>, <em>56.10234594)</em><big>)</big><a class="headerlink" href="#sapphire.clusters.BaseCluster" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.clusters.</code><code class="descname">BaseCluster</code><span class="sig-paren">(</span><em>position=(0</em>, <em>0</em>, <em>0)</em>, <em>angle=0</em>, <em>lla=(52.35592417</em>, <em>4.95114402</em>, <em>56.10234594)</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.BaseCluster" title="Permalink to this definition">¶</a></dt>
 <dd><p>Base class for HiSPARC clusters</p>
 <p>Override this function to build your cluster</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -287,7 +287,7 @@ absolute coordinate system</td>
 <li><strong>position</strong> &#8211; x,y,z position for the center of the cluster.</li>
 <li><strong>angle</strong> &#8211; rotation of the cluster in the x,y-plane.</li>
 <li><strong>lla</strong> &#8211; Reference WGS84 location of the cluster origin.
-Defaults to the (old) GPS location of 501.</li>
+Defaults to (old) GPS location of station 501 (Nikhef).</li>
 </ul>
 </td>
 </tr>
@@ -295,7 +295,7 @@ Defaults to the (old) GPS location of 501.</li>
 </table>
 <dl class="method">
 <dt id="sapphire.clusters.BaseCluster.set_timestamp">
-<tt class="descname">set_timestamp</tt><big>(</big><em>timestamp</em><big>)</big><a class="headerlink" href="#sapphire.clusters.BaseCluster.set_timestamp" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_timestamp</code><span class="sig-paren">(</span><em>timestamp</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.BaseCluster.set_timestamp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the timestamp to set the active station and detector locations</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -309,30 +309,30 @@ Defaults to the (old) GPS location of 501.</li>
 
 <dl class="attribute">
 <dt id="sapphire.clusters.BaseCluster.stations">
-<tt class="descname">stations</tt><a class="headerlink" href="#sapphire.clusters.BaseCluster.stations" title="Permalink to this definition">¶</a></dt>
+<code class="descname">stations</code><a class="headerlink" href="#sapphire.clusters.BaseCluster.stations" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="sapphire.clusters.BaseCluster.get_station">
-<tt class="descname">get_station</tt><big>(</big><em>number</em><big>)</big><a class="headerlink" href="#sapphire.clusters.BaseCluster.get_station" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_station</code><span class="sig-paren">(</span><em>number</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.BaseCluster.get_station" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a station by its number</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sapphire.clusters.BaseCluster.get_xy_coordinates">
-<tt class="descname">get_xy_coordinates</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.clusters.BaseCluster.get_xy_coordinates" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_xy_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.BaseCluster.get_xy_coordinates" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as get_coordinates but without the z and alpha</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sapphire.clusters.BaseCluster.get_xyalpha_coordinates">
-<tt class="descname">get_xyalpha_coordinates</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.clusters.BaseCluster.get_xyalpha_coordinates" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_xyalpha_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.BaseCluster.get_xyalpha_coordinates" title="Permalink to this definition">¶</a></dt>
 <dd><p>Like get_coordinates, but without z</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sapphire.clusters.BaseCluster.get_coordinates">
-<tt class="descname">get_coordinates</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.clusters.BaseCluster.get_coordinates" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.BaseCluster.get_coordinates" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get cluster coordinates (x, y, z, alpha).</p>
 <p>The coordinates should be interpreted as follows: first, the
 cluster is rotated over angle alpha, around its original center.
@@ -341,13 +341,13 @@ Then, the cluster is translated to (x, y, z).</p>
 
 <dl class="method">
 <dt id="sapphire.clusters.BaseCluster.get_polar_alpha_coordinates">
-<tt class="descname">get_polar_alpha_coordinates</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.clusters.BaseCluster.get_polar_alpha_coordinates" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_polar_alpha_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.BaseCluster.get_polar_alpha_coordinates" title="Permalink to this definition">¶</a></dt>
 <dd><p>Like get_cylindrical_coordinates but without z.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sapphire.clusters.BaseCluster.get_cylindrical_alpha_coordinates">
-<tt class="descname">get_cylindrical_alpha_coordinates</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.clusters.BaseCluster.get_cylindrical_alpha_coordinates" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_cylindrical_alpha_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.BaseCluster.get_cylindrical_alpha_coordinates" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get cluster coordinates (r, phi, z, alpha).</p>
 <p>The coordinates should be interpreted as follows: first, the
 cluster is rotated over angle alpha, around its original center.
@@ -356,12 +356,12 @@ Then, the cluster is translated to (r, phi, z).</p>
 
 <dl class="method">
 <dt id="sapphire.clusters.BaseCluster.get_lla_coordinates">
-<tt class="descname">get_lla_coordinates</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.clusters.BaseCluster.get_lla_coordinates" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_lla_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.BaseCluster.get_lla_coordinates" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="sapphire.clusters.BaseCluster.set_coordinates">
-<tt class="descname">set_coordinates</tt><big>(</big><em>x</em>, <em>y</em>, <em>z</em>, <em>alpha</em><big>)</big><a class="headerlink" href="#sapphire.clusters.BaseCluster.set_coordinates" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_coordinates</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>z</em>, <em>alpha</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.BaseCluster.set_coordinates" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set cluster coordinates (x, y, z, alpha).</p>
 <p>The coordinates should be interpreted as follows: first, the
 cluster is rotated over angle alpha, around its original center.
@@ -370,7 +370,7 @@ Then, the cluster is translated to (x, y, z).</p>
 
 <dl class="method">
 <dt id="sapphire.clusters.BaseCluster.set_cylindrical_coordinates">
-<tt class="descname">set_cylindrical_coordinates</tt><big>(</big><em>r</em>, <em>phi</em>, <em>z</em>, <em>alpha</em><big>)</big><a class="headerlink" href="#sapphire.clusters.BaseCluster.set_cylindrical_coordinates" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_cylindrical_coordinates</code><span class="sig-paren">(</span><em>r</em>, <em>phi</em>, <em>z</em>, <em>alpha</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.BaseCluster.set_cylindrical_coordinates" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set cluster coordinates (r, phi, z, alpha).</p>
 <p>The coordinates should be interpreted as follows: first, the
 cluster is rotated over angle alpha, around its original center.
@@ -379,7 +379,7 @@ Than, the cluster is translated to (r, phi).</p>
 
 <dl class="method">
 <dt id="sapphire.clusters.BaseCluster.calc_rphiz_for_stations">
-<tt class="descname">calc_rphiz_for_stations</tt><big>(</big><em>s0</em>, <em>s1</em><big>)</big><a class="headerlink" href="#sapphire.clusters.BaseCluster.calc_rphiz_for_stations" title="Permalink to this definition">¶</a></dt>
+<code class="descname">calc_rphiz_for_stations</code><span class="sig-paren">(</span><em>s0</em>, <em>s1</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.BaseCluster.calc_rphiz_for_stations" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate distance between and direction of two stations</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -396,12 +396,12 @@ given stations.</td>
 
 <dl class="method">
 <dt id="sapphire.clusters.BaseCluster.calc_xy_center_of_mass_coordinates">
-<tt class="descname">calc_xy_center_of_mass_coordinates</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.clusters.BaseCluster.calc_xy_center_of_mass_coordinates" title="Permalink to this definition">¶</a></dt>
+<code class="descname">calc_xy_center_of_mass_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.BaseCluster.calc_xy_center_of_mass_coordinates" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="sapphire.clusters.BaseCluster.calc_center_of_mass_coordinates">
-<tt class="descname">calc_center_of_mass_coordinates</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.clusters.BaseCluster.calc_center_of_mass_coordinates" title="Permalink to this definition">¶</a></dt>
+<code class="descname">calc_center_of_mass_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.BaseCluster.calc_center_of_mass_coordinates" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate center of mass coordinates of all detectors in cluster</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -418,7 +418,7 @@ absolute coordinate system</td>
 
 <dl class="class">
 <dt id="sapphire.clusters.CompassStations">
-<em class="property">class </em><tt class="descclassname">sapphire.clusters.</tt><tt class="descname">CompassStations</tt><big>(</big><em>position=(0</em>, <em>0</em>, <em>0)</em>, <em>angle=0</em>, <em>lla=(52.35592417</em>, <em>4.95114402</em>, <em>56.10234594)</em><big>)</big><a class="headerlink" href="#sapphire.clusters.CompassStations" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.clusters.</code><code class="descname">CompassStations</code><span class="sig-paren">(</span><em>position=(0</em>, <em>0</em>, <em>0)</em>, <em>angle=0</em>, <em>lla=(52.35592417</em>, <em>4.95114402</em>, <em>56.10234594)</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.CompassStations" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add detectors to stations using compass coordinates</p>
 <p>Compass coordinates consist of r, alpha, z, beta. These define
 the location and orientation of detectors. For more information
@@ -434,7 +434,7 @@ uses that coordinate system.</p>
 <li><strong>position</strong> &#8211; x,y,z position for the center of the cluster.</li>
 <li><strong>angle</strong> &#8211; rotation of the cluster in the x,y-plane.</li>
 <li><strong>lla</strong> &#8211; Reference WGS84 location of the cluster origin.
-Defaults to the (old) GPS location of 501.</li>
+Defaults to (old) GPS location of station 501 (Nikhef).</li>
 </ul>
 </td>
 </tr>
@@ -444,33 +444,33 @@ Defaults to the (old) GPS location of 501.</li>
 
 <dl class="class">
 <dt id="sapphire.clusters.SimpleCluster">
-<em class="property">class </em><tt class="descclassname">sapphire.clusters.</tt><tt class="descname">SimpleCluster</tt><big>(</big><em>size=250</em><big>)</big><a class="headerlink" href="#sapphire.clusters.SimpleCluster" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.clusters.</code><code class="descname">SimpleCluster</code><span class="sig-paren">(</span><em>size=250</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.SimpleCluster" title="Permalink to this definition">¶</a></dt>
 <dd><p>Define a simple cluster containing four stations</p>
 <p>Build the cluster</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="sapphire.clusters.SingleStation">
-<em class="property">class </em><tt class="descclassname">sapphire.clusters.</tt><tt class="descname">SingleStation</tt><a class="headerlink" href="#sapphire.clusters.SingleStation" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.clusters.</code><code class="descname">SingleStation</code><a class="headerlink" href="#sapphire.clusters.SingleStation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Define a cluster containing a single station</p>
 <p>Build the cluster</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="sapphire.clusters.SingleDetectorStation">
-<em class="property">class </em><tt class="descclassname">sapphire.clusters.</tt><tt class="descname">SingleDetectorStation</tt><a class="headerlink" href="#sapphire.clusters.SingleDetectorStation" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.clusters.</code><code class="descname">SingleDetectorStation</code><a class="headerlink" href="#sapphire.clusters.SingleDetectorStation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Define a cluster containing a single 1-detector station</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="sapphire.clusters.SingleTwoDetectorStation">
-<em class="property">class </em><tt class="descclassname">sapphire.clusters.</tt><tt class="descname">SingleTwoDetectorStation</tt><a class="headerlink" href="#sapphire.clusters.SingleTwoDetectorStation" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.clusters.</code><code class="descname">SingleTwoDetectorStation</code><a class="headerlink" href="#sapphire.clusters.SingleTwoDetectorStation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Define a cluster containing a single 2 detector station</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="sapphire.clusters.SingleDiamondStation">
-<em class="property">class </em><tt class="descclassname">sapphire.clusters.</tt><tt class="descname">SingleDiamondStation</tt><a class="headerlink" href="#sapphire.clusters.SingleDiamondStation" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.clusters.</code><code class="descname">SingleDiamondStation</code><a class="headerlink" href="#sapphire.clusters.SingleDiamondStation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Define a cluster containing a single diamond shaped station</p>
 <p>Detectors 1, 3 and 4 are in the usual position for a 4 detector
 layout, detector 2 is moved out of the center and positioned to
@@ -479,7 +479,7 @@ create a second equilateral triangle with detectors 1, 2 and 4.</p>
 
 <dl class="class">
 <dt id="sapphire.clusters.HiSPARCStations">
-<em class="property">class </em><tt class="descclassname">sapphire.clusters.</tt><tt class="descname">HiSPARCStations</tt><big>(</big><em>stations</em>, <em>allow_missing=False</em><big>)</big><a class="headerlink" href="#sapphire.clusters.HiSPARCStations" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.clusters.</code><code class="descname">HiSPARCStations</code><span class="sig-paren">(</span><em>stations</em>, <em>allow_missing=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.HiSPARCStations" title="Permalink to this definition">¶</a></dt>
 <dd><p>A cluster containing any real station from the HiSPARC network</p>
 <p>The gps position and number of detectors are taken from the API.
 The detector positions are retrieved if available, otherwise
@@ -509,7 +509,7 @@ with missing location data will be included but get
 
 <dl class="class">
 <dt id="sapphire.clusters.ScienceParkCluster">
-<em class="property">class </em><tt class="descclassname">sapphire.clusters.</tt><tt class="descname">ScienceParkCluster</tt><big>(</big><em>stations=None</em>, <em>allow_missing=False</em><big>)</big><a class="headerlink" href="#sapphire.clusters.ScienceParkCluster" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.clusters.</code><code class="descname">ScienceParkCluster</code><span class="sig-paren">(</span><em>stations=None</em>, <em>allow_missing=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.ScienceParkCluster" title="Permalink to this definition">¶</a></dt>
 <dd><p>A cluster containing stations from the Science Park subcluster</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -525,7 +525,7 @@ is excluded.</td>
 
 <dl class="class">
 <dt id="sapphire.clusters.HiSPARCNetwork">
-<em class="property">class </em><tt class="descclassname">sapphire.clusters.</tt><tt class="descname">HiSPARCNetwork</tt><a class="headerlink" href="#sapphire.clusters.HiSPARCNetwork" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.clusters.</code><code class="descname">HiSPARCNetwork</code><a class="headerlink" href="#sapphire.clusters.HiSPARCNetwork" title="Permalink to this definition">¶</a></dt>
 <dd><p>A cluster containing all station from the HiSPARC network</p>
 </dd></dl>
 
@@ -535,7 +535,7 @@ is excluded.</td>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="index.html">
               <img class="logo" src="_static/header.png" alt="Logo"/>
@@ -546,12 +546,14 @@ is excluded.</td>
   <h4>Next topic</h4>
   <p class="topless"><a href="corsika.html"
                         title="next chapter">CORSIKA simulations</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/clusters.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/clusters.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -568,7 +570,7 @@ is excluded.</td>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -583,13 +585,13 @@ is excluded.</td>
         <li class="right" >
           <a href="api.html" title="HiSPARC API"
              >previous</a> |</li>
-        <li><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
-          <li><a href="sapphire.html" >SAPPHiRE Reference</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="sapphire.html" >SAPPHiRE Reference</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

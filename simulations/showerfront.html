@@ -24,15 +24,15 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="SAPPHiRE 0.12.6 documentation" href="../index.html" />
     <link rel="up" title="Simulation of the detection of EAS events" href="../simulations.html" />
     <link rel="next" title="Low-level storage constructs" href="../storage.html" />
     <link rel="prev" title="Simulations based on theoretical models of EAS lateral distributions" href="ldf.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -47,16 +47,16 @@
         <li class="right" >
           <a href="ldf.html" title="Simulations based on theoretical models of EAS lateral distributions"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
-          <li><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
-          <li><a href="../simulations.html" accesskey="U">Simulation of the detection of EAS events</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../simulations.html" accesskey="U">Simulation of the detection of EAS events</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-sapphire.simulations.showerfront">
 <span id="simulations-based-on-time-structure-of-eas-shower-fronts"></span><h1>Simulations based on time structure of EAS shower fronts<a class="headerlink" href="#module-sapphire.simulations.showerfront" title="Permalink to this headline">¶</a></h1>
@@ -77,10 +77,10 @@ Simulate just the arrival times.</p>
 </div>
 <dl class="class">
 <dt id="sapphire.simulations.showerfront.FlatFrontSimulation">
-<em class="property">class </em><tt class="descclassname">sapphire.simulations.showerfront.</tt><tt class="descname">FlatFrontSimulation</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulation" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.simulations.showerfront.</code><code class="descname">FlatFrontSimulation</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulation" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
 <dt id="sapphire.simulations.showerfront.FlatFrontSimulation.generate_shower_parameters">
-<tt class="descname">generate_shower_parameters</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulation.generate_shower_parameters" title="Permalink to this definition">¶</a></dt>
+<code class="descname">generate_shower_parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulation.generate_shower_parameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate shower parameters, i.e. azimuth and zenith angles.</p>
 <p>For this groundparticles simulation, only the shower core position
 and rotation angle of the shower are generated.  Do <em>not</em>
@@ -99,7 +99,7 @@ rotation of the cluster!  Interpret them as <em>shower</em> parameters.</p>
 
 <dl class="method">
 <dt id="sapphire.simulations.showerfront.FlatFrontSimulation.simulate_detector_response">
-<tt class="descname">simulate_detector_response</tt><big>(</big><em>detector</em>, <em>shower_parameters</em><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulation.simulate_detector_response" title="Permalink to this definition">¶</a></dt>
+<code class="descname">simulate_detector_response</code><span class="sig-paren">(</span><em>detector</em>, <em>shower_parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulation.simulate_detector_response" title="Permalink to this definition">¶</a></dt>
 <dd><p>Simulate detector response to a shower.</p>
 <p>Return the arrival time of shower front passing the center of
 the detector.</p>
@@ -107,7 +107,7 @@ the detector.</p>
 
 <dl class="method">
 <dt id="sapphire.simulations.showerfront.FlatFrontSimulation.get_arrival_time">
-<tt class="descname">get_arrival_time</tt><big>(</big><em>detector</em>, <em>shower_parameters</em><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulation.get_arrival_time" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_arrival_time</code><span class="sig-paren">(</span><em>detector</em>, <em>shower_parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulation.get_arrival_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate arrival time</p>
 <p>Assumes a flat shower front and core position to be
 the center of the cluster.</p>
@@ -128,7 +128,7 @@ not apparent in Fokkema2012 fig 4.4.</p>
 
 <dl class="method">
 <dt id="sapphire.simulations.showerfront.FlatFrontSimulation.simulate_gps">
-<tt class="descname">simulate_gps</tt><big>(</big><em>station_observables</em>, <em>shower_parameters</em>, <em>station</em><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulation.simulate_gps" title="Permalink to this definition">¶</a></dt>
+<code class="descname">simulate_gps</code><span class="sig-paren">(</span><em>station_observables</em>, <em>shower_parameters</em>, <em>station</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulation.simulate_gps" title="Permalink to this definition">¶</a></dt>
 <dd><p>Simulate gps timestamp</p>
 <p>Ensure that all detector arrival times are positive.</p>
 </dd></dl>
@@ -137,18 +137,18 @@ not apparent in Fokkema2012 fig 4.4.</p>
 
 <dl class="class">
 <dt id="sapphire.simulations.showerfront.FlatFrontSimulationWithoutErrors">
-<em class="property">class </em><tt class="descclassname">sapphire.simulations.showerfront.</tt><tt class="descname">FlatFrontSimulationWithoutErrors</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulationWithoutErrors" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.simulations.showerfront.</code><code class="descname">FlatFrontSimulationWithoutErrors</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulationWithoutErrors" title="Permalink to this definition">¶</a></dt>
 <dd><p>This simulation does not simulate errors/uncertainties</p>
 <p>This should result in perfect timing for the detectors.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="sapphire.simulations.showerfront.FlatFrontSimulation2D">
-<em class="property">class </em><tt class="descclassname">sapphire.simulations.showerfront.</tt><tt class="descname">FlatFrontSimulation2D</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulation2D" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.simulations.showerfront.</code><code class="descname">FlatFrontSimulation2D</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulation2D" title="Permalink to this definition">¶</a></dt>
 <dd><p>This simualtion ignores detector altitudes.</p>
 <dl class="method">
 <dt id="sapphire.simulations.showerfront.FlatFrontSimulation2D.get_arrival_time">
-<tt class="descname">get_arrival_time</tt><big>(</big><em>detector</em>, <em>shower_parameters</em><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulation2D.get_arrival_time" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_arrival_time</code><span class="sig-paren">(</span><em>detector</em>, <em>shower_parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulation2D.get_arrival_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate arrival time</p>
 <p>Ignore detector altitudes</p>
 <p>Equation based on Fokkema2012 sec 4.2, eq 4.9.
@@ -159,13 +159,13 @@ not apparent in Fokkema2012 fig 4.4.</p>
 
 <dl class="class">
 <dt id="sapphire.simulations.showerfront.FlatFrontSimulation2DWithoutErrors">
-<em class="property">class </em><tt class="descclassname">sapphire.simulations.showerfront.</tt><tt class="descname">FlatFrontSimulation2DWithoutErrors</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulation2DWithoutErrors" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.simulations.showerfront.</code><code class="descname">FlatFrontSimulation2DWithoutErrors</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.showerfront.FlatFrontSimulation2DWithoutErrors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ignore altitude of detectors and do not simulate errors.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="sapphire.simulations.showerfront.ConeFrontSimulation">
-<em class="property">class </em><tt class="descclassname">sapphire.simulations.showerfront.</tt><tt class="descname">ConeFrontSimulation</tt><big>(</big><em>max_core_distance</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.ConeFrontSimulation" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.simulations.showerfront.</code><code class="descname">ConeFrontSimulation</code><span class="sig-paren">(</span><em>max_core_distance</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.showerfront.ConeFrontSimulation" title="Permalink to this definition">¶</a></dt>
 <dd><p>This simulation uses a cone shaped shower front.</p>
 <p>Ignore altitude of detectors.
 The opening angle of the cone is given in the init</p>
@@ -192,7 +192,7 @@ The opening angle of the cone is given in the init</p>
 </table>
 <dl class="method">
 <dt id="sapphire.simulations.showerfront.ConeFrontSimulation.generate_shower_parameters">
-<tt class="descname">generate_shower_parameters</tt><big>(</big><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.ConeFrontSimulation.generate_shower_parameters" title="Permalink to this definition">¶</a></dt>
+<code class="descname">generate_shower_parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.showerfront.ConeFrontSimulation.generate_shower_parameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate shower parameters</p>
 <p>For this cone-shaped showerfront, the core position, the azimuth
 and zenith angle of the shower are generated.</p>
@@ -209,13 +209,13 @@ and zenith angle of the shower are generated.</p>
 
 <dl class="method">
 <dt id="sapphire.simulations.showerfront.ConeFrontSimulation.get_arrival_time">
-<tt class="descname">get_arrival_time</tt><big>(</big><em>detector</em>, <em>shower_parameters</em><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.ConeFrontSimulation.get_arrival_time" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_arrival_time</code><span class="sig-paren">(</span><em>detector</em>, <em>shower_parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.showerfront.ConeFrontSimulation.get_arrival_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate arrival time</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sapphire.simulations.showerfront.ConeFrontSimulation.front_shape">
-<tt class="descname">front_shape</tt><big>(</big><em>r</em><big>)</big><a class="headerlink" href="#sapphire.simulations.showerfront.ConeFrontSimulation.front_shape" title="Permalink to this definition">¶</a></dt>
+<code class="descname">front_shape</code><span class="sig-paren">(</span><em>r</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.showerfront.ConeFrontSimulation.front_shape" title="Permalink to this definition">¶</a></dt>
 <dd><p>Delay of the showerfront relative to flat as function of distance</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -237,7 +237,7 @@ and zenith angle of the shower are generated.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/header.png" alt="Logo"/>
@@ -248,12 +248,14 @@ and zenith angle of the shower are generated.</p>
   <h4>Next topic</h4>
   <p class="topless"><a href="../storage.html"
                         title="next chapter">Low-level storage constructs</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../_sources/simulations/showerfront.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/simulations/showerfront.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
@@ -270,7 +272,7 @@ and zenith angle of the shower are generated.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -285,14 +287,14 @@ and zenith angle of the shower are generated.</p>
         <li class="right" >
           <a href="ldf.html" title="Simulations based on theoretical models of EAS lateral distributions"
              >previous</a> |</li>
-        <li><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
-          <li><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
-          <li><a href="../simulations.html" >Simulation of the detection of EAS events</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../simulations.html" >Simulation of the detection of EAS events</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

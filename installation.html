@@ -24,14 +24,14 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="top" title="SAPPHiRE 0.12.6 documentation" href="index.html" />
     <link rel="next" title="Tutorial" href="tutorial.html" />
     <link rel="prev" title="Welcome to SAPPHiRE’s documentation!" href="index.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -46,14 +46,14 @@
         <li class="right" >
           <a href="index.html" title="Welcome to SAPPHiRE’s documentation!"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
@@ -82,8 +82,8 @@ your variables.</p>
 <div class="section" id="minimal-installation-miniconda">
 <h3>Minimal installation (miniconda)<a class="headerlink" href="#minimal-installation-miniconda" title="Permalink to this headline">¶</a></h3>
 <p>In theory, installing a Python package should be very easy. To install
-SAPPHiRE, the Python package called <tt class="docutils literal"><span class="pre">sapphire</span></tt> would be retrieved from the
-internet.  It would have its dependencies listed and <tt class="docutils literal"><span class="pre">pip</span></tt> would pull them in
+SAPPHiRE, the Python package called <code class="docutils literal"><span class="pre">sapphire</span></code> would be retrieved from the
+internet.  It would have its dependencies listed and <code class="docutils literal"><span class="pre">pip</span></code> would pull them in
 and all should be well.  In fact, SAPPHiRE <em>does</em> have its dependencies
 listed and Pip <em>will</em> pull them in.  It is only then, that things start go
 wrong.  Whether you&#8217;ll experience difficulties depends on the operating system
@@ -131,23 +131,23 @@ ourselves for quite a while. YMMV.</p>
 <h4>Debian and derivatives (like Ubuntu)<a class="headerlink" href="#debian-and-derivatives-like-ubuntu" title="Permalink to this headline">¶</a></h4>
 <p>Debian has a first-class package manager which other distributions and
 operating systems have a hard time competing with.  In my personal opinion,
-anyway.  Lots of Python packages can be installed using <tt class="docutils literal"><span class="pre">apt-get</span></tt>, but some
+anyway.  Lots of Python packages can be installed using <code class="docutils literal"><span class="pre">apt-get</span></code>, but some
 of them might be outdated, depending on the age of your distribution.  Use
-<tt class="docutils literal"><span class="pre">apt-get</span></tt> for Python packages at your own discretion (read: risk).  Pip
+<code class="docutils literal"><span class="pre">apt-get</span></code> for Python packages at your own discretion (read: risk).  Pip
 handles Python packages very well, so you&#8217;ll probably need some packages to
 install using Pip.</p>
 <p>As of this writing, several of the dependencies listed by SAPPHiRE do not
 have their own dependencies listed in a way that Pip (or other tools, for
 that matter) know how to handle.  Furthermore, matplotlib needs to be
 installed all by itself, and its dependencies must be installed before it.</p>
-<p>You can try to install packages using <tt class="docutils literal"><span class="pre">apt-get</span></tt>, for example:</p>
+<p>You can try to install packages using <code class="docutils literal"><span class="pre">apt-get</span></code>, for example:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ sudo apt-get install python-matplotlib
 </pre></div>
 </div>
 <p>To figure out what you need, look at the prerequisites for SAPPHiRE, listed
 in the setup.py file in the code repository. You can also try to install
 SAPPHiRE using pip, and waiting for the installation to fail on some
-prerequisites. If you then need development libraries, <tt class="docutils literal"><span class="pre">apt-get</span></tt> can help you
+prerequisites. If you then need development libraries, <code class="docutils literal"><span class="pre">apt-get</span></code> can help you
 with that:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ sudo apt-get build-dep python-numpy
 </pre></div>
@@ -233,7 +233,7 @@ correctly installed.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="index.html">
               <img class="logo" src="_static/header.png" alt="Logo"/>
@@ -267,12 +267,14 @@ correctly installed.</p>
   <h4>Next topic</h4>
   <p class="topless"><a href="tutorial.html"
                         title="next chapter">Tutorial</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/installation.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/installation.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -289,7 +291,7 @@ correctly installed.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -304,12 +306,12 @@ correctly installed.</p>
         <li class="right" >
           <a href="index.html" title="Welcome to SAPPHiRE’s documentation!"
              >previous</a> |</li>
-        <li><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>
