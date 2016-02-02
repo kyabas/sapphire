@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>HiSPARC clusters &mdash; SAPPHiRE 0.12.6 documentation</title>
+    <title>HiSPARC clusters &mdash; SAPPHiRE 0.13.0 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.12.6',
+        VERSION:     '0.13.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.12.6 documentation" href="index.html" />
+    <link rel="top" title="SAPPHiRE 0.13.0 documentation" href="index.html" />
     <link rel="up" title="SAPPHiRE Reference" href="sapphire.html" />
     <link rel="next" title="CORSIKA simulations" href="corsika.html" />
     <link rel="prev" title="HiSPARC API" href="api.html" /> 
@@ -47,7 +47,7 @@
         <li class="right" >
           <a href="api.html" title="HiSPARC API"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.13.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="sapphire.html" accesskey="U">SAPPHiRE Reference</a> &raquo;</li> 
       </ul>
     </div>  
@@ -118,7 +118,19 @@ detector respectively.</li>
 <dl class="method">
 <dt id="sapphire.clusters.Detector.get_lla_coordinates">
 <code class="descname">get_lla_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.Detector.get_lla_coordinates" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Get detector LLA coordinates (latitude, longitude, altitude)</p>
+<p>get detector WGS84 coordinates
+LLA: Latitude, Longitude, Altitude</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">tuple (latitude, longitude, altitude).
+Latitude, longitude in degrees. Altitude in meters.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="method">
 <dt id="sapphire.clusters.Detector.get_corners">
@@ -229,7 +241,18 @@ relative to absolute coordinate system</td>
 <dl class="method">
 <dt id="sapphire.clusters.Station.get_lla_coordinates">
 <code class="descname">get_lla_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.Station.get_lla_coordinates" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Get station LLA coordinates (latitude, longitude, altitude)</p>
+<p>LLA: Latitude, Longitude, Altitude</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">tuple (latitude, longitude, altitude).
+Latitude, longitude in degrees. Altitude in meters.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="method">
 <dt id="sapphire.clusters.Station.calc_r_and_phi_for_detectors">
@@ -357,7 +380,19 @@ Then, the cluster is translated to (r, phi, z).</p>
 <dl class="method">
 <dt id="sapphire.clusters.BaseCluster.get_lla_coordinates">
 <code class="descname">get_lla_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.BaseCluster.get_lla_coordinates" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Get cluster LLA coordinates (latitude, longitude, altitude)</p>
+<p>get cluster WGS84 coordinates
+LLA: Latitude, Longitude, Altitude</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">tuple (latitude, longitude, altitude).
+Latitude, longitude in degrees. Altitude in meters.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="method">
 <dt id="sapphire.clusters.BaseCluster.set_coordinates">
@@ -397,7 +432,8 @@ given stations.</td>
 <dl class="method">
 <dt id="sapphire.clusters.BaseCluster.calc_xy_center_of_mass_coordinates">
 <code class="descname">calc_xy_center_of_mass_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.BaseCluster.calc_xy_center_of_mass_coordinates" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Like calc_center_of_mass_coordinates, but without z</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sapphire.clusters.BaseCluster.calc_center_of_mass_coordinates">
@@ -407,7 +443,7 @@ given stations.</td>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">x, y; coordinates of cluster center relative to
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">x, y, z; coordinates of cluster center relative to
 absolute coordinate system</td>
 </tr>
 </tbody>
@@ -585,13 +621,13 @@ is excluded.</td>
         <li class="right" >
           <a href="api.html" title="HiSPARC API"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.13.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="sapphire.html" >SAPPHiRE Reference</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.
     </div>
   </body>
 </html>

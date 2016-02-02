@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Landau distribution &mdash; SAPPHiRE 0.12.6 documentation</title>
+    <title>Landau distribution &mdash; SAPPHiRE 0.13.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.12.6',
+        VERSION:     '0.13.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.12.6 documentation" href="../index.html" />
+    <link rel="top" title="SAPPHiRE 0.13.0 documentation" href="../index.html" />
     <link rel="up" title="Data analysis" href="../analysis.html" />
     <link rel="next" title="Processing of HiSPARC events" href="process_events.html" />
     <link rel="prev" title="MPV fit" href="find_mpv.html" /> 
@@ -47,7 +47,7 @@
         <li class="right" >
           <a href="find_mpv.html" title="MPV fit"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.13.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../analysis.html" accesskey="U">Data analysis</a> &raquo;</li> 
       </ul>
@@ -68,6 +68,7 @@ relatively thin layer of matter.</p>
 function using two integral representations of the defining complex
 integral.  This should be extended by approximations when the need for
 doing serious work arises.</p>
+<p>References are made to Fokkema2012, DOI: 10.3990/1.9789036534383.</p>
 <dl class="function">
 <dt id="sapphire.analysis.landau.pdf_kernel">
 <code class="descclassname">sapphire.analysis.landau.</code><code class="descname">pdf_kernel</code><span class="sig-paren">(</span><em>y</em>, <em>sf</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.landau.pdf_kernel" title="Permalink to this definition">¶</a></dt>
@@ -76,7 +77,9 @@ doing serious work arises.</p>
 <dl class="function">
 <dt id="sapphire.analysis.landau.pdf_kernel2">
 <code class="descclassname">sapphire.analysis.landau.</code><code class="descname">pdf_kernel2</code><span class="sig-paren">(</span><em>u</em>, <em>lf</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.landau.pdf_kernel2" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>The Landau kernel</p>
+<p>Fokkema2012, eq 2.13.</p>
+</dd></dl>
 
 <dl class="class">
 <dt id="sapphire.analysis.landau.Scintillator">
@@ -134,17 +137,78 @@ doing serious work arises.</p>
 <dl class="method">
 <dt id="sapphire.analysis.landau.Scintillator.landau_pdf">
 <code class="descname">landau_pdf</code><span class="sig-paren">(</span><em>Delta</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.landau.Scintillator.landau_pdf" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>The Landau energy loss distribution function</p>
+<p>Fokkema2012, eq 2.9, where lf is eq 2.10.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>Delta</strong> &#8211; Energy loss in the scintillator.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">energy loss probability.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.landau.Scintillator.lf">
+<code class="descname">lf</code><span class="sig-paren">(</span><em>Delta</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.landau.Scintillator.lf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the lambda parameter</p>
+<p>Fokkema2012, eq 2.10.
+With additional shift by delta.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>Delta</strong> &#8211; Energy loss in the scintillator.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">lambda parameter.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="method">
 <dt id="sapphire.analysis.landau.Scintillator.pdf">
 <code class="descname">pdf</code><span class="sig-paren">(</span><em>lf</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.landau.Scintillator.pdf" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>The Landau probability density function</p>
+<p>Fokkema2012, eq 2.13.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lf</strong> &#8211; lambda parameter.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">probability.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="method">
 <dt id="sapphire.analysis.landau.Scintillator.conv_landau_for_x">
 <code class="descname">conv_landau_for_x</code><span class="sig-paren">(</span><em>x</em>, <em>count_scale=1</em>, <em>mev_scale=None</em>, <em>gauss_scale=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.landau.Scintillator.conv_landau_for_x" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Landau convolved with Gaussian</p>
+<p>Fokkema2012, eq 5.4.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> &#8211; energy loss(es) for which to get the probability.</li>
+<li><strong>count_scale</strong> &#8211; total number of counts.</li>
+<li><strong>mev_scale</strong> &#8211; number of MeV per unit of x.</li>
+<li><strong>gauss_scale</strong> &#8211; width of the normal distribution.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">probability.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="method">
 <dt id="sapphire.analysis.landau.Scintillator.conv_landau">
@@ -172,7 +236,24 @@ If not, the results cannot be trusted!</p>
 <dl class="function">
 <dt id="sapphire.analysis.landau.discrete_convolution">
 <code class="descclassname">sapphire.analysis.landau.</code><code class="descname">discrete_convolution</code><span class="sig-paren">(</span><em>f</em>, <em>g</em>, <em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.landau.discrete_convolution" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Discrete convolution</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>f,g</strong> &#8211; two functions that take one argument (t).</li>
+<li><strong>t</strong> &#8211; values for which the functions will be evaluated, and the along
+which the convolution will be performed.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">convolution of the two functions.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 </div>
 
@@ -230,14 +311,14 @@ If not, the results cannot be trusted!</p>
         <li class="right" >
           <a href="find_mpv.html" title="MPV fit"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.12.6 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.13.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../analysis.html" >Data analysis</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.
     </div>
   </body>
 </html>
