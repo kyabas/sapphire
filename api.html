@@ -92,7 +92,7 @@ is returned as NumPy arrays.</p>
 
 <dl class="attribute">
 <dt id="sapphire.api.API.src_urls">
-<code class="descname">src_urls</code><em class="property"> = {'eventtime': 'eventtime/{station_number}/{year}/{month}/{day}/', 'barometer': 'barometer/{station_number}/{year}/{month}/{day}/', 'integral': 'pulseintegral/{station_number}/{year}/{month}/{day}/', 'voltage': 'voltage/{station_number}/', 'coincidencenumber': 'coincidencenumber/{year}/{month}/{day}/', 'coincidencetime': 'coincidencetime/{year}/{month}/{day}/', 'layout': 'layout/{station_number}/', 'temperature': 'temperature/{station_number}/{year}/{month}/{day}/', 'pulseheight': 'pulseheight/{station_number}/{year}/{month}/{day}/', 'detector_timing_offsets': 'detector_timing_offsets/{station_number}/', 'current': 'current/{station_number}/', 'trigger': 'trigger/{station_number}/', 'gps': 'gps/{station_number}/'}</em><a class="headerlink" href="#sapphire.api.API.src_urls" title="Permalink to this definition">¶</a></dt>
+<code class="descname">src_urls</code><em class="property"> = {'eventtime': 'eventtime/{station_number}/{year}/{month}/{day}/', 'barometer': 'barometer/{station_number}/{year}/{month}/{day}/', 'zenith': 'zenith/{station_number}/{year}/{month}/{day}/', 'integral': 'pulseintegral/{station_number}/{year}/{month}/{day}/', 'voltage': 'voltage/{station_number}/', 'coincidencenumber': 'coincidencenumber/{year}/{month}/{day}/', 'coincidencetime': 'coincidencetime/{year}/{month}/{day}/', 'layout': 'layout/{station_number}/', 'temperature': 'temperature/{station_number}/{year}/{month}/{day}/', 'pulseheight': 'pulseheight/{station_number}/{year}/{month}/{day}/', 'detector_timing_offsets': 'detector_timing_offsets/{station_number}/', 'current': 'current/{station_number}/', 'trigger': 'trigger/{station_number}/', 'azimuth': 'azimuth/{station_number}/{year}/{month}/{day}/', 'gps': 'gps/{station_number}/'}</em><a class="headerlink" href="#sapphire.api.API.src_urls" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="staticmethod">
@@ -491,6 +491,38 @@ to get the traces.</li>
 <dt id="sapphire.api.Station.pulse_integral">
 <code class="descname">pulse_integral</code><span class="sig-paren">(</span><em>year</em>, <em>month</em>, <em>day</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Station.pulse_integral" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the pulseintegral histogram</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>year,month,day</strong> &#8211; the date for which to get the histogram.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">array of bins and counts.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.api.Station.azimuth">
+<code class="descname">azimuth</code><span class="sig-paren">(</span><em>year</em>, <em>month</em>, <em>day</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Station.azimuth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the azimuth histogram</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>year,month,day</strong> &#8211; the date for which to get the histogram.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">array of bins and counts.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.api.Station.zenith">
+<code class="descname">zenith</code><span class="sig-paren">(</span><em>year</em>, <em>month</em>, <em>day</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Station.zenith" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the zenith histogram</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />

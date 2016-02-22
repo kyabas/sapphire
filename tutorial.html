@@ -27,7 +27,7 @@
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="top" title="SAPPHiRE 0.13.0 documentation" href="index.html" />
-    <link rel="next" title="SAPPHiRE Reference" href="sapphire.html" />
+    <link rel="next" title="Example scripts" href="examples.html" />
     <link rel="prev" title="Installation" href="installation.html" /> 
   </head>
   <body role="document">
@@ -41,7 +41,7 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="sapphire.html" title="SAPPHiRE Reference"
+          <a href="examples.html" title="Example scripts"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="installation.html" title="Installation"
@@ -577,7 +577,7 @@ documentation) it is clear that we have to specify the datafile
 containing the station data (<code class="docutils literal"><span class="pre">station_groups</span></code>).  Once that&#8217;s done, there
 is an easy way to search for coincidences, process the events making up
 the coincidences, and store them in the destination group:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">coincidences</span><span class="o">.</span><span class="n">search_and_store_coincidences</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">coincidences</span><span class="o">.</span><span class="n">search_and_store_coincidences</span><span class="p">(</span><span class="n">station_numbers</span><span class="o">=</span><span class="n">STATIONS</span><span class="p">)</span>
 <span class="go">100%|######################################|Time: 0:00:02</span>
 <span class="go">100%|######################################|Time: 0:00:00</span>
 </pre></div>
@@ -650,13 +650,13 @@ table.  Let&#8217;s look at the columns:</p>
 <tr class="row-even"><td>energy</td>
 <td><em>compatibility reasons</em></td>
 </tr>
-<tr class="row-odd"><td>s0</td>
+<tr class="row-odd"><td>s501</td>
 <td>flag to indicate if the first station is in coincidence</td>
 </tr>
-<tr class="row-even"><td>s1</td>
+<tr class="row-even"><td>s503</td>
 <td>as previous but for second station</td>
 </tr>
-<tr class="row-odd"><td>s2</td>
+<tr class="row-odd"><td>s506</td>
 <td>as previous but for third station</td>
 </tr>
 </tbody>
@@ -810,8 +810,8 @@ different.  To uniquely define an event, use a station number /
   <p class="topless"><a href="installation.html"
                         title="previous chapter">Installation</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="sapphire.html"
-                        title="next chapter">SAPPHiRE Reference</a></p>
+  <p class="topless"><a href="examples.html"
+                        title="next chapter">Example scripts</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -846,7 +846,7 @@ different.  To uniquely define an event, use a station number /
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="sapphire.html" title="SAPPHiRE Reference"
+          <a href="examples.html" title="Example scripts"
              >next</a> |</li>
         <li class="right" >
           <a href="installation.html" title="Installation"

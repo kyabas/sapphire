@@ -416,6 +416,8 @@ Than, the cluster is translated to (r, phi).</p>
 <dt id="sapphire.clusters.BaseCluster.calc_rphiz_for_stations">
 <code class="descname">calc_rphiz_for_stations</code><span class="sig-paren">(</span><em>s0</em>, <em>s1</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.BaseCluster.calc_rphiz_for_stations" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate distance between and direction of two stations</p>
+<p>The calculated result is between the center of mass coordinates
+of the two stations.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -482,14 +484,20 @@ Defaults to (old) GPS location of station 501 (Nikhef).</li>
 <dt id="sapphire.clusters.SimpleCluster">
 <em class="property">class </em><code class="descclassname">sapphire.clusters.</code><code class="descname">SimpleCluster</code><span class="sig-paren">(</span><em>size=250</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.SimpleCluster" title="Permalink to this definition">¶</a></dt>
 <dd><p>Define a simple cluster containing four stations</p>
-<p>Build the cluster</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>size</strong> &#8211; This value is the distance between the three outer stations.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="class">
 <dt id="sapphire.clusters.SingleStation">
 <em class="property">class </em><code class="descclassname">sapphire.clusters.</code><code class="descname">SingleStation</code><a class="headerlink" href="#sapphire.clusters.SingleStation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Define a cluster containing a single station</p>
-<p>Build the cluster</p>
 </dd></dl>
 
 <dl class="class">
