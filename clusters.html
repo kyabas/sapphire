@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>HiSPARC clusters &mdash; SAPPHiRE 0.13.0 documentation</title>
+    <title>HiSPARC clusters &mdash; SAPPHiRE 0.13.7 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.13.0',
+        VERSION:     '0.13.7',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.13.0 documentation" href="index.html" />
+    <link rel="top" title="SAPPHiRE 0.13.7 documentation" href="index.html" />
     <link rel="up" title="SAPPHiRE Reference" href="sapphire.html" />
     <link rel="next" title="CORSIKA simulations" href="corsika.html" />
     <link rel="prev" title="HiSPARC API" href="api.html" /> 
@@ -47,7 +47,7 @@
         <li class="right" >
           <a href="api.html" title="HiSPARC API"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.13.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.13.7 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="sapphire.html" accesskey="U">SAPPHiRE Reference</a> &raquo;</li> 
       </ul>
     </div>  
@@ -452,6 +452,40 @@ absolute coordinate system</td>
 </table>
 </dd></dl>
 
+<dl class="method">
+<dt id="sapphire.clusters.BaseCluster.calc_distance_between_stations">
+<code class="descname">calc_distance_between_stations</code><span class="sig-paren">(</span><em>s1</em>, <em>s2</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.BaseCluster.calc_distance_between_stations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate distance between two stations</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>s1,s2</strong> &#8211; station numbers.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">distance between stations.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.clusters.BaseCluster.calc_horizontal_distance_between_stations">
+<code class="descname">calc_horizontal_distance_between_stations</code><span class="sig-paren">(</span><em>s1</em>, <em>s2</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.BaseCluster.calc_horizontal_distance_between_stations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate 2D distance between two HiSPARC stations. Ignores altitude</p>
+<p>The 2D plane is the East-North plane defined by the ENU axes at the
+reference location for this cluster.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>s1,s2</strong> &#8211; station numbers.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">distance between stations.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -523,7 +557,7 @@ create a second equilateral triangle with detectors 1, 2 and 4.</p>
 
 <dl class="class">
 <dt id="sapphire.clusters.HiSPARCStations">
-<em class="property">class </em><code class="descclassname">sapphire.clusters.</code><code class="descname">HiSPARCStations</code><span class="sig-paren">(</span><em>stations</em>, <em>allow_missing=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.HiSPARCStations" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.clusters.</code><code class="descname">HiSPARCStations</code><span class="sig-paren">(</span><em>stations</em>, <em>skip_missing=False</em>, <em>force_fresh=False</em>, <em>force_stale=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.HiSPARCStations" title="Permalink to this definition">¶</a></dt>
 <dd><p>A cluster containing any real station from the HiSPARC network</p>
 <p>The gps position and number of detectors are taken from the API.
 The detector positions are retrieved if available, otherwise
@@ -536,10 +570,10 @@ default values are used!</p>
 <li><strong>stations</strong> &#8211; A list of station numbers to include. The
 coordinates are retrieved from the Public Database API.
 The first station is placed at the origin of the cluster.</li>
-<li><strong>allow_missing</strong> &#8211; Set to True to allow stations to have missing
+<li><strong>skip_missing</strong> &#8211; Set to True to skip stations which have missing
 location data, otherwise an exception will be raised. Stations
-with missing location data will be included but get
-(lat,lon,alt) = (0, 0, 0). Does not apply to detector positions.</li>
+with missing location data will be excluded. Does not apply
+to missing detector positions.</li>
 </ul>
 </td>
 </tr>
@@ -553,7 +587,7 @@ with missing location data will be included but get
 
 <dl class="class">
 <dt id="sapphire.clusters.ScienceParkCluster">
-<em class="property">class </em><code class="descclassname">sapphire.clusters.</code><code class="descname">ScienceParkCluster</code><span class="sig-paren">(</span><em>stations=None</em>, <em>allow_missing=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.ScienceParkCluster" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.clusters.</code><code class="descname">ScienceParkCluster</code><span class="sig-paren">(</span><em>stations=None</em>, <em>skip_missing=False</em>, <em>force_fresh=False</em>, <em>force_stale=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.ScienceParkCluster" title="Permalink to this definition">¶</a></dt>
 <dd><p>A cluster containing stations from the Science Park subcluster</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -569,7 +603,7 @@ is excluded.</td>
 
 <dl class="class">
 <dt id="sapphire.clusters.HiSPARCNetwork">
-<em class="property">class </em><code class="descclassname">sapphire.clusters.</code><code class="descname">HiSPARCNetwork</code><a class="headerlink" href="#sapphire.clusters.HiSPARCNetwork" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.clusters.</code><code class="descname">HiSPARCNetwork</code><span class="sig-paren">(</span><em>force_fresh=False</em>, <em>force_stale=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.clusters.HiSPARCNetwork" title="Permalink to this definition">¶</a></dt>
 <dd><p>A cluster containing all station from the HiSPARC network</p>
 </dd></dl>
 
@@ -629,7 +663,7 @@ is excluded.</td>
         <li class="right" >
           <a href="api.html" title="HiSPARC API"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.13.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.13.7 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="sapphire.html" >SAPPHiRE Reference</a> &raquo;</li> 
       </ul>
     </div>

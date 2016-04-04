@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Tutorial &mdash; SAPPHiRE 0.13.0 documentation</title>
+    <title>Tutorial &mdash; SAPPHiRE 0.13.7 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.13.0',
+        VERSION:     '0.13.7',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.13.0 documentation" href="index.html" />
+    <link rel="top" title="SAPPHiRE 0.13.7 documentation" href="index.html" />
     <link rel="next" title="Example scripts" href="examples.html" />
     <link rel="prev" title="Installation" href="installation.html" /> 
   </head>
@@ -46,7 +46,7 @@
         <li class="right" >
           <a href="installation.html" title="Installation"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.13.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.13.7 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -121,7 +121,7 @@ HiSPARC data with preliminary analysis already included. It is simple to
 quickly start playing with data:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sapphire</span> <span class="kn">import</span> <span class="n">esd</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">esd</span><span class="o">.</span><span class="n">quick_download</span><span class="p">(</span><span class="mi">102</span><span class="p">)</span>
-<span class="go">100%|################################################################|Time: 5.91</span>
+<span class="go">100%|####################################|Time: 5.91</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">data</span>
 <span class="go">data8.h5 (File) &#39;&#39;</span>
 <span class="go">Last modif.: &#39;Thu Oct 22 16:02:05 2015&#39;</span>
@@ -336,7 +336,9 @@ save us some typing:</p>
 <p>Now, we have stored a short-hand reference to the events table. Let&#8217;s get
 the first event:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">events</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="go">(0L, 1445385601, 613271528L, 1445385601613271528L, [3, 266, 400, 372], [0, 3090, 5695, 5621], 0.0, 1.0312000513076782, 1.551300048828125, 1.5881999731063843, -999.0, 1002.5, 1000.0, 1022.5, 1030.0)</span>
+<span class="go">(0L, 1445385601, 613271528L, 1445385601613271528L, [3, 266, 400, 372],</span>
+<span class="go"> [0, 3090, 5695, 5621], 0.0, 1.03120, 1.55130, 1.58820,</span>
+<span class="go"> -999.0, 1002.5, 1000.0, 1022.5, 1030.0, -999.0, -999.0)</span>
 </pre></div>
 </div>
 <p>That&#8217;s the first event!  It is not, however, immediately clear what
@@ -851,7 +853,7 @@ different.  To uniquely define an event, use a station number /
         <li class="right" >
           <a href="installation.html" title="Installation"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.13.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.13.7 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

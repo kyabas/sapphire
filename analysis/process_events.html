@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Processing of HiSPARC events &mdash; SAPPHiRE 0.13.0 documentation</title>
+    <title>Processing of HiSPARC events &mdash; SAPPHiRE 0.13.7 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.13.0',
+        VERSION:     '0.13.7',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.13.0 documentation" href="../index.html" />
+    <link rel="top" title="SAPPHiRE 0.13.7 documentation" href="../index.html" />
     <link rel="up" title="Data analysis" href="../analysis.html" />
     <link rel="next" title="Processing of HiSPARC traces" href="process_traces.html" />
     <link rel="prev" title="Landau distribution" href="landau.html" /> 
@@ -47,7 +47,7 @@
         <li class="right" >
           <a href="landau.html" title="Landau distribution"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.13.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.13.7 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../analysis.html" accesskey="U">Data analysis</a> &raquo;</li> 
       </ul>
@@ -171,7 +171,7 @@ The default, None, corresponds to no limit.</li>
 
 <dl class="method">
 <dt id="sapphire.analysis.process_events.ProcessEvents.process_traces">
-<code class="descname">process_traces</code><span class="sig-paren">(</span><em>limit=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.process_events.ProcessEvents.process_traces" title="Permalink to this definition">¶</a></dt>
+<code class="descname">process_traces</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.process_events.ProcessEvents.process_traces" title="Permalink to this definition">¶</a></dt>
 <dd><p>Process traces to yield pulse timing information.</p>
 </dd></dl>
 
@@ -359,7 +359,7 @@ meaning the default name &#8216;events&#8217;.</li>
 
 <dl class="class">
 <dt id="sapphire.analysis.process_events.ProcessEventsFromSource">
-<em class="property">class </em><code class="descclassname">sapphire.analysis.process_events.</code><code class="descname">ProcessEventsFromSource</code><span class="sig-paren">(</span><em>source_file</em>, <em>dest_file</em>, <em>source_group</em>, <em>dest_group</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.process_events.ProcessEventsFromSource" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.analysis.process_events.</code><code class="descname">ProcessEventsFromSource</code><span class="sig-paren">(</span><em>source_file</em>, <em>dest_file</em>, <em>source_group</em>, <em>dest_group</em>, <em>progress=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.process_events.ProcessEventsFromSource" title="Permalink to this definition">¶</a></dt>
 <dd><p>Process HiSPARC events from a different source.</p>
 <p>This class is a subclass of ProcessEvents.  The difference is that in
 this class, the source and destination are assumed to be different
@@ -384,7 +384,7 @@ group</li>
 
 <dl class="class">
 <dt id="sapphire.analysis.process_events.ProcessEventsFromSourceWithTriggerOffset">
-<em class="property">class </em><code class="descclassname">sapphire.analysis.process_events.</code><code class="descname">ProcessEventsFromSourceWithTriggerOffset</code><span class="sig-paren">(</span><em>source_file</em>, <em>dest_file</em>, <em>source_group</em>, <em>dest_group</em>, <em>station=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.process_events.ProcessEventsFromSourceWithTriggerOffset" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.analysis.process_events.</code><code class="descname">ProcessEventsFromSourceWithTriggerOffset</code><span class="sig-paren">(</span><em>source_file</em>, <em>dest_file</em>, <em>source_group</em>, <em>dest_group</em>, <em>station=None</em>, <em>progress=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.process_events.ProcessEventsFromSourceWithTriggerOffset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Process events from a different source and find trigger.</p>
 <p>This is a subclass of <a class="reference internal" href="#sapphire.analysis.process_events.ProcessEventsFromSource" title="sapphire.analysis.process_events.ProcessEventsFromSource"><code class="xref py py-class docutils literal"><span class="pre">ProcessEventsFromSource</span></code></a> and
 <a class="reference internal" href="#sapphire.analysis.process_events.ProcessEventsWithTriggerOffset" title="sapphire.analysis.process_events.ProcessEventsWithTriggerOffset"><code class="xref py py-class docutils literal"><span class="pre">ProcessEventsWithTriggerOffset</span></code></a>.  Processing events and
@@ -457,7 +457,7 @@ The default, None, corresponds to no limit.</li>
 
 <dl class="class">
 <dt id="sapphire.analysis.process_events.ProcessWeatherFromSource">
-<em class="property">class </em><code class="descclassname">sapphire.analysis.process_events.</code><code class="descname">ProcessWeatherFromSource</code><span class="sig-paren">(</span><em>source_file</em>, <em>dest_file</em>, <em>source_group</em>, <em>dest_group</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.process_events.ProcessWeatherFromSource" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.analysis.process_events.</code><code class="descname">ProcessWeatherFromSource</code><span class="sig-paren">(</span><em>source_file</em>, <em>dest_file</em>, <em>source_group</em>, <em>dest_group</em>, <em>progress=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.process_events.ProcessWeatherFromSource" title="Permalink to this definition">¶</a></dt>
 <dd><p>Process HiSPARC weather from a different source.</p>
 <p>This class is a subclass of ProcessWeather.  The difference is that in
 this class, the source and destination are assumed to be different
@@ -535,7 +535,7 @@ destination group</li>
         <li class="right" >
           <a href="landau.html" title="Landau distribution"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.13.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.13.7 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../analysis.html" >Data analysis</a> &raquo;</li> 
       </ul>
