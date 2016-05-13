@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>GPS date/time utility functions &mdash; SAPPHiRE 0.13.7 documentation</title>
+    <title>GPS date/time utility functions &mdash; SAPPHiRE 0.14.0 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.13.7',
+        VERSION:     '0.14.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.13.7 documentation" href="index.html" />
+    <link rel="top" title="SAPPHiRE 0.14.0 documentation" href="index.html" />
     <link rel="up" title="SAPPHiRE Reference" href="sapphire.html" />
     <link rel="next" title="Coordinate and time transformations" href="transformations.html" />
     <link rel="prev" title="Low-level storage constructs" href="storage.html" /> 
@@ -47,7 +47,7 @@
         <li class="right" >
           <a href="storage.html" title="Low-level storage constructs"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.13.7 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.14.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="sapphire.html" accesskey="U">SAPPHiRE Reference</a> &raquo;</li> 
       </ul>
     </div>  
@@ -76,7 +76,7 @@ minutes, seconds default to zero.</p>
 <p>If the argument is a single number, this is interpreted as a
 Unix-like timestamp, in GPS time.</p>
 <p>Examples specifying the exact same time:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">GPSTime</span><span class="p">(</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">GPSTime</span><span class="p">(</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">GPSTime</span><span class="p">(</span><span class="mi">1354320000</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -85,7 +85,7 @@ Unix-like timestamp, in GPS time.</p>
 <code class="descname">gpstimestamp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.time_util.GPSTime.gpstimestamp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the GPS date/time as a timestamp.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">gpstime</span> <span class="o">=</span> <span class="n">GPSTime</span><span class="p">(</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gpstime</span> <span class="o">=</span> <span class="n">GPSTime</span><span class="p">(</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">gpstime</span><span class="o">.</span><span class="n">gpstimestamp</span><span class="p">()</span>
 <span class="go">1354320000</span>
 </pre></div>
@@ -97,7 +97,7 @@ Unix-like timestamp, in GPS time.</p>
 <code class="descname">description</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.time_util.GPSTime.description" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the GPS date/time as a string.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">gpstime</span> <span class="o">=</span> <span class="n">GPSTime</span><span class="p">(</span><span class="mi">1354320000</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gpstime</span> <span class="o">=</span> <span class="n">GPSTime</span><span class="p">(</span><span class="mi">1354320000</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">gpstime</span><span class="o">.</span><span class="n">description</span><span class="p">()</span>
 <span class="go">&#39;Sat Dec  1 00:00:00 2012&#39;</span>
 </pre></div>
@@ -109,7 +109,7 @@ Unix-like timestamp, in GPS time.</p>
 <code class="descname">datetime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.time_util.GPSTime.datetime" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the GPS date/time as a <code class="docutils literal"><span class="pre">datetime.datetime</span></code> instance.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">gpstime</span> <span class="o">=</span> <span class="n">GPSTime</span><span class="p">(</span><span class="mi">1354320000</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gpstime</span> <span class="o">=</span> <span class="n">GPSTime</span><span class="p">(</span><span class="mi">1354320000</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">gpstime</span><span class="o">.</span><span class="n">datetime</span><span class="p">()</span>
 <span class="go">datetime.datetime(2012, 12, 1, 0, 0)</span>
 </pre></div>
@@ -150,9 +150,6 @@ Unix-like timestamp, in GPS time.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -174,13 +171,13 @@ Unix-like timestamp, in GPS time.</p>
         <li class="right" >
           <a href="storage.html" title="Low-level storage constructs"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.13.7 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.14.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="sapphire.html" >SAPPHiRE Reference</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

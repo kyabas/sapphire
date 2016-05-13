@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Event Summary Data &mdash; SAPPHiRE 0.13.7 documentation</title>
+    <title>Event Summary Data &mdash; SAPPHiRE 0.14.0 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.13.7',
+        VERSION:     '0.14.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.13.7 documentation" href="index.html" />
+    <link rel="top" title="SAPPHiRE 0.14.0 documentation" href="index.html" />
     <link rel="up" title="SAPPHiRE Reference" href="sapphire.html" />
     <link rel="next" title="KASCADE data" href="kascade.html" />
     <link rel="prev" title="CORSIKA Units" href="corsika/units.html" /> 
@@ -47,7 +47,7 @@
         <li class="right" >
           <a href="corsika/units.html" title="CORSIKA Units"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.13.7 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.14.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="sapphire.html" accesskey="U">SAPPHiRE Reference</a> &raquo;</li> 
       </ul>
     </div>  
@@ -64,7 +64,7 @@
 <p>If you are in a real hurry and know what you&#8217;re doing (and took the
 time to read this far), you can call the <a class="reference internal" href="#sapphire.esd.quick_download" title="sapphire.esd.quick_download"><code class="xref py py-func docutils literal"><span class="pre">quick_download()</span></code></a>
 function like this:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sapphire</span> <span class="kn">import</span> <span class="n">quick_download</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sapphire</span> <span class="k">import</span> <span class="n">quick_download</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">quick_download</span><span class="p">(</span><span class="mi">501</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -93,9 +93,9 @@ instance), passed unchanged to the <a class="reference internal" href="#sapphire
 <p>Everything is handled by this function, including file creation.
 Expect no frills: you just get yesterday&#8217;s data.</p>
 <p>Example usage:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sapphire.esd</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sapphire.esd</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">sapphire</span><span class="o">.</span><span class="n">esd</span><span class="o">.</span><span class="n">quick_download</span><span class="p">(</span><span class="mi">501</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">data</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">data</span>
 <span class="go">data1.h5 (File) u&#39;&#39;</span>
 <span class="go">Last modif.: &#39;Mon Jun  9 22:03:50 2014&#39;</span>
 <span class="go">Object Tree:</span>
@@ -112,8 +112,8 @@ Expect no frills: you just get yesterday&#8217;s data.</p>
 <dd><p>Load downloaded event summary data into PyTables file.</p>
 <p>If you&#8217;ve previously downloaded event summary data from
 <a class="reference external" href="http://data.hisparc.nl/">http://data.hisparc.nl/</a> in TSV format, you can load them into a PyTables
-file using this method. The data is then indistinguishable from data
-downloaded using <a class="reference internal" href="#sapphire.esd.download_data" title="sapphire.esd.download_data"><code class="xref py py-func docutils literal"><span class="pre">download_data()</span></code></a>.</p>
+file using this method. The result is equal to directly downloading data
+using <a class="reference internal" href="#sapphire.esd.download_data" title="sapphire.esd.download_data"><code class="xref py py-func docutils literal"><span class="pre">download_data()</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -130,7 +130,7 @@ Public Database</li>
 </tbody>
 </table>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">tables</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">tables</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sapphire.esd</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="s1">&#39;data.h5&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sapphire</span><span class="o">.</span><span class="n">esd</span><span class="o">.</span><span class="n">load_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;/s501&#39;</span><span class="p">,</span> <span class="s1">&#39;events-s501-20130910.tsv&#39;</span><span class="p">)</span>
@@ -167,12 +167,43 @@ yesterday&#8217;s data is downloaded.  If only end is None, a single day&#8217;s
 worth of data is downloaded, starting at the datetime specified with
 start.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">tables</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">tables</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">datetime</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sapphire.esd</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="s1">&#39;data.h5&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sapphire</span><span class="o">.</span><span class="n">esd</span><span class="o">.</span><span class="n">download_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;/s501&#39;</span><span class="p">,</span> <span class="mi">501</span><span class="p">,</span>
 <span class="gp">... </span>    <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2013</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2013</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.esd.load_coincidences">
+<code class="descclassname">sapphire.esd.</code><code class="descname">load_coincidences</code><span class="sig-paren">(</span><em>file</em>, <em>tsv_file</em>, <em>group=''</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.esd.load_coincidences" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load downloaded event summary data into PyTables file.</p>
+<p>If you&#8217;ve previously downloaded coincidence data from
+<a class="reference external" href="http://data.hisparc.nl/">http://data.hisparc.nl/</a> in TSV format, you can load them into a PyTables
+file using this method. The result is equal to directly downloading data
+using <a class="reference internal" href="#sapphire.esd.download_coincidences" title="sapphire.esd.download_coincidences"><code class="xref py py-func docutils literal"><span class="pre">download_coincidences()</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>file</strong> &#8211; the PyTables datafile handler.</li>
+<li><strong>tsv_file</strong> &#8211; path to the tsv file downloaded from the HiSPARC
+Public Database containing coincidences.</li>
+<li><strong>group</strong> &#8211; the PyTables destination group, which need not exist.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">tables</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sapphire.esd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="s1">&#39;coincidences.h5&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sapphire</span><span class="o">.</span><span class="n">esd</span><span class="o">.</span><span class="n">load_coincidences</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;coincidences-20151130.tsv&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -207,7 +238,7 @@ start.</p>
 <p>Optionally either a cluster or stations can be defined to limit the
 results to include only events from those stations.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">tables</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">tables</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">datetime</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sapphire.esd</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="s1">&#39;data_coincidences.h5&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
@@ -250,9 +281,6 @@ results to include only events from those stations.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -274,13 +302,13 @@ results to include only events from those stations.</p>
         <li class="right" >
           <a href="corsika/units.html" title="CORSIKA Units"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.13.7 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.14.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="sapphire.html" >SAPPHiRE Reference</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

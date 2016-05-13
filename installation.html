@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Installation &mdash; SAPPHiRE 0.13.7 documentation</title>
+    <title>Installation &mdash; SAPPHiRE 0.14.0 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.13.7',
+        VERSION:     '0.14.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.13.7 documentation" href="index.html" />
+    <link rel="top" title="SAPPHiRE 0.14.0 documentation" href="index.html" />
     <link rel="next" title="Tutorial" href="tutorial.html" />
     <link rel="prev" title="Welcome to SAPPHiRE’s documentation!" href="index.html" /> 
   </head>
@@ -46,7 +46,7 @@
         <li class="right" >
           <a href="index.html" title="Welcome to SAPPHiRE’s documentation!"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.13.7 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.14.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -97,7 +97,7 @@ you covered.</p>
 Installation instructions can be found at
 <a class="reference external" href="http://conda.pydata.org/docs/install/quick.html">http://conda.pydata.org/docs/install/quick.html</a>. After installation, install
 the following packages:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ conda install matplotlib scipy pytables
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ conda install matplotlib scipy pytables
 </pre></div>
 </div>
 <p>This is enough to simply install SAPPHiRE using Pip (see below).</p>
@@ -113,7 +113,7 @@ the following packages:</p>
 great packages, is done using <a class="reference external" href="https://mxcl.github.com/homebrew/">Homebrew</a>.  Please follow the installation
 instructions (really easy) and when done, type the following into a
 terminal:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ brew install python
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ brew install python
 </pre></div>
 </div>
 <p>This will install Python and Pip.</p>
@@ -121,11 +121,11 @@ terminal:</p>
 have their own dependencies listed in a way that Pip (or other tools, for that
 matter) know how to handle. To install matplotlib with its requirements, you
 can type:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ brew install homebrew/python/matplotlib
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ brew install homebrew/python/matplotlib
 </pre></div>
 </div>
 <p>Warning: this will install gcc and start a very long compilation process. Alternatively, with the introduction of <em>wheels</em> in Python, you can simply try to install packages like numpy, scipy and matplotlib using Pip:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ pip install numpy scipy matplotlib
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ pip install numpy scipy matplotlib
 </pre></div>
 </div>
 <p>If you&#8217;re lucky, using a wheel will not need a compiler. We haven&#8217;t tried this
@@ -145,7 +145,7 @@ have their own dependencies listed in a way that Pip (or other tools, for
 that matter) know how to handle.  Furthermore, matplotlib needs to be
 installed all by itself, and its dependencies must be installed before it.</p>
 <p>You can try to install packages using <code class="docutils literal"><span class="pre">apt-get</span></code>, for example:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ sudo apt-get install python-matplotlib
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ sudo apt-get install python-matplotlib
 </pre></div>
 </div>
 <p>To figure out what you need, look at the prerequisites for SAPPHiRE, listed
@@ -153,7 +153,7 @@ in the setup.py file in the code repository. You can also try to install
 SAPPHiRE using pip, and waiting for the installation to fail on some
 prerequisites. If you then need development libraries, <code class="docutils literal"><span class="pre">apt-get</span></code> can help you
 with that:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ sudo apt-get build-dep python-numpy
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ sudo apt-get build-dep python-numpy
 </pre></div>
 </div>
 <p>will install everything you need to build numpy from source.</p>
@@ -171,13 +171,13 @@ and use setup.py to install it.</p>
 <p>These scenarios do not involve fetching the code.  They will just
 install SAPPHiRE, so that you can get to work.  To get the latest
 stable release version, simply issue:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ pip install hisparc-sapphire
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ pip install hisparc-sapphire
 </pre></div>
 </div>
 <p>Done.  Now get to work.</p>
 <p>If you like living on the edge with a possibly broken version of
 SAPPHiRE, get the latest development version:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ pip install https://github.com/hisparc/sapphire/zipball/master
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ pip install https://github.com/hisparc/sapphire/zipball/master
 </pre></div>
 </div>
 </div>
@@ -193,7 +193,7 @@ which will prompt you to download the GitHub Desktop app (recommended).</p>
 <img alt="_images/github-zipball.png" src="_images/github-zipball.png" />
 <p>Open a terminal and navigate to the top-level directory containing the code.
 Then issue:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ python setup.py develop
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ python setup.py develop
 </pre></div>
 </div>
 <p>This takes care of installing the missing dependencies and SAPPHiRE itself.
@@ -216,16 +216,16 @@ directory.</em></p>
 </div>
 <p>Start a Python session.  You can use a launcher of some type (e.g. the one
 from Python(x,y)), or open a terminal and type:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ python
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ python
 </pre></div>
 </div>
 <p>Or, if you prefer, <a class="reference external" href="http://ipython.org">IPython</a>:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ ipython
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ipython
 </pre></div>
 </div>
 <p>In fact, we recommend using IPython for interactive use.  Then, try to import
 SAPPHiRE:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sapphire</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sapphire</span>
 </pre></div>
 </div>
 <p>If this returns without an error message, all is well and SAPPHiRE is
@@ -286,9 +286,6 @@ correctly installed.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -310,12 +307,12 @@ correctly installed.</p>
         <li class="right" >
           <a href="index.html" title="Welcome to SAPPHiRE’s documentation!"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.13.7 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.14.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

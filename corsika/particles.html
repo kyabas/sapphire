@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>CORSIKA Particles &mdash; SAPPHiRE 0.13.7 documentation</title>
+    <title>CORSIKA Particles &mdash; SAPPHiRE 0.14.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.13.7',
+        VERSION:     '0.14.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.13.7 documentation" href="../index.html" />
+    <link rel="top" title="SAPPHiRE 0.14.0 documentation" href="../index.html" />
     <link rel="up" title="CORSIKA simulations" href="../corsika.html" />
     <link rel="next" title="CORSIKA on Stoomboot" href="qsub_corsika.html" />
     <link rel="prev" title="Create an overview of CORSIKA simulations" href="generate_corsika_overview.html" /> 
@@ -47,7 +47,7 @@
         <li class="right" >
           <a href="generate_corsika_overview.html" title="Create an overview of CORSIKA simulations"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.13.7 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.14.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../corsika.html" accesskey="U">CORSIKA simulations</a> &raquo;</li> 
       </ul>
@@ -63,11 +63,11 @@
 <p>Use this for particle identification for particles in CORSIKA</p>
 <p>Particle codes as specified in CORSIKA user manual, Table 4.</p>
 <p>This relates to the Description in Particles as:</p>
-<div class="highlight-python"><div class="highlight"><pre>particle id x 1000 + hadron generation x 10 + no. of observation level
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">particle</span> <span class="nb">id</span> <span class="n">x</span> <span class="mi">1000</span> <span class="o">+</span> <span class="n">hadron</span> <span class="n">generation</span> <span class="n">x</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">no</span><span class="o">.</span> <span class="n">of</span> <span class="n">observation</span> <span class="n">level</span>
 </pre></div>
 </div>
 <p>So to find e+/e-:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">sapphire.corsika</span> <span class="kn">import</span> <span class="n">particles</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sapphire.corsika</span> <span class="kn">import</span> <span class="n">particles</span>
 
 <span class="n">particle</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="k">if</span> <span class="n">particles</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="n">particle</span><span class="o">.</span><span class="n">id</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;positron&#39;</span><span class="p">,</span> <span class="s1">&#39;electron&#39;</span><span class="p">]:</span>
@@ -145,9 +145,6 @@ For atoms the code is: A x 100 + Z</td>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -169,14 +166,14 @@ For atoms the code is: A x 100 + Z</td>
         <li class="right" >
           <a href="generate_corsika_overview.html" title="Create an overview of CORSIKA simulations"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.13.7 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.14.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../corsika.html" >CORSIKA simulations</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

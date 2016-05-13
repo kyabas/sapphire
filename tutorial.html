@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Tutorial &mdash; SAPPHiRE 0.13.7 documentation</title>
+    <title>Tutorial &mdash; SAPPHiRE 0.14.0 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.13.7',
+        VERSION:     '0.14.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.13.7 documentation" href="index.html" />
+    <link rel="top" title="SAPPHiRE 0.14.0 documentation" href="index.html" />
     <link rel="next" title="Example scripts" href="examples.html" />
     <link rel="prev" title="Installation" href="installation.html" /> 
   </head>
@@ -46,7 +46,7 @@
         <li class="right" >
           <a href="installation.html" title="Installation"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.13.7 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.14.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -63,7 +63,7 @@ download data?  How can you analyze this data?  How can you produce
 pulseheight histograms?  How can you calculate the direction of cosmic
 rays?  This tutorial will only give you an overview of what&#8217;s possible
 with SAPPHiRE.  For details on all available classes and methods, please
-see the <a class="reference internal" href="sapphire.html"><em>SAPPHiRE Reference</em></a>.</p>
+see the <a class="reference internal" href="sapphire.html"><span class="doc">SAPPHiRE Reference</span></a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">We&#8217;ll require you to know basic Python.  If you&#8217;re unfamiliar with Python,
@@ -78,16 +78,16 @@ you can use the Spyder environment. You can write a script in the main window,
 or type short commands in the command prompt in the bottom right. The first
 thing you have to do is import everything from pylab. That makes it
 ridiculously easy to plot things:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pylab</span> <span class="k">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 <p>You can also start an IPython terminal with pylab using:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ ipython --pylab
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ipython --pylab
 </pre></div>
 </div>
 <p>In that case, you don&#8217;t need to import pylab.</p>
 <p>Whenever you see something like:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="s1">&#39;Hello, world&#39;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="s1">&#39;Hello, world&#39;</span>
 <span class="go">Hello, world</span>
 </pre></div>
 </div>
@@ -98,19 +98,19 @@ some instructions.  In the above example, we&#8217;ve typed in <code class="docu
 <em>Hello, world</em> on the screen.</p>
 <p>The first thing we&#8217;ll have to do to start using SAPPHiRE is to <em>import</em>
 the SAPPHiRE module:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sapphire</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sapphire</span>
 </pre></div>
 </div>
 <p>There will be no output if everything is succesful.  It is easy to get
 some help from inside the Python terminal.  Just say:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="n">sapphire</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="n">sapphire</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>and you&#8217;ll be presented with a basic help screen.  Instead of
 <code class="docutils literal"><span class="pre">sapphire</span></code>, you can throw in modules, packages, functions, classes,
 objects, etc.  Everything in Python has <em>some</em> help text associated with
 it.  Not all of it is very helpful to a newcomer, hence this tutorial.
-All help text is also available in the <a class="reference internal" href="sapphire.html"><em>SAPPHiRE Reference</em></a>.</p>
+All help text is also available in the <a class="reference internal" href="sapphire.html"><span class="doc">SAPPHiRE Reference</span></a>.</p>
 </div>
 <div class="section" id="downloading-and-accessing-hisparc-data">
 <h2>Downloading and accessing HiSPARC data<a class="headerlink" href="#downloading-and-accessing-hisparc-data" title="Permalink to this headline">¶</a></h2>
@@ -119,10 +119,10 @@ from the public database, we&#8217;ll have to import the <a class="reference int
 This module gives us access to the <em>event summary data</em>, which is the raw
 HiSPARC data with preliminary analysis already included. It is simple to
 quickly start playing with data:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sapphire</span> <span class="kn">import</span> <span class="n">esd</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sapphire</span> <span class="k">import</span> <span class="n">esd</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">esd</span><span class="o">.</span><span class="n">quick_download</span><span class="p">(</span><span class="mi">102</span><span class="p">)</span>
 <span class="go">100%|####################################|Time: 5.91</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">data</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">data</span>
 <span class="go">data8.h5 (File) &#39;&#39;</span>
 <span class="go">Last modif.: &#39;Thu Oct 22 16:02:05 2015&#39;</span>
 <span class="go">Object Tree:</span>
@@ -140,13 +140,13 @@ we need the <code class="docutils literal"><span class="pre">tables</span></code
 (research) institutes</a>.  For
 example, it is used by the KNMI and by NASA.  To specify the date and time for
 which to download the data, we need the <code class="docutils literal"><span class="pre">datetime</span></code> module.  Thus, we have:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">tables</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">tables</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">datetime</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sapphire</span> <span class="kn">import</span> <span class="n">esd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sapphire</span> <span class="k">import</span> <span class="n">esd</span>
 </pre></div>
 </div>
 <p>Creating an empty data file, with the name <code class="docutils literal"><span class="pre">mydata.h5</span></code>, is done easily:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="s1">&#39;mydata.h5&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="s1">&#39;mydata.h5&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal"><span class="pre">'w'</span></code> means <em>write</em>, which creates a file for writing (and reading).
@@ -160,7 +160,7 @@ overwriting its contents.  Finally, you can specify <code class="docutils litera
 <p>To download data, we have to specify the date/time <em>range</em>.  If we want to
 download data from the December 1, 2012 all through December 2, 2012,
 we can specify this by typing:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -168,7 +168,7 @@ we can specify this by typing:</p>
 hours.  Thus, there is no data included for December 3.  Alternatively,
 we can download data from a two hour interval on October 17 by specifying
 the hour of day:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -182,7 +182,7 @@ window in two arbitrarily-named variables, <code class="docutils literal"><span 
 download data from station 501 and store it in a group with name <code class="docutils literal"><span class="pre">/s501</span></code>,
 we can use the <a class="reference internal" href="esd.html#sapphire.esd.download_data" title="sapphire.esd.download_data"><code class="xref py py-func docutils literal"><span class="pre">sapphire.esd.download_data()</span></code></a> function. Since we&#8217;ve
 imported <code class="docutils literal"><span class="pre">esd</span></code> from <code class="docutils literal"><span class="pre">sapphire</span></code>, we can drop the <code class="docutils literal"><span class="pre">sapphire</span></code> prefix:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">esd</span><span class="o">.</span><span class="n">download_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;/s501&#39;</span><span class="p">,</span> <span class="mi">501</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">esd</span><span class="o">.</span><span class="n">download_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;/s501&#39;</span><span class="p">,</span> <span class="mi">501</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
 <span class="go">100%|####################################|Time: 0:00:16</span>
 </pre></div>
 </div>
@@ -209,7 +209,7 @@ parameters specify the date/time range.</p>
 <p>Finally, <em>type</em> selects whether to download event or weather data should
 be downloaded.  We&#8217;ve selected the default, which is <em>events</em>. We can also
 download the weather data by changing the type to <code class="docutils literal"><span class="pre">'weather'</span></code>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">esd</span><span class="o">.</span><span class="n">download_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;/s501&#39;</span><span class="p">,</span> <span class="mi">501</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;weather&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">esd</span><span class="o">.</span><span class="n">download_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;/s501&#39;</span><span class="p">,</span> <span class="mi">501</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;weather&#39;</span><span class="p">)</span>
 <span class="go">100%|####################################|Time: 0:00:10</span>
 </pre></div>
 </div>
@@ -223,7 +223,7 @@ later in the tutorial.</p>
 <h3>Looking around<a class="headerlink" href="#looking-around" title="Permalink to this headline">¶</a></h3>
 <p>If you want to know what groups and tables are contained within the data
 file, just <code class="docutils literal"><span class="pre">print</span></code> it:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">data</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">data</span>
 <span class="go">mydata.h5 (File) &#39;&#39;</span>
 <span class="go">Last modif.: &#39;Sat Dec 29 14:50:55 2012&#39;</span>
 <span class="go">Object Tree:</span>
@@ -241,12 +241,12 @@ the weather table contains data from the (optional) weather station.</p>
 <code class="docutils literal"><span class="pre">data.root</span></code> object, which points to the root group.  Then, just specify
 the remaining path, with dots instead of slashes.  For example, to access
 the events table:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">data</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">s501</span><span class="o">.</span><span class="n">events</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">data</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">s501</span><span class="o">.</span><span class="n">events</span>
 <span class="go">/s501/events (Table(137600,)) &#39;HiSPARC coincidences table&#39;</span>
 </pre></div>
 </div>
 <p>If you want, you can also access the object using its name as a string, by calling <code class="docutils literal"><span class="pre">get_node</span></code> on the file handler:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">data</span><span class="o">.</span><span class="n">get_node</span><span class="p">(</span><span class="s1">&#39;/s501/events&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">data</span><span class="o">.</span><span class="n">get_node</span><span class="p">(</span><span class="s1">&#39;/s501/events&#39;</span><span class="p">)</span>
 <span class="go">/s501/events (Table(137600,)) &#39;HiSPARC coincidences table&#39;</span>
 </pre></div>
 </div>
@@ -254,7 +254,7 @@ the events table:</p>
 statement, and just access the object directly.  PyTables is set up such
 that it will give more detailed information whenever you specify the
 object directly:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">s501</span><span class="o">.</span><span class="n">events</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">s501</span><span class="o">.</span><span class="n">events</span>
 <span class="go">/s501/events (Table(137600,)) &#39;&#39;</span>
 <span class="go">  description := {</span>
 <span class="go">  &quot;event_id&quot;: UInt32Col(shape=(), dflt=0, pos=0),</span>
@@ -299,7 +299,7 @@ detectors are -1.  If the baseline of the trace could not be determined
 all these values are -999.</p>
 <p>We&#8217;ll get to work with this data in a moment.  First, we&#8217;ll take a look at
 the weather table:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">s501</span><span class="o">.</span><span class="n">weather</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">s501</span><span class="o">.</span><span class="n">weather</span>
 <span class="go">/s501/weather (Table(51513,)) &#39;HiSPARC weather data&#39;</span>
 <span class="go">  description := {</span>
 <span class="go">  &quot;event_id&quot;: UInt32Col(shape=(), dflt=0, pos=0),</span>
@@ -330,12 +330,12 @@ the weather table:</p>
 table, or just one or several rows from it.  We can read out a single
 column, or select data based on a query.  Before we do any of that, we&#8217;ll
 save us some typing:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">events</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">s501</span><span class="o">.</span><span class="n">events</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">events</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">s501</span><span class="o">.</span><span class="n">events</span>
 </pre></div>
 </div>
 <p>Now, we have stored a short-hand reference to the events table. Let&#8217;s get
 the first event:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">events</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">events</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="go">(0L, 1445385601, 613271528L, 1445385601613271528L, [3, 266, 400, 372],</span>
 <span class="go"> [0, 3090, 5695, 5621], 0.0, 1.03120, 1.55130, 1.58820,</span>
 <span class="go"> -999.0, 1002.5, 1000.0, 1022.5, 1030.0, -999.0, -999.0)</span>
@@ -345,7 +345,7 @@ the first event:</p>
 numbers correspond to which columns.  They are in order, however, so you
 could find out.  It is often easier to specify the column you&#8217;re
 interested in:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">events</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;pulseheights&#39;</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">events</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;pulseheights&#39;</span><span class="p">]</span>
 <span class="go">array([  3, 266, 400, 372], dtype=int16)</span>
 </pre></div>
 </div>
@@ -358,20 +358,20 @@ pulseheights, and that they were registered as a significant <em>peak</em> in th
 signal.</p>
 <p>If you&#8217;re interested in the pulseheights of <em>all</em> events, the fastest way
 to do it is to make use of the <code class="docutils literal"><span class="pre">Table.col</span></code> method of the table:</p>
-<div class="highlight-python"><div class="highlight"><pre>&gt;&gt; events.col(&#39;pulseheights&#39;)
-array([[  3, 266, 400, 372],
-       [  4, 277, 887,   7],
-       [ 72, 256,   6, 330],
-       ...,
-       [162,  78,   4, 299],
-       [ 10,   6, 618, 446],
-       [593, 621, 343,  13]], dtype=int16)
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">events</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s1">&#39;pulseheights&#39;</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([[</span>  <span class="mi">3</span><span class="p">,</span> <span class="mi">266</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">372</span><span class="p">],</span>
+       <span class="p">[</span>  <span class="mi">4</span><span class="p">,</span> <span class="mi">277</span><span class="p">,</span> <span class="mi">887</span><span class="p">,</span>   <span class="mi">7</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span>   <span class="mi">6</span><span class="p">,</span> <span class="mi">330</span><span class="p">],</span>
+       <span class="o">...</span><span class="p">,</span>
+       <span class="p">[</span><span class="mi">162</span><span class="p">,</span>  <span class="mi">78</span><span class="p">,</span>   <span class="mi">4</span><span class="p">,</span> <span class="mi">299</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">10</span><span class="p">,</span>   <span class="mi">6</span><span class="p">,</span> <span class="mi">618</span><span class="p">,</span> <span class="mi">446</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">593</span><span class="p">,</span> <span class="mi">621</span><span class="p">,</span> <span class="mi">343</span><span class="p">,</span>  <span class="mi">13</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">int16</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>It is also possible to select the data based on a query.  For example, to
 select all events between timestamps 1354320000 and 1354323600 (a one-hour
 time span):</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t0</span> <span class="o">=</span> <span class="mi">1354320000</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t0</span> <span class="o">=</span> <span class="mi">1354320000</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span> <span class="o">=</span> <span class="n">t0</span> <span class="o">+</span> <span class="mi">3600</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sel_events</span> <span class="o">=</span> <span class="n">events</span><span class="o">.</span><span class="n">read_where</span><span class="p">(</span><span class="s1">&#39;(t0 &lt;= timestamp) &amp; (timestamp &lt; t1)&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">sel_events</span><span class="p">)</span>
@@ -381,7 +381,7 @@ time span):</p>
 <p>Thus, we have selected 2836 events.  The variable <code class="docutils literal"><span class="pre">sel_events</span></code> no longer
 points to a table.  We can no longer make use of the <code class="docutils literal"><span class="pre">Table.col</span></code>
 method, but we <em>can</em> access all pulseheights in the following way:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sel_events</span><span class="p">[</span><span class="s1">&#39;pulseheights&#39;</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sel_events</span><span class="p">[</span><span class="s1">&#39;pulseheights&#39;</span><span class="p">]</span>
 <span class="go">array([[173,   3, 407,   3],</span>
 <span class="go">       [  1,   2, 313, 756],</span>
 <span class="go">       [211,   2,   2, 268],</span>
@@ -409,7 +409,7 @@ to UTC or local time, but instead always refer to GPS time!</p>
 minutes, seconds notation, the events table contains timestamps.  It is
 often hard to convert between the two.  For example, the correct
 conversion between a GPS date/time and a GPS timestamp is given by:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">calendar</span><span class="o">.</span><span class="n">timegm</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">utctimetuple</span><span class="p">())</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">calendar</span><span class="o">.</span><span class="n">timegm</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">utctimetuple</span><span class="p">())</span>
 <span class="go">1354320000</span>
 </pre></div>
 </div>
@@ -419,14 +419,14 @@ the <a class="reference internal" href="time_util.html#sapphire.time_util.GPSTim
 by giving it a GPS time to work with.  It can either be in date/time
 notation, or as a timestamp.  For example, the exact same result is
 obtained by these two last lines of code:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sapphire.time_util</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sapphire.time_util</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sapphire</span><span class="o">.</span><span class="n">time_util</span><span class="o">.</span><span class="n">GPSTime</span><span class="p">(</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sapphire</span><span class="o">.</span><span class="n">time_util</span><span class="o">.</span><span class="n">GPSTime</span><span class="p">(</span><span class="mi">1354320000</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>If you store the instance, you can then call several methods to convert
 the date/time to whatever you require:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">gpstime</span> <span class="o">=</span> <span class="n">sapphire</span><span class="o">.</span><span class="n">time_util</span><span class="o">.</span><span class="n">GPSTime</span><span class="p">(</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gpstime</span> <span class="o">=</span> <span class="n">sapphire</span><span class="o">.</span><span class="n">time_util</span><span class="o">.</span><span class="n">GPSTime</span><span class="p">(</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">gpstime</span><span class="o">.</span><span class="n">datetime</span><span class="p">()</span>
 <span class="go">datetime.datetime(2012, 12, 1, 0, 0)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">gpstime</span><span class="o">.</span><span class="n">description</span><span class="p">()</span>
@@ -436,7 +436,7 @@ the date/time to whatever you require:</p>
 </pre></div>
 </div>
 <p>Or, indeed:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">gpstime</span> <span class="o">=</span> <span class="n">sapphire</span><span class="o">.</span><span class="n">time_util</span><span class="o">.</span><span class="n">GPSTime</span><span class="p">(</span><span class="mi">1354320000</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gpstime</span> <span class="o">=</span> <span class="n">sapphire</span><span class="o">.</span><span class="n">time_util</span><span class="o">.</span><span class="n">GPSTime</span><span class="p">(</span><span class="mi">1354320000</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">gpstime</span><span class="o">.</span><span class="n">datetime</span><span class="p">()</span>
 <span class="go">datetime.datetime(2012, 12, 1, 0, 0)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">gpstime</span><span class="o">.</span><span class="n">description</span><span class="p">()</span>
@@ -447,7 +447,7 @@ the date/time to whatever you require:</p>
 </div>
 <p>It is now easy to select events occuring between 12:00 and 13:00 hours GPS
 time on December 2, 2012:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t0</span> <span class="o">=</span> <span class="n">sapphire</span><span class="o">.</span><span class="n">time_util</span><span class="o">.</span><span class="n">GPSTime</span><span class="p">(</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">gpstimestamp</span><span class="p">()</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t0</span> <span class="o">=</span> <span class="n">sapphire</span><span class="o">.</span><span class="n">time_util</span><span class="o">.</span><span class="n">GPSTime</span><span class="p">(</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">gpstimestamp</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span> <span class="o">=</span> <span class="n">sapphire</span><span class="o">.</span><span class="n">time_util</span><span class="o">.</span><span class="n">GPSTime</span><span class="p">(</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span><span class="o">.</span><span class="n">gpstimestamp</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t0</span><span class="p">,</span> <span class="n">t1</span>
 <span class="go">(1354449600, 1354453200)</span>
@@ -457,7 +457,7 @@ time on December 2, 2012:</p>
 </pre></div>
 </div>
 <p>And when did the tenth event occur?  Well:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">sel_events</span><span class="p">[</span><span class="mi">9</span><span class="p">][</span><span class="s1">&#39;timestamp&#39;</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">sel_events</span><span class="p">[</span><span class="mi">9</span><span class="p">][</span><span class="s1">&#39;timestamp&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
 <span class="go">1354449620</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sapphire</span><span class="o">.</span><span class="n">time_util</span><span class="o">.</span><span class="n">GPSTime</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">description</span><span class="p">()</span>
@@ -466,7 +466,7 @@ time on December 2, 2012:</p>
 </div>
 <p>To shorten the typing somewhat, remember that in Python you can import
 classes from modules into your own namespace:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sapphire.time_util</span> <span class="kn">import</span> <span class="n">GPSTime</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sapphire.time_util</span> <span class="k">import</span> <span class="n">GPSTime</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">GPSTime</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">description</span><span class="p">()</span>
 <span class="go">&#39;Sun Dec  2 12:00:20 2012&#39;</span>
 </pre></div>
@@ -479,7 +479,7 @@ is a great way to do that.  And of course, the venerable histogram is
 still very useful to condense thousands of events into one display.  Pylab
 contains an easy function to do just that: <code class="docutils literal"><span class="pre">hist</span></code>.  Let&#8217;s try to
 recreate a few graphs as seen on the HiSPARC <a class="reference external" href="http://data.hisparc.nl/show/stations/501/2012/12/1/">data display</a>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">ph</span> <span class="o">=</span> <span class="n">events</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s1">&#39;pulseheights&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ph</span> <span class="o">=</span> <span class="n">events</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s1">&#39;pulseheights&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hist</span><span class="p">(</span><span class="n">ph</span><span class="p">)</span>
 <span class="go">([array([114794,  17565,   3062,   1009,    502,    285,    170,     86,</span>
 <span class="go">           72,     55]), array([112813,  19028,   3339,   1246,    540,    295,    163,    100,</span>
@@ -500,8 +500,8 @@ with hardly any events.</p>
 <code class="docutils literal"><span class="pre">hist</span></code> function.  We&#8217;ll also make use of some NumPy (<a class="reference external" href="http://docs.scipy.org/doc/numpy/user/">documentation</a>) functionality.  For Pylab
 documentation, see the <a class="reference external" href="http://matplotlib.org">Matplotlib site</a>
 (<a class="reference external" href="http://matplotlib.org/1.2.0/api/pyplot_summary.html">function reference</a>).  Try this:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">bins</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">hist</span><span class="p">(</span><span class="n">ph</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;step&#39;</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bins</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hist</span><span class="p">(</span><span class="n">ph</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;step&#39;</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Pulseheight [ADC]&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Counts&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Pulseheight histogram (log scale)&quot;</span><span class="p">)</span>
@@ -531,11 +531,11 @@ use of the <a class="reference internal" href="analysis/coincidences.html#module
 <h3>Performing the search<a class="headerlink" href="#performing-the-search" title="Permalink to this headline">¶</a></h3>
 <p>Consider the following script, which you can hopefully understand by now
 (note that the prompt (<code class="docutils literal"><span class="pre">&gt;&gt;&gt;</span></code>) is absent, since this is a <em>script</em>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">datetime</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
 
 <span class="kn">import</span> <span class="nn">tables</span>
 
-<span class="kn">from</span> <span class="nn">sapphire</span> <span class="kn">import</span> <span class="n">download_data</span><span class="p">,</span> <span class="n">CoincidencesESD</span>
+<span class="kn">from</span> <span class="nn">sapphire</span> <span class="k">import</span> <span class="n">download_data</span><span class="p">,</span> <span class="n">CoincidencesESD</span>
 
 
 <span class="n">STATIONS</span> <span class="o">=</span> <span class="p">[</span><span class="mi">501</span><span class="p">,</span> <span class="mi">503</span><span class="p">,</span> <span class="mi">506</span><span class="p">]</span>
@@ -554,7 +554,7 @@ use of the <a class="reference internal" href="analysis/coincidences.html#module
 <p>At this point, we have downloaded data for three stations. Note that we
 used the <a class="reference internal" href="esd.html#module-sapphire.esd" title="sapphire.esd"><code class="xref py py-mod docutils literal"><span class="pre">sapphire.esd</span></code></a> for downloading. Thus, we have no traces
 and the download is quick. Let&#8217;s see what the datafile now contains:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">data</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">data</span>
 <span class="go">data.h5 (File) &#39;&#39;</span>
 <span class="go">Last modif.: &#39;Mon Jan 14 17:34:39 2013&#39;</span>
 <span class="go">Object Tree:</span>
@@ -570,7 +570,7 @@ and the download is quick. Let&#8217;s see what the datafile now contains:</p>
 <p>It contains three groups, one for each station.  To search for
 coincidences between these stations, we first initialize the
 <a class="reference internal" href="analysis/coincidences.html#sapphire.analysis.coincidences.CoincidencesESD" title="sapphire.analysis.coincidences.CoincidencesESD"><code class="xref py py-class docutils literal"><span class="pre">sapphire.analysis.coincidences.CoincidencesESD</span></code></a> class like so:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">coincidences</span> <span class="o">=</span> <span class="n">CoincidencesESD</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;/coincidences&#39;</span><span class="p">,</span> <span class="n">station_groups</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">coincidences</span> <span class="o">=</span> <span class="n">CoincidencesESD</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;/coincidences&#39;</span><span class="p">,</span> <span class="n">station_groups</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>From the documentation (click on the class above the example to go to the
@@ -579,7 +579,7 @@ documentation) it is clear that we have to specify the datafile
 containing the station data (<code class="docutils literal"><span class="pre">station_groups</span></code>).  Once that&#8217;s done, there
 is an easy way to search for coincidences, process the events making up
 the coincidences, and store them in the destination group:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">coincidences</span><span class="o">.</span><span class="n">search_and_store_coincidences</span><span class="p">(</span><span class="n">station_numbers</span><span class="o">=</span><span class="n">STATIONS</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">coincidences</span><span class="o">.</span><span class="n">search_and_store_coincidences</span><span class="p">(</span><span class="n">station_numbers</span><span class="o">=</span><span class="n">STATIONS</span><span class="p">)</span>
 <span class="go">100%|######################################|Time: 0:00:02</span>
 <span class="go">100%|######################################|Time: 0:00:00</span>
 </pre></div>
@@ -587,7 +587,7 @@ the coincidences, and store them in the destination group:</p>
 <p>If you want to tweak the process using non-default parameters, see the
 module documentation (<a class="reference internal" href="analysis/coincidences.html#module-sapphire.analysis.coincidences" title="sapphire.analysis.coincidences"><code class="xref py py-mod docutils literal"><span class="pre">sapphire.analysis.coincidences</span></code></a>).  For now,
 let us turn to the results:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">data</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">data</span>
 <span class="go">data.h5 (File) &#39;&#39;</span>
 <span class="go">Last modif.: &#39;Mon Jan 14 17:46:23 2013&#39;</span>
 <span class="go">Object Tree:</span>
@@ -673,24 +673,24 @@ nonetheless.  These columns are all set to 0.0.</p>
 <p>The <code class="docutils literal"><span class="pre">c_index</span></code> array is used as an index to look up the tables and
 individual events making up a coincidence.  The second coincidence is
 accessed by:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">coincidences</span><span class="o">.</span><span class="n">coincidences</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">coincidences</span><span class="o">.</span><span class="n">coincidences</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 <span class="go">(2L, 1356998460, 730384055L, 1356998460730384055L, 2, 0.0, 0.0, 0.0,</span>
 <span class="go"> 0.0, 0.0, 0.0, True, False, True)</span>
 </pre></div>
 </div>
 <p>Remember, the indexes are zero-based.  The coincidence id is also 2:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">coincidences</span><span class="o">.</span><span class="n">coincidences</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">coincidences</span><span class="o">.</span><span class="n">coincidences</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
 <span class="go">2</span>
 </pre></div>
 </div>
 <p>and the number of stations participating is 2:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">coincidences</span><span class="o">.</span><span class="n">coincidences</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="s1">&#39;N&#39;</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">coincidences</span><span class="o">.</span><span class="n">coincidences</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="s1">&#39;N&#39;</span><span class="p">]</span>
 <span class="go">2</span>
 </pre></div>
 </div>
 <p>To lookup the indexes of the events taking part in this coincidence,
 access the <code class="docutils literal"><span class="pre">c_index</span></code> array using the same id:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">coincidences</span><span class="o">.</span><span class="n">c_index</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">coincidences</span><span class="o">.</span><span class="n">c_index</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 <span class="go">array([[ 0, 40],</span>
 <span class="go">       [ 2, 57]], dtype=uint32)</span>
 </pre></div>
@@ -700,7 +700,7 @@ of this coincidence.  The event observables are still stored in their
 original location and can be accessed using the ids. To find the
 location of the station group the <code class="docutils literal"><span class="pre">s_index</span></code> contains the paths to the
 station groups.:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">coincidences</span><span class="o">.</span><span class="n">s_index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">coincidences</span><span class="o">.</span><span class="n">s_index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="go">&#39;/s501&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">get_node</span><span class="p">(</span><span class="s1">&#39;/s501&#39;</span><span class="p">,</span> <span class="s1">&#39;events&#39;</span><span class="p">)[</span><span class="mi">40</span><span class="p">]</span>
 <span class="go">(40L, 1356998460, 730384055L, 1356998460730384055L, [2, 227, 301, 2],</span>
@@ -723,31 +723,31 @@ network, by not specifying any. It can be a subset of stations by listing
 those stations (upto 30 stations), or a cluster of stations by giving the name
 of the cluster.</p>
 <p>So first import the packages:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">datetime</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">datetime</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">tables</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sapphire</span> <span class="kn">import</span> <span class="n">esd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sapphire</span> <span class="k">import</span> <span class="n">esd</span>
 </pre></div>
 </div>
 <p>Set the date/time range:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Open (in this case create) a datafile:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="s1">&#39;data_coincidences.h5&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">tables</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="s1">&#39;data_coincidences.h5&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Then download the coincidences. Here we specify the cluster &#8216;Enschede&#8217; to
 select all stations in that cluster. By setting <em>n</em> to 3 we require that a
 coincidence has at least 3 events.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">esd</span><span class="o">.</span><span class="n">download_coincidences</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">cluster</span><span class="o">=</span><span class="s1">&#39;Enschede&#39;</span><span class="p">,</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">esd</span><span class="o">.</span><span class="n">download_coincidences</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">cluster</span><span class="o">=</span><span class="s1">&#39;Enschede&#39;</span><span class="p">,</span>
 <span class="gp">... </span>                          <span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="n">end</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>If you now look in the data file it will contain event tables for all stations
 with at least one event in a coincidence, and a coincidence table for the
 coincidence data. Just like when coincidences were searched manually:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">data</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">data</span>
 <span class="go">Object Tree:</span>
 <span class="go">/ (RootGroup) &#39;&#39;</span>
 <span class="go">/coincidences (Group) &#39;&#39;</span>
@@ -829,9 +829,6 @@ different.  To uniquely define an event, use a station number /
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -853,12 +850,12 @@ different.  To uniquely define an event, use a station number /
         <li class="right" >
           <a href="installation.html" title="Installation"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.13.7 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.14.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Time deltas &mdash; SAPPHiRE 0.14.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/hisparc_style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="SAPPHiRE 0.14.0 documentation" href="../index.html" />
+    <link rel="up" title="Data analysis" href="../analysis.html" />
+    <link rel="next" title="HiSPARC API" href="../api.html" />
+    <link rel="prev" title="Reconstructions" href="reconstructions.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../api.html" title="HiSPARC API"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="reconstructions.html" title="Reconstructions"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.14.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../analysis.html" accesskey="U">Data analysis</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-sapphire.analysis.time_deltas">
+<span id="time-deltas"></span><h1>Time deltas<a class="headerlink" href="#module-sapphire.analysis.time_deltas" title="Permalink to this headline">¶</a></h1>
+<p>Determine time differences between coincident events</p>
+<p>Determine time delta between coincidence events from station pairs.</p>
+<p>Example usage:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="kn">import</span> <span class="nn">tables</span>
+
+<span class="kn">from</span> <span class="nn">sapphire</span> <span class="k">import</span> <span class="n">download_coincidences</span>
+<span class="kn">from</span> <span class="nn">sapphire</span> <span class="k">import</span> <span class="n">ProcessTimeDeltas</span>
+
+<span class="n">START</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">END</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">tables</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="s1">&#39;data.h5&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">data</span><span class="p">:</span>
+        <span class="n">download_coincidences</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">START</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="n">END</span><span class="p">)</span>
+        <span class="n">td</span> <span class="o">=</span> <span class="n">ProcessTimeDeltas</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">td</span><span class="o">.</span><span class="n">determine_and_store_time_deltas</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="class">
+<dt id="sapphire.analysis.time_deltas.ProcessTimeDeltas">
+<em class="property">class </em><code class="descclassname">sapphire.analysis.time_deltas.</code><code class="descname">ProcessTimeDeltas</code><span class="sig-paren">(</span><em>data</em>, <em>coincidence_group='/coincidences'</em>, <em>progress=True</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.time_deltas.ProcessTimeDeltas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process HiSPARC event coincidences to obtain time deltas.</p>
+<p>Use this to determine arrival time differences between station pairs which
+have coincident events.</p>
+<p>Initialize the class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>data</strong> &#8211; the PyTables datafile.</li>
+<li><strong>coincidence_group</strong> &#8211; path to the coincidences group.</li>
+<li><strong>progress</strong> &#8211; show progressbar.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="sapphire.analysis.time_deltas.ProcessTimeDeltas.determine_and_store_time_deltas">
+<code class="descname">determine_and_store_time_deltas</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.time_deltas.ProcessTimeDeltas.determine_and_store_time_deltas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find station pairs, determine time deltas, and store the results.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.time_deltas.ProcessTimeDeltas.determine_and_store_time_deltas_for_pairs">
+<code class="descname">determine_and_store_time_deltas_for_pairs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.time_deltas.ProcessTimeDeltas.determine_and_store_time_deltas_for_pairs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine time deltas for all pairs and store the results.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.time_deltas.ProcessTimeDeltas.find_station_pairs">
+<code class="descname">find_station_pairs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.time_deltas.ProcessTimeDeltas.find_station_pairs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find all unique station pairs which are in a coincidence together</p>
+<p>Assumes the stations in the s_index are sorted by station number.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.time_deltas.ProcessTimeDeltas.get_detector_offsets">
+<code class="descname">get_detector_offsets</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.time_deltas.ProcessTimeDeltas.get_detector_offsets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the API detector_timing_offset method for all pairs</p>
+<p>The detector_timing_offset methods accept a single timestamp as
+argument, and return the detector offsets for this timestamp.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.time_deltas.ProcessTimeDeltas.determine_time_deltas_for_pair">
+<code class="descname">determine_time_deltas_for_pair</code><span class="sig-paren">(</span><em>ref_station</em>, <em>station</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.time_deltas.ProcessTimeDeltas.determine_time_deltas_for_pair" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine the arrival time differences between two stations.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ref_station,station</strong> &#8211; station numbers.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">extended timestamp of the first event and time difference,
+t - t_ref. Not corrected for altitude differences.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.time_deltas.ProcessTimeDeltas.store_time_deltas">
+<code class="descname">store_time_deltas</code><span class="sig-paren">(</span><em>ext_timestamps</em>, <em>time_deltas</em>, <em>pair</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.time_deltas.ProcessTimeDeltas.store_time_deltas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store determined dt values</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/header.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="reconstructions.html"
+                        title="previous chapter">Reconstructions</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../api.html"
+                        title="next chapter">HiSPARC API</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/analysis/time_deltas.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../api.html" title="HiSPARC API"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="reconstructions.html" title="Reconstructions"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.14.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../analysis.html" >Data analysis</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+    </div>
+  </body>
+</html>

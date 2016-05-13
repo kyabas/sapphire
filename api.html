@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>HiSPARC API &mdash; SAPPHiRE 0.13.7 documentation</title>
+    <title>HiSPARC API &mdash; SAPPHiRE 0.14.0 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.13.7',
+        VERSION:     '0.14.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,10 +26,10 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.13.7 documentation" href="index.html" />
+    <link rel="top" title="SAPPHiRE 0.14.0 documentation" href="index.html" />
     <link rel="up" title="SAPPHiRE Reference" href="sapphire.html" />
     <link rel="next" title="HiSPARC clusters" href="clusters.html" />
-    <link rel="prev" title="Reconstructions" href="analysis/reconstructions.html" /> 
+    <link rel="prev" title="Time deltas" href="analysis/time_deltas.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -45,9 +45,9 @@
           <a href="clusters.html" title="HiSPARC clusters"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="analysis/reconstructions.html" title="Reconstructions"
+          <a href="analysis/time_deltas.html" title="Time deltas"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.13.7 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.14.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="sapphire.html" accesskey="U">SAPPHiRE Reference</a> &raquo;</li> 
       </ul>
     </div>  
@@ -64,7 +64,7 @@
 publicdb API. This takes care of the url retrieval and conversion
 from JSON to Python dictionaries.</p>
 <p>Example usage:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sapphire</span> <span class="kn">import</span> <span class="n">Station</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sapphire</span> <span class="kn">import</span> <span class="n">Station</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">stations</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3102</span><span class="p">,</span> <span class="mi">504</span><span class="p">,</span> <span class="mi">7101</span><span class="p">,</span> <span class="mi">8008</span><span class="p">,</span> <span class="mi">13005</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">clusters</span> <span class="o">=</span> <span class="p">[</span><span class="n">Station</span><span class="p">(</span><span class="n">station</span><span class="p">)</span><span class="o">.</span><span class="n">cluster</span> <span class="k">for</span> <span class="n">station</span> <span class="ow">in</span> <span class="n">stations</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">station</span><span class="p">,</span> <span class="n">cluster</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">stations</span><span class="p">,</span> <span class="n">clusters</span><span class="p">):</span>
@@ -103,7 +103,7 @@ fresh data is prefered, but falls back to local data.</td>
 
 <dl class="attribute">
 <dt id="sapphire.api.API.src_urls">
-<code class="descname">src_urls</code><em class="property"> = {'eventtime': 'eventtime/{station_number}/{year}/{month}/{day}/', 'barometer': 'barometer/{station_number}/{year}/{month}/{day}/', 'zenith': 'zenith/{station_number}/{year}/{month}/{day}/', 'integral': 'pulseintegral/{station_number}/{year}/{month}/{day}/', 'voltage': 'voltage/{station_number}/', 'coincidencenumber': 'coincidencenumber/{year}/{month}/{day}/', 'coincidencetime': 'coincidencetime/{year}/{month}/{day}/', 'layout': 'layout/{station_number}/', 'temperature': 'temperature/{station_number}/{year}/{month}/{day}/', 'pulseheight': 'pulseheight/{station_number}/{year}/{month}/{day}/', 'detector_timing_offsets': 'detector_timing_offsets/{station_number}/', 'current': 'current/{station_number}/', 'trigger': 'trigger/{station_number}/', 'azimuth': 'azimuth/{station_number}/{year}/{month}/{day}/', 'gps': 'gps/{station_number}/'}</em><a class="headerlink" href="#sapphire.api.API.src_urls" title="Permalink to this definition">¶</a></dt>
+<code class="descname">src_urls</code><em class="property"> = {'coincidencetime': 'coincidencetime/{year}/{month}/{day}/', 'eventtime': 'eventtime/{station_number}/{year}/{month}/{day}/', 'barometer': 'barometer/{station_number}/{year}/{month}/{day}/', 'temperature': 'temperature/{station_number}/{year}/{month}/{day}/', 'zenith': 'zenith/{station_number}/{year}/{month}/{day}/', 'pulseheight': 'pulseheight/{station_number}/{year}/{month}/{day}/', 'integral': 'pulseintegral/{station_number}/{year}/{month}/{day}/', 'detector_timing_offsets': 'detector_timing_offsets/{station_number}/', 'current': 'current/{station_number}/', 'station_timing_offsets': 'station_timing_offsets/{station_1}/{station_2}/', 'trigger': 'trigger/{station_number}/', 'voltage': 'voltage/{station_number}/', 'azimuth': 'azimuth/{station_number}/{year}/{month}/{day}/', 'layout': 'layout/{station_number}/', 'electronics': 'electronics/{station_number}/', 'coincidencenumber': 'coincidencenumber/{year}/{month}/{day}/', 'gps': 'gps/{station_number}/'}</em><a class="headerlink" href="#sapphire.api.API.src_urls" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="staticmethod">
@@ -626,6 +626,36 @@ to get the traces.</li>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sapphire.api.Station.electronics">
+<code class="descname">electronics</code><a class="headerlink" href="#sapphire.api.Station.electronics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the electronics version data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">array of timestamps and values.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.api.Station.electronic">
+<code class="descname">electronic</code><span class="sig-paren">(</span><em>timestamp</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Station.electronic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get electronics version data for specific timestamp</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>timestamp</strong> &#8211; timestamp for which the values are valid.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of values for given timestamp.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
 <dt id="sapphire.api.Station.voltages">
 <code class="descname">voltages</code><a class="headerlink" href="#sapphire.api.Station.voltages" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the PMT voltage data</p>
@@ -642,12 +672,12 @@ to get the traces.</li>
 <dl class="method">
 <dt id="sapphire.api.Station.voltage">
 <code class="descname">voltage</code><span class="sig-paren">(</span><em>timestamp</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Station.voltage" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get PMT coltage data for specific timestamp</p>
+<dd><p>Get PMT voltage data for specific timestamp</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>timestamp</strong> &#8211; timestamp for which the value is valid.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>timestamp</strong> &#8211; timestamp for which the values are valid.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of values for given timestamp.</td>
 </tr>
@@ -677,7 +707,7 @@ to get the traces.</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>timestamp</strong> &#8211; timestamp for which the value is valid.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>timestamp</strong> &#8211; timestamp for which the values are valid.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of values for given timestamp.</td>
 </tr>
@@ -708,7 +738,7 @@ to get the traces.</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>timestamp</strong> &#8211; optional timestamp or datetime object for which
-the value is valid.</td>
+the values are valid.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dictionary with the values for given timestamp.</td>
 </tr>
@@ -738,7 +768,7 @@ the value is valid.</td>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>timestamp</strong> &#8211; timestamp for which the value is valid.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>timestamp</strong> &#8211; timestamp for which the values are valid.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">thresholds and trigger values for given timestamp.</td>
 </tr>
@@ -768,7 +798,7 @@ the value is valid.</td>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>timestamp</strong> &#8211; timestamp for which the value is valid.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>timestamp</strong> &#8211; timestamp for which the values are valid.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of coordinates for given timestamp.</td>
 </tr>
@@ -798,9 +828,46 @@ the value is valid.</td>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>timestamp</strong> &#8211; timestamp for which the value is valid.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>timestamp</strong> &#8211; timestamp for which the values are valid.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of values for given timestamp.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.api.Station.station_timing_offsets">
+<code class="descname">station_timing_offsets</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Station.station_timing_offsets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the station timing offset relative to reference_station</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>reference_station</strong> &#8211; reference station</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">array of timestamps and values.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.api.Station.station_timing_offset">
+<code class="descname">station_timing_offset</code><span class="sig-paren">(</span><em>timestamp</em>, <em>reference_station</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.api.Station.station_timing_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get station timing offset data for specific timestamp</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>timestamp</strong> &#8211; timestamp for which the value is valid.</li>
+<li><strong>reference_station</strong> &#8211; reference station</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of values for given timestamp.</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -820,8 +887,8 @@ the value is valid.</td>
               <img class="logo" src="_static/header.png" alt="Logo"/>
             </a></p>
   <h4>Previous topic</h4>
-  <p class="topless"><a href="analysis/reconstructions.html"
-                        title="previous chapter">Reconstructions</a></p>
+  <p class="topless"><a href="analysis/time_deltas.html"
+                        title="previous chapter">Time deltas</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="clusters.html"
                         title="next chapter">HiSPARC clusters</a></p>
@@ -840,9 +907,6 @@ the value is valid.</td>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -862,15 +926,15 @@ the value is valid.</td>
           <a href="clusters.html" title="HiSPARC clusters"
              >next</a> |</li>
         <li class="right" >
-          <a href="analysis/reconstructions.html" title="Reconstructions"
+          <a href="analysis/time_deltas.html" title="Time deltas"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.13.7 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 0.14.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="sapphire.html" >SAPPHiRE Reference</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>
