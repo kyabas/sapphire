@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Data timing and signal calibration &mdash; SAPPHiRE 0.14.0 documentation</title>
+    <title>Data timing and signal calibration &mdash; SAPPHiRE 1.0.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.14.0',
+        VERSION:     '1.0.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.14.0 documentation" href="../index.html" />
+    <link rel="top" title="SAPPHiRE 1.0.0 documentation" href="../index.html" />
     <link rel="up" title="Data analysis" href="../analysis.html" />
     <link rel="next" title="Query coincidences from a datafile" href="coincidence_queries.html" />
     <link rel="prev" title="Data analysis" href="../analysis.html" /> 
@@ -47,7 +47,7 @@
         <li class="right" >
           <a href="../analysis.html" title="Data analysis"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.14.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../analysis.html" accesskey="U">Data analysis</a> &raquo;</li> 
       </ul>
@@ -96,11 +96,12 @@ number of detectors and relative altitudes.</li>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>dt</strong> &#8211; a list of time differences between detectors (t - t_ref).</li>
-<li><strong>dz</strong> &#8211; height difference between the detector (z - z_ref).</li>
+<li><strong>dz</strong> &#8211; height difference between the detectors (z - z_ref).</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">mean of a gaussian fit to the data corrected for height.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">mean of a gaussian fit to the data corrected for height, and
+the error of the mean.</p>
 </td>
 </tr>
 </tbody>
@@ -109,7 +110,7 @@ number of detectors and relative altitudes.</li>
 
 <dl class="class">
 <dt id="sapphire.analysis.calibration.DetermineStationTimingOffsets">
-<em class="property">class </em><code class="descclassname">sapphire.analysis.calibration.</code><code class="descname">DetermineStationTimingOffsets</code><span class="sig-paren">(</span><em>stations=None</em>, <em>data=None</em>, <em>progress=False</em>, <em>force_stale=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.calibration.DetermineStationTimingOffsets" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.analysis.calibration.</code><code class="descname">DetermineStationTimingOffsets</code><span class="sig-paren">(</span><em>stations=None</em>, <em>data=None</em>, <em>progress=False</em>, <em>force_stale=False</em>, <em>time_deltas_group='/coincidences/time_deltas'</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.calibration.DetermineStationTimingOffsets" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determine the timing offsets between stations</p>
 <p>Initialize the class</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -121,6 +122,7 @@ number of detectors and relative altitudes.</li>
 <li><strong>data</strong> &#8211; the PyTables datafile with timedelta tables.</li>
 <li><strong>progress</strong> &#8211; if true: show progressbar if true.</li>
 <li><strong>force_stale</strong> &#8211; if true: do not get network information from API.</li>
+<li><strong>time_deltas_group</strong> &#8211; path to the time deltas group.</li>
 </ul>
 </td>
 </tr>
@@ -133,7 +135,7 @@ number of detectors and relative altitudes.</li>
 
 <dl class="attribute">
 <dt id="sapphire.analysis.calibration.DetermineStationTimingOffsets.MIN_LEN_DT">
-<code class="descname">MIN_LEN_DT</code><em class="property"> = 100</em><a class="headerlink" href="#sapphire.analysis.calibration.DetermineStationTimingOffsets.MIN_LEN_DT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">MIN_LEN_DT</code><em class="property"> = 200</em><a class="headerlink" href="#sapphire.analysis.calibration.DetermineStationTimingOffsets.MIN_LEN_DT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -180,7 +182,7 @@ station offset around date</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">station offset and reduced chi squared.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">station offset and error.</p>
 </td>
 </tr>
 </tbody>
@@ -203,7 +205,7 @@ station offset around date</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of station offsets as tuple (timestamp, offset, rchi2).</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of station offsets as tuple (timestamp, offset, error).</p>
 </td>
 </tr>
 </tbody>
@@ -221,7 +223,7 @@ station offset around date</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>date</strong> &#8211; date for which to determine offsets as datetime.date.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of station offsets as tuple
-(station, ref_station, offset, rchi2).</td>
+(station, ref_station, offset, error).</td>
 </tr>
 </tbody>
 </table>
@@ -249,7 +251,8 @@ station offset around date</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">mean of a gaussian fit to the data corrected for height.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">mean of a gaussian fit to the data corrected for height, and
+the error of the mean.</p>
 </td>
 </tr>
 </tbody>
@@ -270,7 +273,7 @@ station offset around date</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">mean of a gaussian fit to the data corrected for height.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">mean of a gaussian fit to the data and the error of the mean.</p>
 </td>
 </tr>
 </tbody>
@@ -352,8 +355,8 @@ Spreads remaining days over first intervals</p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -378,14 +381,14 @@ Spreads remaining days over first intervals</p>
         <li class="right" >
           <a href="../analysis.html" title="Data analysis"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.14.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../analysis.html" >Data analysis</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
     </div>
   </body>
 </html>

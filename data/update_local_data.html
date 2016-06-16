@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Update default local data with latest data from Publicdb &mdash; SAPPHiRE 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/hisparc_style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="SAPPHiRE 1.0.0 documentation" href="../index.html" />
+    <link rel="up" title="Updating and extending local data" href="../data.html" />
+    <link rel="next" title="Event Summary Data" href="../esd.html" />
+    <link rel="prev" title="Download additional local data" href="extend_local_data.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../esd.html" title="Event Summary Data"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="extend_local_data.html" title="Download additional local data"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../data.html" accesskey="U">Updating and extending local data</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-sapphire.data.update_local_data">
+<span id="update-default-local-data-with-latest-data-from-publicdb"></span><h1>Update default local data with latest data from Publicdb<a class="headerlink" href="#module-sapphire.data.update_local_data" title="Permalink to this headline">¶</a></h1>
+<p>Update local JSON and TSV data</p>
+<p>This script updates the local copies of the JSON and TSV data from the Public
+Database API. If internet is unavailable the <a class="reference internal" href="../api.html#module-sapphire.api" title="sapphire.api"><code class="xref py py-mod docutils literal"><span class="pre">api</span></code></a> uses these
+files. The use of local data can also be forced to skip calls to the server or
+prevented to require fresh data from the server.</p>
+<p>Not all available data is included by default because then the SAPPHiRE package
+would become to large. It is possible to add those files after installation.</p>
+<p>This can be run by simply running the installed script from the command line:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ update_local_data
+</pre></div>
+</div>
+<p>To make the script show information about what it will do add the help flag:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ update_local_data --help
+</pre></div>
+</div>
+<dl class="function">
+<dt id="sapphire.data.update_local_data.update_local_json">
+<code class="descclassname">sapphire.data.update_local_data.</code><code class="descname">update_local_json</code><span class="sig-paren">(</span><em>progress=True</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.data.update_local_data.update_local_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get cluster organisation and basic station JSON data</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.data.update_local_data.update_local_tsv">
+<code class="descclassname">sapphire.data.update_local_data.</code><code class="descname">update_local_tsv</code><span class="sig-paren">(</span><em>progress=True</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.data.update_local_data.update_local_tsv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get configuration and calibration TSV data for all stations</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.data.update_local_data.update_toplevel_json">
+<code class="descclassname">sapphire.data.update_local_data.</code><code class="descname">update_toplevel_json</code><span class="sig-paren">(</span><em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.data.update_local_data.update_toplevel_json" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="sapphire.data.update_local_data.update_sublevel_json">
+<code class="descclassname">sapphire.data.update_local_data.</code><code class="descname">update_sublevel_json</code><span class="sig-paren">(</span><em>arg_type</em>, <em>type</em>, <em>progress=True</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.data.update_local_data.update_sublevel_json" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="sapphire.data.update_local_data.update_sublevel_tsv">
+<code class="descclassname">sapphire.data.update_local_data.</code><code class="descname">update_sublevel_tsv</code><span class="sig-paren">(</span><em>type</em>, <em>station_numbers</em>, <em>progress=True</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.data.update_local_data.update_sublevel_tsv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="sapphire.data.update_local_data.update_subsublevel_tsv">
+<code class="descclassname">sapphire.data.update_local_data.</code><code class="descname">update_subsublevel_tsv</code><span class="sig-paren">(</span><em>type</em>, <em>station_numbers</em>, <em>network</em>, <em>progress=True</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.data.update_local_data.update_subsublevel_tsv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="sapphire.data.update_local_data.get_and_store_json">
+<code class="descclassname">sapphire.data.update_local_data.</code><code class="descname">get_and_store_json</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.data.update_local_data.get_and_store_json" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="sapphire.data.update_local_data.get_and_store_tsv">
+<code class="descclassname">sapphire.data.update_local_data.</code><code class="descname">get_and_store_tsv</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.data.update_local_data.get_and_store_tsv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="sapphire.data.update_local_data.main">
+<code class="descclassname">sapphire.data.update_local_data.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.data.update_local_data.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/header.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="extend_local_data.html"
+                        title="previous chapter">Download additional local data</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../esd.html"
+                        title="next chapter">Event Summary Data</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/data/update_local_data.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../esd.html" title="Event Summary Data"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="extend_local_data.html" title="Download additional local data"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../data.html" >Updating and extending local data</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
+    </div>
+  </body>
+</html>

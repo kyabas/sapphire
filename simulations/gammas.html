@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Simulation of detector response due to gammas &mdash; SAPPHiRE 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/hisparc_style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="SAPPHiRE 1.0.0 documentation" href="../index.html" />
+    <link rel="up" title="Simulation of the detection of EAS events" href="../simulations.html" />
+    <link rel="next" title="Low-level storage constructs" href="../storage.html" />
+    <link rel="prev" title="Simulations based on time structure of EAS shower fronts" href="showerfront.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../storage.html" title="Low-level storage constructs"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="showerfront.html" title="Simulations based on time structure of EAS shower fronts"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../simulations.html" accesskey="U">Simulation of the detection of EAS events</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-sapphire.simulations.gammas">
+<span id="simulation-of-detector-response-due-to-gammas"></span><h1>Simulation of detector response due to gammas<a class="headerlink" href="#module-sapphire.simulations.gammas" title="Permalink to this headline">¶</a></h1>
+<p>Gammas</p>
+<p>This module implements simulation of interactions of gamma photons with
+a scintillator. Used in groundparticle simulations.</p>
+<dl class="function">
+<dt id="sapphire.simulations.gammas.compton_edge">
+<code class="descclassname">sapphire.simulations.gammas.</code><code class="descname">compton_edge</code><span class="sig-paren">(</span><em>gamma_energy</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.gammas.compton_edge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate Compton edge for a given photon energy</p>
+<p>W.R. Leo (1987) p.54</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>gamma_energy</strong> &#8211; photon energy [MeV].</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">compton edge [MeV].</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.simulations.gammas.compton_energy_transfer">
+<code class="descclassname">sapphire.simulations.gammas.</code><code class="descname">compton_energy_transfer</code><span class="sig-paren">(</span><em>gamma_energy</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.gammas.compton_energy_transfer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the energy transfer from photon to electron</p>
+<p>From the differential cross section the cumulative distribution
+is calculated. From this distribution a random energy transfer
+(within kinematic bounds) is returned.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>gamma_energy</strong> &#8211; photon energy [MeV].</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">transfered energy [MeV].</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.simulations.gammas.dsigma_dT">
+<code class="descclassname">sapphire.simulations.gammas.</code><code class="descname">dsigma_dT</code><span class="sig-paren">(</span><em>E</em>, <em>T</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.gammas.dsigma_dT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Differential cross section dsigma/dT</p>
+<p>Differential cross section for energy transfer from gamma
+to scattered electron in compton scattering.</p>
+<p>W.R. Leo (1987) p 54</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>E</strong> &#8211; photon energy [MeV].</li>
+<li><strong>T</strong> &#8211; electron recoil energy [MeV].</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.simulations.gammas.max_energy_deposit_in_MIPS">
+<code class="descclassname">sapphire.simulations.gammas.</code><code class="descname">max_energy_deposit_in_MIPS</code><span class="sig-paren">(</span><em>depth</em>, <em>scintillator_depth</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.gammas.max_energy_deposit_in_MIPS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maximum energy transfer from electron to scintillator</p>
+<p>Determine maximum energy transfer based on remaining scinitillator
+depth.</p>
+<p>Assumes scintillator depth is projected onto the direction
+of the incident particle (divided by cos(theta)).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>depth</strong> &#8211; depth at which the electron is produced [cm].</li>
+<li><strong>scintillator_depth</strong> &#8211; total depth of the scintillator [cm].</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.simulations.gammas.simulate_detector_mips_gammas">
+<code class="descclassname">sapphire.simulations.gammas.</code><code class="descname">simulate_detector_mips_gammas</code><span class="sig-paren">(</span><em>p</em>, <em>theta</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.gammas.simulate_detector_mips_gammas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simulate detection of gammas</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>p</strong> &#8211; the momenta of the gammas as array, in eV.</li>
+<li><strong>theta</strong> &#8211; angles of incidence of the gammas as array, in radians.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the simulated detector signal (in mips).</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.simulations.gammas.pair_mean_free_path">
+<code class="descclassname">sapphire.simulations.gammas.</code><code class="descname">pair_mean_free_path</code><span class="sig-paren">(</span><em>gamma_energy</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.gammas.pair_mean_free_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mean free path pair production</p>
+<p>NIST XCOM database: <a class="reference external" href="http://www.nist.gov/pml/data/xcom/">http://www.nist.gov/pml/data/xcom/</a>
+compound: C9H10
+pair production (total attenuation)</p>
+<p>table generated by &#64;tomkooij/lio-project/photons/nist.py</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>gamma_energy</strong> &#8211; photon energy [MeV].</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">mean free path [cm].</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.simulations.gammas.compton_mean_free_path">
+<code class="descclassname">sapphire.simulations.gammas.</code><code class="descname">compton_mean_free_path</code><span class="sig-paren">(</span><em>gamma_energy</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.gammas.compton_mean_free_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mean free path compton scattering</p>
+<p>NIST XCOM database: <a class="reference external" href="http://www.nist.gov/pml/data/xcom/">http://www.nist.gov/pml/data/xcom/</a>
+compound: C9H10
+compton scattering (incoherent scattering)</p>
+<p>table generated by &#64;tomkooij/lio-project/photons/nist.py</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>gamma_energy</strong> &#8211; photon energy [MeV].</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">mean free path [cm].</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/header.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="showerfront.html"
+                        title="previous chapter">Simulations based on time structure of EAS shower fronts</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../storage.html"
+                        title="next chapter">Low-level storage constructs</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/simulations/gammas.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../storage.html" title="Low-level storage constructs"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="showerfront.html" title="Simulations based on time structure of EAS shower fronts"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../simulations.html" >Simulation of the detection of EAS events</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
+    </div>
+  </body>
+</html>

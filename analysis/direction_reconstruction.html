@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Reconstruction of EAS direction &mdash; SAPPHiRE 0.14.0 documentation</title>
+    <title>Reconstruction of EAS direction &mdash; SAPPHiRE 1.0.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.14.0',
+        VERSION:     '1.0.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.14.0 documentation" href="../index.html" />
+    <link rel="top" title="SAPPHiRE 1.0.0 documentation" href="../index.html" />
     <link rel="up" title="Data analysis" href="../analysis.html" />
     <link rel="next" title="Get signal and timing values from events" href="event_utils.html" />
     <link rel="prev" title="Reconstruction of EAS core and size" href="core_reconstruction.html" /> 
@@ -47,7 +47,7 @@
         <li class="right" >
           <a href="core_reconstruction.html" title="Reconstruction of EAS core and size"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.14.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../analysis.html" accesskey="U">Data analysis</a> &raquo;</li> 
       </ul>
@@ -91,7 +91,7 @@ with a &#8216;station&#8217; and you can reconstruct events using
 </table>
 <dl class="method">
 <dt id="sapphire.analysis.direction_reconstruction.EventDirectionReconstruction.reconstruct_event">
-<code class="descname">reconstruct_event</code><span class="sig-paren">(</span><em>event, detector_ids=None, offsets=[0.0, 0.0, 0.0, 0.0]</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.EventDirectionReconstruction.reconstruct_event" title="Permalink to this definition">¶</a></dt>
+<code class="descname">reconstruct_event</code><span class="sig-paren">(</span><em>event, detector_ids=None, offsets=[0.0, 0.0, 0.0, 0.0], initial={}</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.EventDirectionReconstruction.reconstruct_event" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct a single event</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -106,6 +106,7 @@ reconstruction. The detector ids are 0-based, unlike the
 column names in the esd data.</li>
 <li><strong>offsets</strong> &#8211; time offsets for each detector or a
 <a class="reference internal" href="../api.html#sapphire.api.Station" title="sapphire.api.Station"><code class="xref py py-class docutils literal"><span class="pre">Station</span></code></a> object.</li>
+<li><strong>initial</strong> &#8211; dictionary with already fitted shower parameters.</li>
 </ul>
 </td>
 </tr>
@@ -118,7 +119,7 @@ column names in the esd data.</li>
 
 <dl class="method">
 <dt id="sapphire.analysis.direction_reconstruction.EventDirectionReconstruction.reconstruct_events">
-<code class="descname">reconstruct_events</code><span class="sig-paren">(</span><em>events, detector_ids=None, offsets=[0.0, 0.0, 0.0, 0.0], progress=True</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.EventDirectionReconstruction.reconstruct_events" title="Permalink to this definition">¶</a></dt>
+<code class="descname">reconstruct_events</code><span class="sig-paren">(</span><em>events, detector_ids=None, offsets=[0.0, 0.0, 0.0, 0.0], progress=True, initials=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.EventDirectionReconstruction.reconstruct_events" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct events</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -130,6 +131,9 @@ file.</li>
 <li><strong>detector_ids</strong> &#8211; detectors to use for the reconstructions.</li>
 <li><strong>offsets</strong> &#8211; time offsets for each detector or a
 <a class="reference internal" href="../api.html#sapphire.api.Station" title="sapphire.api.Station"><code class="xref py py-class docutils literal"><span class="pre">Station</span></code></a> object.</li>
+<li><strong>progress</strong> &#8211; if True shows a progress bar.</li>
+<li><strong>initials</strong> &#8211; list of dictionaries with already reconstructed shower
+parameters.</li>
 </ul>
 </td>
 </tr>
@@ -149,7 +153,7 @@ file.</li>
 <p>This class is aware of &#8216;coincidences&#8217; and &#8216;clusters&#8217;.  Initialize
 this class with a &#8216;cluster&#8217; and you can reconstruct a coincidence
 using <a class="reference internal" href="#sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstruction.reconstruct_coincidence" title="sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstruction.reconstruct_coincidence"><code class="xref py py-meth docutils literal"><span class="pre">reconstruct_coincidence()</span></code></a>. To use other algorithms
-overwrite the <code class="docutils literal"><span class="pre">direct</span></code> and <code class="docutils literal"><span class="pre">fit</span></code> attributes.</p>
+overwrite the <code class="docutils literal"><span class="pre">direct</span></code>,``fit``, and <code class="docutils literal"><span class="pre">curved</span></code> attributes.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -160,7 +164,7 @@ overwrite the <code class="docutils literal"><span class="pre">direct</span></co
 </table>
 <dl class="method">
 <dt id="sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstruction.reconstruct_coincidence">
-<code class="descname">reconstruct_coincidence</code><span class="sig-paren">(</span><em>coincidence_events</em>, <em>station_numbers=None</em>, <em>offsets={}</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstruction.reconstruct_coincidence" title="Permalink to this definition">¶</a></dt>
+<code class="descname">reconstruct_coincidence</code><span class="sig-paren">(</span><em>coincidence_events</em>, <em>station_numbers=None</em>, <em>offsets={}</em>, <em>initial={}</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstruction.reconstruct_coincidence" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct a single coincidence</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -171,9 +175,10 @@ overwrite the <code class="docutils literal"><span class="pre">direct</span></co
 or more (station_number, event) tuples.</li>
 <li><strong>station_numbers</strong> &#8211; list of station numbers, to only use
 events from those stations.</li>
-<li><strong>offsets</strong> &#8211; dictionary with detector offsets for each station.
-These detector offsets should be relative to one
-detector from a specific station.</li>
+<li><strong>offsets</strong> &#8211; a dictionary of either lists of detector timing
+offsets for each station or api.Station objects for
+each station.</li>
+<li><strong>initial</strong> &#8211; dictionary with already fitted shower parameters.</li>
 </ul>
 </td>
 </tr>
@@ -186,7 +191,7 @@ detector from a specific station.</li>
 
 <dl class="method">
 <dt id="sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstruction.reconstruct_coincidences">
-<code class="descname">reconstruct_coincidences</code><span class="sig-paren">(</span><em>coincidences</em>, <em>station_numbers=None</em>, <em>offsets={}</em>, <em>progress=True</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstruction.reconstruct_coincidences" title="Permalink to this definition">¶</a></dt>
+<code class="descname">reconstruct_coincidences</code><span class="sig-paren">(</span><em>coincidences</em>, <em>station_numbers=None</em>, <em>offsets={}</em>, <em>progress=True</em>, <em>initials=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstruction.reconstruct_coincidences" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct all coincidences</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -200,6 +205,9 @@ events from those stations.</li>
 <li><strong>offsets</strong> &#8211; dictionary with detector offsets for each station.
 These detector offsets should be relative to one
 detector from a specific station.</li>
+<li><strong>progress</strong> &#8211; if True shows a progress bar.</li>
+<li><strong>initials</strong> &#8211; list of dictionaries with already reconstructed shower
+parameters.</li>
 </ul>
 </td>
 </tr>
@@ -209,6 +217,44 @@ detector from a specific station.</li>
 </tbody>
 </table>
 </dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstruction.get_station_offsets">
+<code class="descname">get_station_offsets</code><span class="sig-paren">(</span><em>coincidence_events</em>, <em>station_numbers</em>, <em>offsets</em>, <em>ts0</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstruction.get_station_offsets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstruction.determine_best_offsets">
+<code class="descname">determine_best_offsets</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstruction.determine_best_offsets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine best combined station and detector offsets</p>
+<p>Check which station is best used as reference. Allow offsets via
+other stations, intermediate stations are used if it reduces the
+offset error.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>station_numbers</strong> &#8211; list of stations in the coincidence or also
+other stations can are allow to be the
+reference station.</li>
+<li><strong>midnight_ts</strong> &#8211; timestamp of midnight before the coincidence.</li>
+<li><strong>offsets</strong> &#8211; a dictionary of api.Station objects for each station.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">combined detector and station offsets for given station,
+relative to the reference station.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstruction.determine_best_reference">
+<code class="descname">determine_best_reference</code><span class="sig-paren">(</span><em>error_matrix</em>, <em>station_numbers</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstruction.determine_best_reference" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -220,20 +266,21 @@ detector from a specific station.</li>
 uses the arrival time in each detector for the reconstruction.</p>
 <dl class="method">
 <dt id="sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstructionDetectors.reconstruct_coincidence">
-<code class="descname">reconstruct_coincidence</code><span class="sig-paren">(</span><em>coincidence_events</em>, <em>station_numbers=None</em>, <em>offsets={}</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstructionDetectors.reconstruct_coincidence" title="Permalink to this definition">¶</a></dt>
+<code class="descname">reconstruct_coincidence</code><span class="sig-paren">(</span><em>coincidence_events</em>, <em>station_numbers=None</em>, <em>offsets={}</em>, <em>initial={}</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.CoincidenceDirectionReconstructionDetectors.reconstruct_coincidence" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct a single coincidence</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>coincidence_events</strong> &#8211; a coincidence list consisting of three
+<li><strong>coincidence_events</strong> &#8211; a coincidence list consisting of one
 or more (station_number, event) tuples.</li>
 <li><strong>station_numbers</strong> &#8211; list of station numbers, to only use
 events from those stations.</li>
 <li><strong>offsets</strong> &#8211; dictionary with detector offsets for each station.
 These detector offsets should be relative to one
 detector from a specific station.</li>
+<li><strong>initial</strong> &#8211; dictionary with already fitted shower parameters.</li>
 </ul>
 </td>
 </tr>
@@ -254,7 +301,6 @@ detector from a specific station.</li>
 (DOI: 10.3990/1.9789036534383)</p>
 <p>This algorithm assumes each detector is at the same altitude.</p>
 <p>Note! The detectors are 0-based.</p>
-<p>Speed of light is in [m / ns]</p>
 <dl class="classmethod">
 <dt id="sapphire.analysis.direction_reconstruction.DirectAlgorithm.reconstruct_common">
 <em class="property">classmethod </em><code class="descname">reconstruct_common</code><span class="sig-paren">(</span><em>t</em>, <em>x</em>, <em>y</em>, <em>z=None</em>, <em>initial={}</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithm.reconstruct_common" title="Permalink to this definition">¶</a></dt>
@@ -341,8 +387,8 @@ phi as given by Fokkema2012 eq 4.13.</p>
 </dd></dl>
 
 <dl class="class">
-<dt id="sapphire.analysis.direction_reconstruction.DirectAlgorithmCartesian2D">
-<em class="property">class </em><code class="descclassname">sapphire.analysis.direction_reconstruction.</code><code class="descname">DirectAlgorithmCartesian2D</code><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithmCartesian2D" title="Permalink to this definition">¶</a></dt>
+<dt id="sapphire.analysis.direction_reconstruction.DirectAlgorithmCartesian">
+<em class="property">class </em><code class="descclassname">sapphire.analysis.direction_reconstruction.</code><code class="descname">DirectAlgorithmCartesian</code><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithmCartesian" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct angles using direct analytical formula.</p>
 <p>This implements the equations derived in Montanus2014.
 &#8220;Direction reconstruction of cosmic air showers with
@@ -350,8 +396,8 @@ detectorstations at different altitudes&#8221;</p>
 <p>Here the 2D version is used, assuming each detector is at the same
 altitude.</p>
 <dl class="classmethod">
-<dt id="sapphire.analysis.direction_reconstruction.DirectAlgorithmCartesian2D.reconstruct_common">
-<em class="property">classmethod </em><code class="descname">reconstruct_common</code><span class="sig-paren">(</span><em>t</em>, <em>x</em>, <em>y</em>, <em>z=None</em>, <em>initial={}</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithmCartesian2D.reconstruct_common" title="Permalink to this definition">¶</a></dt>
+<dt id="sapphire.analysis.direction_reconstruction.DirectAlgorithmCartesian.reconstruct_common">
+<em class="property">classmethod </em><code class="descname">reconstruct_common</code><span class="sig-paren">(</span><em>t</em>, <em>x</em>, <em>y</em>, <em>z=None</em>, <em>initial={}</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithmCartesian.reconstruct_common" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct angles from 3 detections</p>
 <p>This function converts the coordinates to be suitable for the
 algorithm.</p>
@@ -373,8 +419,8 @@ reconstructions is ignored.</li>
 </dd></dl>
 
 <dl class="staticmethod">
-<dt id="sapphire.analysis.direction_reconstruction.DirectAlgorithmCartesian2D.reconstruct">
-<em class="property">static </em><code class="descname">reconstruct</code><span class="sig-paren">(</span><em>dt1</em>, <em>dt2</em>, <em>dx1</em>, <em>dx2</em>, <em>dy1</em>, <em>dy2</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithmCartesian2D.reconstruct" title="Permalink to this definition">¶</a></dt>
+<dt id="sapphire.analysis.direction_reconstruction.DirectAlgorithmCartesian.reconstruct">
+<em class="property">static </em><code class="descname">reconstruct</code><span class="sig-paren">(</span><em>dt1</em>, <em>dt2</em>, <em>dx1</em>, <em>dx2</em>, <em>dy1</em>, <em>dy2</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithmCartesian.reconstruct" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct angles from 3 detections</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -480,7 +526,7 @@ three detectors / stations in meters.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the declination and right ascension of the source. The
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">declination and right ascension of the source. The
 apparent location of the cosmic ray source in the
 Equatorial Coordinate System.</p>
 </td>
@@ -501,11 +547,10 @@ as described by N.G. Schultheiss 2012</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>x,y,z</strong> &#8211; Arrays with the orthogonal coordinates of the three
-detectors / stations in m.</li>
-<li><strong>t</strong> &#8211; The arrival time of the shower in the detectors / stations
-in ns.</li>
-<li><strong>t_int</strong> &#8211; The interaction time in ns.</li>
+<li><strong>x,y,z</strong> &#8211; arrays with the orthogonal coordinates of the three
+detection points in m.</li>
+<li><strong>t</strong> &#8211; arrival times of the detectors in ns.</li>
+<li><strong>t_int</strong> &#8211; interaction time in ns.</li>
 </ul>
 </td>
 </tr>
@@ -519,11 +564,11 @@ in ns.</li>
 </dd></dl>
 
 <dl class="class">
-<dt id="sapphire.analysis.direction_reconstruction.FitAlgorithm">
-<em class="property">class </em><code class="descclassname">sapphire.analysis.direction_reconstruction.</code><code class="descname">FitAlgorithm</code><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.FitAlgorithm" title="Permalink to this definition">¶</a></dt>
+<dt id="sapphire.analysis.direction_reconstruction.FitAlgorithm3D">
+<em class="property">class </em><code class="descclassname">sapphire.analysis.direction_reconstruction.</code><code class="descname">FitAlgorithm3D</code><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.FitAlgorithm3D" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="classmethod">
-<dt id="sapphire.analysis.direction_reconstruction.FitAlgorithm.reconstruct_common">
-<em class="property">classmethod </em><code class="descname">reconstruct_common</code><span class="sig-paren">(</span><em>t</em>, <em>x</em>, <em>y</em>, <em>z=None</em>, <em>initial={}</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.FitAlgorithm.reconstruct_common" title="Permalink to this definition">¶</a></dt>
+<dt id="sapphire.analysis.direction_reconstruction.FitAlgorithm3D.reconstruct_common">
+<em class="property">classmethod </em><code class="descname">reconstruct_common</code><span class="sig-paren">(</span><em>t</em>, <em>x</em>, <em>y</em>, <em>z=None</em>, <em>initial={}</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.FitAlgorithm3D.reconstruct_common" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct angles from 3 or more detections</p>
 <p>This function converts the arguments to be suitable for the
 algorithm.</p>
@@ -545,8 +590,8 @@ reconstructions is ignored.</li>
 </dd></dl>
 
 <dl class="classmethod">
-<dt id="sapphire.analysis.direction_reconstruction.FitAlgorithm.reconstruct">
-<em class="property">classmethod </em><code class="descname">reconstruct</code><span class="sig-paren">(</span><em>t</em>, <em>x</em>, <em>y</em>, <em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.FitAlgorithm.reconstruct" title="Permalink to this definition">¶</a></dt>
+<dt id="sapphire.analysis.direction_reconstruction.FitAlgorithm3D.reconstruct">
+<em class="property">classmethod </em><code class="descname">reconstruct</code><span class="sig-paren">(</span><em>t</em>, <em>x</em>, <em>y</em>, <em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.FitAlgorithm3D.reconstruct" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct angles for many detections</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -567,20 +612,14 @@ phi as given by Montanus2014 eq 22.</p>
 </dd></dl>
 
 <dl class="staticmethod">
-<dt id="sapphire.analysis.direction_reconstruction.FitAlgorithm.make_relative">
-<em class="property">static </em><code class="descname">make_relative</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.FitAlgorithm.make_relative" title="Permalink to this definition">¶</a></dt>
-<dd><p>Make first element the origin and make rest relative to it.</p>
-</dd></dl>
-
-<dl class="staticmethod">
-<dt id="sapphire.analysis.direction_reconstruction.FitAlgorithm.constraint_normal_vector">
-<em class="property">static </em><code class="descname">constraint_normal_vector</code><span class="sig-paren">(</span><em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.FitAlgorithm.constraint_normal_vector" title="Permalink to this definition">¶</a></dt>
+<dt id="sapphire.analysis.direction_reconstruction.FitAlgorithm3D.constraint_normal_vector">
+<em class="property">static </em><code class="descname">constraint_normal_vector</code><span class="sig-paren">(</span><em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.FitAlgorithm3D.constraint_normal_vector" title="Permalink to this definition">¶</a></dt>
 <dd><p>This should be equal to zero</p>
 </dd></dl>
 
 <dl class="staticmethod">
-<dt id="sapphire.analysis.direction_reconstruction.FitAlgorithm.best_fit">
-<em class="property">static </em><code class="descname">best_fit</code><span class="sig-paren">(</span><em>n_xyz</em>, <em>dt</em>, <em>dx</em>, <em>dy</em>, <em>dz</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.FitAlgorithm.best_fit" title="Permalink to this definition">¶</a></dt>
+<dt id="sapphire.analysis.direction_reconstruction.FitAlgorithm3D.best_fit">
+<em class="property">static </em><code class="descname">best_fit</code><span class="sig-paren">(</span><em>n_xyz</em>, <em>dt</em>, <em>dx</em>, <em>dy</em>, <em>dz</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.FitAlgorithm3D.best_fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>The function to be minimized to find the direction</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -655,12 +694,6 @@ phi as derived by Montanus2014.</p>
 </table>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="sapphire.analysis.direction_reconstruction.RegressionAlgorithm.make_relative">
-<em class="property">static </em><code class="descname">make_relative</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.RegressionAlgorithm.make_relative" title="Permalink to this definition">¶</a></dt>
-<dd><p>Make first element the origin and make rest relative to it.</p>
-</dd></dl>
-
 </dd></dl>
 
 <dl class="class">
@@ -670,6 +703,11 @@ phi as derived by Montanus2014.</p>
 <p>This implements the equations as recently derived (Montanus 2014).
 &#8220;Direction reconstruction of cosmic air showers with
 three or more detectorstations at arbitrary altitudes&#8221;</p>
+<dl class="attribute">
+<dt id="sapphire.analysis.direction_reconstruction.RegressionAlgorithm3D.MAX_ITERATIONS">
+<code class="descname">MAX_ITERATIONS</code><em class="property"> = 1000</em><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.RegressionAlgorithm3D.MAX_ITERATIONS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="classmethod">
 <dt id="sapphire.analysis.direction_reconstruction.RegressionAlgorithm3D.reconstruct_common">
 <em class="property">classmethod </em><code class="descname">reconstruct_common</code><span class="sig-paren">(</span><em>t</em>, <em>x</em>, <em>y</em>, <em>z=None</em>, <em>initial={}</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.RegressionAlgorithm3D.reconstruct_common" title="Permalink to this definition">¶</a></dt>
@@ -715,11 +753,143 @@ phi as derived by Montanus2014.</p>
 </table>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="sapphire.analysis.direction_reconstruction.RegressionAlgorithm3D.make_relative">
-<em class="property">static </em><code class="descname">make_relative</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.RegressionAlgorithm3D.make_relative" title="Permalink to this definition">¶</a></dt>
-<dd><p>Make first element the origin and make rest relative to it.</p>
 </dd></dl>
+
+<dl class="class">
+<dt id="sapphire.analysis.direction_reconstruction.CurvedRegressionAlgorithm">
+<em class="property">class </em><code class="descclassname">sapphire.analysis.direction_reconstruction.</code><code class="descname">CurvedRegressionAlgorithm</code><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.CurvedRegressionAlgorithm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reconstruct angles taking the shower front curvature into account.</p>
+<p>Take the shower front curvature into account. Assumes knowledge about the
+shower core position.</p>
+<dl class="attribute">
+<dt id="sapphire.analysis.direction_reconstruction.CurvedRegressionAlgorithm.MAX_ITERATIONS">
+<code class="descname">MAX_ITERATIONS</code><em class="property"> = 1000</em><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.CurvedRegressionAlgorithm.MAX_ITERATIONS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.direction_reconstruction.CurvedRegressionAlgorithm.reconstruct_common">
+<code class="descname">reconstruct_common</code><span class="sig-paren">(</span><em>t</em>, <em>x</em>, <em>y</em>, <em>z=None</em>, <em>initial={}</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.CurvedRegressionAlgorithm.reconstruct_common" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reconstruct angles from 3 or more detections</p>
+<p>This function converts the arguments to be suitable for the
+algorithm.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>t</strong> &#8211; arrival times of the detectors in ns.</li>
+<li><strong>x,y,z</strong> &#8211; positions of the detectors in m.  The height
+is ignored.</li>
+<li><strong>initial</strong> &#8211; dictionary containing values from previous
+reconstructions, including core position.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.direction_reconstruction.CurvedRegressionAlgorithm.reconstruct">
+<code class="descname">reconstruct</code><span class="sig-paren">(</span><em>t</em>, <em>x</em>, <em>y</em>, <em>core_x</em>, <em>core_y</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.CurvedRegressionAlgorithm.reconstruct" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reconstruct angles for many detections</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>t</strong> &#8211; arrival times in the detectors in ns.</li>
+<li><strong>x,y</strong> &#8211; positions of the detectors in m.</li>
+<li><strong>core_x,core_y</strong> &#8211; core position at z = 0 in m.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">theta as derived by Montanus2014,
+phi as derived by Montanus2014.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.direction_reconstruction.CurvedRegressionAlgorithm.time_delay">
+<code class="descname">time_delay</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>core_x</em>, <em>core_y</em>, <em>theta</em>, <em>phi</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.CurvedRegressionAlgorithm.time_delay" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="sapphire.analysis.direction_reconstruction.CurvedRegressionAlgorithm.radial_core_distance">
+<em class="property">classmethod </em><code class="descname">radial_core_distance</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>core_x</em>, <em>core_y</em>, <em>theta</em>, <em>phi</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.CurvedRegressionAlgorithm.radial_core_distance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sapphire.analysis.direction_reconstruction.CurvedRegressionAlgorithm3D">
+<em class="property">class </em><code class="descclassname">sapphire.analysis.direction_reconstruction.</code><code class="descname">CurvedRegressionAlgorithm3D</code><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.CurvedRegressionAlgorithm3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reconstruct angles accounting for front curvature and detector altitudes</p>
+<p>Take the shower front curvature and different detector heights into
+account. Assumes knowledge about the shower core position.</p>
+<dl class="attribute">
+<dt id="sapphire.analysis.direction_reconstruction.CurvedRegressionAlgorithm3D.MAX_ITERATIONS">
+<code class="descname">MAX_ITERATIONS</code><em class="property"> = 1000</em><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.CurvedRegressionAlgorithm3D.MAX_ITERATIONS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.direction_reconstruction.CurvedRegressionAlgorithm3D.reconstruct_common">
+<code class="descname">reconstruct_common</code><span class="sig-paren">(</span><em>t</em>, <em>x</em>, <em>y</em>, <em>z=None</em>, <em>initial={}</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.CurvedRegressionAlgorithm3D.reconstruct_common" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reconstruct angles from 3 or more detections</p>
+<p>This function converts the arguments to be suitable for the
+algorithm.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>t</strong> &#8211; arrival times of the detectors in ns.</li>
+<li><strong>x,y,z</strong> &#8211; positions of the detectors in m. The height
+for all detectors will be set to 0 if not given.</li>
+<li><strong>initial</strong> &#8211; dictionary containing values from previous
+reconstructions, including core position.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.direction_reconstruction.CurvedRegressionAlgorithm3D.reconstruct">
+<code class="descname">reconstruct</code><span class="sig-paren">(</span><em>t</em>, <em>x</em>, <em>y</em>, <em>z</em>, <em>core_x</em>, <em>core_y</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.CurvedRegressionAlgorithm3D.reconstruct" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reconstruct angles for many detections</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>t</strong> &#8211; arrival times in the detectors in ns.</li>
+<li><strong>x,y,z</strong> &#8211; positions of the detectors in m.</li>
+<li><strong>core_x,core_y</strong> &#8211; core position at z = 0 in m.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">theta as derived by Montanus2014,
+phi as derived by Montanus2014.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sapphire.analysis.direction_reconstruction.CurvedRegressionAlgorithm3D.time_delay">
+<code class="descname">time_delay</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>core_x</em>, <em>core_y</em>, <em>theta</em>, <em>phi</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.CurvedRegressionAlgorithm3D.time_delay" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="sapphire.analysis.direction_reconstruction.CurvedRegressionAlgorithm3D.radial_core_distance">
+<em class="property">classmethod </em><code class="descname">radial_core_distance</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>core_x</em>, <em>core_y</em>, <em>theta</em>, <em>phi</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.CurvedRegressionAlgorithm3D.radial_core_distance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -787,8 +957,8 @@ distance becomes relevant.</li>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -813,14 +983,14 @@ distance becomes relevant.</li>
         <li class="right" >
           <a href="core_reconstruction.html" title="Reconstruction of EAS core and size"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.14.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../analysis.html" >Data analysis</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
     </div>
   </body>
 </html>

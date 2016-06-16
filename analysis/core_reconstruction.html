@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Reconstruction of EAS core and size &mdash; SAPPHiRE 0.14.0 documentation</title>
+    <title>Reconstruction of EAS core and size &mdash; SAPPHiRE 1.0.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.14.0',
+        VERSION:     '1.0.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.14.0 documentation" href="../index.html" />
+    <link rel="top" title="SAPPHiRE 1.0.0 documentation" href="../index.html" />
     <link rel="up" title="Data analysis" href="../analysis.html" />
     <link rel="next" title="Reconstruction of EAS direction" href="direction_reconstruction.html" />
     <link rel="prev" title="Search for coincidences between HiSPARC stations" href="coincidences.html" /> 
@@ -47,7 +47,7 @@
         <li class="right" >
           <a href="coincidences.html" title="Search for coincidences between HiSPARC stations"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.14.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../analysis.html" accesskey="U">Data analysis</a> &raquo;</li> 
       </ul>
@@ -90,7 +90,7 @@ with a &#8216;station&#8217; and you can reconstruct events using
 </table>
 <dl class="method">
 <dt id="sapphire.analysis.core_reconstruction.EventCoreReconstruction.reconstruct_event">
-<code class="descname">reconstruct_event</code><span class="sig-paren">(</span><em>event</em>, <em>detector_ids=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.core_reconstruction.EventCoreReconstruction.reconstruct_event" title="Permalink to this definition">¶</a></dt>
+<code class="descname">reconstruct_event</code><span class="sig-paren">(</span><em>event</em>, <em>detector_ids=None</em>, <em>initial={}</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.core_reconstruction.EventCoreReconstruction.reconstruct_event" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct a single event</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -103,6 +103,8 @@ reconstructing the direction of a shower (e.g. number of mips).</li>
 <li><strong>detector_ids</strong> &#8211; list of the detectors to use for
 reconstruction. The detector ids are 0-based, unlike the
 column names in the esd data.</li>
+<li><strong>initial</strong> &#8211; dictionary with already reconstructed shower
+parameters.</li>
 </ul>
 </td>
 </tr>
@@ -115,7 +117,7 @@ column names in the esd data.</li>
 
 <dl class="method">
 <dt id="sapphire.analysis.core_reconstruction.EventCoreReconstruction.reconstruct_events">
-<code class="descname">reconstruct_events</code><span class="sig-paren">(</span><em>events</em>, <em>detector_ids=None</em>, <em>progress=True</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.core_reconstruction.EventCoreReconstruction.reconstruct_events" title="Permalink to this definition">¶</a></dt>
+<code class="descname">reconstruct_events</code><span class="sig-paren">(</span><em>events</em>, <em>detector_ids=None</em>, <em>progress=True</em>, <em>initials=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.core_reconstruction.EventCoreReconstruction.reconstruct_events" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct events</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -125,6 +127,9 @@ column names in the esd data.</li>
 <li><strong>events</strong> &#8211; the events table for the station from an ESD data
 file.</li>
 <li><strong>detector_ids</strong> &#8211; detectors which use for the reconstructions.</li>
+<li><strong>progress</strong> &#8211; if True shows a progress bar.</li>
+<li><strong>initials</strong> &#8211; list of dictionaries with already reconstructed shower
+parameters.</li>
 </ul>
 </td>
 </tr>
@@ -154,7 +159,7 @@ using <a class="reference internal" href="#sapphire.analysis.core_reconstruction
 </table>
 <dl class="method">
 <dt id="sapphire.analysis.core_reconstruction.CoincidenceCoreReconstruction.reconstruct_coincidence">
-<code class="descname">reconstruct_coincidence</code><span class="sig-paren">(</span><em>coincidence</em>, <em>station_numbers=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CoincidenceCoreReconstruction.reconstruct_coincidence" title="Permalink to this definition">¶</a></dt>
+<code class="descname">reconstruct_coincidence</code><span class="sig-paren">(</span><em>coincidence</em>, <em>station_numbers=None</em>, <em>initial={}</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CoincidenceCoreReconstruction.reconstruct_coincidence" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct a single coincidence</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -165,6 +170,8 @@ using <a class="reference internal" href="#sapphire.analysis.core_reconstruction
 multiple (station_number, event) tuples</li>
 <li><strong>station_numbers</strong> &#8211; list of station numbers, to only use
 events from those stations.</li>
+<li><strong>initial</strong> &#8211; dictionary with already reconstructed shower
+parameters.</li>
 </ul>
 </td>
 </tr>
@@ -177,7 +184,7 @@ events from those stations.</li>
 
 <dl class="method">
 <dt id="sapphire.analysis.core_reconstruction.CoincidenceCoreReconstruction.reconstruct_coincidences">
-<code class="descname">reconstruct_coincidences</code><span class="sig-paren">(</span><em>coincidences</em>, <em>station_numbers=None</em>, <em>progress=True</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CoincidenceCoreReconstruction.reconstruct_coincidences" title="Permalink to this definition">¶</a></dt>
+<code class="descname">reconstruct_coincidences</code><span class="sig-paren">(</span><em>coincidences</em>, <em>station_numbers=None</em>, <em>progress=True</em>, <em>initials=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CoincidenceCoreReconstruction.reconstruct_coincidences" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct all coincidences</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -188,6 +195,9 @@ events from those stations.</li>
 multiple (station_number, event) tuples.</li>
 <li><strong>station_numbers</strong> &#8211; list of station numbers, to only use
 events from those stations.</li>
+<li><strong>progress</strong> &#8211; if True shows a progress bar.</li>
+<li><strong>initials</strong> &#8211; list of dictionaries with already reconstructed shower
+parameters.</li>
 </ul>
 </td>
 </tr>
@@ -208,7 +218,7 @@ events from those stations.</li>
 uses the particle density in each detector for the reconstruction.</p>
 <dl class="method">
 <dt id="sapphire.analysis.core_reconstruction.CoincidenceCoreReconstructionDetectors.reconstruct_coincidence">
-<code class="descname">reconstruct_coincidence</code><span class="sig-paren">(</span><em>coincidence</em>, <em>station_numbers=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CoincidenceCoreReconstructionDetectors.reconstruct_coincidence" title="Permalink to this definition">¶</a></dt>
+<code class="descname">reconstruct_coincidence</code><span class="sig-paren">(</span><em>coincidence</em>, <em>station_numbers=None</em>, <em>initial={}</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.core_reconstruction.CoincidenceCoreReconstructionDetectors.reconstruct_coincidence" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct a single coincidence</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -219,6 +229,8 @@ uses the particle density in each detector for the reconstruction.</p>
 multiple (station_number, event) tuples</li>
 <li><strong>station_numbers</strong> &#8211; list of station numbers, to only use
 events from those stations.</li>
+<li><strong>initial</strong> &#8211; dictionary with already reconstructed shower
+parameters.</li>
 </ul>
 </td>
 </tr>
@@ -282,7 +294,7 @@ reconstructions.</li>
 <em class="property">class </em><code class="descclassname">sapphire.analysis.core_reconstruction.</code><code class="descname">AverageIntersectionAlgorithm</code><a class="headerlink" href="#sapphire.analysis.core_reconstruction.AverageIntersectionAlgorithm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Core estimator</p>
 <p>To the densities in 3 stations correspond 2 possible cores. The line
-through these points is quit stable for the lateral distribution function.
+through these points is quite stable for the lateral distribution function.
 To each combination of 3 stations out of a set of at least 4
 stations hit corresponds a line. To each combinations of 2 lines out of
 the set of lines corresponds a point of intersection (if the 2 lines are
@@ -411,8 +423,8 @@ reconstructions: zenith and azimuth.</li>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -437,14 +449,14 @@ reconstructions: zenith and azimuth.</li>
         <li class="right" >
           <a href="coincidences.html" title="Search for coincidences between HiSPARC stations"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.14.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../analysis.html" >Data analysis</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
     </div>
   </body>
 </html>

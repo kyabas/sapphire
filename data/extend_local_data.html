@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>CORSIKA Units &mdash; SAPPHiRE 1.0.0 documentation</title>
+    <title>Download additional local data &mdash; SAPPHiRE 1.0.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -27,9 +27,9 @@
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="SAPPHiRE 1.0.0 documentation" href="../index.html" />
-    <link rel="up" title="CORSIKA simulations" href="../corsika.html" />
-    <link rel="next" title="Updating and extending local data" href="../data.html" />
-    <link rel="prev" title="Store CORSIKA data as HDF5" href="store_corsika_data.html" /> 
+    <link rel="up" title="Updating and extending local data" href="../data.html" />
+    <link rel="next" title="Update default local data with latest data from Publicdb" href="update_local_data.html" />
+    <link rel="prev" title="Updating and extending local data" href="../data.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -42,14 +42,14 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="../data.html" title="Updating and extending local data"
+          <a href="update_local_data.html" title="Update default local data with latest data from Publicdb"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="store_corsika_data.html" title="Store CORSIKA data as HDF5"
+          <a href="../data.html" title="Updating and extending local data"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
-          <li class="nav-item nav-item-2"><a href="../corsika.html" accesskey="U">CORSIKA simulations</a> &raquo;</li> 
+          <li class="nav-item nav-item-2"><a href="../data.html" accesskey="U">Updating and extending local data</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -58,52 +58,34 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="module-sapphire.corsika.units">
-<span id="corsika-units"></span><h1>CORSIKA Units<a class="headerlink" href="#module-sapphire.corsika.units" title="Permalink to this headline">¶</a></h1>
-<p>Defines units in terms of HiSPARC standard units</p>
-<p>You should use the units defined in this file whenever you
-have a dimensional quantity in your code.  For example:</p>
-<p>Do:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">km</span>
+  <div class="section" id="module-sapphire.data.extend_local_data">
+<span id="download-additional-local-data"></span><h1>Download additional local data<a class="headerlink" href="#module-sapphire.data.extend_local_data" title="Permalink to this headline">¶</a></h1>
+<p>Add more local JSON and TSV data</p>
+<p>Add additional local data, to be used by <a class="reference internal" href="../api.html#module-sapphire.api" title="sapphire.api"><code class="xref py py-mod docutils literal"><span class="pre">api</span></code></a> if internet is
+unavailable. The use of local data can also be forced to skip calls to the
+server or prevented to require fresh data from the server.</p>
+<p>This data is not included by default because then the SAPPHiRE package would
+become to large. By running this script the data is added after installation.
+This script downloads approximately 100 MB of data.</p>
+<p>This can be run by simply running the installed script from the command line:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ extend_local_data
 </pre></div>
 </div>
-<p>Don&#8217;t:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="mf">1.5</span>  <span class="c1"># don&#39;t forget this is in km!</span>
+<p>To make the script show information about what it will do add the help flag:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ extend_local_data --help
 </pre></div>
 </div>
-<p>The conversion factors defined in this file
-convert your data into HiSPARC base units, so that
-all dimensional quantities in the code are in a
-single system of units!  You can also
-use the conversions defined here to, for example,
-display data with the unit of your choice.  For example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="s2">&quot;s = </span><span class="si">%f</span><span class="s2"> mm&quot;</span> <span class="o">%</span>  <span class="n">s</span> <span class="o">/</span> <span class="n">mm</span>
-<span class="go">1500000 mm</span>
-</pre></div>
-</div>
-<p>The base units are:</p>
-<ul class="simple">
-<li>meter (meter)</li>
-<li>nanosecond (nanosecond)</li>
-<li>electron Volt (eV)</li>
-<li>positron charge (eplus)</li>
-<li>degree Kelvin (kelvin)</li>
-<li>the amount of substance (mole)</li>
-<li>luminous intensity (candela)</li>
-<li>radian (radian)</li>
-<li>steradian (steradian)</li>
-</ul>
-<p>The SI numerical value of the positron charge is defined here,
-as it is needed for conversion factor: positron charge = eSI (coulomb)</p>
-<p>This is a slightly modified version of the units definitions
-written by the Geant4 collaboration.</p>
-<p>Authors:</p>
-<ul class="simple">
-<li>M Maire</li>
-<li>S Giani</li>
-<li>T Paul (modifications for Auger)</li>
-<li>Arne de Laat &lt;<a class="reference external" href="mailto:adelaat&#37;&#52;&#48;nikhef&#46;nl">adelaat<span>&#64;</span>nikhef<span>&#46;</span>nl</a>&gt;</li>
-</ul>
+<dl class="function">
+<dt id="sapphire.data.extend_local_data.update_additional_local_tsv">
+<code class="descclassname">sapphire.data.extend_local_data.</code><code class="descname">update_additional_local_tsv</code><span class="sig-paren">(</span><em>progress=True</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.data.extend_local_data.update_additional_local_tsv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get location tsv data for all stations</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.data.extend_local_data.main">
+<code class="descclassname">sapphire.data.extend_local_data.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.data.extend_local_data.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 
@@ -116,15 +98,15 @@ written by the Geant4 collaboration.</p>
               <img class="logo" src="../_static/header.png" alt="Logo"/>
             </a></p>
   <h4>Previous topic</h4>
-  <p class="topless"><a href="store_corsika_data.html"
-                        title="previous chapter">Store CORSIKA data as HDF5</a></p>
-  <h4>Next topic</h4>
   <p class="topless"><a href="../data.html"
-                        title="next chapter">Updating and extending local data</a></p>
+                        title="previous chapter">Updating and extending local data</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="update_local_data.html"
+                        title="next chapter">Update default local data with latest data from Publicdb</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/corsika/units.txt"
+      <li><a href="../_sources/data/extend_local_data.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -152,14 +134,14 @@ written by the Geant4 collaboration.</p>
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="../data.html" title="Updating and extending local data"
+          <a href="update_local_data.html" title="Update default local data with latest data from Publicdb"
              >next</a> |</li>
         <li class="right" >
-          <a href="store_corsika_data.html" title="Store CORSIKA data as HDF5"
+          <a href="../data.html" title="Updating and extending local data"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
-          <li class="nav-item nav-item-2"><a href="../corsika.html" >CORSIKA simulations</a> &raquo;</li> 
+          <li class="nav-item nav-item-2"><a href="../data.html" >Updating and extending local data</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

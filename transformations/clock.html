@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Time conversion functions &mdash; SAPPHiRE 0.14.0 documentation</title>
+    <title>Time conversion functions &mdash; SAPPHiRE 1.0.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.14.0',
+        VERSION:     '1.0.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.14.0 documentation" href="../index.html" />
+    <link rel="top" title="SAPPHiRE 1.0.0 documentation" href="../index.html" />
     <link rel="up" title="Coordinate and time transformations" href="../transformations.html" />
     <link rel="next" title="Transformations between geographic coordinate systems" href="geographic.html" />
     <link rel="prev" title="Transformations between Celestial coordinate systems" href="celestial.html" /> 
@@ -47,7 +47,7 @@
         <li class="right" >
           <a href="celestial.html" title="Transformations between Celestial coordinate systems"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.14.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../transformations.html" accesskey="U">Coordinate and time transformations</a> &raquo;</li> 
       </ul>
@@ -74,6 +74,12 @@ ISBN 0-521-38995-X</p>
 <p>Adrian Price-Whelan
 apwlib.convert
 <a class="reference external" href="https://github.com/adrn/apwlib">https://github.com/adrn/apwlib</a></p>
+<dl class="data">
+<dt id="sapphire.transformations.clock.LEAP_SECONDS">
+<code class="descclassname">sapphire.transformations.clock.</code><code class="descname">LEAP_SECONDS</code><em class="property"> = (('July 1, 2015', 17), ('July 1, 2012', 16), ('January 1, 2009', 15), ('January 1, 2006', 14), ('January 1, 1999', 13), ('July 1, 1997', 12), ('January 1, 1996', 11), ('July 1, 1994', 10), ('July 1, 1993', 9), ('July 1, 1992', 8), ('January 1, 1991', 7), ('January 1, 1990', 6), ('January 1, 1988', 5), ('July 1, 1985', 4), ('July 1, 1983', 3), ('July 1, 1982', 2), ('July 1, 1981', 1))</em><a class="headerlink" href="#sapphire.transformations.clock.LEAP_SECONDS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dates of leap second introductions.</p>
+</dd></dl>
+
 <dl class="function">
 <dt id="sapphire.transformations.clock.time_to_decimal">
 <code class="descclassname">sapphire.transformations.clock.</code><code class="descname">time_to_decimal</code><span class="sig-paren">(</span><em>time</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.transformations.clock.time_to_decimal" title="Permalink to this definition">¶</a></dt>
@@ -498,8 +504,8 @@ So the returned date will end in .5 because the date refers to midnight.</p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -524,14 +530,14 @@ So the returned date will end in .5 because the date refers to midnight.</p>
         <li class="right" >
           <a href="celestial.html" title="Transformations between Celestial coordinate systems"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.14.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../transformations.html" >Coordinate and time transformations</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
     </div>
   </body>
 </html>

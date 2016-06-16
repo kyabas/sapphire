@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Reconstructions &mdash; SAPPHiRE 0.14.0 documentation</title>
+    <title>Reconstructions &mdash; SAPPHiRE 1.0.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.14.0',
+        VERSION:     '1.0.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.14.0 documentation" href="../index.html" />
+    <link rel="top" title="SAPPHiRE 1.0.0 documentation" href="../index.html" />
     <link rel="up" title="Data analysis" href="../analysis.html" />
     <link rel="next" title="Time deltas" href="time_deltas.html" />
     <link rel="prev" title="Processing of HiSPARC traces" href="process_traces.html" /> 
@@ -47,7 +47,7 @@
         <li class="right" >
           <a href="process_traces.html" title="Processing of HiSPARC traces"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.14.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../analysis.html" accesskey="U">Data analysis</a> &raquo;</li> 
       </ul>
@@ -62,7 +62,7 @@
 <span id="reconstructions"></span><h1>Reconstructions<a class="headerlink" href="#module-sapphire.analysis.reconstructions" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="sapphire.analysis.reconstructions.ReconstructESDEvents">
-<em class="property">class </em><code class="descclassname">sapphire.analysis.reconstructions.</code><code class="descname">ReconstructESDEvents</code><span class="sig-paren">(</span><em>data</em>, <em>station_group</em>, <em>station</em>, <em>overwrite=False</em>, <em>progress=True</em>, <em>destination='reconstructions'</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.reconstructions.ReconstructESDEvents" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.analysis.reconstructions.</code><code class="descname">ReconstructESDEvents</code><span class="sig-paren">(</span><em>data</em>, <em>station_group</em>, <em>station</em>, <em>overwrite=False</em>, <em>progress=True</em>, <em>destination='reconstructions'</em>, <em>force_fresh=False</em>, <em>force_stale=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.reconstructions.ReconstructESDEvents" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct events from single stations</p>
 <p>Example usage:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">tables</span>
@@ -95,8 +95,8 @@
 <li><strong>station_group</strong> &#8211; the group containing the event table,
 the results will also be stored in this group.</li>
 <li><strong>station</strong> &#8211; either a station number or
-<a class="reference internal" href="../clusters.html#sapphire.clusters.Station" title="sapphire.clusters.Station"><code class="xref py py-class docutils literal"><span class="pre">Station</span></code></a> object. If number the
-positions and offsets are retrieved from the API. Otherwise
+<a class="reference internal" href="../clusters.html#sapphire.clusters.Station" title="sapphire.clusters.Station"><code class="xref py py-class docutils literal"><span class="pre">Station</span></code></a> object. If it is a number the
+positions and offsets will be retrieved from the API. Otherwise
 the offsets will be determined with the available data.</li>
 <li><strong>overwrite</strong> &#8211; if True, overwrite existing reconstruction table.</li>
 <li><strong>progress</strong> &#8211; if True, show a progressbar while reconstructing.</li>
@@ -164,7 +164,7 @@ NaN as reconstructed value.</p>
 
 <dl class="class">
 <dt id="sapphire.analysis.reconstructions.ReconstructESDEventsFromSource">
-<em class="property">class </em><code class="descclassname">sapphire.analysis.reconstructions.</code><code class="descname">ReconstructESDEventsFromSource</code><span class="sig-paren">(</span><em>source_data</em>, <em>dest_data</em>, <em>source_group</em>, <em>dest_group</em>, <em>station</em>, <em>overwrite=False</em>, <em>progress=True</em>, <em>destination='reconstructions'</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.reconstructions.ReconstructESDEventsFromSource" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.analysis.reconstructions.</code><code class="descname">ReconstructESDEventsFromSource</code><span class="sig-paren">(</span><em>source_data</em>, <em>dest_data</em>, <em>source_group</em>, <em>dest_group</em>, <em>station</em>, <em>overwrite=False</em>, <em>progress=True</em>, <em>destination='reconstructions'</em>, <em>force_fresh=False</em>, <em>force_stale=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.reconstructions.ReconstructESDEventsFromSource" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize the class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -196,7 +196,7 @@ the offsets will be determined with the available data.</li>
 
 <dl class="class">
 <dt id="sapphire.analysis.reconstructions.ReconstructESDCoincidences">
-<em class="property">class </em><code class="descclassname">sapphire.analysis.reconstructions.</code><code class="descname">ReconstructESDCoincidences</code><span class="sig-paren">(</span><em>data</em>, <em>coincidences_group='/coincidences'</em>, <em>overwrite=False</em>, <em>progress=True</em>, <em>destination='reconstructions'</em>, <em>cluster=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.reconstructions.ReconstructESDCoincidences" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.analysis.reconstructions.</code><code class="descname">ReconstructESDCoincidences</code><span class="sig-paren">(</span><em>data</em>, <em>coincidences_group='/coincidences'</em>, <em>overwrite=False</em>, <em>progress=True</em>, <em>destination='reconstructions'</em>, <em>cluster=None</em>, <em>force_fresh=False</em>, <em>force_stale=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.reconstructions.ReconstructESDCoincidences" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconstruct coincidences, e.g. event between multiple stations</p>
 <p>Example usage:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">tables</span>
@@ -267,21 +267,11 @@ the offsets will be determined with the available data.</li>
 <dl class="method">
 <dt id="sapphire.analysis.reconstructions.ReconstructESDCoincidences.get_station_timing_offsets">
 <code class="descname">get_station_timing_offsets</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.reconstructions.ReconstructESDCoincidences.get_station_timing_offsets" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get predetermined station offsets</p>
-<p>References for subclusters:
-102 for Zaanlands stations, data from 2012/6-2014/8.
-501 for Science Park stations, data from 2010/1-2014/8.
-7001 for Twente University stations, data from 2011/8-2014/8.
-8001 for Eindhoven University stations, data from 2011/10-2014/8.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="sapphire.analysis.reconstructions.ReconstructESDCoincidences.determine_station_timing_offsets">
-<code class="descname">determine_station_timing_offsets</code><span class="sig-paren">(</span><em>ref_station_number=501</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.reconstructions.ReconstructESDCoincidences.determine_station_timing_offsets" title="Permalink to this definition">¶</a></dt>
-<dd><p>Determine the offsets between the stations.</p>
-<p>ADL: This should use more than one day of data for a good fit.
-Station altitudes are not taken into account. It would be better
-to choose a different reference station per (sub)cluster.</p>
+<dd><p>Construct a dict of api.Station objects</p>
+<p>Simulations store the offsets in the cluster object, try to extract
+that into a dictionary, to be used by the reconstructions.
+If the data is not from simulations create an api.Station object
+for each station in the cluster.</p>
 </dd></dl>
 
 <dl class="method">
@@ -296,7 +286,7 @@ NaN as reconstructed value.</p>
 
 <dl class="class">
 <dt id="sapphire.analysis.reconstructions.ReconstructESDCoincidencesFromSource">
-<em class="property">class </em><code class="descclassname">sapphire.analysis.reconstructions.</code><code class="descname">ReconstructESDCoincidencesFromSource</code><span class="sig-paren">(</span><em>source_data</em>, <em>dest_data</em>, <em>source_group</em>, <em>dest_group</em>, <em>overwrite=False</em>, <em>progress=True</em>, <em>destination='reconstructions'</em>, <em>cluster=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.reconstructions.ReconstructESDCoincidencesFromSource" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">sapphire.analysis.reconstructions.</code><code class="descname">ReconstructESDCoincidencesFromSource</code><span class="sig-paren">(</span><em>source_data</em>, <em>dest_data</em>, <em>source_group</em>, <em>dest_group</em>, <em>overwrite=False</em>, <em>progress=True</em>, <em>destination='reconstructions'</em>, <em>cluster=None</em>, <em>force_fresh=False</em>, <em>force_stale=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.reconstructions.ReconstructESDCoincidencesFromSource" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize the class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -353,8 +343,8 @@ the offsets will be determined with the available data.</li>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -379,14 +369,14 @@ the offsets will be determined with the available data.</li>
         <li class="right" >
           <a href="process_traces.html" title="Processing of HiSPARC traces"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.14.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../analysis.html" >Data analysis</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
     </div>
   </body>
 </html>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Coordinate and time transformations &mdash; SAPPHiRE 1.0.0 documentation</title>
+    <title>Updating and extending local data &mdash; SAPPHiRE 1.0.0 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -28,8 +28,8 @@
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="top" title="SAPPHiRE 1.0.0 documentation" href="index.html" />
     <link rel="up" title="SAPPHiRE Reference" href="sapphire.html" />
-    <link rel="next" title="Conversion between different angle notations" href="transformations/angles.html" />
-    <link rel="prev" title="GPS date/time utility functions" href="time_util.html" /> 
+    <link rel="next" title="Download additional local data" href="data/extend_local_data.html" />
+    <link rel="prev" title="CORSIKA Units" href="corsika/units.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -42,10 +42,10 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="transformations/angles.html" title="Conversion between different angle notations"
+          <a href="data/extend_local_data.html" title="Download additional local data"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="time_util.html" title="GPS date/time utility functions"
+          <a href="corsika/units.html" title="CORSIKA Units"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="sapphire.html" accesskey="U">SAPPHiRE Reference</a> &raquo;</li> 
@@ -57,23 +57,15 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="module-sapphire.transformations">
-<span id="coordinate-and-time-transformations"></span><h1>Coordinate and time transformations<a class="headerlink" href="#module-sapphire.transformations" title="Permalink to this headline">¶</a></h1>
-<p>Convert coordinate and time systems.</p>
-<p>Easy transformations between different systems.</p>
+  <div class="section" id="module-sapphire.data">
+<span id="updating-and-extending-local-data"></span><h1>Updating and extending local data<a class="headerlink" href="#module-sapphire.data" title="Permalink to this headline">¶</a></h1>
+<p>Update or extend local data with latest data from public database</p>
+<p>This package contains modules for updating local data:</p>
 <dl class="docutils">
-<dt><a class="reference internal" href="transformations/angles.html#module-sapphire.transformations.angles" title="sapphire.transformations.angles"><code class="xref py py-mod docutils literal"><span class="pre">angles</span></code></a></dt>
-<dd>conversion between different angle notations</dd>
-<dt><a class="reference internal" href="transformations/axes.html#module-sapphire.transformations.axes" title="sapphire.transformations.axes"><code class="xref py py-mod docutils literal"><span class="pre">axes</span></code></a></dt>
-<dd>rotation matrices and conversion between coordinate systems</dd>
-<dt><a class="reference internal" href="transformations/base.html#module-sapphire.transformations.base" title="sapphire.transformations.base"><code class="xref py py-mod docutils literal"><span class="pre">base</span></code></a></dt>
-<dd>conversion betweeen decimal and sexagesimal</dd>
-<dt><a class="reference internal" href="transformations/celestial.html#module-sapphire.transformations.celestial" title="sapphire.transformations.celestial"><code class="xref py py-mod docutils literal"><span class="pre">celestial</span></code></a></dt>
-<dd>conversion betweeen celestial coordinate systems</dd>
-<dt><a class="reference internal" href="transformations/clock.html#module-sapphire.transformations.clock" title="sapphire.transformations.clock"><code class="xref py py-mod docutils literal"><span class="pre">clock</span></code></a></dt>
-<dd>conversion between different time keeping systems</dd>
-<dt><a class="reference internal" href="transformations/geographic.html#module-sapphire.transformations.geographic" title="sapphire.transformations.geographic"><code class="xref py py-mod docutils literal"><span class="pre">geographic</span></code></a></dt>
-<dd>geographic coordinate transformations (e.g. WGS84 to ENU)</dd>
+<dt><a class="reference internal" href="data/extend_local_data.html#module-sapphire.data.extend_local_data" title="sapphire.data.extend_local_data"><code class="xref py py-mod docutils literal"><span class="pre">extend_local_data</span></code></a></dt>
+<dd>add additional data</dd>
+<dt><a class="reference internal" href="data/update_local_data.html#module-sapphire.data.update_local_data" title="sapphire.data.update_local_data"><code class="xref py py-mod docutils literal"><span class="pre">update_local_data</span></code></a></dt>
+<dd>bring already included data up to date</dd>
 </dl>
 <div class="toctree-wrapper compound">
 </div>
@@ -89,15 +81,15 @@
               <img class="logo" src="_static/header.png" alt="Logo"/>
             </a></p>
   <h4>Previous topic</h4>
-  <p class="topless"><a href="time_util.html"
-                        title="previous chapter">GPS date/time utility functions</a></p>
+  <p class="topless"><a href="corsika/units.html"
+                        title="previous chapter">CORSIKA Units</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="transformations/angles.html"
-                        title="next chapter">Conversion between different angle notations</a></p>
+  <p class="topless"><a href="data/extend_local_data.html"
+                        title="next chapter">Download additional local data</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/transformations.txt"
+      <li><a href="_sources/data.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -125,10 +117,10 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="transformations/angles.html" title="Conversion between different angle notations"
+          <a href="data/extend_local_data.html" title="Download additional local data"
              >next</a> |</li>
         <li class="right" >
-          <a href="time_util.html" title="GPS date/time utility functions"
+          <a href="corsika/units.html" title="CORSIKA Units"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="sapphire.html" >SAPPHiRE Reference</a> &raquo;</li> 

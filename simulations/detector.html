@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Detector simulations &mdash; SAPPHiRE 0.14.0 documentation</title>
+    <title>Detector simulations &mdash; SAPPHiRE 1.0.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.14.0',
+        VERSION:     '1.0.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 0.14.0 documentation" href="../index.html" />
+    <link rel="top" title="SAPPHiRE 1.0.0 documentation" href="../index.html" />
     <link rel="up" title="Simulation of the detection of EAS events" href="../simulations.html" />
     <link rel="next" title="Simulations based on Monte Carlo EAS ground particle data" href="groundparticles.html" />
     <link rel="prev" title="Simulation base classes" href="base.html" /> 
@@ -47,7 +47,7 @@
         <li class="right" >
           <a href="base.html" title="Simulation base classes"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.14.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../simulations.html" accesskey="U">Simulation of the detection of EAS events</a> &raquo;</li> 
       </ul>
@@ -81,6 +81,8 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>n_detectors</strong> &#8211; number of offsets to return.</td>
 </tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of detector timing offsets in ns.</td>
+</tr>
 </tbody>
 </table>
 </dd></dl>
@@ -90,6 +92,14 @@
 <em class="property">classmethod </em><code class="descname">simulate_detector_offset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.detector.HiSPARCSimulation.simulate_detector_offset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Simulate time offsets between detectors in one station</p>
 <p>This offset should be fixed for each detector for a simulation run.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">detector timing offset in ns.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="classmethod">
@@ -99,6 +109,14 @@
 <p>This offset should be fixed for each station for a simulation run.
 The actual distribution is not yet very clear. We assume it is
 gaussian for convenience. Then the stddev is about 16 ns.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">station timing offset in ns.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="classmethod">
@@ -169,10 +187,15 @@ the single and vectorized part.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>n</strong> &#8211; number of particles.</li>
-<li><strong>theta</strong> &#8211; angle of incidence of the particles, as float or array.</li>
+<li><strong>theta</strong> &#8211; angle of incidence of the particles. Either a single
+value valid for all particles, or an array with an angle
+for each particle.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">signal strength in number of mips.</p>
 </td>
 </tr>
 </tbody>
@@ -267,6 +290,14 @@ atmosphere into account.</p>
 <em class="property">classmethod </em><code class="descname">generate_azimuth</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.simulations.detector.HiSPARCSimulation.generate_azimuth" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a random azimuth</p>
 <p>Showers from each azimuth have equal probability</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">shower azimuth angle, in radians.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="classmethod">
@@ -280,10 +311,13 @@ with higher energy occur less often, following a power law.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>min_E,max_E</strong> &#8211; Energy bounds for the distribution (in eV).</li>
 <li><strong>alpha</strong> &#8211; Steepness of the power law distribution.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">primary particle energy, in eV.</p>
 </td>
 </tr>
 </tbody>
@@ -359,8 +393,8 @@ with higher energy occur less often, following a power law.</p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -385,14 +419,14 @@ with higher energy occur less often, following a power law.</p>
         <li class="right" >
           <a href="base.html" title="Simulation base classes"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 0.14.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../simulations.html" >Simulation of the detection of EAS events</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
     </div>
   </body>
 </html>
