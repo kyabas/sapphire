@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Search for coincidences between HiSPARC stations &mdash; SAPPHiRE 1.0.0 documentation</title>
+    <title>Search for coincidences between HiSPARC stations &mdash; SAPPHiRE 1.2.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 1.0.0 documentation" href="../index.html" />
+    <link rel="top" title="SAPPHiRE 1.2.0 documentation" href="../index.html" />
     <link rel="up" title="Data analysis" href="../analysis.html" />
     <link rel="next" title="Reconstruction of EAS core and size" href="core_reconstruction.html" />
     <link rel="prev" title="Query coincidences from a datafile" href="coincidence_queries.html" /> 
@@ -47,7 +47,7 @@
         <li class="right" >
           <a href="coincidence_queries.html" title="Query coincidences from a datafile"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.2.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../analysis.html" accesskey="U">Data analysis</a> &raquo;</li> 
       </ul>
@@ -104,16 +104,18 @@ data downloaded from the public database.</p>
 <p>Suppose you want to search for coincidences between stations 501 and
 503.  First, download the data for these stations (with, or without
 traces, depending on your intentions).  Suppose you stored the data in
-the &#8216;/s501&#8217; and &#8216;/s503&#8217; groups in the &#8216;data&#8217; file.  Then:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">station_groups</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;/s501&#39;</span><span class="p">,</span> <span class="s1">&#39;/s503&#39;</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">coin</span> <span class="o">=</span> <span class="n">Coincidences</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;/coincidences&#39;</span><span class="p">,</span> <span class="n">station_groups</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">coin</span><span class="o">.</span><span class="n">search_and_store_coincidences</span><span class="p">()</span>
+the &#8216;/s501&#8217; and &#8216;/s503&#8217; groups in the &#8216;data.h5&#8217; file.  Then:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">groups</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;/s501&#39;</span><span class="p">,</span> <span class="s1">&#39;/s503&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Coincidences</span><span class="p">(</span><span class="s1">&#39;data.h5&#39;</span><span class="p">,</span> <span class="s1">&#39;/coincidences&#39;</span><span class="p">,</span> <span class="n">groups</span><span class="p">)</span> <span class="k">as</span> <span class="n">coin</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">coin</span><span class="o">.</span><span class="n">search_and_store_coincidences</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>If you want a more manual method, replace the last line with:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">coin</span><span class="o">.</span><span class="n">search_coincidences</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="mi">50000</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">coin</span><span class="o">.</span><span class="n">process_events</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">coin</span><span class="o">.</span><span class="n">store_coincidences</span><span class="p">()</span>
+<p>If you want a more manual method, replace the last line the separate
+methods which it calls:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Coincidences</span><span class="p">(</span><span class="s1">&#39;data.h5&#39;</span><span class="p">,</span> <span class="s1">&#39;/coincidences&#39;</span><span class="p">,</span> <span class="n">groups</span><span class="p">)</span> <span class="k">as</span> <span class="n">coin</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">coin</span><span class="o">.</span><span class="n">search_coincidences</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="mi">50000</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">coin</span><span class="o">.</span><span class="n">process_events</span><span class="p">()</span>
+<span class="gp">... </span>    <span class="n">coin</span><span class="o">.</span><span class="n">store_coincidences</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>You can then provide different parameters to the individual methods.
@@ -162,14 +164,12 @@ arrival times from the raw traces (if available). It has a
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>data</strong> &#8211; the PyTables datafile.</li>
-<li><strong>coincidence_group</strong> &#8211; the destination group.</li>
-<li><strong>station_groups</strong> &#8211; a list of groups containing the station
-data.</li>
-<li><strong>overwrite</strong> &#8211; if True, overwrite a previous coincidences
-group.</li>
-<li><strong>progress</strong> &#8211; if True, show a progressbar while storing
-coincidences.</li>
+<li><strong>data</strong> &#8211; either a PyTables file or path to a HDF5 file.</li>
+<li><strong>coincidence_group</strong> &#8211; the destination group. If None the results
+can not be stored, but coincidences can still be searched for.</li>
+<li><strong>station_groups</strong> &#8211; a list of groups containing the station data.</li>
+<li><strong>overwrite</strong> &#8211; if True overwrite a previous coincidences group.</li>
+<li><strong>progress</strong> &#8211; if True show a progressbar while storing coincidences.</li>
 </ul>
 </td>
 </tr>
@@ -263,21 +263,21 @@ lookup-table. The c_index stores the station and event id for each event in
 the coincidence, allowing you to find the original event row.</p>
 <p>Suppose you want to search for coincidences between stations 501 and 503.
 First, download the data for these stations from the ESD. Suppose you
-stored the data in the &#8216;/s501&#8217; and &#8216;/s503&#8217; groups in the file &#8216;data&#8217;.
+stored the data in the &#8216;/s501&#8217; and &#8216;/s503&#8217; groups in the file &#8216;data.h5&#8217;.
 Then:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">station_groups</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;/s501&#39;</span><span class="p">,</span> <span class="s1">&#39;/s503&#39;</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">coin</span> <span class="o">=</span> <span class="n">CoincidencesESD</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;/coincidences&#39;</span><span class="p">,</span> <span class="n">station_groups</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">coin</span><span class="o">.</span><span class="n">search_and_store_coincidences</span><span class="p">()</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">groups</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;/s501&#39;</span><span class="p">,</span> <span class="s1">&#39;/s503&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">CoincidencesESD</span><span class="p">(</span><span class="s1">&#39;data.h5&#39;</span><span class="p">,</span> <span class="s1">&#39;/coincidences&#39;</span><span class="p">,</span> <span class="n">groups</span><span class="p">)</span> <span class="k">as</span> <span class="n">coin</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">coin</span><span class="o">.</span><span class="n">search_and_store_coincidences</span><span class="p">(</span><span class="n">station_numbers</span><span class="o">=</span><span class="p">[</span><span class="mi">501</span><span class="p">,</span> <span class="mi">503</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>If you want a more manual method, replace the last line with:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">coin</span><span class="o">.</span><span class="n">search_coincidences</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">coin</span><span class="o">.</span><span class="n">process_events</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">coin</span><span class="o">.</span><span class="n">store_coincidences</span><span class="p">()</span>
+<p>If you want a more manual method, replace the last line with, for example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">CoincidencesESD</span><span class="p">(</span><span class="s1">&#39;data.h5&#39;</span><span class="p">,</span> <span class="s1">&#39;/coincidences&#39;</span><span class="p">,</span> <span class="n">groups</span><span class="p">)</span> <span class="k">as</span> <span class="n">coin</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">coin</span><span class="o">.</span><span class="n">search_coincidences</span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span> <span class="n">shifts</span><span class="o">=</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="n">limit</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">coin</span><span class="o">.</span><span class="n">store_coincidences</span><span class="p">(</span><span class="n">station_numbers</span><span class="o">=</span><span class="p">[</span><span class="mi">501</span><span class="p">,</span> <span class="mi">503</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>You can then provide different parameters to the individual methods.
-See the corresponding docstrings.</p>
+See the corresponding docstrings for more details.</p>
 <p>Once the coincidences are stored, there will be a <cite>coincidences</cite> table in
 the group. This table has multiple columns used for storing simulation
 inputs like shower direction and energy. At this point, they contain no
@@ -293,7 +293,7 @@ the <code class="docutils literal"><span class="pre">coincidence</span></code> a
 <li><code class="docutils literal"><span class="pre">ext_timestamp</span></code>: the timestamp of the event in nanoseconds (equal
 to timestamp * 1000000000 + nanoseconds)</li>
 <li><code class="docutils literal"><span class="pre">N</span></code>: the number of stations participating in this coincidence</li>
-<li><code class="docutils literal"><span class="pre">s0</span></code>, <code class="docutils literal"><span class="pre">s1</span></code>, ...: for each station indicate whether it
+<li><code class="docutils literal"><span class="pre">s501</span></code>, <code class="docutils literal"><span class="pre">s503</span></code>, ...: for each station indicate whether it
 participated in the coincidence.</li>
 </ul>
 </div></blockquote>
@@ -319,20 +319,20 @@ up the source events making up the 40th coincidence:</p>
 </pre></div>
 </div>
 <p>The <code class="docutils literal"><span class="pre">event</span></code> is one of the events in the coincidence.</p>
+<p>Coincidences stored by this class can easily be searched by using
+a <a class="reference internal" href="coincidence_queries.html#sapphire.analysis.coincidence_queries.CoincidenceQuery" title="sapphire.analysis.coincidence_queries.CoincidenceQuery"><code class="xref py py-class docutils literal"><span class="pre">CoincidenceQuery</span></code></a> object.</p>
 <p>Initialize the class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>data</strong> &#8211; the PyTables datafile.</li>
-<li><strong>coincidence_group</strong> &#8211; the destination group.</li>
-<li><strong>station_groups</strong> &#8211; a list of groups containing the station
-data.</li>
-<li><strong>overwrite</strong> &#8211; if True, overwrite a previous coincidences
-group.</li>
-<li><strong>progress</strong> &#8211; if True, show a progressbar while storing
-coincidences.</li>
+<li><strong>data</strong> &#8211; either a PyTables file or path to a HDF5 file.</li>
+<li><strong>coincidence_group</strong> &#8211; the destination group. If None the results
+can not be stored, but coincidences can still be searched for.</li>
+<li><strong>station_groups</strong> &#8211; a list of groups containing the station data.</li>
+<li><strong>overwrite</strong> &#8211; if True overwrite a previous coincidences group.</li>
+<li><strong>progress</strong> &#8211; if True show a progressbar while storing coincidences.</li>
 </ul>
 </td>
 </tr>
@@ -454,13 +454,6 @@ a list of the uncompressed traces.</p>
   <h4>Next topic</h4>
   <p class="topless"><a href="core_reconstruction.html"
                         title="next chapter">Reconstruction of EAS core and size</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../_sources/analysis/coincidences.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -490,14 +483,13 @@ a list of the uncompressed traces.</p>
         <li class="right" >
           <a href="coincidence_queries.html" title="Query coincidences from a datafile"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.2.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../analysis.html" >Data analysis</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
+        &copy; Copyright 2009-2016, David Fokkema, Arne de Laat, and Tom Kooij.
     </div>
   </body>
 </html>

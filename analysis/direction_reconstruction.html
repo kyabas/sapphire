@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Reconstruction of EAS direction &mdash; SAPPHiRE 1.0.0 documentation</title>
+    <title>Reconstruction of EAS direction &mdash; SAPPHiRE 1.2.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 1.0.0 documentation" href="../index.html" />
+    <link rel="top" title="SAPPHiRE 1.2.0 documentation" href="../index.html" />
     <link rel="up" title="Data analysis" href="../analysis.html" />
     <link rel="next" title="Get signal and timing values from events" href="event_utils.html" />
     <link rel="prev" title="Reconstruction of EAS core and size" href="core_reconstruction.html" /> 
@@ -47,7 +47,7 @@
         <li class="right" >
           <a href="core_reconstruction.html" title="Reconstruction of EAS core and size"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.2.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../analysis.html" accesskey="U">Data analysis</a> &raquo;</li> 
       </ul>
@@ -67,11 +67,11 @@ relevant information from the station and event or cluster and
 coincidence. Various algorithms which do the reconstruction are also
 defined here. The algorithms require positions and arrival times to
 do the reconstruction.</p>
-<p>Each algorithm has a <a class="reference internal" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithm.reconstruct_common" title="sapphire.analysis.direction_reconstruction.DirectAlgorithm.reconstruct_common"><code class="xref py py-meth docutils literal"><span class="pre">reconstruct_common()</span></code></a>
+<p>Each algorithm has a <a class="reference internal" href="#sapphire.analysis.direction_reconstruction.BaseDirectionAlgorithm.reconstruct_common" title="sapphire.analysis.direction_reconstruction.BaseDirectionAlgorithm.reconstruct_common"><code class="xref py py-meth docutils literal"><span class="pre">reconstruct_common()</span></code></a>
 method which always requires arrival times, x, and y positions and
 optionally z positions and previous reconstruction results. The data
 is then prepared for the algorithm and passed to
-the <a class="reference internal" href="#sapphire.analysis.direction_reconstruction.DirectAlgorithm.reconstruct" title="sapphire.analysis.direction_reconstruction.DirectAlgorithm.reconstruct"><code class="xref py py-meth docutils literal"><span class="pre">reconstruct()</span></code></a> method which returns the
+the <a class="reference internal" href="#sapphire.analysis.direction_reconstruction.BaseDirectionAlgorithm.reconstruct" title="sapphire.analysis.direction_reconstruction.BaseDirectionAlgorithm.reconstruct"><code class="xref py py-meth docutils literal"><span class="pre">reconstruct()</span></code></a> method which returns the
 reconstructed theta and phi coordinates.</p>
 <dl class="class">
 <dt id="sapphire.analysis.direction_reconstruction.EventDirectionReconstruction">
@@ -85,7 +85,7 @@ with a &#8216;station&#8217; and you can reconstruct events using
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>station</strong> &#8211; <a class="reference internal" href="../clusters.html#sapphire.clusters.Station" title="sapphire.clusters.Station"><code class="xref py py-class docutils literal"><span class="pre">Station</span></code></a> object.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>station</strong> &#8211; <a class="reference internal" href="../clusters.html#sapphire.clusters.Station" title="sapphire.clusters.Station"><code class="xref py py-class docutils literal"><span class="pre">sapphire.clusters.Station</span></code></a> object.</td>
 </tr>
 </tbody>
 </table>
@@ -131,7 +131,7 @@ file.</li>
 <li><strong>detector_ids</strong> &#8211; detectors to use for the reconstructions.</li>
 <li><strong>offsets</strong> &#8211; time offsets for each detector or a
 <a class="reference internal" href="../api.html#sapphire.api.Station" title="sapphire.api.Station"><code class="xref py py-class docutils literal"><span class="pre">Station</span></code></a> object.</li>
-<li><strong>progress</strong> &#8211; if True shows a progress bar.</li>
+<li><strong>progress</strong> &#8211; if True show a progress bar while reconstructing.</li>
 <li><strong>initials</strong> &#8211; list of dictionaries with already reconstructed shower
 parameters.</li>
 </ul>
@@ -176,8 +176,7 @@ or more (station_number, event) tuples.</li>
 <li><strong>station_numbers</strong> &#8211; list of station numbers, to only use
 events from those stations.</li>
 <li><strong>offsets</strong> &#8211; a dictionary of either lists of detector timing
-offsets for each station or api.Station objects for
-each station.</li>
+offsets or <a class="reference internal" href="../api.html#sapphire.api.Station" title="sapphire.api.Station"><code class="xref py py-class docutils literal"><span class="pre">Station</span></code></a> objects for each station.</li>
 <li><strong>initial</strong> &#8211; dictionary with already fitted shower parameters.</li>
 </ul>
 </td>
@@ -205,7 +204,7 @@ events from those stations.</li>
 <li><strong>offsets</strong> &#8211; dictionary with detector offsets for each station.
 These detector offsets should be relative to one
 detector from a specific station.</li>
-<li><strong>progress</strong> &#8211; if True shows a progress bar.</li>
+<li><strong>progress</strong> &#8211; if True show a progress bar while reconstructing.</li>
 <li><strong>initials</strong> &#8211; list of dictionaries with already reconstructed shower
 parameters.</li>
 </ul>
@@ -239,7 +238,8 @@ offset error.</p>
 other stations can are allow to be the
 reference station.</li>
 <li><strong>midnight_ts</strong> &#8211; timestamp of midnight before the coincidence.</li>
-<li><strong>offsets</strong> &#8211; a dictionary of api.Station objects for each station.</li>
+<li><strong>offsets</strong> &#8211; a dictionary of <a class="reference internal" href="../api.html#sapphire.api.Station" title="sapphire.api.Station"><code class="xref py py-class docutils literal"><span class="pre">Station</span></code></a> objects
+for each station.</li>
 </ul>
 </td>
 </tr>
@@ -286,6 +286,51 @@ detector from a specific station.</li>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of theta, phi, and station numbers.</p>
 </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sapphire.analysis.direction_reconstruction.BaseDirectionAlgorithm">
+<em class="property">class </em><code class="descclassname">sapphire.analysis.direction_reconstruction.</code><code class="descname">BaseDirectionAlgorithm</code><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.BaseDirectionAlgorithm" title="Permalink to this definition">¶</a></dt>
+<dd><p>No actual direction reconstruction algorithm</p>
+<p>Simply returns (nan, nan) as direction.</p>
+<dl class="classmethod">
+<dt id="sapphire.analysis.direction_reconstruction.BaseDirectionAlgorithm.reconstruct_common">
+<em class="property">classmethod </em><code class="descname">reconstruct_common</code><span class="sig-paren">(</span><em>t</em>, <em>x</em>, <em>y</em>, <em>z=None</em>, <em>initial={}</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.BaseDirectionAlgorithm.reconstruct_common" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reconstruct shower angles</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>t</strong> &#8211; detector arrival time in ns.</li>
+<li><strong>x,y</strong> &#8211; positions of detectors in m.</li>
+<li><strong>z</strong> &#8211; height of detectors in m.</li>
+<li><strong>initial</strong> &#8211; dictionary containing values from previous
+reconstructions.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">reconstructed theta and phi angles.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="sapphire.analysis.direction_reconstruction.BaseDirectionAlgorithm.reconstruct">
+<em class="property">static </em><code class="descname">reconstruct</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.direction_reconstruction.BaseDirectionAlgorithm.reconstruct" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reconstruct shower angles</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">reconstructed theta and phi angles.</td>
 </tr>
 </tbody>
 </table>
@@ -947,13 +992,6 @@ distance becomes relevant.</li>
   <h4>Next topic</h4>
   <p class="topless"><a href="event_utils.html"
                         title="next chapter">Get signal and timing values from events</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../_sources/analysis/direction_reconstruction.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -983,14 +1021,13 @@ distance becomes relevant.</li>
         <li class="right" >
           <a href="core_reconstruction.html" title="Reconstruction of EAS core and size"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.2.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../analysis.html" >Data analysis</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
+        &copy; Copyright 2009-2016, David Fokkema, Arne de Laat, and Tom Kooij.
     </div>
   </body>
 </html>

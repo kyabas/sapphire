@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Data timing and signal calibration &mdash; SAPPHiRE 1.0.0 documentation</title>
+    <title>Data timing and signal calibration &mdash; SAPPHiRE 1.2.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 1.0.0 documentation" href="../index.html" />
+    <link rel="top" title="SAPPHiRE 1.2.0 documentation" href="../index.html" />
     <link rel="up" title="Data analysis" href="../analysis.html" />
     <link rel="next" title="Query coincidences from a datafile" href="coincidence_queries.html" />
     <link rel="prev" title="Data analysis" href="../analysis.html" /> 
@@ -47,7 +47,7 @@
         <li class="right" >
           <a href="../analysis.html" title="Data analysis"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.2.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../analysis.html" accesskey="U">Data analysis</a> &raquo;</li> 
       </ul>
@@ -74,7 +74,7 @@ Determine the PMT response curve to correct the detected number of MIPs.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>events</strong> &#8211; events table of processed events.</li>
-<li><strong>station</strong> &#8211; <a class="reference internal" href="../clusters.html#sapphire.clusters.Station" title="sapphire.clusters.Station"><code class="xref py py-class docutils literal"><span class="pre">Station</span></code></a> object, to determine
+<li><strong>station</strong> &#8211; <a class="reference internal" href="../clusters.html#sapphire.clusters.Station" title="sapphire.clusters.Station"><code class="xref py py-class docutils literal"><span class="pre">sapphire.clusters.Station</span></code></a> object, to determine
 number of detectors and relative altitudes.</li>
 </ul>
 </td>
@@ -95,7 +95,7 @@ number of detectors and relative altitudes.</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>dt</strong> &#8211; a list of time differences between detectors (t - t_ref).</li>
+<li><strong>dt</strong> &#8211; array of time differences between detectors (t - t_ref).</li>
 <li><strong>dz</strong> &#8211; height difference between the detectors (z - z_ref).</li>
 </ul>
 </td>
@@ -120,7 +120,7 @@ the error of the mean.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>stations</strong> &#8211; list of stations for which to determine offsets.</li>
 <li><strong>data</strong> &#8211; the PyTables datafile with timedelta tables.</li>
-<li><strong>progress</strong> &#8211; if true: show progressbar if true.</li>
+<li><strong>progress</strong> &#8211; if True show progressbar when determining offsets.</li>
 <li><strong>force_stale</strong> &#8211; if true: do not get network information from API.</li>
 <li><strong>time_deltas_group</strong> &#8211; path to the time deltas group.</li>
 </ul>
@@ -325,7 +325,7 @@ Spreads remaining days over first intervals</p>
 <dl class="function">
 <dt id="sapphire.analysis.calibration.pairwise">
 <code class="descclassname">sapphire.analysis.calibration.</code><code class="descname">pairwise</code><span class="sig-paren">(</span><em>iterable</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.calibration.pairwise" title="Permalink to this definition">¶</a></dt>
-<dd><p>s -&gt; (s0,s1), (s1,s2), (s2, s3), ...</p>
+<dd><p>s -&gt; (s0, s1), (s1, s2), (s2, s3), ...</p>
 </dd></dl>
 
 </div>
@@ -345,13 +345,6 @@ Spreads remaining days over first intervals</p>
   <h4>Next topic</h4>
   <p class="topless"><a href="coincidence_queries.html"
                         title="next chapter">Query coincidences from a datafile</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../_sources/analysis/calibration.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -381,14 +374,13 @@ Spreads remaining days over first intervals</p>
         <li class="right" >
           <a href="../analysis.html" title="Data analysis"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.2.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../analysis.html" >Data analysis</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
+        &copy; Copyright 2009-2016, David Fokkema, Arne de Laat, and Tom Kooij.
     </div>
   </body>
 </html>

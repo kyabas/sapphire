@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>CORSIKA Blocks &mdash; SAPPHiRE 1.0.0 documentation</title>
+    <title>CORSIKA Blocks &mdash; SAPPHiRE 1.2.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 1.0.0 documentation" href="../index.html" />
+    <link rel="top" title="SAPPHiRE 1.2.0 documentation" href="../index.html" />
     <link rel="up" title="CORSIKA simulations" href="../corsika.html" />
     <link rel="next" title="Query CORSIKA overview for simulations" href="corsika_queries.html" />
     <link rel="prev" title="CORSIKA simulations" href="../corsika.html" /> 
@@ -47,7 +47,7 @@
         <li class="right" >
           <a href="../corsika.html" title="CORSIKA simulations"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.2.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../corsika.html" accesskey="U">CORSIKA simulations</a> &raquo;</li> 
       </ul>
@@ -63,7 +63,7 @@
 <p>Classes corresponding to CORSIKA blocks and sub-blocks</p>
 <p>The classes in this module correspond one-to-one with the sub-blocks
 (and blocks) as specified in the CORSIKA users manual.</p>
-<p>Author: Javier Gonzalez &lt;<a class="reference external" href="mailto:jgonzalez&#37;&#52;&#48;ik&#46;fzk&#46;de">jgonzalez<span>&#64;</span>ik<span>&#46;</span>fzk<span>&#46;</span>de</a>&gt;</p>
+<p>Author: Javier Gonzalez</p>
 <dl class="function">
 <dt id="sapphire.corsika.blocks.jit">
 <code class="descclassname">sapphire.corsika.blocks.</code><code class="descname">jit</code><span class="sig-paren">(</span><em>func</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.blocks.jit" title="Permalink to this definition">¶</a></dt>
@@ -148,6 +148,22 @@ CORSIKA coordinate conventions are mentioned in Figure 1 and Table 10.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">tuple with p_x, p_y, p_z, x, y, t, id, r, hadron_generation,
 observation_level, phi data.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="sapphire.corsika.blocks.particle_data_thin">
+<code class="descclassname">sapphire.corsika.blocks.</code><code class="descname">particle_data_thin</code><span class="sig-paren">(</span><em>subblock</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.blocks.particle_data_thin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get thinned particle data.</p>
+<p>Similar to <a class="reference internal" href="#sapphire.corsika.blocks.particle_data" title="sapphire.corsika.blocks.particle_data"><code class="xref py py-func docutils literal"><span class="pre">particle_data()</span></code></a>, but includes particle weight.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">tuple with p_x, p_y, p_z, x, y, t, id, r, hadron_generation,
+observation_level, phi, weight data.</td>
 </tr>
 </tbody>
 </table>
@@ -246,13 +262,6 @@ compilation options.</p>
   <h4>Next topic</h4>
   <p class="topless"><a href="corsika_queries.html"
                         title="next chapter">Query CORSIKA overview for simulations</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../_sources/corsika/blocks.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -282,14 +291,13 @@ compilation options.</p>
         <li class="right" >
           <a href="../corsika.html" title="CORSIKA simulations"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.2.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../corsika.html" >CORSIKA simulations</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
+        &copy; Copyright 2009-2016, David Fokkema, Arne de Laat, and Tom Kooij.
     </div>
   </body>
 </html>

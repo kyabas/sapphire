@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Processing of HiSPARC events &mdash; SAPPHiRE 1.0.0 documentation</title>
+    <title>Processing of HiSPARC events &mdash; SAPPHiRE 1.2.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 1.0.0 documentation" href="../index.html" />
+    <link rel="top" title="SAPPHiRE 1.2.0 documentation" href="../index.html" />
     <link rel="up" title="Data analysis" href="../analysis.html" />
     <link rel="next" title="Processing of HiSPARC traces" href="process_traces.html" />
     <link rel="prev" title="Landau distribution" href="landau.html" /> 
@@ -47,7 +47,7 @@
         <li class="right" >
           <a href="landau.html" title="Landau distribution"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.2.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../analysis.html" accesskey="U">Data analysis</a> &raquo;</li> 
       </ul>
@@ -124,7 +124,8 @@ the detector to a copy of the event table.</p>
 cases, this is simply the group containing the events table.</li>
 <li><strong>source</strong> &#8211; the name of the events table.  Default: None,
 meaning the default name &#8216;events&#8217;.</li>
-<li><strong>progress</strong> &#8211; show progressbar.</li>
+<li><strong>progress</strong> &#8211; if True show a progressbar while copying and
+processing events.</li>
 </ul>
 </td>
 </tr>
@@ -199,6 +200,22 @@ The default, None, corresponds to no limit.</li>
 <em class="property">static </em><code class="descname">first_above_threshold</code><span class="sig-paren">(</span><em>trace</em>, <em>threshold</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.process_events.ProcessEvents.first_above_threshold" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find the first element in the list equal or above threshold</p>
 <p>If no element matches the condition -999 will be returned.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>trace</strong> &#8211; iterable trace.</li>
+<li><strong>threshold</strong> &#8211; value the trace has to be greater or equal to.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">index in trace where a value is greater or equal to
+threshold.</p>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -222,6 +239,8 @@ cases, this is simply the group containing the events table.</li>
 <li><strong>indexes</strong> &#8211; a list of indexes into the events table.</li>
 <li><strong>source</strong> &#8211; the name of the events table.  Default: None,
 meaning the default name &#8216;events&#8217;.</li>
+<li><strong>progress</strong> &#8211; if True show a progressbar while copying and
+processing events.</li>
 </ul>
 </td>
 </tr>
@@ -258,7 +277,8 @@ interpolation method to determine the arrival times of particles.</p>
 cases, this is simply the group containing the events table.</li>
 <li><strong>source</strong> &#8211; the name of the events table.  Default: None,
 meaning the default name &#8216;events&#8217;.</li>
-<li><strong>progress</strong> &#8211; show progressbar.</li>
+<li><strong>progress</strong> &#8211; if True show a progressbar while copying and
+processing events.</li>
 </ul>
 </td>
 </tr>
@@ -284,6 +304,8 @@ cases, this is simply the group containing the events table.</li>
 <li><strong>indexes</strong> &#8211; a list of indexes into the events table.</li>
 <li><strong>source</strong> &#8211; the name of the events table.  Default: None,
 meaning the default name &#8216;events&#8217;.</li>
+<li><strong>progress</strong> &#8211; if True show a progressbar while copying and
+processing events.</li>
 </ul>
 </td>
 </tr>
@@ -311,7 +333,8 @@ processing time and data size.</p>
 cases, this is simply the group containing the events table.</li>
 <li><strong>source</strong> &#8211; the name of the events table.  Default: None,
 meaning the default name &#8216;events&#8217;.</li>
-<li><strong>progress</strong> &#8211; show progressbar.</li>
+<li><strong>progress</strong> &#8211; if True show a progressbar while copying and
+processing events.</li>
 </ul>
 </td>
 </tr>
@@ -341,6 +364,8 @@ cases, this is simply the group containing the events table.</li>
 <li><strong>indexes</strong> &#8211; a list of indexes into the events table.</li>
 <li><strong>source</strong> &#8211; the name of the events table.  Default: None,
 meaning the default name &#8216;events&#8217;.</li>
+<li><strong>progress</strong> &#8211; if True show a progressbar while copying and
+processing events.</li>
 </ul>
 </td>
 </tr>
@@ -367,7 +392,8 @@ a value of -999 will be entered.</p>
 cases, this is simply the group containing the events table.</li>
 <li><strong>source</strong> &#8211; the name of the events table.  Default: None,
 meaning the default name &#8216;events&#8217;.</li>
-<li><strong>progress</strong> &#8211; boolean to indicate if a progress bar should be shown.</li>
+<li><strong>progress</strong> &#8211; if True show a progressbar while copying and
+processing events.</li>
 <li><strong>station</strong> &#8211; station number of station to which the data belongs.</li>
 </ul>
 </td>
@@ -390,10 +416,11 @@ original event tables) and the destination is assumed to be empty.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>source_file</strong> &#8211; the PyTables source file</li>
-<li><strong>dest_file</strong> &#8211; the PyTables dest file</li>
-<li><strong>group_path</strong> &#8211; the pathname of the source (and destination)
-group</li>
+<li><strong>source_file,dest_file</strong> &#8211; PyTables source and destination files.</li>
+<li><strong>source_group,dest_group</strong> &#8211; the pathname of the source and
+destination group.</li>
+<li><strong>progress</strong> &#8211; if True show a progressbar while copying and
+processing events.</li>
 </ul>
 </td>
 </tr>
@@ -415,11 +442,12 @@ different file than the source.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>source_file</strong> &#8211; the PyTables source file</li>
-<li><strong>dest_file</strong> &#8211; the PyTables dest file</li>
-<li><strong>group_path</strong> &#8211; the pathname of the source (and destination)
-group</li>
+<li><strong>source_file,dest_file</strong> &#8211; PyTables source and destination files.</li>
+<li><strong>source_group,dest_group</strong> &#8211; the pathname of the source and
+destination group.</li>
 <li><strong>station</strong> &#8211; station number of station to which the data belongs.</li>
+<li><strong>progress</strong> &#8211; if True show a progressbar while copying and
+processing events.</li>
 </ul>
 </td>
 </tr>
@@ -445,7 +473,8 @@ copy of the weather table.</p>
 cases, this is simply the group containing the events table.</li>
 <li><strong>source</strong> &#8211; the name of the events table.  Default: None,
 meaning the default name &#8216;events&#8217;.</li>
-<li><strong>progress</strong> &#8211; show progressbar.</li>
+<li><strong>progress</strong> &#8211; if True show a progressbar while copying and
+processing events.</li>
 </ul>
 </td>
 </tr>
@@ -488,9 +517,11 @@ original event tables) and the destination is assumed to be empty.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>source_file,dest_file</strong> &#8211; the PyTables source and destination file</li>
+<li><strong>source_file,dest_file</strong> &#8211; PyTables source and destination files.</li>
 <li><strong>source_group,dest_group</strong> &#8211; the pathname of the source and
-destination group</li>
+destination group.</li>
+<li><strong>progress</strong> &#8211; if True show a progressbar while copying and
+processing events.</li>
 </ul>
 </td>
 </tr>
@@ -515,13 +546,6 @@ destination group</li>
   <h4>Next topic</h4>
   <p class="topless"><a href="process_traces.html"
                         title="next chapter">Processing of HiSPARC traces</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../_sources/analysis/process_events.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -551,14 +575,13 @@ destination group</li>
         <li class="right" >
           <a href="landau.html" title="Landau distribution"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.2.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../analysis.html" >Data analysis</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
+        &copy; Copyright 2009-2016, David Fokkema, Arne de Laat, and Tom Kooij.
     </div>
   </body>
 </html>

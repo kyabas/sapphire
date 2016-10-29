@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>CORSIKA on Stoomboot &mdash; SAPPHiRE 1.0.0 documentation</title>
+    <title>CORSIKA on Stoomboot &mdash; SAPPHiRE 1.2.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 1.0.0 documentation" href="../index.html" />
+    <link rel="top" title="SAPPHiRE 1.2.0 documentation" href="../index.html" />
     <link rel="up" title="CORSIKA simulations" href="../corsika.html" />
     <link rel="next" title="Convert CORSIKA simulations on Stoomboot" href="qsub_store_corsika_data.html" />
     <link rel="prev" title="CORSIKA Particles" href="particles.html" /> 
@@ -47,7 +47,7 @@
         <li class="right" >
           <a href="particles.html" title="CORSIKA Particles"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.2.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../corsika.html" accesskey="U">CORSIKA simulations</a> &raquo;</li> 
       </ul>
@@ -115,6 +115,24 @@ corsika74000Linux_SIBYLL_gheisha</li>
 </tr>
 </tbody>
 </table>
+<dl class="method">
+<dt id="sapphire.corsika.qsub_corsika.CorsikaBatch.corsika_energy">
+<code class="descname">corsika_energy</code><span class="sig-paren">(</span><em>energy</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.qsub_corsika.CorsikaBatch.corsika_energy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert energy to format for CORSIKA input</p>
+<p>Convert from log10(E/eV) to E[GeV] and split value to multiplier
+and power.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>energy</strong> &#8211; primary particle energy as log10(E/eV).</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">separate multiplier and power</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="method">
 <dt id="sapphire.corsika.qsub_corsika.CorsikaBatch.run">
 <code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.qsub_corsika.CorsikaBatch.run" title="Permalink to this definition">¶</a></dt>
@@ -210,7 +228,8 @@ run.</p>
 <li><strong>azimuth</strong> &#8211; Azimuth angle in degrees of the primary particle</li>
 <li><strong>queue</strong> &#8211; Stoomboot queue to submit to</li>
 <li><strong>corsika</strong> &#8211; Name of the CORSIKA executable to use</li>
-<li><strong>progress</strong> &#8211; Toggle printing of overview.</li>
+<li><strong>progress</strong> &#8211; if True print an overview of the chosen paramters and
+show a progressbar of the job submission progress.</li>
 </ul>
 </td>
 </tr>
@@ -240,13 +259,6 @@ run.</p>
   <h4>Next topic</h4>
   <p class="topless"><a href="qsub_store_corsika_data.html"
                         title="next chapter">Convert CORSIKA simulations on Stoomboot</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../_sources/corsika/qsub_corsika.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -276,14 +288,13 @@ run.</p>
         <li class="right" >
           <a href="particles.html" title="CORSIKA Particles"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.2.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../corsika.html" >CORSIKA simulations</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
+        &copy; Copyright 2009-2016, David Fokkema, Arne de Laat, and Tom Kooij.
     </div>
   </body>
 </html>

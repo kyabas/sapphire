@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>MPV fit &mdash; SAPPHiRE 1.0.0 documentation</title>
+    <title>MPV fit &mdash; SAPPHiRE 1.2.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 1.0.0 documentation" href="../index.html" />
+    <link rel="top" title="SAPPHiRE 1.2.0 documentation" href="../index.html" />
     <link rel="up" title="Data analysis" href="../analysis.html" />
     <link rel="next" title="Landau distribution" href="landau.html" />
     <link rel="prev" title="Get signal and timing values from events" href="event_utils.html" /> 
@@ -47,7 +47,7 @@
         <li class="right" >
           <a href="event_utils.html" title="Get signal and timing values from events"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.2.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../analysis.html" accesskey="U">Data analysis</a> &raquo;</li> 
       </ul>
@@ -92,7 +92,7 @@ number of counts.</li>
 <dt><a class="reference internal" href="#sapphire.analysis.find_mpv.FindMostProbableValueInSpectrum.fit_mpv" title="sapphire.analysis.find_mpv.FindMostProbableValueInSpectrum.fit_mpv"><code class="xref py py-meth docutils literal"><span class="pre">fit_mpv()</span></code></a></dt>
 <dd>Based on a first guess, fit the MIP peak to obtain the MPV</dd>
 </dl>
-<p>Initialize the class instance.</p>
+<p>Initialize the class instance</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -112,7 +112,7 @@ peak.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return mpv:</th><td class="field-body">best guess of the most probable value</td>
+<tr class="field-odd field"><th class="field-name">Return mpv:</th><td class="field-body">best guess of the most probable value.</td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">Return boolean is_fitted:</th></tr>
 <tr class="field-even field"><td>&nbsp;</td><td class="field-body">indicates if the fit was successful.</td>
@@ -143,7 +143,7 @@ this to be the approximate location of the MIP peak.</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return mpv:</th><td class="field-body">first guess of the most probable value</td>
+<tr class="field-odd field"><th class="field-name">Return mpv:</th><td class="field-body">first guess of the most probable value.</td>
 </tr>
 </tbody>
 </table>
@@ -162,15 +162,15 @@ be adjusted by the width_factor parameter.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>first_guess</strong> &#8211; approximate location of the most probable
-value</li>
+value.</li>
 <li><strong>width_factor</strong> &#8211; float in the range [0., 1.] to indicate the
 width of the fit domain.  The domain is given by
-[(1. - width_factor) * first_guess, (1. + width_factor) *
-first_guess]</li>
+<code class="docutils literal"><span class="pre">[(1.</span> <span class="pre">-</span> <span class="pre">width_factor)</span> <span class="pre">*</span> <span class="pre">first_guess,</span> <span class="pre">(1.</span> <span class="pre">+</span> <span class="pre">width_factor)</span> <span class="pre">*</span>
+<span class="pre">first_guess]</span></code>.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return mpv:</th><td class="field-body"><p class="first last">mpv value obtained from the fit</p>
+<tr class="field-even field"><th class="field-name">Return mpv:</th><td class="field-body"><p class="first last">mpv value obtained from the fit.</p>
 </td>
 </tr>
 </tbody>
@@ -196,13 +196,6 @@ first_guess]</li>
   <h4>Next topic</h4>
   <p class="topless"><a href="landau.html"
                         title="next chapter">Landau distribution</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../_sources/analysis/find_mpv.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -232,14 +225,13 @@ first_guess]</li>
         <li class="right" >
           <a href="event_utils.html" title="Get signal and timing values from events"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.2.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../analysis.html" >Data analysis</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
+        &copy; Copyright 2009-2016, David Fokkema, Arne de Laat, and Tom Kooij.
     </div>
   </body>
 </html>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Reconstructions &mdash; SAPPHiRE 1.0.0 documentation</title>
+    <title>Reconstructions &mdash; SAPPHiRE 1.2.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 1.0.0 documentation" href="../index.html" />
+    <link rel="top" title="SAPPHiRE 1.2.0 documentation" href="../index.html" />
     <link rel="up" title="Data analysis" href="../analysis.html" />
     <link rel="next" title="Time deltas" href="time_deltas.html" />
     <link rel="prev" title="Processing of HiSPARC traces" href="process_traces.html" /> 
@@ -47,7 +47,7 @@
         <li class="right" >
           <a href="process_traces.html" title="Processing of HiSPARC traces"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.2.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../analysis.html" accesskey="U">Data analysis</a> &raquo;</li> 
       </ul>
@@ -95,11 +95,11 @@
 <li><strong>station_group</strong> &#8211; the group containing the event table,
 the results will also be stored in this group.</li>
 <li><strong>station</strong> &#8211; either a station number or
-<a class="reference internal" href="../clusters.html#sapphire.clusters.Station" title="sapphire.clusters.Station"><code class="xref py py-class docutils literal"><span class="pre">Station</span></code></a> object. If it is a number the
+<a class="reference internal" href="../clusters.html#sapphire.clusters.Station" title="sapphire.clusters.Station"><code class="xref py py-class docutils literal"><span class="pre">sapphire.clusters.Station</span></code></a> object. If it is a number the
 positions and offsets will be retrieved from the API. Otherwise
 the offsets will be determined with the available data.</li>
-<li><strong>overwrite</strong> &#8211; if True, overwrite existing reconstruction table.</li>
-<li><strong>progress</strong> &#8211; if True, show a progressbar while reconstructing.</li>
+<li><strong>overwrite</strong> &#8211; if True overwrite existing reconstruction table.</li>
+<li><strong>progress</strong> &#8211; if True show a progressbar while reconstructing.</li>
 <li><strong>destination</strong> &#8211; alternative name for reconstruction table.</li>
 </ul>
 </td>
@@ -175,11 +175,11 @@ NaN as reconstructed value.</p>
 <li><strong>station_group</strong> &#8211; the group containing the event table,
 the results will also be stored in this group.</li>
 <li><strong>station</strong> &#8211; either a station number or
-<a class="reference internal" href="../clusters.html#sapphire.clusters.Station" title="sapphire.clusters.Station"><code class="xref py py-class docutils literal"><span class="pre">Station</span></code></a> object. If number the
+<a class="reference internal" href="../clusters.html#sapphire.clusters.Station" title="sapphire.clusters.Station"><code class="xref py py-class docutils literal"><span class="pre">sapphire.clusters.Station</span></code></a> object. If number the
 positions and offsets are retrieved from the API. Otherwise
 the offsets will be determined with the available data.</li>
-<li><strong>overwrite</strong> &#8211; if True, overwrite existing reconstruction table.</li>
-<li><strong>progress</strong> &#8211; if True, show a progressbar while reconstructing.</li>
+<li><strong>overwrite</strong> &#8211; if True overwrite existing reconstruction table.</li>
+<li><strong>progress</strong> &#8211; if True show a progressbar while reconstructing.</li>
 <li><strong>destination</strong> &#8211; alternative name for reconstruction table.</li>
 </ul>
 </td>
@@ -215,8 +215,8 @@ the offsets will be determined with the available data.</li>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>data</strong> &#8211; the PyTables datafile.</li>
 <li><strong>coincidences_group</strong> &#8211; the destination group.</li>
-<li><strong>overwrite</strong> &#8211; if True, overwrite existing reconstruction table.</li>
-<li><strong>progress</strong> &#8211; if True, show a progressbar while reconstructing.</li>
+<li><strong>overwrite</strong> &#8211; if True overwrite existing reconstruction table.</li>
+<li><strong>progress</strong> &#8211; if True show a progressbar while reconstructing.</li>
 <li><strong>destination</strong> &#8211; alternative name for reconstruction table.</li>
 <li><strong>cluster</strong> &#8211; a Cluster object to use for the reconstructions.</li>
 </ul>
@@ -238,7 +238,7 @@ the offsets will be determined with the available data.</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>detector_ids</strong> &#8211; list of detector ids to use for reconstructions.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>station_numbers</strong> &#8211; list of stations to use for reconstructions.</td>
 </tr>
 </tbody>
 </table>
@@ -252,7 +252,7 @@ the offsets will be determined with the available data.</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>detector_ids</strong> &#8211; list of detector ids to use for reconstructions.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>station_numbers</strong> &#8211; list of stations to use for reconstructions.</td>
 </tr>
 </tbody>
 </table>
@@ -267,11 +267,11 @@ the offsets will be determined with the available data.</li>
 <dl class="method">
 <dt id="sapphire.analysis.reconstructions.ReconstructESDCoincidences.get_station_timing_offsets">
 <code class="descname">get_station_timing_offsets</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.analysis.reconstructions.ReconstructESDCoincidences.get_station_timing_offsets" title="Permalink to this definition">¶</a></dt>
-<dd><p>Construct a dict of api.Station objects</p>
+<dd><p>Construct a dict of <a class="reference internal" href="../api.html#sapphire.api.Station" title="sapphire.api.Station"><code class="xref py py-class docutils literal"><span class="pre">Station</span></code></a> objects</p>
 <p>Simulations store the offsets in the cluster object, try to extract
 that into a dictionary, to be used by the reconstructions.
-If the data is not from simulations create an api.Station object
-for each station in the cluster.</p>
+If the data is not from simulations create an
+<a class="reference internal" href="../api.html#sapphire.api.Station" title="sapphire.api.Station"><code class="xref py py-class docutils literal"><span class="pre">Station</span></code></a> object for each station in the cluster.</p>
 </dd></dl>
 
 <dl class="method">
@@ -297,11 +297,11 @@ NaN as reconstructed value.</p>
 <li><strong>station_group</strong> &#8211; the group containing the event table,
 the results will also be stored in this group.</li>
 <li><strong>station</strong> &#8211; either a station number or
-<a class="reference internal" href="../clusters.html#sapphire.clusters.Station" title="sapphire.clusters.Station"><code class="xref py py-class docutils literal"><span class="pre">Station</span></code></a> object. If number the
+<a class="reference internal" href="../clusters.html#sapphire.clusters.Station" title="sapphire.clusters.Station"><code class="xref py py-class docutils literal"><span class="pre">sapphire.clusters.Station</span></code></a> object. If number the
 positions and offsets are retrieved from the API. Otherwise
 the offsets will be determined with the available data.</li>
-<li><strong>overwrite</strong> &#8211; if True, overwrite existing reconstruction table.</li>
-<li><strong>progress</strong> &#8211; if True, show a progressbar while reconstructing.</li>
+<li><strong>overwrite</strong> &#8211; if True overwrite existing reconstruction table.</li>
+<li><strong>progress</strong> &#8211; if True show a progressbar while reconstructing.</li>
 <li><strong>destination</strong> &#8211; alternative name for reconstruction table.</li>
 </ul>
 </td>
@@ -333,13 +333,6 @@ the offsets will be determined with the available data.</li>
   <h4>Next topic</h4>
   <p class="topless"><a href="time_deltas.html"
                         title="next chapter">Time deltas</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../_sources/analysis/reconstructions.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -369,14 +362,13 @@ the offsets will be determined with the available data.</li>
         <li class="right" >
           <a href="process_traces.html" title="Processing of HiSPARC traces"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.2.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../analysis.html" >Data analysis</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
+        &copy; Copyright 2009-2016, David Fokkema, Arne de Laat, and Tom Kooij.
     </div>
   </body>
 </html>

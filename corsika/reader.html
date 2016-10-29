@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>CORSIKA Reader &mdash; SAPPHiRE 1.0.0 documentation</title>
+    <title>CORSIKA Reader &mdash; SAPPHiRE 1.2.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 1.0.0 documentation" href="../index.html" />
+    <link rel="top" title="SAPPHiRE 1.2.0 documentation" href="../index.html" />
     <link rel="up" title="CORSIKA simulations" href="../corsika.html" />
     <link rel="next" title="Store CORSIKA data as HDF5" href="store_corsika_data.html" />
     <link rel="prev" title="Convert CORSIKA simulations on Stoomboot" href="qsub_store_corsika_data.html" /> 
@@ -47,7 +47,7 @@
         <li class="right" >
           <a href="qsub_store_corsika_data.html" title="Convert CORSIKA simulations on Stoomboot"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.2.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../corsika.html" accesskey="U">CORSIKA simulations</a> &raquo;</li> 
       </ul>
@@ -115,14 +115,27 @@ Particle Output&#8217; section.</p>
 <div class="section" id="authors">
 <h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Javier Gonzalez &lt;<a class="reference external" href="mailto:jgonzalez&#37;&#52;&#48;ik&#46;fzk&#46;de">jgonzalez<span>&#64;</span>ik<span>&#46;</span>fzk<span>&#46;</span>de</a>&gt;</li>
+<li>Javier Gonzalez</li>
 <li>Arne de Laat &lt;<a class="reference external" href="mailto:adelaat&#37;&#52;&#48;nikhef&#46;nl">adelaat<span>&#64;</span>nikhef<span>&#46;</span>nl</a>&gt;</li>
 </ul>
 <dl class="class">
 <dt id="sapphire.corsika.reader.CorsikaEvent">
 <em class="property">class </em><code class="descclassname">sapphire.corsika.reader.</code><code class="descname">CorsikaEvent</code><span class="sig-paren">(</span><em>raw_file</em>, <em>header_index</em>, <em>end_index</em><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.reader.CorsikaEvent" title="Permalink to this definition">¶</a></dt>
-<dd><p>CorsikaEvent constructor.</p>
+<dd><p>CorsikaEvent constructor</p>
 <p>The user never calls this. The CorsikaFile does.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>raw_file</strong> &#8211; <a class="reference internal" href="#sapphire.corsika.reader.CorsikaFile" title="sapphire.corsika.reader.CorsikaFile"><code class="xref py py-class docutils literal"><span class="pre">CorsikaFile</span></code></a> object.</li>
+<li><strong>header_index</strong> &#8211; index where the event header starts.</li>
+<li><strong>end_index</strong> &#8211; index where the event end starts.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="sapphire.corsika.reader.CorsikaEvent.get_header">
 <code class="descname">get_header</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.reader.CorsikaEvent.get_header" title="Permalink to this definition">¶</a></dt>
@@ -193,6 +206,12 @@ This class is meant for unthinned simulations.</p>
 </tr>
 </tbody>
 </table>
+<dl class="method">
+<dt id="sapphire.corsika.reader.CorsikaFile.finish">
+<code class="descname">finish</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.reader.CorsikaFile.finish" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close the opened CORSIKA data file</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="sapphire.corsika.reader.CorsikaFile.check">
 <code class="descname">check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sapphire.corsika.reader.CorsikaFile.check" title="Permalink to this definition">¶</a></dt>
@@ -301,13 +320,6 @@ This class is meant for thinned simulations.</p>
   <h4>Next topic</h4>
   <p class="topless"><a href="store_corsika_data.html"
                         title="next chapter">Store CORSIKA data as HDF5</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../_sources/corsika/reader.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -337,14 +349,13 @@ This class is meant for thinned simulations.</p>
         <li class="right" >
           <a href="qsub_store_corsika_data.html" title="Convert CORSIKA simulations on Stoomboot"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.2.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../corsika.html" >CORSIKA simulations</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
+        &copy; Copyright 2009-2016, David Fokkema, Arne de Laat, and Tom Kooij.
     </div>
   </body>
 </html>

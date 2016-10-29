@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Time conversion functions &mdash; SAPPHiRE 1.0.0 documentation</title>
+    <title>Time conversion functions &mdash; SAPPHiRE 1.2.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.0.0',
+        VERSION:     '1.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="SAPPHiRE 1.0.0 documentation" href="../index.html" />
+    <link rel="top" title="SAPPHiRE 1.2.0 documentation" href="../index.html" />
     <link rel="up" title="Coordinate and time transformations" href="../transformations.html" />
     <link rel="next" title="Transformations between geographic coordinate systems" href="geographic.html" />
     <link rel="prev" title="Transformations between Celestial coordinate systems" href="celestial.html" /> 
@@ -47,7 +47,7 @@
         <li class="right" >
           <a href="celestial.html" title="Transformations between Celestial coordinate systems"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.2.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../transformations.html" accesskey="U">Coordinate and time transformations</a> &raquo;</li> 
       </ul>
@@ -65,6 +65,9 @@
 Such as easy conversions between different time systems.
 Supported systems: GPS, UTC, GMST, LST, JD and MJD.</p>
 <p>Formulae from:</p>
+<p>IETF list of leap seconds
+&#8216;Leap seconds announced by the IERS&#8217;
+<a class="reference external" href="https://www.ietf.org/timezones/data/leap-seconds.list">https://www.ietf.org/timezones/data/leap-seconds.list</a></p>
 <p>Duffett-Smith1990
 &#8216;Astronomy with your personal computer&#8217;
 ISBN 0-521-38995-X</p>
@@ -76,7 +79,7 @@ apwlib.convert
 <a class="reference external" href="https://github.com/adrn/apwlib">https://github.com/adrn/apwlib</a></p>
 <dl class="data">
 <dt id="sapphire.transformations.clock.LEAP_SECONDS">
-<code class="descclassname">sapphire.transformations.clock.</code><code class="descname">LEAP_SECONDS</code><em class="property"> = (('July 1, 2015', 17), ('July 1, 2012', 16), ('January 1, 2009', 15), ('January 1, 2006', 14), ('January 1, 1999', 13), ('July 1, 1997', 12), ('January 1, 1996', 11), ('July 1, 1994', 10), ('July 1, 1993', 9), ('July 1, 1992', 8), ('January 1, 1991', 7), ('January 1, 1990', 6), ('January 1, 1988', 5), ('July 1, 1985', 4), ('July 1, 1983', 3), ('July 1, 1982', 2), ('July 1, 1981', 1))</em><a class="headerlink" href="#sapphire.transformations.clock.LEAP_SECONDS" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">sapphire.transformations.clock.</code><code class="descname">LEAP_SECONDS</code><em class="property"> = (('January 1, 2017', 18), ('July 1, 2015', 17), ('July 1, 2012', 16), ('January 1, 2009', 15), ('January 1, 2006', 14), ('January 1, 1999', 13), ('July 1, 1997', 12), ('January 1, 1996', 11), ('July 1, 1994', 10), ('July 1, 1993', 9), ('July 1, 1992', 8), ('January 1, 1991', 7), ('January 1, 1990', 6), ('January 1, 1988', 5), ('July 1, 1985', 4), ('July 1, 1983', 3), ('July 1, 1982', 2), ('July 1, 1981', 1))</em><a class="headerlink" href="#sapphire.transformations.clock.LEAP_SECONDS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dates of leap second introductions.</p>
 </dd></dl>
 
@@ -88,9 +91,9 @@ apwlib.convert
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>time</strong> &#8211; datetime.time or datetime.datetime object</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>time</strong> &#8211; datetime.time or datetime.datetime object.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">decimal number representing the input time</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">decimal number representing the input time.</td>
 </tr>
 </tbody>
 </table>
@@ -104,9 +107,9 @@ apwlib.convert
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>hours</strong> &#8211; datetime.time or datetime.datetime object</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>hours</strong> &#8211; datetime.time or datetime.datetime object.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">decimal number representing the input time</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">decimal number representing the input time.</td>
 </tr>
 </tbody>
 </table>
@@ -123,13 +126,13 @@ So the returned date will end in .5 because the date refers to midnight.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>year</strong> &#8211; A Gregorian year (B.C. years are negative)</li>
-<li><strong>month</strong> &#8211; A Gregorian month (1-12)</li>
-<li><strong>day</strong> &#8211; A Gregorian day (1-31)</li>
+<li><strong>year</strong> &#8211; a Gregorian year (B.C. years are negative).</li>
+<li><strong>month</strong> &#8211; a Gregorian month (1-12).</li>
+<li><strong>day</strong> &#8211; a Gregorian day (1-31).</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The Julian Date for the given year, month, and day</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the Julian Date for the given year, month, and day.</p>
 </td>
 </tr>
 </tbody>
@@ -144,9 +147,9 @@ So the returned date will end in .5 because the date refers to midnight.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dt</strong> &#8211; datetime object</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dt</strong> &#8211; datetime object.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The Julian Date for the given datetime object</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The Julian Date for the given datetime object.</td>
 </tr>
 </tbody>
 </table>
@@ -160,9 +163,9 @@ So the returned date will end in .5 because the date refers to midnight.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>juliandate</strong> &#8211; a Julian Date</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>juliandate</strong> &#8211; a Julian Date.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">the Modified Julian Date</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">the Modified Julian Date.</td>
 </tr>
 </tbody>
 </table>
@@ -176,9 +179,9 @@ So the returned date will end in .5 because the date refers to midnight.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>modifiedjf</strong> &#8211; a Modified Julian Date</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>modifiedjf</strong> &#8211; a Modified Julian Date.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Julian Date</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Julian Date.</td>
 </tr>
 </tbody>
 </table>
@@ -192,9 +195,9 @@ So the returned date will end in .5 because the date refers to midnight.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dt</strong> &#8211; datetime object</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dt</strong> &#8211; datetime object.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">the Modified Julian Date</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">the Modified Julian Date.</td>
 </tr>
 </tbody>
 </table>
@@ -208,9 +211,9 @@ So the returned date will end in .5 because the date refers to midnight.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>juliandate</strong> &#8211; Julian Date</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>juliandate</strong> &#8211; Julian Date.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">decimal hours in GMST</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">decimal hours in GMST.</td>
 </tr>
 </tbody>
 </table>
@@ -224,9 +227,9 @@ So the returned date will end in .5 because the date refers to midnight.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dt</strong> &#8211; datetime object in UTC time</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dt</strong> &#8211; datetime object in UTC time.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">decimal hours in GMST</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">decimal hours in GMST.</td>
 </tr>
 </tbody>
 </table>
@@ -241,9 +244,9 @@ So the returned date will end in .5 because the date refers to midnight.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dt</strong> &#8211; datetime object in GMST time</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dt</strong> &#8211; datetime object in GMST time.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">datetime object in UTC</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">datetime object in UTC.</td>
 </tr>
 </tbody>
 </table>
@@ -257,9 +260,9 @@ So the returned date will end in .5 because the date refers to midnight.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>juliandate</strong> &#8211; a Julian Date</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>juliandate</strong> &#8211; a Julian Date.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">datetime object in UTC time</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">datetime object in UTC time.</td>
 </tr>
 </tbody>
 </table>
@@ -273,9 +276,9 @@ So the returned date will end in .5 because the date refers to midnight.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>juliandate</strong> &#8211; a Modified Julian Date</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>juliandate</strong> &#8211; a Modified Julian Date.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">datetime object in UTC time</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">datetime object in UTC time.</td>
 </tr>
 </tbody>
 </table>
@@ -290,12 +293,12 @@ So the returned date will end in .5 because the date refers to midnight.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>hours</strong> &#8211; decimal hours in GMST</li>
-<li><strong>longitude</strong> &#8211; location in degrees, E positive</li>
+<li><strong>hours</strong> &#8211; decimal hours in GMST.</li>
+<li><strong>longitude</strong> &#8211; location in degrees, east positive.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">decimal hours in LST</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">decimal hours in LST.</p>
 </td>
 </tr>
 </tbody>
@@ -311,12 +314,12 @@ So the returned date will end in .5 because the date refers to midnight.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>hours</strong> &#8211; decimal hours in LST</li>
-<li><strong>longitude</strong> &#8211; location in degrees, E positive</li>
+<li><strong>hours</strong> &#8211; decimal hours in LST.</li>
+<li><strong>longitude</strong> &#8211; location in degrees, east positive.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">decimal hours in GMST</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">decimal hours in GMST.</p>
 </td>
 </tr>
 </tbody>
@@ -332,12 +335,12 @@ So the returned date will end in .5 because the date refers to midnight.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>dt</strong> &#8211; datetime object in UTC</li>
-<li><strong>longitude</strong> &#8211; location in degrees, E positive</li>
+<li><strong>dt</strong> &#8211; datetime object in UTC.</li>
+<li><strong>longitude</strong> &#8211; location in degrees, east positive.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">decimal hours in LST</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">decimal hours in LST.</p>
 </td>
 </tr>
 </tbody>
@@ -418,7 +421,7 @@ So the returned date will end in .5 because the date refers to midnight.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>timestamp</strong> &#8211; GPS timestamp in seconds.</li>
-<li><strong>longitude</strong> &#8211; location in degrees, E positive.</li>
+<li><strong>longitude</strong> &#8211; location in degrees, east positive.</li>
 </ul>
 </td>
 </tr>
@@ -469,9 +472,9 @@ So the returned date will end in .5 because the date refers to midnight.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>time</strong> &#8211; GPS datetime object or GPS timestamp</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>time</strong> &#8211; GPS datetime object or GPS timestamp.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">GPS timestamp</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">GPS timestamp.</td>
 </tr>
 </tbody>
 </table>
@@ -494,13 +497,6 @@ So the returned date will end in .5 because the date refers to midnight.</p>
   <h4>Next topic</h4>
   <p class="topless"><a href="geographic.html"
                         title="next chapter">Transformations between geographic coordinate systems</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../_sources/transformations/clock.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -530,14 +526,13 @@ So the returned date will end in .5 because the date refers to midnight.</p>
         <li class="right" >
           <a href="celestial.html" title="Transformations between Celestial coordinate systems"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.0.0 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SAPPHiRE 1.2.0 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../sapphire.html" >SAPPHiRE Reference</a> &raquo;</li>
           <li class="nav-item nav-item-2"><a href="../transformations.html" >Coordinate and time transformations</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2009-2015, David Fokkema, Arne de Laat.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
+        &copy; Copyright 2009-2016, David Fokkema, Arne de Laat, and Tom Kooij.
     </div>
   </body>
 </html>
